@@ -1,6 +1,7 @@
-import pygame
+﻿import pygame
 import time
 import random
+from Gameloop import *
  
 pygame.init()
  
@@ -57,8 +58,8 @@ def game_intro():
         
         if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_green, (150,500,100,50))
-            #if click[0] == 1:
-                #game_loop()
+            if click[0] == 1:
+                game_loop()
             
                  
         else:

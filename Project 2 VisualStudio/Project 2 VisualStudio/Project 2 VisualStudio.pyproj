@@ -22,6 +22,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Gameloop.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Project_2_VisualStudio.py" />
   </ItemGroup>
   <PropertyGroup>
