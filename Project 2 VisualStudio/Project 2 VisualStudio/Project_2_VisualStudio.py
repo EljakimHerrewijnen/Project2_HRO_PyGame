@@ -42,10 +42,15 @@ def game_intro():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
+<<<<<<< HEAD
         
         bg = pygame.image.load("background_menu1.jpg")
         bg= pygame.transform.scale(bg, (display_width, display_height))
         gameDisplay.blit(bg, (0, 0))         
+=======
+
+
+>>>>>>> origin/master
         #gameDisplay.fill(white)
         largeText = pygame.font.Font('freesansbold.ttf', 115)
         #TextSurf, TextRect = text_objects('Frequency', largeText)
