@@ -44,7 +44,8 @@ def game_intro():
                 pygame.quit()
                 quit()
 
-        gameDisplay.fill(white)
+
+        #gameDisplay.fill(white)
         largeText = pygame.font.Font('freesansbold.ttf', 115)
         TextSurf, TextRect = text_objects('Frequency', largeText)
         TextRect.center = ((display_width/2), (display_height/4))
