@@ -2,11 +2,12 @@
 import time
 import random
 from Gameloop import *
+#from ChoosePlayer import *
  
 pygame.init()
  
-display_width = 800
-display_height = 600
+display_width = 720
+display_height = 720
  
 black = (0,0,0)
 white = (255,255,255)
@@ -43,8 +44,10 @@ def game_intro():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
-
-        gameDisplay.fill(white)
+        
+        bg = pygame.image.load('background_menu.png')       
+        gameDisplay.blit(bg, (0, 0))           
+        #gameDisplay.fill(white)
         largeText = pygame.font.Font('freesansbold.ttf', 115)
         TextSurf, TextRect = text_objects('Frequency', largeText)
         TextRect.center = ((display_width/2), (display_height/4))
@@ -75,8 +78,8 @@ def game_intro():
         
         if 350+100 > mouse[0] > 350 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (350,500,100,50))
-            #if click[0] is == 1:
-                #Rules_loop()
+            if click[0]  == 1:
+                ChoosePlayerScreen()
         else: 
             pygame.draw.rect(gameDisplay, blue, (350,500,100,50))
         
