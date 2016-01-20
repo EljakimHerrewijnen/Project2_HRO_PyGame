@@ -10,7 +10,7 @@ def game_loop():
         ChoosePlayerScreen()
     print(AmountPlayersDefault)
     pygame.init()
-    Tilesize = 80
+    Tilesize = 40
     Mapwidth = 18
     Mapheight = 18
     screen = pygame.display.set_mode((Mapwidth * Tilesize, Mapheight * Tilesize))

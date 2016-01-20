@@ -6,8 +6,8 @@ from Gameloop import *
  
 pygame.init()
  
-display_width = 720
-display_height = 720
+display_width = 800
+display_height = 600
  
 black = (0,0,0)
 white = (255,255,255)
@@ -27,8 +27,6 @@ pygame.display.set_caption('Frequency')
 clock = pygame.time.Clock()
 
 
- 
-
 
 def text_objects(text, font):
     textSurface = font.render(text, True, black)
@@ -45,13 +43,14 @@ def game_intro():
                 pygame.quit()
                 quit()
         
-        bg = pygame.image.load('background_menu.png')       
-        gameDisplay.blit(bg, (0, 0))           
+        bg = pygame.image.load("background_menu1.jpg")
+        bg= pygame.transform.scale(bg, (display_width, display_height))
+        gameDisplay.blit(bg, (0, 0))         
         #gameDisplay.fill(white)
         largeText = pygame.font.Font('freesansbold.ttf', 115)
-        TextSurf, TextRect = text_objects('Frequency', largeText)
-        TextRect.center = ((display_width/2), (display_height/4))
-        gameDisplay.blit(TextSurf, TextRect)
+        #TextSurf, TextRect = text_objects('Frequency', largeText)
+        #TextRect.center = ((display_width/2), (display_height/4))
+        #gameDisplay.blit(TextSurf, TextRect)
 
         
         
