@@ -1,4 +1,4 @@
-﻿import pygame
+import pygame
 import time
 import random
 from Gameloop import *
@@ -33,65 +33,51 @@ def text_objects(text, font):
     return textSurface, textSurface.get_rect()
 
 
-def game_intro():
+def SandRules():
 
     intro = True
 
     while intro:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                pygame.quit()
-                quit()
-
-        
+                intro = False        
         bg = pygame.image.load("background_menu1.jpg")
         bg= pygame.transform.scale(bg, (display_width, display_height))
-        gameDisplay.blit(bg, (0, 0))         
-
-        #gameDisplay.fill(white)
+        gameDisplay.blit(white)         
         largeText = pygame.font.Font('freesansbold.ttf', 115)
-        #TextSurf, TextRect = text_objects('Frequency', largeText)
-        #TextRect.center = ((display_width/2), (display_height/4))
-        #gameDisplay.blit(TextSurf, TextRect)
 
-        
-        
+              
         mouse = pygame.mouse.get_pos()
         click = pygame.mouse.get_pressed()
-       
-        
+             
         if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_green, (150,500,100,50))
             if click[0] == 1:
-                game_loop()
+                IceRules()
             
                  
         else:
             pygame.draw.rect(gameDisplay, green, (150,500,100,50))
 
         smallText = pygame.font.Font('freesansbold.ttf', 20)
-        textSurf, textRect = text_objects('Play!', smallText)
+        textSurf, textRect = text_objects('Go Back', smallText)
         textRect.center = ( (150+(100/2)), (500+(50/2)) )
         gameDisplay.blit(textSurf, textRect)
 
-
-        
-        
+        #IceRules    
         if 350+100 > mouse[0] > 350 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (350,500,100,50))
             if click[0]  == 1:
-                ChoosePlayerScreen()
+                IceRules()
         else: 
             pygame.draw.rect(gameDisplay, blue, (350,500,100,50))
         
         smallText = pygame.font.Font('freesansbold.ttf', 20)
         textSurf, textRect = text_objects('Rules', smallText)
         textRect.center = ( (350+(100/2)), (500+(50/2)) )
-        gameDisplay.blit(textSurf, textRect)
+        gameDisplay.blit(textSurf, textRect)              
         
-        
-        
-        
+        #Quit
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:    
             pygame.draw.rect(gameDisplay, bright_red, (550,500,100,50))
             if click[0] == 1:
@@ -109,4 +95,5 @@ def game_intro():
         pygame.display.update()
         clock.tick(15)
 
-game_intro()
+def IceRules():
+    print("Nog Niks")

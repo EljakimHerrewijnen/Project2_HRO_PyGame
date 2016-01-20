@@ -162,8 +162,7 @@ def ChoosePlayerScreen():
     while intro:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                pygame.quit()
-                quit()
+                intro = False
 
         gameDisplay.fill(white)        #Pretty much the same as carlo's Menu screen
         largeText = pygame.font.Font('freesansbold.ttf', 40)
