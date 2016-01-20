@@ -1,8 +1,6 @@
-﻿import pygame
+import pygame
 import time
 import random
-from ChoosePlayerAmount import *
-from GameLoop import *
  
 pygame.init()
  
@@ -29,13 +27,13 @@ clock = pygame.time.Clock()
 
  
 
-
-def text_objects(text, font):
+# Set Font
+def Text_AmountPlayers(text, font):
     textSurface = font.render(text, True, black)
     return textSurface, textSurface.get_rect()
 
-
-def game_intro():
+#Main Def
+def AmountPlayers():
 
     intro = True
 
@@ -47,7 +45,7 @@ def game_intro():
 
         gameDisplay.fill(white)
         largeText = pygame.font.Font('freesansbold.ttf', 115)
-        TextSurf, TextRect = text_objects('Frequency', largeText)
+        TextSurf, TextRect = text_objects('Choose Your Amount of players!', largeText)
         TextRect.center = ((display_width/2), (display_height/4))
         gameDisplay.blit(TextSurf, TextRect)
 
@@ -59,8 +57,8 @@ def game_intro():
         
         if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_green, (150,500,100,50))
-            if click[0] == 1:
-                game_loop()
+            #if click[0] == 1:
+                #game_loop()
             
                  
         else:
@@ -106,6 +104,6 @@ def game_intro():
         pygame.display.update()
         clock.tick(15)
 
-game_intro()
+AmountPlayers()
 
 

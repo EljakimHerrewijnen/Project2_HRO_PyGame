@@ -26,6 +26,9 @@
     <Compile Include="..\..\..\..\GitHub\Project2\Python_project_2.py">
       <Link>Python_project_2.py</Link>
     </Compile>
+    <Compile Include="module1.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
