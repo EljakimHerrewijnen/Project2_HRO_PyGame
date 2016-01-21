@@ -4,7 +4,7 @@ import time
 
 #Voor Carlo
 
-pygame.intit()
+pygame.init()
 
 display_width = 800
 display_height = 600
@@ -39,9 +39,9 @@ def winning_screen():
             if event.type == pygame.QUIT:
                 winning = False
         gameDisplay.fill(white)
-        LargeText = pygame.font.Font('freesandsbold.tff', 70)
-        TextSurf, TextRect = text_objects('Congratulations, you won!', LargeText)
+        largeText = pygame.font.Font('freesansbold.ttf', 40)
+        TextSurf, TextRect = text_objects('Congratulations, you won!', largeText)
         TextRect.center = ((display_width/2), (display_height/2))
-        gamedisplay.blit(TextSurf, TextRect)
+        gameDisplay.blit(TextSurf, TextRect)
 
 winning_screen()
