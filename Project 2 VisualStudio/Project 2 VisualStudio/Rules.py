@@ -8,7 +8,7 @@ from Gameloop import *
 
 
 
-def SandRules():
+def Rules():
     pygame.init()
  
     display_width = 800
@@ -63,7 +63,8 @@ def SandRules():
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:    
             pygame.draw.rect(gameDisplay, bright_red, (550,500,100,50))
         if click[0] == 1:
-                winning = False
+                pygame.quit()
+                quit()
         else:
             pygame.draw.rect(gameDisplay, red, (550,500,100,50))
 
@@ -78,5 +79,3 @@ def SandRules():
 
 def IceRules():
     print("Nog Niks")
-
-SandRules()

@@ -79,8 +79,8 @@ def game_intro():
         
         if 350+100 > mouse[0] > 350 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (350,500,100,50))
-            #if click[0]  == 1:
-                #rules()
+            if click[0] == 1:
+                Rules()
         else: 
             pygame.draw.rect(gameDisplay, blue, (350,500,100,50))
         
