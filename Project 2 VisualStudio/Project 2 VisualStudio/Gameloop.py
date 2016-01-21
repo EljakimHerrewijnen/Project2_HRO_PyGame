@@ -10,7 +10,8 @@ def game_loop():
         ChoosePlayerScreen()
     print(AmountPlayersDefault)
     pygame.init()
-    Tilesize = 40
+    Texuresize = 40
+    Tilesize = Texuresize + 2
     Mapwidth = 18
     Mapheight = 18
     screen = pygame.display.set_mode((Mapwidth * Tilesize, Mapheight * Tilesize))
@@ -18,6 +19,10 @@ def game_loop():
     clock = pygame.time.Clock()
     pygame.mixer.music.load('Cipher2.mp3')
     pygame.mixer.music.play(0)
+
+    bgmap = pygame.image.load("content/map895.jpg")
+    bgmap = pygame.transform.scale(bgmap, (Mapwidth * Tilesize, Mapheight * Tilesize))
+    screen.blit(bgmap, (0, 0)) 
 
     #for i in range(0, aantal):
         #random_nr = random.randint(0, 4)
@@ -36,12 +41,19 @@ def game_loop():
     white = (255, 250, 250)
     green = (34, 139, 34)
     #textures
-    Water_texture = pygame.image.load('water_texture.png'), 
-    Goldmine_texture = pygame.image.load('goldmine_texture.png'), 
-    Forest_texture = pygame.image.load('forest_texture.png'), 
-    Ice_texture = pygame.image.load('ice_texture.png'), 
-    Swamp_texture = pygame.image.load('swamp_texture.png'), 
-    Desert_texture = pygame.image.load('desert_texture.png'), 
+    transparent_texture = pygame.image.load('content/transparent_tile.png')
+    Water_texture = pygame.image.load('content/water_texture.png')
+    Water_texture = pygame.transform.scale(Water_texture, (Texuresize, Texuresize))
+    Goldmine_texture = pygame.image.load('content/goldmine_texture.png')
+    Goldmine_texture = pygame.transform.scale(Goldmine_texture, (Texuresize, Texuresize))
+    Forest_texture = pygame.image.load('content/forest_texture.png')
+    Forest_texture = pygame.transform.scale(Forest_texture, (Texuresize, Texuresize))
+    Ice_texture = pygame.image.load('content/ice_texture.png')
+    Ice_texture = pygame.transform.scale(Ice_texture, (Texuresize, Texuresize))
+    Swamp_texture = pygame.image.load('content/swamp_texture.png')
+    Swamp_texture = pygame.transform.scale(Swamp_texture, (Texuresize, Texuresize))
+    Desert_texture = pygame.image.load('content/desert_texture.png')
+    Desert_texture = pygame.transform.scale(Desert_texture, (Texuresize, Texuresize))
 
     #elements
     Water = 0
@@ -52,12 +64,12 @@ def game_loop():
     Desert = 5
 
     #elements linked to textures
-    textures = {Water: pygame.image.load('water_texture.png'), 
-               Goldmine: pygame.image.load('goldmine_texture.png'), 
-               Forest: pygame.image.load('forest_texture.png'), 
-               Ice: pygame.image.load('ice_texture.png'), 
-               Swamp: pygame.image.load('swamp_texture.png'), 
-               Desert: pygame.image.load('desert_texture.png')}
+    textures = {Water: pygame.transform.scale(transparent_texture, (Texuresize, Texuresize)), 
+               Goldmine: pygame.transform.scale(transparent_texture, (Texuresize, Texuresize)), 
+               Forest: pygame.transform.scale(transparent_texture, (Texuresize, Texuresize)),
+               Ice: pygame.transform.scale(transparent_texture, (Texuresize, Texuresize)), 
+               Swamp: pygame.transform.scale(transparent_texture, (Texuresize, Texuresize)), 
+               Desert: pygame.transform.scale(transparent_texture, (Texuresize, Texuresize))}
 
 
     tilelist = [                        #[Water for r in range(Mapwidth)] for c in range(Mapheight)] #Water for r in range(0, 4)
@@ -131,8 +143,6 @@ def ChoosePlayerScreen():
  # Can be changed if needed
     display_width = 800
     display_height = 600
- 
-
 
     #Colours, same as Carlo's code
     black = (0,0,0)

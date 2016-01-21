@@ -44,7 +44,7 @@ def game_intro():
                 quit()
 
         
-        bg = pygame.image.load("background_menu1.jpg")
+        bg = pygame.image.load("content/background_menu1.jpg")
         bg= pygame.transform.scale(bg, (display_width, display_height))
         gameDisplay.blit(bg, (0, 0))         
 
@@ -53,7 +53,6 @@ def game_intro():
         #TextSurf, TextRect = text_objects('Frequency', largeText)
         #TextRect.center = ((display_width/2), (display_height/4))
         #gameDisplay.blit(TextSurf, TextRect)
-
         
         
         mouse = pygame.mouse.get_pos()
@@ -79,8 +78,8 @@ def game_intro():
         
         if 350+100 > mouse[0] > 350 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (350,500,100,50))
-            if click[0]  == 1:
-                ChoosePlayerScreen()
+            #if click[0]  == 1:
+                #rules()
         else: 
             pygame.draw.rect(gameDisplay, blue, (350,500,100,50))
         
