@@ -1,6 +1,6 @@
 ﻿import pygame
 import random
-#from Node import *
+from Players import * 
 
 AmountPlayersDefault = 0
 
@@ -24,17 +24,23 @@ def game_loop():
     bgmap = pygame.transform.scale(bgmap, (Mapwidth * Tilesize, Mapheight * Tilesize))
     screen.blit(bgmap, (0, 0)) 
 
-    #for i in range(0, aantal):
-        #random_nr = random.randint(0, 4)
-        #if random_nr = 1:
-
-        #if random_nr = 2:
-            
-        #if random_nr = 1:
-            
-        #if random_nr = 1:
-
-
+    """
+    pl_id = 1
+    countdown = AmountPlayersDefault
+    for i in range(0, AmountPlayersDefault):
+        random_nr = random.randint(0, countdown)
+        if random_nr == 0:
+            Playerlist = Node(Player(pl_id, Naam1, SwampCard), Playerlist)
+        elif random_nr == 1:
+            Playerlist = Node(Player(pl_id, Naam2, IceCard), Playerlist)
+        elif random_nr == 2:
+            Playerlist = Node(Player(pl_id, Naam3, DesertCard), Playerlist)
+        elif random_nr == 3:
+            Playerlist = Node(Player(pl_id, Naam4, ForestCard), Playerlist)
+        if Playerlist
+        countdown -= 1
+        playerid += 1
+        """
 
     #colours
     blue = (132, 112, 255)
@@ -162,6 +168,8 @@ def ChoosePlayerScreen():
     pygame.display.set_caption('Frequency')
     clock = pygame.time.Clock()
 
+
+
     #properties of the objects
     
     def text_objects(text, font):
@@ -180,7 +188,6 @@ def ChoosePlayerScreen():
         TextRect.center = ((display_width/2), (display_height/4))
         gameDisplay.blit(TextSurf, TextRect)
 
-       
         mouse = pygame.mouse.get_pos()
         click = pygame.mouse.get_pressed()
        
