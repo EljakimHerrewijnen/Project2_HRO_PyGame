@@ -22,7 +22,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="ChoosePlayers.py" />
+    <Compile Include="WinningScreen.py" />
     <Compile Include="Gameloop.py">
       <SubType>Code</SubType>
     </Compile>
