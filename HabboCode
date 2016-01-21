@@ -1,0 +1,143 @@
+import pygame
+import time
+import random
+ 
+pygame.init()
+ 
+display_width  = 800
+display_height = 600
+ 
+black          = (0,0,0)
+white          = (255,255,255)
+
+bright_blue    = (0,0,255)
+blue           = (30,144,255)
+
+bright_red     = (255,0,0)
+red            = (175,0,0)
+
+bright_green   = (0,255,0)
+green          = (0,175,0)
+
+bright_orange  = (255,191,0)   #MINE
+orange         = (255,128,0)   #MINE
+
+bright_yellow  = (255,255,0)   #MINE
+yellow         = (242,242,13)  #MINE
+
+bright_purple  = (127,0,255)    #MINE
+purple         = (197,255,0)    #MINE
+
+bright_pink    = (255,128,128)  #MINE
+pink           = (255,204,204)  #MINE
+
+bright_brown   = (153,76,0)  #MINE
+brown          = (102,51,0)  #MINE
+
+bright_gray    = (204,204,204)  #MINE
+gray           = (128,128,128)  #MINE
+
+ 
+block_color    = (53,115,255)
+
+ 
+gameDisplay = pygame.display.set_mode((display_width,display_height))
+pygame.display.set_caption('Frequency')
+clock = pygame.time.Clock()
+
+def text_objects(text, font):
+    textSurface = font.render(text, True, black)
+    return textSurface, textSurface.get_rect()
+
+def rules_loop():   # MINE
+
+ rules = True       # MINE
+
+ while rules:                                      # MINE
+        for event in pygame.event.get():           # MINE
+            if event.type == pygame.QUIT:          # MINE
+                pygame.quit()                      # MINE
+                quit()                             # MINE
+
+        gameDisplay.fill(white)                    # MINE
+        largeText = pygame.font.Font('freesansbold.ttf', 115) # MINE
+        TextSurf, TextRect = text_objects('WELCOME TO FREQUENCY: Welcome at the Frequency game! Dive into the world of Frequency, and try to destroy the enemy base! Think of a strategy that works with your climate. Try to capture the goldmine, and play dangerous by earning as much money in enemy territory, or play safe and defend your own area with a huge army. Everything is possible in Frequency, and that is what makes the game exciting. Everyone has the same goal, but may have a different strategy. So be ready to apply your own strategy. But be aware! The game is not finished in 30 minutes, so think about your strategy before you make your moves, before you know it your enemy beats the devil out of you! Buy soldiers, conquer territory and earn Frequencies with which you can build your own army. Use your digital banking system, and follow your strategy into the destruction of your enemies and conquest enemy territory. Have fun playing Frequency, and may the odds be ever in your favor! THE BACKGROUND OF FREQUENCY: It is 2025. In the years after the cold war is officially over, the Americans and Russians have secretly continued the production of the atomic bomb. Under direct command off Vladimir Putin, a small team worked on a bomb that had the power to take out the whole western world. Due to a small miscalculation has the area where the bomb should explode been greatly increased. After the explosion almost whole humanity went extinct, and the whole world had been destroyed. A small area near Qatar however survived the explosion. The rich sheiks hid in their bomb shelter and survived the attack. They rebuild the small area that was left. However due to the explosion of the bomb the small part that was not destroyed had seen climate change. It is now divided into four and is called Sector4. Sharir Ali, the sheik and leader of Sector4 passed away some time after the explosion. His dying wish was that his four sons would all get a piece of his land. And so Sector4 had been divided into four areas and one of each sons has control over one of the follwowing areas. FOREST, SWAMP, ICE PLAINS, DESERT. The four sons did not agree with how the land had been divided, they all wanted to possess the Goldmine. The sons would love to rule the whole area, just like their dad Sharir Ali. They send threatenining letters, and declared war to one an other. The playing board is a squared board. In every corner of the board, there is a base with its own climate. In the middle of the board is the goldmine. The areas are divided by water. The board is divided in tiles. Per tile in own territory you will earn 50 dollars, per box that you own in enemy territory you earn 100 dollars, inside the goldmine you will earn 150 dollars per tile. At the sides of the board there is a legend that will support the gameplay. In the corner of every climate there is a base. This is the starting position for every player. CLIMATES: The board is divided into different climates. The different climates are, swamp, forest, desert and ice plains. On different climates there are different raw materials. In the swamp you can find minerals and sedge. In the forest you can lumber wood or collect coal. In the desert there is oil, and on the ice plains you can hunt down ice bears and penguins. By collecting the raw materials, you earn frequencies, indicated with an f, this is the monetary unit of the game. CLIMATE CARDS: At the start of the game the players pull a climate card, the cards you have pulled is your starting area, the areas are forest, ice, swamp and desert. Per area you have an advantage. In the forest building a robot is 60 dollars cheaper. In the swamp a boat is 200 dollars cheaper. On the ie plains soldiers are 30 euroes cheaper, and on the desert the tanks are 150 euroes cheaper. Every climate has his own 20% off on one of the playing figures. DESERT: In the desert the tanks are cheaper, the people in the desert are specialized in building tanks. The reason is that tanks will break down faster in the desert area. The people must be able to defend themselves and therefore learned how to build and repair tanks. SIn the swamp boats are cheaper since people use boats for years and years now. By years of experience of making boats the people are more efficinet in making boats and can produce them with less costs. ICE PLAINS: Near Qatar there has been a climate shift due to the atomic explosion. This created a cold climate. The soldiers on the newly created ice plains are weaker than in other areas This is because Arabs are not used to this cold weather. For this reason, the soldiers get a higher life insurance. This ensures that more men are willing to join the army. This leads to cheaper training of soldiers. FOREST: Because the people in the forest use robots made of Boston Dynamics. The robots are more stable in this climate. The robots are mostly made of wood; this makes the robots cheaper to produce in this kind of environment. THE GAME-THE START OF THE GAME: At the start of the game every player pulls a card. The card you have pulled will be your starting climate and will determine where your starting base is located. Everyone gets 500 dollars of starting money. When it is a players turn he can make 4 moves during his turn. The player who pulled the forest card may start the game. Every start-area is armed with an base barrack. MOVES AND TURNS: Within the game you have turns, when it is your turn you can make 4 moves. These moves can be building troops, move troops to an other location, attacking other players or building barracks. You can not hoard your moves; this means that if you decide to not use a move when it is your turn you cant use that turn later on in the game. All moves that your make will cost you 1 of your 4 moves. When you made a move you cannot rollback your move. As well applies the rule that when you touch something you have to make a move with that item. BUILDING YOUR ECONOMY: When you start building your economy, you start by capturing land. You can capture land by leaving at least 1 soldiers, tank or robot on a box of land, and a maximum of 3 soldiers, tanks or robots. When in your own territory you get 50 dollars per piece of land you occupied. You get 100 dollars if you control enemy territory and a stunning 150 dollars if you are able to control a piece of land in the goldmine. At the start of your turn you get your earnings for that turn. These earnings are calculated by the number of boxes you have occupied at the start of your turn. CAPTURING LAND: All areas, except the corners, have a standard value of 0. When you want to capture the land you have to leave troops with at least the value of 1. It is of great importance to control land in order to earn frequencies. You can also take control of land that is in possession of an enemy. When you want to take land that is in possession you have to fight for it. The person with the higher value of troops will win the fight and earn the piece of land. The value that is left is the sum of hitpoints/values of the soldiers. So when team A has 3 hitpoints and attacks team B which has 1 hitpoint, it is 3 vs 1 which results in 3-1=2, so the winner has a remaining value of 2. You can not attack when you are on a boat. HOW DO YOU WIN? There are two ways to win. The first way is to earn 50000 euroes. The second way is to take control of 2 enemy bases. When you defeat an enemy base you get his/her money and are able to build his troops as well. However, you do not get extra moves and all the figures from the defeated enemy are wiped of the map. When a player decides to surrender, all his money goes back into the bank and figures are no longer available to use. THE ARMY: SOLDIERS - When you want to make soldiers you have to pay 150 euroes per soldier you want to train. If your starting base is located on the ice plains these costs are reduced by 20% and you will only have to pay 120 dollars. A soldier can only move across one box per move. All soldiers have an attack value of 1 and a defensive value of 1. ROBOT - Robots are more expensive then soldiers, with a price of 300 dollars. When you live in the forest these robots are cheaper with a price of only 240 dollars per robot. Robots can only move one box per move. All robots have an attack value of 2 and a defensive value of 2. TANK - Tanks are by far the strongest troops you can build. But with great power comes a great price starting at 750 dollars, however in the desert these tanks are only 600 dollars. Tanks can only move one box per move, but tanks have an attack range of 2. This means that they can attack from a longer distance. All tanks have an attack value of 2 and a defensive value of 2. BASIS - The base is the starting point for the game, and is located in the corner of your land. Your base has a defensive value of 25. Every base contains 1 barrack. So you can train/make loops from that location. BARRACK - By building barracks you can train/make troops on different places. Building a barrack costs 500 dollars in your own territory. When building a barrack in enemy territory you need to count down some extra cash since the price is 1500 dollars, this is however still not much in comparison with the huge price of 2000 dollars when you are building in the goldmine. BOAT - Building a boat will cost you a fine 1000 dollars. These costs are reduced for the swamp people since they are spending almost their whole life in the water. A boat will only cost 800 dollars in the swamp. You can use boats to travel across the river to the goldmine or enemy territory. You can move 2 boxes per move, loading troops into the boat will cost 1 move and unloading troops will also cost 1 move. The amount of troops that you load into the boat will not make this more expensive. Note however that a boat can only transport 3 troops at a time, and that a player is limited to having 3 boats in total. A boat has no attack value but does have a defensive value of 6. GAME SCENARIOS - WHEN CAN YOU CAPTURE A BASIS?: Every base has a defense value of 25. To conquer an enemy, you need an army. The base doesnt have an attack value so when you try to destroy the enemy base your troops do not get lost. FIGHTING TO CAPTURE LAND - When two players are fighting for land, the player with the strongest army/highest hitpoints wins. Examples for this are: 1 soldier vs 1 robot = Robot wins, 1 robot vs 1 tank = Tank wins, 2 soldiers vs 1 tank = Tank wins, 2 soldiers vs 1 robot = No one wins CAPTURING ENEMY TERRITORY: Before you can capture enemy land, you first need to get there. In this case it is smart to split up your forces. You can leave some of your troops behind to defend and attack with a small amount of troops. You can also decide to invade the enemy and send a huge army. When you have successfully invaded enemy land, you can build a barrack and start training troops from that location, so you can faster invade the enmy. Or you can go for a different approach and rush to the goldmine. It leaves you vulnerable but you are very resourceful in no time. Note that these are only a few examples, you can think of your own strategies that might even work better. ', largeText) # SORRY FOR THE LONG STRING. I DON'T HAVE AN IMAGE OF A POTATO, SO HERE IS ANOTHER LONG STRING: ######################################################################################
+        TextRect.center = ((display_width/2), (display_height/4)) # MINE (SORT OF)
+        gameDisplay.blit(TextSurf, TextRect)                      # MINE
+        mouse = pygame.mouse.get_pos()                            # MINE
+        click = pygame.mouse.get_pressed()                        # MINE
+
+
+
+def game_intro():
+
+    intro = True
+
+    while intro:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+
+        gameDisplay.fill(white)
+        largeText = pygame.font.Font('freesansbold.ttf', 115)
+        TextSurf, TextRect = text_objects('Frequency', largeText)
+        TextRect.center = ((display_width/2), (display_height/4))
+        gameDisplay.blit(TextSurf, TextRect)
+
+        
+        
+        mouse = pygame.mouse.get_pos()
+        click = pygame.mouse.get_pressed()
+       
+        
+        if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
+            pygame.draw.rect(gameDisplay, bright_green, (150,500,100,50))
+            #if click[0] == 1:
+                #game_loop()
+            
+                 
+        else:
+            pygame.draw.rect(gameDisplay, green, (150,500,100,50))
+
+        smallText = pygame.font.Font('freesansbold.ttf', 20)
+        textSurf, textRect = text_objects('Play!', smallText)
+        textRect.center = ( (150+(100/2)), (500+(50/2)) )
+        gameDisplay.blit(textSurf, textRect)
+
+
+        
+        
+        if 350+100 > mouse[0] > 350 and 500+50 > mouse[1] > 500:
+            pygame.draw.rect(gameDisplay, bright_blue, (350,500,100,50))    # 350 + 50  x-as   500 + 50 y-as
+            if click[0] == 1:
+                rules_loop()
+        else: 
+            pygame.draw.rect(gameDisplay, blue, (350,500,100,50))
+        
+        smallText = pygame.font.Font('freesansbold.ttf', 20)
+        textSurf, textRect = text_objects('Rules', smallText)
+        textRect.center = ( (350+(100/2)), (500+(50/2)) )
+        gameDisplay.blit(textSurf, textRect)
+        
+        
+        
+        
+        if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:    
+            pygame.draw.rect(gameDisplay, bright_red, (550,500,100,50))
+            if click[0] == 1:
+                pygame.quit()
+                quit()
+        else:
+            pygame.draw.rect(gameDisplay, red, (550,500,100,50))
+
+        smallText = pygame.font.Font('freesansbold.ttf', 20)
+        textSurf, textRect = text_objects('Quit!', smallText)
+        textRect.center = ( (550+(100/2)), (500+(50/2)) )
+        gameDisplay.blit(textSurf, textRect)
+        
+            
+        pygame.display.update()
+        clock.tick(15)
+
+game_intro()
