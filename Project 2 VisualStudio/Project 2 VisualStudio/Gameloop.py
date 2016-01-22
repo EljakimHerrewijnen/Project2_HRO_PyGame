@@ -2,17 +2,19 @@
 import random
 from Players import * 
 from Tile import *
+from Players import *
 
 AmountPlayersDefault = 0
 
-def game_loop():
-    global AmountPlayersDefault
+def game_loop():                        #GameLoop door Joost en Eljakim
+    global AmountPlayersDefault     #Eljakim's code
     if AmountPlayersDefault == 0:
         ChoosePlayerScreen()
     print(AmountPlayersDefault)
-    tile_loop()
+    Player.GenerateRandomBiome()
+    tile_loop()                     #Joost
 
-def ChoosePlayerScreen():
+def ChoosePlayerScreen():               #ChoosePlayerScreen door Joost en Eljakim
     pygame.init() 
     global AmountPlayersDefault
 
@@ -114,5 +116,5 @@ def ChoosePlayerScreen():
         
             
         pygame.display.update()
-        clock.tick(15)
+        clock.tick(15)                      #Einde code Joost en Eljakim
 

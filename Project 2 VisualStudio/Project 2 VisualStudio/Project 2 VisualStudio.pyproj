@@ -22,6 +22,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="BuyScreen.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Node.py">
       <SubType>Code</SubType>
     </Compile>
@@ -29,6 +32,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Tile.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Units.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="WinningScreen.py" />

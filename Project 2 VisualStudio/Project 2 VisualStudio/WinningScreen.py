@@ -5,7 +5,7 @@ from Gameloop import *
 def winning_screen():
     pygame.init()
  
-    display_width = 800
+    display_width = 800      #Code door Eljakim
     display_height = 600
  
     black = (0,0,0)
@@ -39,10 +39,10 @@ def winning_screen():
          
         bg = pygame.image.load("content/youwin.jpg")
         bg= pygame.transform.scale(bg, (display_width, display_height))
-        gameDisplay.blit(bg, (0, 0))         
+        gameDisplay.blit(bg, (0, 0))                                    # Einde Eljakim's code
 
         #gameDisplay.fill(white)
-        largeText = pygame.font.Font('freesansbold.ttf', 115)
+        largeText = pygame.font.Font('freesansbold.ttf', 115)           #Stukje code van Carlo
         #TextSurf, TextRect = text_objects('Frequency', largeText)
         #TextRect.center = ((display_width/2), (display_height/4))
         #gameDisplay.blit(TextSurf, TextRect)
@@ -55,12 +55,12 @@ def winning_screen():
         if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_green, (150,500,100,50))
             if click[0] == 1:
-                game_loop()
-                 
+                game_loop()                                                     #Einde Code Carlo
+                    
         else:
             pygame.draw.rect(gameDisplay, green, (150,500,100,50))
 
-        smallText = pygame.font.Font('freesansbold.ttf', 20)
+        smallText = pygame.font.Font('freesansbold.ttf', 20)                #Code van Eljakim
         textSurf, textRect = text_objects('Replay!', smallText)
         textRect.center = ( (150+(100/2)), (500+(50/2)) )
         gameDisplay.blit(textSurf, textRect)
@@ -80,7 +80,4 @@ def winning_screen():
         
             
         pygame.display.update()
-        clock.tick(15)
-
-
-winning_screen()
+        clock.tick(15)                                      # Einde code Eljakim

@@ -1,5 +1,5 @@
-class Node:
-  def __init__(self, value, tail):
+﻿class Node:
+  def __init__(self, value, tail):          # Code door Joost
     self.Tail = tail
     self.Value = value
     self.IsEmpty = False
