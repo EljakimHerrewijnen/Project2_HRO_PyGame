@@ -1,4 +1,4 @@
-import pygame
+﻿import pygame
 from Node import *
 
 class Player:
@@ -6,3 +6,4 @@ class Player:
         self.Pl_id = id
         self.Pl_name = name
         self.Gamecard = card
+
