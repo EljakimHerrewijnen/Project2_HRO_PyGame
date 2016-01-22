@@ -81,3 +81,4 @@ def winning_screen():
             
         pygame.display.update()
         clock.tick(15)                                      # Einde code Eljakim
+winning_screen()
