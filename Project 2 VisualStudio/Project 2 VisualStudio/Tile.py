@@ -1,10 +1,19 @@
-import pygame
-import random
+import pygame, sys, random
 from Players import * 
 from Node import *
+from pygame.locals import *
 
-#class Tile:
- #   def __init__(self)
+class Point:
+  def __init__(self, x, y):
+    self.X = x
+    self.Y = y
+
+class Tile:
+  def __init__(self, position, texture, offset, properties):
+      self.Position = position
+      self.Texture = texture
+      self.Offset = offset
+      self.Properties = properties
 
 def tile_loop():
     pygame.init()
@@ -12,7 +21,7 @@ def tile_loop():
     Tilesize = Texuresize + 2
     Mapwidth = 18
     Mapheight = 18
-    screen = pygame.display.set_mode((Mapwidth * Tilesize, Mapheight * Tilesize))
+    screen = pygame.display.set_mode((Mapwidth * Tilesize + 100, Mapheight * Tilesize))
     done = False
     clock = pygame.time.Clock()
     pygame.mixer.music.load('Cipher2.mp3')
@@ -21,6 +30,10 @@ def tile_loop():
     bgmap = pygame.image.load("content/map895.jpg")
     bgmap = pygame.transform.scale(bgmap, (Mapwidth * Tilesize, Mapheight * Tilesize))
     screen.blit(bgmap, (0, 0)) 
+
+    Soldier = pygame.image.load("content/soldier_texture.tif").convert_alpha()
+    Soldier = pygame.transform.scale(Soldier, (Tilesize, Tilesize))
+    soldierPos = [0, 0]
 
     """
     pl_id = 1
@@ -132,10 +145,29 @@ def tile_loop():
         for event in pygame.event.get():    #get all user events
             if event.type == pygame.QUIT:   #Option to quit
                 done = True
+            # if a key is pressed move the soldier
+            if event.type == KEYDOWN and soldierPos[0] < Mapwidth - 1:
+                if (event.key == K_RIGHT):
+                    soldierPos[0] += 1
+            if event.type == KEYDOWN and soldierPos[0] > 0:
+                if (event.key == K_LEFT):
+                    soldierPos[0] -= 1
+            if event.type == KEYDOWN and soldierPos[1] > 0:
+                if (event.key == K_UP):
+                    soldierPos[1] -= 1
+            if event.type == KEYDOWN and soldierPos[1] < Mapheight - 1:
+                if (event.key == K_DOWN):
+                    soldierPos[1] += 1
 
+        #print map
         for row in range(Mapheight):
             for column in range(Mapwidth):
                     screen.blit(textures[tilelist[row][column]], (column * Tilesize, row * Tilesize))  #, Tilesize, Tilesize))
+        
+        #print de soldier
+        screen.blit(Soldier,(soldierPos[0] * Tilesize, soldierPos[1] * Tilesize))
+        #print soldier-coordinaten in console
+        print(soldierPos[0], soldierPos[1])
 
         pygame.display.flip()
         clock.tick(60)
