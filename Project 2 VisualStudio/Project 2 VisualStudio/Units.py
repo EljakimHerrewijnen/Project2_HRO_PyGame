@@ -1,4 +1,4 @@
-import pygame
+﻿import pygame
 from Gameloop import *
                             #Code van Eljakim
 
