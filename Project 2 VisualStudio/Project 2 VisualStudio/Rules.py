@@ -11,14 +11,9 @@ def Rules():
  
     black = (0,0,0)
     white = (255,255,255)
-    bright_blue = (0, 0, 255)
     red = (175,0,0)
-    green = (0,175,0)
-    blue = (30,144,255)
     bright_red = (255,0,0)
-    bright_green = (0,255,0)
 
- 
     block_color = (53,115,255)
     
     def text_objects(text, font):
@@ -26,7 +21,7 @@ def Rules():
         return TextSurface, TextSurface.get_rect()
  
     gameDisplay = pygame.display.set_mode((display_width,display_height))
-    pygame.display.set_caption('Frequency')
+    pygame.display.set_caption('Frequency Rules')
     clock = pygame.time.Clock()
 
 
