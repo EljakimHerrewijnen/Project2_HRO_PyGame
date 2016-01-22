@@ -28,6 +28,9 @@
     <Compile Include="Players.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Tile.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="WinningScreen.py" />
     <Compile Include="Gameloop.py">
       <SubType>Code</SubType>

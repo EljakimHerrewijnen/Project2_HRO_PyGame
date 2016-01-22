@@ -3,11 +3,6 @@ import time
 import random
 from Gameloop import *
 
- 
-
-
-
-
 def Rules():
     pygame.init()
  
