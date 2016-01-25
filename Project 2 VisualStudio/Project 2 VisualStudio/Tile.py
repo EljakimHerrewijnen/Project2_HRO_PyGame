@@ -1,7 +1,8 @@
-﻿import pygame, sys, random
+﻿import pygame, sys, random, math
 from Players import * 
 from Node import *
 from pygame.locals import *
+
 
 class Point:
   def __init__(self, x, y):
@@ -14,6 +15,8 @@ class Tile:
       self.Texture = texture
       self.Offset = offset
       self.Properties = properties
+
+
 
 def tile_loop():
     pygame.init()
@@ -158,6 +161,16 @@ def tile_loop():
             if event.type == KEYDOWN and soldierPos[1] < Mapheight - 1:
                 if (event.key == K_DOWN):
                     soldierPos[1] += 1
+            if event.type == KEYDOWN:
+                if (event.key == K_SPACE):
+                    currentTile = tilelist[soldierPos[0]][soldierPos[1]]
+                    print(currentTile)
+           
+        if pygame.mouse.get_pressed()[0]:
+            mouse_x = math.floor(pygame.mouse.get_pos()[0] / Tilesize) * Tilesize
+            mouse_y = math.floor(pygame.mouse.get_pos()[1] / Tilesize) * Tilesize
+
+            soldierPos = [mouse_x, mouse_y]
 
         #print map
         for row in range(Mapheight):
@@ -165,9 +178,13 @@ def tile_loop():
                     screen.blit(textures[tilelist[row][column]], (column * Tilesize, row * Tilesize))  #, Tilesize, Tilesize))
         
         #print de soldier
-        screen.blit(Soldier,(soldierPos[0] * Tilesize, soldierPos[1] * Tilesize))
+        screen.blit(Soldier,(soldierPos[0], soldierPos[1]))
         #print soldier-coordinaten in console
-        print(soldierPos[0], soldierPos[1])
+        print("x = ", soldierPos[0], "y = ", soldierPos[1])
+
+
+
+
 
         pygame.display.flip()
         clock.tick(60)
