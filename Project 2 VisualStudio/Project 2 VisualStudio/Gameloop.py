@@ -7,6 +7,7 @@ from WinningScreen import *
 from Units import *
 
 AmountPlayersDefault = 0
+Playerslist = Empty
 def game_loop():                                #GameLoop door Joost en Eljakim
     global AmountPlayersDefault     #Eljakim's code
     if AmountPlayersDefault == 0:
@@ -41,7 +42,6 @@ def ChoosePlayerScreen():               #ChoosePlayerScreen door Joost en Eljaki
     gameDisplay = pygame.display.set_mode((display_width,display_height))
     pygame.display.set_caption('Frequency')
     clock = pygame.time.Clock()
-
 
 
     #properties of the objects
@@ -115,7 +115,11 @@ def ChoosePlayerScreen():               #ChoosePlayerScreen door Joost en Eljaki
         textSurf, textRect = text_objects('4 Players', smallText)
         textRect.center = ( (550+(100/2)), (500+(50/2)) )
         gameDisplay.blit(textSurf, textRect)
-        
+
+        #player lijst:  
+        #id = 1          #Joost is hier bezig
+        #if AmountPlayersDefault = 2:
+        #    Playerslist = Node(Player1(id, "Playername", "Swamp", "Swamp", 500), Playerslist)
             
         pygame.display.update()
         clock.tick(15)                      #Einde code Joost en Eljakim

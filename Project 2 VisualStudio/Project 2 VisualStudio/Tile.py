@@ -52,7 +52,7 @@ def tile_loop():
     buy_background = pygame.image.load("content/wood.jpg")
     buy_background = pygame.transform.scale(buy_background, (250, 260))
 
-    Soldier = pygame.image.load("content/soldier_texture.tif").convert_alpha()
+    Soldier = pygame.image.load("content/soldier.png").convert_alpha()
     Soldier = pygame.transform.scale(Soldier, (Tilesize, Tilesize))
     soldierPos = [0, 0]
 
@@ -189,13 +189,13 @@ def tile_loop():
                     print("Water = 0/Goldmine = 1/Forest = 2/Ice = 3/Swamp = 4/Desert = 5: ", currentTile)
         
 
-        if pygame.mouse.get_pressed()[0]:
+
+        if pygame.mouse.get_pressed()[0] and pygame.mouse.get_pos()[0] < (Mapwidth * Tilesize):
             mouse_x = math.floor(pygame.mouse.get_pos()[0] / Tilesize) * Tilesize
             mouse_y = math.floor(pygame.mouse.get_pos()[1] / Tilesize) * Tilesize
             soldierPos = [mouse_x, mouse_y]
             mouse_x = math.floor(pygame.mouse.get_pos()[0] / Tilesize)
             mouse_y = math.floor(pygame.mouse.get_pos()[1] / Tilesize)
-
         #print map
         for row in range(Mapheight):
             for column in range(Mapwidth):
@@ -208,8 +208,11 @@ def tile_loop():
         #als de muis over tekst heen gaat verkleurt de achtergrond van de text
         
         mouse = pygame.mouse.get_pos()  
+        click = pygame.mouse.get_pressed()
         if 865 + 124 > mouse[0] > 865 and 31 + 19 > mouse[1] > 31:
             pygame.draw.rect(screen, cyan, (865,31,124,19))    
+            if click[0] == 1:
+                Units.BuyTank()
         else:
             pygame.draw.rect(screen, white, (865,31,124,19))
         textSurf, textRect = text_objects('Soldier = f150', font1)

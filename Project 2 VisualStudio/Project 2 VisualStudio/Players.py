@@ -29,7 +29,6 @@ class Player1:
         print(Player1.Biome)
         print(Player1.PL_id)
 
-
 class Player2:
     def __init__(self, id, name, card, Biome, currency):              #Node gemaakt door Joost, aangepast door Eljakim
         self.Pl_id = id
