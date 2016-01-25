@@ -4,6 +4,12 @@ from Node import *
 from pygame.locals import *
 from Units import *
 
+#colors
+black = (0,0,0)
+white = (255,255,255)
+poepkleur = (139, 69, 19)
+cyan = (0, 255, 255)
+
 class Point:
   def __init__(self, x, y):
     self.X = x
@@ -16,21 +22,18 @@ class Tile:
       self.Offset = offset
       self.Properties = properties
 
-<<<<<<< HEAD
+
 def text_objects(text, font):
     textSurface = font.render(text, True, black)
     return textSurface, textSurface.get_rect()
-=======
+
 currentTile = 0
->>>>>>> origin/master
+
 
 def tile_loop():
     global currentTile
-    #colors
-    black = (0,0,0)
-    white = (255,255,255)
-    poepkleur = (139, 69, 19)
-    kots = (160, 82, 45)
+
+
 
     pygame.init()
     Texturesize = 40
@@ -161,7 +164,8 @@ def tile_loop():
                """
 
     #fonts voor de text
-    font1 = pygame.font.Font("freesansbold.ttf", 18)
+    font1 = pygame.font.Font("freesansbold.ttf", 16)
+
     while not done:
         for event in pygame.event.get():    #get all user events
             if event.type == pygame.QUIT:   #Option to quit
@@ -205,50 +209,58 @@ def tile_loop():
         
         mouse = pygame.mouse.get_pos()  
         if 865 + 124 > mouse[0] > 865 and 31 + 19 > mouse[1] > 31:
-            pygame.draw.rect(screen, kots, (865,31,124,19))    
+            pygame.draw.rect(screen, cyan, (865,31,124,19))    
         else:
-            pygame.draw.rect(screen, poepkleur, (865,31,124,19))
-        #textSurf, textRect = text_objects('Gay!', smallText)
-        #textRect.center = ( (865+(124/2)), (34+(19/2)) )
-        #gameDisplay.blit(textSurf, textRect)
+            pygame.draw.rect(screen, white, (865,31,124,19))
+        textSurf, textRect = text_objects('Soldier = f150', font1)
+        textRect.center = ( (865+(124/2)), (34+(7.5)) )
+        screen.blit(textSurf, textRect)
         
         if 865 + 124 > mouse[0] > 865 and 115 + 19 > mouse[1] > 115:
-            pygame.draw.rect(screen, kots, (865,115,124,19))    
+            pygame.draw.rect(screen, cyan, (865,115,124,19))    
         else:
-            pygame.draw.rect(screen, poepkleur, (865,115,124,19))
-
+            pygame.draw.rect(screen, white, (865,115,124,19))
+        textSurf, textRect = text_objects('Robot = f300', font1)
+        textRect.center = ( (865+(124/2)), (115+(9)) )
+        screen.blit(textSurf, textRect)
 
         if 865 + 124 > mouse[0] > 865 and 199 + 19 > mouse[1] > 199:
-            pygame.draw.rect(screen, kots, (865,199,124,19))    
+            pygame.draw.rect(screen, cyan, (865,199,124,19))    
         else:
-            pygame.draw.rect(screen, poepkleur, (865,199,124,19))
-
+            pygame.draw.rect(screen, white, (865,199,124,19))
+        textSurf, textRect = text_objects('Tank = f750', font1)
+        textRect.center = ( (865+(124/2)), (199+(9)) )
+        screen.blit(textSurf, textRect)
         
         if 865 + 124 > mouse[0] > 865 and 283 + 19 > mouse[1] > 283:
-            pygame.draw.rect(screen, kots, (865,283,124,19))    
+            pygame.draw.rect(screen, cyan, (865,283,124,19))    
         else:
-            pygame.draw.rect(screen, poepkleur, (865,283,124,19))
-
+            pygame.draw.rect(screen, white, (865,283,124,19))
+        textSurf, textRect = text_objects('Boat = f1000', font1)
+        textRect.center = ( (865+(124/2)), (283+(9)) )
+        screen.blit(textSurf, textRect)
         
         if 865 + 124 > mouse[0] > 865 and 367 + 19 > mouse[1] > 367:
-            pygame.draw.rect(screen, kots, (865,367,124,19))    
+            pygame.draw.rect(screen, cyan, (865,367,124,19))    
         else:
-            pygame.draw.rect(screen, poepkleur, (865,367,124,19))
-        
+            pygame.draw.rect(screen, white, (865,367,124,19))
+        textSurf, textRect = text_objects('Barrack = f500', font1)
+        textRect.center = ( (865+(124/2)), (367+(9)) )
+        screen.blit(textSurf, textRect)        
 
         #print BuyScreen
         placePositionY = 10
         placePositionX = Tilesize * 2 + 5
         for i in range(0, 5):
             screen.blit(unit_textures[i], (Mapwidth * Tilesize + 20, placePositionY))
-            Text = font1.render(str(unit_text[i]), True, black, kots)
-            screen.blit(Text, (Mapwidth * Tilesize + 20 + placePositionX, placePositionY + 0.5 * Tilesize))
+            #Text = font1.render(str(unit_text[i]), True, black, kots)
+            #screen.blit(Text, (Mapwidth * Tilesize + 20 + placePositionX, placePositionY + 0.5 * Tilesize))
             placePositionY += Tilesize * 2
 
         #print de soldier
         screen.blit(Soldier,(soldierPos[0], soldierPos[1]))
         #print soldier-coordinaten in console
-        #print("x = ", soldierPos[0], "y = ", soldierPos[1])
+        print("x = ", soldierPos[0], "y = ", soldierPos[1])
         
 
 

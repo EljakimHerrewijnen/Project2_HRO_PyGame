@@ -1,6 +1,5 @@
 ﻿import pygame
 from Gameloop import *
-<<<<<<< HEAD
 
 # ------------------------------------------------------------------------------------testen door Joost
 Texturesize = 42 * 2                       
@@ -38,13 +37,12 @@ unit_text = {
                 }
 #--------------------------------------------------------------------------------------------------t/m hier
                 #Code van Eljakim
-=======
+
 from Tile import *
 from BuyScreen import *
 
                             #Code van Eljakim
 AddUnit = Empty
->>>>>>> origin/master
 class Units():
     def __init__(self, id, unittype, position):
         self.id = id
