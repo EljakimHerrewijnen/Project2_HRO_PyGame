@@ -3,6 +3,8 @@ import random
 from Players import * 
 from Tile import *
 from Players import *
+from WinningScreen import *
+from Units import *
 
 AmountPlayersDefault = 0
 
@@ -12,6 +14,8 @@ def game_loop():                        #GameLoop door Joost en Eljakim
         ChoosePlayerScreen()
     print(AmountPlayersDefault)
     Player.GenerateRandomBiome()
+    Units.UnitPrice()
+
     tile_loop()                     #Joost
 
 def ChoosePlayerScreen():               #ChoosePlayerScreen door Joost en Eljakim
