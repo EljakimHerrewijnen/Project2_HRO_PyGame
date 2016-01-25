@@ -82,6 +82,7 @@ def tile_loop():
     Ice = 3
     Swamp = 4
     Desert = 5
+    
 
     #elements linked to textures
     textures = {Water: pygame.transform.scale(transparent_texture, (Texuresize, Texuresize)), 
@@ -144,6 +145,7 @@ def tile_loop():
                 tilelist[r][c] = tile
                """
 
+
     while not done:
         for event in pygame.event.get():    #get all user events
             if event.type == pygame.QUIT:   #Option to quit
@@ -161,17 +163,19 @@ def tile_loop():
             if event.type == KEYDOWN and soldierPos[1] < Mapheight - 1:
                 if (event.key == K_DOWN):
                     soldierPos[1] += 1
-            if event.type == KEYDOWN:
-                if (event.key == K_SPACE):
-                    currentTile = tilelist[soldierPos[0]][soldierPos[1]]
-                    print(currentTile)
-           
+            #als spatie is ingedrukt: print het klimaat of water
+            if pygame.key.get_pressed()[K_SPACE] == 1:
+                    currentTile = tilelist[mouse_x][mouse_y]
+                    print("Water = 0/Goldmine = 1/Forest = 2/Ice = 3/Swamp = 4/Desert = 5: ", currentTile)
+        
+
         if pygame.mouse.get_pressed()[0]:
             mouse_x = math.floor(pygame.mouse.get_pos()[0] / Tilesize) * Tilesize
             mouse_y = math.floor(pygame.mouse.get_pos()[1] / Tilesize) * Tilesize
-
             soldierPos = [mouse_x, mouse_y]
-
+            mouse_x = math.floor(pygame.mouse.get_pos()[0] / Tilesize)
+            mouse_y = math.floor(pygame.mouse.get_pos()[1] / Tilesize)
+            
         #print map
         for row in range(Mapheight):
             for column in range(Mapwidth):
