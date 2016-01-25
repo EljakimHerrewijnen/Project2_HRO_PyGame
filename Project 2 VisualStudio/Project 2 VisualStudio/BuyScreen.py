@@ -68,6 +68,3 @@ def BuyScreen():
             
         pygame.display.update()
         clock.tick(15)
-
-BuyScreen()
-

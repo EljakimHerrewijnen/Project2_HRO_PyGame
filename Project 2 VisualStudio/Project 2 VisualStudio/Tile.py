@@ -19,14 +19,11 @@ class Tile:
 currentTile = 0
 
 def tile_loop():
-<<<<<<< HEAD
     global currentTile
-=======
     #colors
     black = (0,0,0)
     white = (255,255,255)
 
->>>>>>> origin/master
     pygame.init()
     Texuresize = 40
     Tilesize = Texuresize + 2
@@ -153,12 +150,8 @@ def tile_loop():
                 tilelist[r][c] = tile
                """
 
-<<<<<<< HEAD
-
-=======
     #fonts voor de text
     font1 = pygame.font.Font("freesansbold.ttf", 18)
->>>>>>> origin/master
     while not done:
         for event in pygame.event.get():    #get all user events
             if event.type == pygame.QUIT:   #Option to quit
