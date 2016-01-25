@@ -1,7 +1,8 @@
-﻿import pygame, sys, random
+﻿import pygame, sys, random, math
 from Players import * 
 from Node import *
 from pygame.locals import *
+
 
 class Point:
   def __init__(self, x, y):
@@ -14,6 +15,8 @@ class Tile:
       self.Texture = texture
       self.Offset = offset
       self.Properties = properties
+
+
 
 def tile_loop():
     pygame.init()
@@ -79,6 +82,7 @@ def tile_loop():
     Ice = 3
     Swamp = 4
     Desert = 5
+    
 
     #elements linked to textures
     textures = {Water: pygame.transform.scale(transparent_texture, (Texuresize, Texuresize)), 
@@ -141,6 +145,7 @@ def tile_loop():
                 tilelist[r][c] = tile
                """
 
+
     while not done:
         for event in pygame.event.get():    #get all user events
             if event.type == pygame.QUIT:   #Option to quit
@@ -158,16 +163,32 @@ def tile_loop():
             if event.type == KEYDOWN and soldierPos[1] < Mapheight - 1:
                 if (event.key == K_DOWN):
                     soldierPos[1] += 1
+            #als spatie is ingedrukt: print het klimaat of water
+            if pygame.key.get_pressed()[K_SPACE] == 1:
+                    currentTile = tilelist[mouse_x][mouse_y]
+                    print("Water = 0/Goldmine = 1/Forest = 2/Ice = 3/Swamp = 4/Desert = 5: ", currentTile)
+        
 
+        if pygame.mouse.get_pressed()[0]:
+            mouse_x = math.floor(pygame.mouse.get_pos()[0] / Tilesize) * Tilesize
+            mouse_y = math.floor(pygame.mouse.get_pos()[1] / Tilesize) * Tilesize
+            soldierPos = [mouse_x, mouse_y]
+            mouse_x = math.floor(pygame.mouse.get_pos()[0] / Tilesize)
+            mouse_y = math.floor(pygame.mouse.get_pos()[1] / Tilesize)
+            
         #print map
         for row in range(Mapheight):
             for column in range(Mapwidth):
                     screen.blit(textures[tilelist[row][column]], (column * Tilesize, row * Tilesize))  #, Tilesize, Tilesize))
         
         #print de soldier
-        screen.blit(Soldier,(soldierPos[0] * Tilesize, soldierPos[1] * Tilesize))
+        screen.blit(Soldier,(soldierPos[0], soldierPos[1]))
         #print soldier-coordinaten in console
-        print(soldierPos[0], soldierPos[1])
+        print("x = ", soldierPos[0], "y = ", soldierPos[1])
+
+
+
+
 
         pygame.display.flip()
         clock.tick(60)

@@ -8,4 +8,13 @@ class Units():
         self.unittype = unittype
         self.position = position
 
+    def UnitPrice():
+        if Player.Biome is "Desert":
+            print("Desert")
+        elif Player.Biome is "Swamp":
+            print("Swamp")
+        else:
+            print("Iets anders")
+
+
     
