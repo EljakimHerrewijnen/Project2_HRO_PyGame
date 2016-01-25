@@ -7,14 +7,12 @@ from WinningScreen import *
 from Units import *
 
 AmountPlayersDefault = 0
-
-def game_loop():                        #GameLoop door Joost en Eljakim
+def game_loop():                                #GameLoop door Joost en Eljakim
     global AmountPlayersDefault     #Eljakim's code
     if AmountPlayersDefault == 0:
         ChoosePlayerScreen()
     print(AmountPlayersDefault)
-    Player.GenerateRandomBiome()
-    Units.UnitPrice()
+    Player1.GenerateRandomBiome()
 
     tile_loop()                     #Joost
 

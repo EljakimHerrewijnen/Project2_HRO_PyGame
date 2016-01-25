@@ -16,11 +16,16 @@ class Tile:
       self.Offset = offset
       self.Properties = properties
 
+<<<<<<< HEAD
 def text_objects(text, font):
     textSurface = font.render(text, True, black)
     return textSurface, textSurface.get_rect()
+=======
+currentTile = 0
+>>>>>>> origin/master
 
 def tile_loop():
+    global currentTile
     #colors
     black = (0,0,0)
     white = (255,255,255)
