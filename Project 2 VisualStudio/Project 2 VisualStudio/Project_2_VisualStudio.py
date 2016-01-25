@@ -50,12 +50,9 @@ def game_intro():
         bg= pygame.transform.scale(bg, (display_width, display_height))
         gameDisplay.blit(bg, (0, 0))         
 
-        #gameDisplay.fill(white)
         largeText = pygame.font.Font('freesansbold.ttf', 115)
-        #TextSurf, TextRect = text_objects('Frequency', largeText)
-        #TextRect.center = ((display_width/2), (display_height/4))
-        #gameDisplay.blit(TextSurf, TextRect)
-        
+
+    
         
         mouse = pygame.mouse.get_pos()
         click = pygame.mouse.get_pressed()

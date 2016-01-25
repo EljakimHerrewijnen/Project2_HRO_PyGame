@@ -2,13 +2,13 @@
 from Players import * 
 from Node import *
 from pygame.locals import *
-
+from Units import *
 
 class Point:
   def __init__(self, x, y):
     self.X = x
     self.Y = y
-
+    
 class Tile:
   def __init__(self, position, texture, offset, properties):
       self.Position = position
@@ -16,18 +16,22 @@ class Tile:
       self.Offset = offset
       self.Properties = properties
 
-
+def text_objects(text, font):
+    textSurface = font.render(text, True, black)
+    return textSurface, textSurface.get_rect()
 
 def tile_loop():
     #colors
     black = (0,0,0)
     white = (255,255,255)
+    poepkleur = (139, 69, 19)
+    kots = (160, 82, 45)
 
     pygame.init()
-    Texuresize = 40
-    Tilesize = Texuresize + 2
+    Texturesize = 40
+    Tilesize = Texturesize + 2
     Mapwidth = 18
-    Mapheight = 18
+    Mapheight = 18 
     screen = pygame.display.set_mode((Mapwidth * Tilesize + 250, Mapheight * Tilesize))
     done = False
     clock = pygame.time.Clock()
@@ -37,6 +41,8 @@ def tile_loop():
     bgmap = pygame.image.load("content/map895.jpg")
     bgmap = pygame.transform.scale(bgmap, (Mapwidth * Tilesize, Mapheight * Tilesize))
     screen.blit(bgmap, (0, 0)) 
+    buy_background = pygame.image.load("content/wood.jpg")
+    buy_background = pygame.transform.scale(buy_background, (250, 260))
 
     Soldier = pygame.image.load("content/soldier_texture.tif").convert_alpha()
     Soldier = pygame.transform.scale(Soldier, (Tilesize, Tilesize))
@@ -67,17 +73,17 @@ def tile_loop():
     #textures
     transparent_texture = pygame.image.load('content/transparent_tile.png')
     Water_texture = pygame.image.load('content/water_texture.png')
-    Water_texture = pygame.transform.scale(Water_texture, (Texuresize, Texuresize))
+    Water_texture = pygame.transform.scale(Water_texture, (Texturesize, Texturesize))
     Goldmine_texture = pygame.image.load('content/goldmine_texture.png')
-    Goldmine_texture = pygame.transform.scale(Goldmine_texture, (Texuresize, Texuresize))
+    Goldmine_texture = pygame.transform.scale(Goldmine_texture, (Texturesize, Texturesize))
     Forest_texture = pygame.image.load('content/forest_texture.png')
-    Forest_texture = pygame.transform.scale(Forest_texture, (Texuresize, Texuresize))
+    Forest_texture = pygame.transform.scale(Forest_texture, (Texturesize, Texturesize))
     Ice_texture = pygame.image.load('content/ice_texture.png')
-    Ice_texture = pygame.transform.scale(Ice_texture, (Texuresize, Texuresize))
+    Ice_texture = pygame.transform.scale(Ice_texture, (Texturesize, Texturesize))
     Swamp_texture = pygame.image.load('content/swamp_texture.png')
-    Swamp_texture = pygame.transform.scale(Swamp_texture, (Texuresize, Texuresize))
+    Swamp_texture = pygame.transform.scale(Swamp_texture, (Texturesize, Texturesize))
     Desert_texture = pygame.image.load('content/desert_texture.png')
-    Desert_texture = pygame.transform.scale(Desert_texture, (Texuresize, Texuresize))
+    Desert_texture = pygame.transform.scale(Desert_texture, (Texturesize, Texturesize))
 
     #elements
     Water = 0
@@ -89,12 +95,12 @@ def tile_loop():
     
 
     #elements linked to textures
-    textures = {Water: pygame.transform.scale(transparent_texture, (Texuresize, Texuresize)), 
-               Goldmine: pygame.transform.scale(transparent_texture, (Texuresize, Texuresize)), 
-               Forest: pygame.transform.scale(transparent_texture, (Texuresize, Texuresize)),
-               Ice: pygame.transform.scale(transparent_texture, (Texuresize, Texuresize)), 
-               Swamp: pygame.transform.scale(transparent_texture, (Texuresize, Texuresize)), 
-               Desert: pygame.transform.scale(transparent_texture, (Texuresize, Texuresize))}
+    textures = {Water: pygame.transform.scale(transparent_texture, (Texturesize, Texturesize)), 
+               Goldmine: pygame.transform.scale(transparent_texture, (Texturesize, Texturesize)), 
+               Forest: pygame.transform.scale(transparent_texture, (Texturesize, Texturesize)),
+               Ice: pygame.transform.scale(transparent_texture, (Texturesize, Texturesize)), 
+               Swamp: pygame.transform.scale(transparent_texture, (Texturesize, Texturesize)), 
+               Desert: pygame.transform.scale(transparent_texture, (Texturesize, Texturesize))}
 
 
     tilelist = [                        #[Water for r in range(Mapwidth)] for c in range(Mapheight)] #Water for r in range(0, 4)
@@ -180,25 +186,65 @@ def tile_loop():
             soldierPos = [mouse_x, mouse_y]
             mouse_x = math.floor(pygame.mouse.get_pos()[0] / Tilesize)
             mouse_y = math.floor(pygame.mouse.get_pos()[1] / Tilesize)
-            
+
         #print map
         for row in range(Mapheight):
             for column in range(Mapwidth):
                     screen.blit(textures[tilelist[row][column]], (column * Tilesize, row * Tilesize))  #, Tilesize, Tilesize))
+        #Background buyscreen
+        placeBackground = 0
+        for i in range(0, 3):
+            screen.blit(buy_background, (Mapwidth * Tilesize, placeBackground))
+            placeBackground += 260
+        #als de muis over tekst heen gaat verkleurt de achtergrond van de text
+        
+        mouse = pygame.mouse.get_pos()  
+        if 865 + 124 > mouse[0] > 865 and 31 + 19 > mouse[1] > 31:
+            pygame.draw.rect(screen, kots, (865,31,124,19))    
+        else:
+            pygame.draw.rect(screen, poepkleur, (865,31,124,19))
+        #textSurf, textRect = text_objects('Gay!', smallText)
+        #textRect.center = ( (865+(124/2)), (34+(19/2)) )
+        #gameDisplay.blit(textSurf, textRect)
+        
+        if 865 + 124 > mouse[0] > 865 and 115 + 19 > mouse[1] > 115:
+            pygame.draw.rect(screen, kots, (865,115,124,19))    
+        else:
+            pygame.draw.rect(screen, poepkleur, (865,115,124,19))
+
+
+        if 865 + 124 > mouse[0] > 865 and 199 + 19 > mouse[1] > 199:
+            pygame.draw.rect(screen, kots, (865,199,124,19))    
+        else:
+            pygame.draw.rect(screen, poepkleur, (865,199,124,19))
+
+        
+        if 865 + 124 > mouse[0] > 865 and 283 + 19 > mouse[1] > 283:
+            pygame.draw.rect(screen, kots, (865,283,124,19))    
+        else:
+            pygame.draw.rect(screen, poepkleur, (865,283,124,19))
+
+        
+        if 865 + 124 > mouse[0] > 865 and 367 + 19 > mouse[1] > 367:
+            pygame.draw.rect(screen, kots, (865,367,124,19))    
+        else:
+            pygame.draw.rect(screen, poepkleur, (865,367,124,19))
+        
+
         #print BuyScreen
-        placePosition = 10
+        placePositionY = 10
+        placePositionX = Tilesize * 2 + 5
         for i in range(0, 5):
-            screen.blit(textures[item], (Mapwidth * Tilesize + 20, placePosition))
-            placePosition += 20
-            Text = font1.render(str(inventory[item]), True, white, black)
-            screen.blit(Text, (Mapwidth * Tilesize + 20, placePosition))
-            placePosition += 40
+            screen.blit(unit_textures[i], (Mapwidth * Tilesize + 20, placePositionY))
+            Text = font1.render(str(unit_text[i]), True, black, kots)
+            screen.blit(Text, (Mapwidth * Tilesize + 20 + placePositionX, placePositionY + 0.5 * Tilesize))
+            placePositionY += Tilesize * 2
 
         #print de soldier
         screen.blit(Soldier,(soldierPos[0], soldierPos[1]))
         #print soldier-coordinaten in console
-        print("x = ", soldierPos[0], "y = ", soldierPos[1])
-
+        #print("x = ", soldierPos[0], "y = ", soldierPos[1])
+        
 
 
 
