@@ -19,12 +19,16 @@ class Tile:
 
 
 def tile_loop():
+    #colors
+    black = (0,0,0)
+    white = (255,255,255)
+
     pygame.init()
     Texuresize = 40
     Tilesize = Texuresize + 2
     Mapwidth = 18
     Mapheight = 18
-    screen = pygame.display.set_mode((Mapwidth * Tilesize + 100, Mapheight * Tilesize))
+    screen = pygame.display.set_mode((Mapwidth * Tilesize + 250, Mapheight * Tilesize))
     done = False
     clock = pygame.time.Clock()
     pygame.mixer.music.load('Cipher2.mp3')
@@ -145,7 +149,8 @@ def tile_loop():
                 tilelist[r][c] = tile
                """
 
-
+    #fonts voor de text
+    font1 = pygame.font.Font("freesansbold.ttf", 18)
     while not done:
         for event in pygame.event.get():    #get all user events
             if event.type == pygame.QUIT:   #Option to quit
@@ -180,7 +185,15 @@ def tile_loop():
         for row in range(Mapheight):
             for column in range(Mapwidth):
                     screen.blit(textures[tilelist[row][column]], (column * Tilesize, row * Tilesize))  #, Tilesize, Tilesize))
-        
+        #print BuyScreen
+        placePosition = 10
+        for i in range(0, 5):
+            screen.blit(textures[item], (Mapwidth * Tilesize + 20, placePosition))
+            placePosition += 20
+            Text = font1.render(str(inventory[item]), True, white, black)
+            screen.blit(Text, (Mapwidth * Tilesize + 20, placePosition))
+            placePosition += 40
+
         #print de soldier
         screen.blit(Soldier,(soldierPos[0], soldierPos[1]))
         #print soldier-coordinaten in console
