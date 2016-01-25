@@ -81,4 +81,23 @@ def winning_screen():
             
         pygame.display.update()
         clock.tick(15)                                      # Einde code Eljakim
-winning_screen()
+
+
+def LoadingScreen():  #Does not Work yet
+    display_width = 800
+    display_height = 600
+    pygame.init()
+    gameDisplay = pygame.display.set_mode((display_width,display_height))
+    black=(0,0,0)
+    end_it=False
+    bgmap = pygame.image.load("content/LoadingScreen.jpg")
+    bgmap = pygame.transform.scale(bgmap, (Mapwidth * Tilesize, Mapheight * Tilesize))
+    while (end_it==False):
+        gameDisplay.fill(black)
+        myfont=pygame.font.SysFont("Britannic Bold", 40)
+        nlabel=myfont.render("Welcome  Start Screen", 1, (255, 0, 0))
+        for event in pygame.event.get():
+            if event.type==MOUSEBUTTONDOWN:
+                end_it=True
+        gameDisplay.blit(bgmap,(200,200))
+        pygame.display.flip()
