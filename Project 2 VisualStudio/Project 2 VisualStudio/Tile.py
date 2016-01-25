@@ -16,9 +16,10 @@ class Tile:
       self.Offset = offset
       self.Properties = properties
 
-
+currentTile = 0
 
 def tile_loop():
+    global currentTile
     pygame.init()
     Texuresize = 40
     Tilesize = Texuresize + 2

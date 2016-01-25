@@ -14,7 +14,6 @@ def game_loop():                        #GameLoop door Joost en Eljakim
         ChoosePlayerScreen()
     print(AmountPlayersDefault)
     Player.GenerateRandomBiome()
-    Units.UnitPrice()
 
     tile_loop()                     #Joost
 

@@ -5,8 +5,9 @@ from Players import *
 from Gameloop import *
 from Units import *
 
+Clicks = 0
 def BuyScreen():
-    Clicks = 0
+    global Clicks
     pygame.init()
     Unit = Empty
     display_width = 800
@@ -51,7 +52,10 @@ def BuyScreen():
             pygame.draw.rect(gameDisplay, bright_red, (550,500,100,50))
         if click[0] == 1:
                Clicks += 1
-               Unit = Node(Units (3, 'Tank',Clicks), Unit)
+               Units.BuyTank()
+               Unit = Node(Units (3, "Tank",Clicks), Unit)
+               Player.GenerateRandomBiome()
+               print(Player.Biome)
                print(Unit.Value.unittype)
                print(Unit.Value.position)
         else:

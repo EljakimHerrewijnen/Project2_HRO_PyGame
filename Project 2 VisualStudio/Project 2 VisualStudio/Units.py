@@ -1,5 +1,8 @@
 ﻿import pygame
 from Gameloop import *
+from Tile import *
+from BuyScreen import *
+
                             #Code van Eljakim
 
 class Units():
@@ -8,13 +11,35 @@ class Units():
         self.unittype = unittype
         self.position = position
 
-    def UnitPrice():
-        if Player.Biome is "Desert":
-            print("Desert")
-        elif Player.Biome is "Swamp":
-            print("Swamp")
+    def BuyTank():
+        global Clicks
+        global currentTile
+        if currentTile == 5:
+            Units.unittype = "Tank"
+            Units.id = Clicks
+            Player.currency -= 600
+            print(Units.id)
+            print(Units.unittype)
         else:
-            print("Iets anders")
+            Units.unittype = "Tank"
+            Units.id = Clicks
+            Player.currency -= 750
+            print(Units.id)
+            print(Units.unittype)
 
-
+    def BuySoldier():
+        global Clicks
+        global currentTile
+        if currentTile == 2:
+            Units.unittype = "Soldier"
+            Units.id = Clicks
+            Player.currency -= 120
+            print(Units.id)
+            print(Units.unittype)
+        else:
+            Units.unittype = "Soldier"
+            Units.id = Clicks
+            Player.currency -= 150
+            print(Units.id)
+            print(Units.unittype)
     
