@@ -7,7 +7,7 @@ soldier_texture = pygame.image.load('content/soldier.png')
 soldier_texture = pygame.transform.scale(soldier_texture, (Texturesize, Texturesize))
 robot_texture = pygame.image.load('content/robot.png')
 robot_texture = pygame.transform.scale(robot_texture, (Texturesize, Texturesize))
-tank_texture = pygame.image.load('content/tank.png')
+tank_texture = pygame.image.load('content/tank.tif')
 tank_texture = pygame.transform.scale(tank_texture, (Texturesize, Texturesize))
 boat_texture = pygame.image.load('content/boat.png')
 boat_texture = pygame.transform.scale(boat_texture, (Texturesize, Texturesize))
@@ -50,20 +50,24 @@ class Units():
         self.position = position
 
     def BuyTank():
+<<<<<<< HEAD
+        
+=======
         global AddUnit
         global Clicks
         global currentTile
         Clicks += 1
-        if currentTile == 5:
-            AddUnit = Node(Units (Clicks, "Tank", 11), AddUnit)
-            Player.currency -= 600
-            print(AddUnit.Value.id)
-            print(AddUnit.Value.unittype)
-        else:
-            AddUnit = Node(Units (Clicks, "Tank", 11), AddUnit)
-            Player.currency -= 750
-            print(AddUnit.Value.id)
-            print(AddUnit.Value.unittype)
+        #if currentTile == 5:
+        #    AddUnit = Node(Units (Clicks, "Tank", 11), AddUnit)
+        #    Player.currency -= 600
+        #    print(AddUnit.Value.id)
+        #    print(AddUnit.Value.unittype)
+        #else:  #vergeet tab niet!!!! <----Joost
+        AddUnit = Node(Units (Clicks, "Tank", 11), AddUnit)
+        Player.currency -= 750
+        print(AddUnit.Value.id)
+        print(AddUnit.Value.unittype)
+>>>>>>> origin/master
 
     def BuySoldier():
         global AddUnit
