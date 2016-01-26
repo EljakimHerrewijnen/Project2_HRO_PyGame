@@ -12,8 +12,8 @@ def game_loop():                                #GameLoop door Joost en Eljakim
     global AmountPlayersDefault     #Eljakim's code
     if AmountPlayersDefault == 0:
         ChoosePlayerScreen()
-    print(AmountPlayersDefault)
-    Player1.GenerateRandomBiome()
+    print("aantal normale spelers: " + AmountPlayersDefault)
+    #Player1.GenerateRandomBiome()
 
     tile_loop()                     #Joost
 
@@ -49,7 +49,9 @@ def ChoosePlayerScreen():               #ChoosePlayerScreen door Joost en Eljaki
     def text_objects(text, font):
         textSurface = font.render(text, True, black)
         return textSurface, textSurface.get_rect()
-        
+    
+    #Playerlist is Empty
+    Playerslist = Empty
 
     while intro:
         for event in pygame.event.get():
@@ -77,7 +79,7 @@ def ChoosePlayerScreen():               #ChoosePlayerScreen door Joost en Eljaki
             pygame.draw.rect(gameDisplay, bright_green, (150,500,100,50))
             if click[0] == 1:
                 AmountPlayersDefault = 2
-                game_loop()               
+                #game_loop()               
         else:
             pygame.draw.rect(gameDisplay, green, (150,500,100,50))
         # Properties of buttons
@@ -91,7 +93,7 @@ def ChoosePlayerScreen():               #ChoosePlayerScreen door Joost en Eljaki
             pygame.draw.rect(gameDisplay, bright_blue, (350,500,100,50))
             if click[0] == 1:
                 AmountPlayersDefault = 3
-                game_loop()
+                #game_loop()
         else: 
             pygame.draw.rect(gameDisplay, blue, (350,500,100,50))
         
@@ -107,7 +109,7 @@ def ChoosePlayerScreen():               #ChoosePlayerScreen door Joost en Eljaki
             pygame.draw.rect(gameDisplay, bright_red, (550,500,100,50))
             if click[0] == 1:
                 AmountPlayersDefault = 4
-                game_loop()
+                #game_loop()
         else:
             pygame.draw.rect(gameDisplay, red, (550,500,100,50))
 
@@ -117,9 +119,33 @@ def ChoosePlayerScreen():               #ChoosePlayerScreen door Joost en Eljaki
         gameDisplay.blit(textSurf, textRect)
 
         #player lijst:  
-        #id = 1          #Joost is hier bezig
-        #if AmountPlayersDefault = 2:
-        #    Playerslist = Node(Player1(id, "Playername", "Swamp", "Swamp", 500), Playerslist)
+        id = 1          #Joost is hier bezig
+        for normalPlayers in range(AmountPlayersDefault):
+            biomegenerator = Player1.GenerateRandomBiome
+            Playername = input("What's the name of player " + str(id) + " ?: ")
+            Playerslist = Node(Player1(id, Playername, biomegenerator, str(biomegenerator), 500), Playerslist)
+            id += 1
+            print("id = " + str(Playerslist.Value.Pl_id))
+            print("name = " + Playerslist.Value.Pl_name)
+            #print("gamecard = " + Playerslist.Value.Gamecard)
+            #print("biome = " + Playerslist.Value.Biome)
+            print("currency = " + str(Playerslist.Value.currency))
+            if normalPlayers == AmountPlayersDefault - 1:
+                if AmountPlayersDefault < 4:
+                    AmountComputerPlayers = 0
+                    AmountComputerPlayers = 4 - normalPlayers
+                    for computerPlayers in range(AmountComputerPlayers - 1):
+                        Playername = "PCplayer " + str(id)
+                        biomegenerator = Player1.GenerateRandomBiome
+                        Playerslist = Node(Player1(id, Playername, biomegenerator, biomegenerator, 500), Playerslist)
+                        id += 1
+                        print("id = " + str(Playerslist.Value.Pl_id))
+                        print("name = " + Playerslist.Value.Pl_name)
+                        #print("gamecard = " + Playerslist.Value.Gamecard)
+                        #print("biome = " + Playerslist.Value.Biome)
+                        print("currency = " + str(Playerslist.Value.currency))
+                game_loop()
+
             
         pygame.display.update()
         clock.tick(15)                      #Einde code Joost en Eljakim
