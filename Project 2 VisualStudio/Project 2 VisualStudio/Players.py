@@ -37,26 +37,6 @@ class Player2:
         self.Gamecard = card
         self.Biome = Biome
         self.currency = currency
-
-    def GenerateRandomBiome():                              #Code door Eljakim
-        RandomBiome = random.randrange(0,4)
-        if RandomBiome == 0:
-            Player2.Biome = 'Forest'
-            Player2.PL_id = 1
-        elif RandomBiome ==  1:
-            Player2.Biome =  'Ice'
-            Player2.PL_id = 1
-        elif RandomBiome == 2:
-            Player2.Biome = 'Desert'
-            Player2.PL_id = 1
-        else:
-            Player2.Biome = 'Swamp'
-            Player2.PL_id = 1
-        Player2.currency = 500
-        print(Player2.currency)
-        print(Player2.Biome)
-        print(Player2.PL_id)
-
         
         
 

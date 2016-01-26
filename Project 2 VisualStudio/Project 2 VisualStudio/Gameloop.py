@@ -13,6 +13,8 @@ def game_loop():                                #GameLoop door Joost en Eljakim
         ChoosePlayerScreen()
     print(AmountPlayersDefault)
     Player1.GenerateRandomBiome()
+    Player1.currency += 500
+    print(Player1.currency)
 
     tile_loop()                     #Joost
 
