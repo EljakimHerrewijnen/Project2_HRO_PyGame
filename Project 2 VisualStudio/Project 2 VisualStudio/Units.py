@@ -67,6 +67,9 @@ class Units():
         Player.currency -= 750
         print(AddUnit.Value.id)
         print(AddUnit.Value.unittype)
+<<<<<<< HEAD
+>>>>>>> origin/master
+=======
 >>>>>>> origin/master
 
     def BuySoldier():

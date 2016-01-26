@@ -13,10 +13,15 @@ def game_loop():                                #GameLoop door Joost en Eljakim
     if AmountPlayersDefault == 0:
         ChoosePlayerScreen()
 <<<<<<< HEAD
+<<<<<<< HEAD
     print(AmountPlayersDefault)
     Player1.GenerateRandomBiome()
     Player1.currency += 500
     print(Player1.currency)
+=======
+    print("aantal normale spelers: " + AmountPlayersDefault)
+    #Player1.GenerateRandomBiome()
+>>>>>>> origin/master
 =======
     print("aantal normale spelers: " + AmountPlayersDefault)
     #Player1.GenerateRandomBiome()
