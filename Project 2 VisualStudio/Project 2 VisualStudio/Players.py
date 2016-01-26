@@ -10,17 +10,18 @@ class Player1:
         self.Biome = Biome
         self.currency = currency
 
-    def GenerateRandomBiome(self):                              #Code door Eljakim, aangepast door Joost
+    def GenerateRandomBiome():                              #Code door Eljakim, aangepast door Joost
         RandomBiome = random.randrange(0,4)
         if RandomBiome == 0:
-            self.Biome = 'Swamp'
+            return 'Swamp'
         elif RandomBiome ==  1:
-            self.Biome =  'Ice'
+            return 'Ice'
         elif RandomBiome == 2:
-            self.Biome = 'Desert'
+            return 'Desert'
         else:
-            self.Biome = 'Forest'
+            return 'Forest'
         return self.Biome
+
 
 
 class Player2:

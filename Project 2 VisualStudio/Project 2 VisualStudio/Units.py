@@ -1,5 +1,8 @@
 ﻿import pygame
 from Gameloop import *
+from Tile import *
+from Node import *
+from Players import *
 
 # ------------------------------------------------------------------------------------testen door Joost
 Texturesize = 42 * 2                       
@@ -42,49 +45,35 @@ from Tile import *
 from BuyScreen import *
 
                             #Code van Eljakim
+
+id_counter = 0
+Position_Unit = 0
 AddUnit = Empty
 class Units():
-    def __init__(self, id, unittype, position):
+    def __init__(self, id, unittype, position, OwnerPlayer):
         self.id = id
         self.unittype = unittype
         self.position = position
+        self.OwnerPlayer = OwnerPlayer
 
     def BuyTank():
-<<<<<<< HEAD
-        
-=======
+        global id_counter
+        global Position_Unit
+        global CurrentPlayer
         global AddUnit
-        global Clicks
-        global currentTile
-        Clicks += 1
-        #if currentTile == 5:
-        #    AddUnit = Node(Units (Clicks, "Tank", 11), AddUnit)
-        #    Player.currency -= 600
-        #    print(AddUnit.Value.id)
-        #    print(AddUnit.Value.unittype)
-        #else:  #vergeet tab niet!!!! <----Joost
-        AddUnit = Node(Units (Clicks, "Tank", 11), AddUnit)
-        Player.currency -= 750
+        id_counter += 1
+        AddUnit = Node(Units (id_counter, "Tank", 0, 0), AddUnit)
         print(AddUnit.Value.id)
-        print(AddUnit.Value.unittype)
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
->>>>>>> origin/master
+        print(AddUnit.Value.OwnerPlayer)
 
     def BuySoldier():
+        while Playerslist.Value.IsEmpty == False:
+            print("nog niks")
+
+        global id_counter
+        global Position_Unit
+        global CurrentPlayer
         global AddUnit
-        global Clicks
-        Clicks += 1
-        global currentTile
-        if currentTile == 2:
-            AddUnit = Node(Units (Clicks, "Soldier", 11), AddUnit)
-            Player1.currency -= 120
-            print(AddUnit.Value.id)
-            print(AddUnit.Value.unittype)
-        else:
-            AddUnit = Node(Units (Clicks, "Soldier", 11), AddUnit)
-            Player.currency -= 150
-            print(AddUnit.Value.id)
-            print(AddUnit.Value.unittype)
-    
+        id_counter += 1
+        AddUnit = Node(Units (id_counter, "Soldier", CurrentPlayer, 1), AddUnit)
+        print(AddUnit.Value.id)

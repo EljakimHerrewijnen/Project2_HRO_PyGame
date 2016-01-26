@@ -8,24 +8,15 @@ from Units import *
 
 AmountPlayersDefault = 0
 Playerslist = Empty
+
+
 def game_loop():                                #GameLoop door Joost en Eljakim
     global AmountPlayersDefault     #Eljakim's code
     if AmountPlayersDefault == 0:
         ChoosePlayerScreen()
-<<<<<<< HEAD
-<<<<<<< HEAD
-    print(AmountPlayersDefault)
-    Player1.GenerateRandomBiome()
-    Player1.currency += 500
-    print(Player1.currency)
-=======
-    print("aantal normale spelers: " + AmountPlayersDefault)
-    #Player1.GenerateRandomBiome()
->>>>>>> origin/master
-=======
-    print("aantal normale spelers: " + AmountPlayersDefault)
-    #Player1.GenerateRandomBiome()
->>>>>>> origin/master
+    print("aantal normale spelers: " + str(AmountPlayersDefault))
+
+
 
     tile_loop()                     #Joost
 
@@ -133,14 +124,14 @@ def ChoosePlayerScreen():               #ChoosePlayerScreen door Joost en Eljaki
         #player lijst:  
         id = 1          #Joost is hier bezig
         for normalPlayers in range(AmountPlayersDefault):
-            biomegenerator = Player1.GenerateRandomBiome
+            biomegenerator = Player1.GenerateRandomBiome()
             Playername = input("What's the name of player " + str(id) + " ?: ")
-            Playerslist = Node(Player1(id, Playername, biomegenerator, str(biomegenerator), 500), Playerslist)
+            Playerslist = Node(Player1(id, Playername, str(biomegenerator), str(biomegenerator), 500), Playerslist)
             id += 1
             print("id = " + str(Playerslist.Value.Pl_id))
             print("name = " + Playerslist.Value.Pl_name)
-            #print("gamecard = " + Playerslist.Value.Gamecard)
-            #print("biome = " + Playerslist.Value.Biome)
+            print("gamecard = " + Playerslist.Value.Gamecard)
+            print("biome = " + str(Playerslist.Value.Biome))
             print("currency = " + str(Playerslist.Value.currency))
             if normalPlayers == AmountPlayersDefault - 1:
                 if AmountPlayersDefault < 4:
@@ -162,3 +153,6 @@ def ChoosePlayerScreen():               #ChoosePlayerScreen door Joost en Eljaki
         pygame.display.update()
         clock.tick(15)                      #Einde code Joost en Eljakim
 
+def NextTurn():
+    print("Next turn Commencing")
+    pygame.time.delay(100)
