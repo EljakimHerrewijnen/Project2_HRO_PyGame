@@ -264,7 +264,7 @@ def tile_loop():
         screen.blit(Soldier,(soldierPos[0], soldierPos[1]))
         #print soldier-coordinaten in console
         print("x = ", soldierPos[0], "y = ", soldierPos[1])
-        
+        pygame.display.toggle_fullscreen
 
 
 
