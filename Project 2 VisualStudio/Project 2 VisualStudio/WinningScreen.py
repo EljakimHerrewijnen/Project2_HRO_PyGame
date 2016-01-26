@@ -83,21 +83,51 @@ def winning_screen():
         clock.tick(15)                                      # Einde code Eljakim
 
 
-def LoadingScreen():  #Does not Work yet
+'''
+    GenerateRandomText = "blieb"
+    sleep(0.05)
+    GenerateRandomText = "blab"
+    sleep(0.05)
+    GenerateRandomText = "Lorem ipsum dolor et ameth"
+    sleep(0.05)
+    GenerateRandomText = "Generating Players........"
+    sleep(0.05)
+    GenerateRandomText = "blab"
+    sleep(0.05)
+    GenerateRandomText = "Lorem ipsum dolor et ameth"
+    sleep(0.05)
+    sleep(0.05)
+    GenerateRandomText = "blab"
+    sleep(0.05)
+    GenerateRandomText = "Lorem ipsum dolor et ameth"
+    sleep(0.05)
+    GenerateRandomText = "Generating Players........"
+    '''
+
+def LoadingScreen():  #Door Eljakim, werkt
+    white=(255,248,207)
     display_width = 800
     display_height = 600
+    Mapwidth = 18
+    Mapheight = 18 
+    Texturesize = 40
+    Tilesize = Texturesize + 2
     pygame.init()
     gameDisplay = pygame.display.set_mode((display_width,display_height))
     black=(0,0,0)
     end_it=False
     bgmap = pygame.image.load("content/LoadingScreen.jpg")
-    bgmap = pygame.transform.scale(bgmap, (Mapwidth * Tilesize, Mapheight * Tilesize))
     while (end_it==False):
-        gameDisplay.fill(black)
+        gameDisplay.fill(white)
         myfont=pygame.font.SysFont("Britannic Bold", 40)
         nlabel=myfont.render("Welcome  Start Screen", 1, (255, 0, 0))
+        LoadingFont = pygame.font.SysFont("Britannic Bold", 10)
+        LoadingText = LoadingFont.render("balajblablajlasdjfka", 10, (0,0,0))
         for event in pygame.event.get():
-            if event.type==MOUSEBUTTONDOWN:
+            if event.type==K_ESCAPE:
                 end_it=True
-        gameDisplay.blit(bgmap,(200,200))
+        gameDisplay.blit(bgmap,(200,50))
         pygame.display.flip()
+        time.sleep(1)
+        end_it = True
+        game_loop()

@@ -50,6 +50,9 @@ class Units():
         self.position = position
 
     def BuyTank():
+<<<<<<< HEAD
+        
+=======
         global AddUnit
         global Clicks
         global currentTile
@@ -64,6 +67,10 @@ class Units():
         Player.currency -= 750
         print(AddUnit.Value.id)
         print(AddUnit.Value.unittype)
+<<<<<<< HEAD
+>>>>>>> origin/master
+=======
+>>>>>>> origin/master
 
     def BuySoldier():
         global AddUnit
@@ -72,7 +79,7 @@ class Units():
         global currentTile
         if currentTile == 2:
             AddUnit = Node(Units (Clicks, "Soldier", 11), AddUnit)
-            Player.currency -= 120
+            Player1.currency -= 120
             print(AddUnit.Value.id)
             print(AddUnit.Value.unittype)
         else:

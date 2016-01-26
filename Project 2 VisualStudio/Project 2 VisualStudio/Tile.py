@@ -165,11 +165,13 @@ def tile_loop():
 
     #fonts voor de text
     font1 = pygame.font.Font("freesansbold.ttf", 16)
+    click = pygame.mouse.get_pressed()
 
     while not done:
         for event in pygame.event.get():    #get all user events
             if event.type == pygame.QUIT:   #Option to quit
                 done = True
+
             # if a key is pressed move the soldier
             if event.type == KEYDOWN and soldierPos[0] < Mapwidth - 1:
                 if (event.key == K_RIGHT):
@@ -249,7 +251,29 @@ def tile_loop():
             pygame.draw.rect(screen, white, (865,367,124,19))
         textSurf, textRect = text_objects('Barrack = f500', font1)
         textRect.center = ( (865+(124/2)), (367+(9)) )
-        screen.blit(textSurf, textRect)        
+        screen.blit(textSurf, textRect)   
+        
+        if 865 + 124 > mouse[0] > 865 and 700 + 19 > mouse[1] > 700:
+            pygame.draw.rect(screen, cyan, (865,700,124,19)) 
+        else:
+            pygame.draw.rect(screen, white, (865,700,124,19))
+        textSurf, textRect = text_objects('End Turn!', font1)
+        textRect.center = ( (865+(124/2)), (700+(9)) )
+        screen.blit(textSurf, textRect) 
+        
+        #Clickable Buttons. Code voor het click Event               Door Eljakim
+        if 865 + 124 > mouse[0] > 865 and 700 + 19 > mouse[1] > 700 and pygame.mouse.get_pressed()[0]:
+            print("End Turn")           #Turn Code
+        elif 865 + 124 > mouse[0] > 865 and 31 + 19 > mouse[1] > 31 and pygame.mouse.get_pressed()[0]:
+            print("soldier")                        #Soldier f150 code
+        elif 865 + 124 > mouse[0] > 865 and 115 + 19 > mouse[1] > 115 and pygame.mouse.get_pressed()[0]:
+            print("Robot")   #Robot f300
+        elif 865 + 124 > mouse[0] > 865 and 199 + 19 > mouse[1] > 199 and pygame.mouse.get_pressed()[0]:        
+            print("Tank")  #Tank f750
+        elif 865 + 124 > mouse[0] > 865 and 283 + 19 > mouse[1] > 283 and pygame.mouse.get_pressed()[0]:        
+            print("Boat")  #Boat
+        elif 865 + 124 > mouse[0] > 865 and 367 + 19 > mouse[1] > 367 and pygame.mouse.get_pressed()[0]:        
+            print("Barrack")  #Barrack
 
         #print BuyScreen
         placePositionY = 10
