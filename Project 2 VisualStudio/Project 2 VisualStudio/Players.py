@@ -17,27 +17,9 @@ class Player1:
         elif RandomBiome ==  1:
             return 'Ice'
         elif RandomBiome == 2:
-<<<<<<< HEAD
             return 'Desert'
         else:
             return 'Forest'
-        return self.Biome
-
-=======
-            return'Desert'
-        else:
-            return 'Forest'
->>>>>>> origin/master
-
-
-class Player2:
-    def __init__(self, id, name, card, Biome, currency):              #Node gemaakt door Joost, aangepast door Eljakim
-        self.Pl_id = id
-        self.Pl_name = name
-        self.Gamecard = card
-        self.Biome = Biome
-        self.currency = currency
-        
         
 
 
