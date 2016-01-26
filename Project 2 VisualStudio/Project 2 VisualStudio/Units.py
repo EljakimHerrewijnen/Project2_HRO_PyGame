@@ -57,14 +57,21 @@ class Units():
         self.OwnerPlayer = OwnerPlayer
 
     def BuyTank():
+<<<<<<< HEAD
         global id_counter
         global Position_Unit
         global CurrentPlayer
+=======
+>>>>>>> origin/master
         global AddUnit
         id_counter += 1
         AddUnit = Node(Units (id_counter, "Tank", 0, 0), AddUnit)
         print(AddUnit.Value.id)
+<<<<<<< HEAD
         print(AddUnit.Value.OwnerPlayer)
+=======
+        print(AddUnit.Value.unittype)
+>>>>>>> origin/master
 
     def BuySoldier():
         while Playerslist.Value.IsEmpty == False:

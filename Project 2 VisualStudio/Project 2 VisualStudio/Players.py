@@ -17,11 +17,17 @@ class Player1:
         elif RandomBiome ==  1:
             return 'Ice'
         elif RandomBiome == 2:
+<<<<<<< HEAD
             return 'Desert'
         else:
             return 'Forest'
         return self.Biome
 
+=======
+            return'Desert'
+        else:
+            return 'Forest'
+>>>>>>> origin/master
 
 
 class Player2:

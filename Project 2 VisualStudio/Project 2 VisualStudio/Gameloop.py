@@ -15,8 +15,11 @@ def game_loop():                                #GameLoop door Joost en Eljakim
     if AmountPlayersDefault == 0:
         ChoosePlayerScreen()
     print("aantal normale spelers: " + str(AmountPlayersDefault))
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> origin/master
 
     tile_loop()                     #Joost
 
@@ -123,15 +126,38 @@ def ChoosePlayerScreen():               #ChoosePlayerScreen door Joost en Eljaki
 
         #player lijst:  
         id = 1          #Joost is hier bezig
+        pl_1_Biome = "niks"
+        pl_2_Biome = "niks"
+        pl_3_Biome = "niks"
+        pl_4_Biome = "niks"
         for normalPlayers in range(AmountPlayersDefault):
             biomegenerator = Player1.GenerateRandomBiome()
             Playername = input("What's the name of player " + str(id) + " ?: ")
+<<<<<<< HEAD
             Playerslist = Node(Player1(id, Playername, str(biomegenerator), str(biomegenerator), 500), Playerslist)
+=======
+            Playerslist = Node(Player1(id, Playername, biomegenerator, biomegenerator, 500), Playerslist)
+            while Playerslist.Value.Biome == pl_1_Biome or Playerslist.Value.Biome == pl_2_Biome or Playerslist.Value.Biome == pl_3_Biome or Playerslist.Value.Biome == pl_4_Biome:
+                biogenerator = Player1.GenerateRandomBiome()
+                Playerslist.Value.Biome = biogenerator
+            if id == 1:
+                pl_1_Biome = Playerslist.Value.Biome
+            elif id == 2:
+                pl_2_Biome = Playerslist.Value.Biome
+            elif id == 3:
+                pl_3_Biome = Playerslist.Value.Biome
+            elif id == 4:
+                pl_4_Biome = Playerslist.Value.Biome
+>>>>>>> origin/master
             id += 1
             print("id = " + str(Playerslist.Value.Pl_id))
             print("name = " + Playerslist.Value.Pl_name)
             print("gamecard = " + Playerslist.Value.Gamecard)
+<<<<<<< HEAD
             print("biome = " + str(Playerslist.Value.Biome))
+=======
+            print("biome = " + Playerslist.Value.Biome)
+>>>>>>> origin/master
             print("currency = " + str(Playerslist.Value.currency))
             if normalPlayers == AmountPlayersDefault - 1:
                 if AmountPlayersDefault < 4:
@@ -139,13 +165,20 @@ def ChoosePlayerScreen():               #ChoosePlayerScreen door Joost en Eljaki
                     AmountComputerPlayers = 4 - normalPlayers
                     for computerPlayers in range(AmountComputerPlayers - 1):
                         Playername = "PCplayer " + str(id)
-                        biomegenerator = Player1.GenerateRandomBiome
+                        biomegenerator = Player1.GenerateRandomBiome()
                         Playerslist = Node(Player1(id, Playername, biomegenerator, biomegenerator, 500), Playerslist)
+                        while Playerslist.Value.Biome == pl_1_Biome or Playerslist.Value.Biome == pl_2_Biome or Playerslist.Value.Biome == pl_3_Biome or Playerslist.Value.Biome == pl_4_Biome:
+                            biogenerator = Player1.GenerateRandomBiome()
+                            Playerslist.Value.Biome = biogenerator
+                        if id == 3:
+                            pl_3_Biome = Playerslist.Value.Biome
+                        elif id == 4:
+                            pl_4_Biome = Playerslist.Value.Biome
                         id += 1
                         print("id = " + str(Playerslist.Value.Pl_id))
                         print("name = " + Playerslist.Value.Pl_name)
-                        #print("gamecard = " + Playerslist.Value.Gamecard)
-                        #print("biome = " + Playerslist.Value.Biome)
+                        print("gamecard = " + Playerslist.Value.Gamecard)
+                        print("biome = " + Playerslist.Value.Biome)
                         print("currency = " + str(Playerslist.Value.currency))
                 game_loop()
 
