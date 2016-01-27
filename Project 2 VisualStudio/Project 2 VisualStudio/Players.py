@@ -20,8 +20,6 @@ class Player1:
             return 'Desert'
         else:
             return 'Forest'
-<<<<<<< HEAD
-
 
 
 class Player2:
@@ -31,9 +29,6 @@ class Player2:
         self.Gamecard = card
         self.Biome = Biome
         self.currency = currency
-        
-=======
->>>>>>> origin/master
         
 
 

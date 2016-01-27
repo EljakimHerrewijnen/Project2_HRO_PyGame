@@ -5,6 +5,9 @@ from Tile import *
 from Players import *
 from WinningScreen import *
 from Units import *
+import sys
+from pygame.locals import *
+import EzText
 
 AmountPlayersDefault = 0
 Playerslist = Empty
@@ -15,11 +18,6 @@ def game_loop():                                #GameLoop door Joost en Eljakim
     if AmountPlayersDefault == 0:
         ChoosePlayerScreen()
     print("aantal normale spelers: " + str(AmountPlayersDefault))
-
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/master
     tile_loop()                     #Joost
 
 def ChoosePlayerScreen():               #ChoosePlayerScreen door Joost en Eljakim
@@ -54,7 +52,9 @@ def ChoosePlayerScreen():               #ChoosePlayerScreen door Joost en Eljaki
     def text_objects(text, font):
         textSurface = font.render(text, True, black)
         return textSurface, textSurface.get_rect()
-    
+
+    #EzText, for typing in pygame GUI
+    txtbx = EzText.Input(maxlength=45, color=(255,0,0), prompt='type here: ')
     #Playerlist is Empty
     Playerslist = Empty
 
@@ -76,9 +76,9 @@ def ChoosePlayerScreen():               #ChoosePlayerScreen door Joost en Eljaki
         gameDisplay.blit(TextSurf, TextRect)
         """
 
+
         mouse = pygame.mouse.get_pos()
         click = pygame.mouse.get_pressed()
-       
         
         if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_green, (150,500,100,50))
@@ -106,10 +106,8 @@ def ChoosePlayerScreen():               #ChoosePlayerScreen door Joost en Eljaki
         textSurf, textRect = text_objects('3 Players', smallText)
         textRect.center = ( (350+(100/2)), (500+(50/2)) )
         gameDisplay.blit(textSurf, textRect)
-        
-        
-        
-        
+        txtbx.draw(800)    
+        pygame.display.flip()
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:    
             pygame.draw.rect(gameDisplay, bright_red, (550,500,100,50))
             if click[0] == 1:
@@ -132,12 +130,7 @@ def ChoosePlayerScreen():               #ChoosePlayerScreen door Joost en Eljaki
         for normalPlayers in range(AmountPlayersDefault):
             biomegenerator = Player1.GenerateRandomBiome()
             Playername = input("What's the name of player " + str(id) + " ?: ")
-<<<<<<< HEAD
-
             Playerslist = Node(Player1(id, Playername, str(biomegenerator), str(biomegenerator), 500), Playerslist)
-
-=======
->>>>>>> origin/master
             Playerslist = Node(Player1(id, Playername, biomegenerator, biomegenerator, 500), Playerslist)
             while Playerslist.Value.Biome == pl_1_Biome or Playerslist.Value.Biome == pl_2_Biome or Playerslist.Value.Biome == pl_3_Biome or Playerslist.Value.Biome == pl_4_Biome:
                 biogenerator = Player1.GenerateRandomBiome()
@@ -151,18 +144,11 @@ def ChoosePlayerScreen():               #ChoosePlayerScreen door Joost en Eljaki
                 pl_3_Biome = Playerslist.Value.Biome
             elif id == 4:
                 pl_4_Biome = Playerslist.Value.Biome
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
             id += 1
             print("id = " + str(Playerslist.Value.Pl_id))
             print("name = " + Playerslist.Value.Pl_name)
             print("gamecard = " + Playerslist.Value.Gamecard)
-<<<<<<< HEAD
             print("biome = " + str(Playerslist.Value.Biome))
-=======
->>>>>>> origin/master
             print("biome = " + Playerslist.Value.Biome)
             print("currency = " + str(Playerslist.Value.currency))
             if normalPlayers == AmountPlayersDefault - 1:
@@ -196,3 +182,12 @@ def ChoosePlayerScreen():               #ChoosePlayerScreen door Joost en Eljaki
 def NextTurn():
     print("Next turn Commencing")
     pygame.time.delay(100)
+
+
+def get_key():
+  while 1:
+    event = pygame.event.poll()
+    if event.type == KEYDOWN:
+      return event.key
+    else:
+      pass
