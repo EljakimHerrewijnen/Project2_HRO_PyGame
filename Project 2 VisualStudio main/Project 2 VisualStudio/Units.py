@@ -47,8 +47,19 @@ from BuyScreen import *
                             #Code van Eljakim
 
 id_counter = 0
-Position_Unit = 0
+
 AddUnit = Empty
+
+#To get the position, this is where in the 5 biomes the unit should spawn.
+def GetBiomePosition(currentPL_biome):
+    if currentPL_biome == "Desert":
+        return [18, 0]
+    elif currentPL_biome == "Swamp":
+        return [0,0]
+    elif currentPL_biome == "Forest":
+        return [18, 18]
+    elif currentPL_biome == "Ice":
+        return [0, 18]
 class Units():
     def __init__(self, id, unittype, position, OwnerPlayer):
         self.id = id
@@ -56,24 +67,89 @@ class Units():
         self.position = position
         self.OwnerPlayer = OwnerPlayer
 
-    def BuyTank():
+    def BuyTank(currentPl_id, currentPL_biome, currentPL_currency):  
         global id_counter
-        global Position_Unit
-        global CurrentPlayer
+        Position_Unit = GetBiomePosition(currentPL_biome)
         global AddUnit
         id_counter += 1
-        AddUnit = Node(Units(id_counter, "Tank", 0, 0), AddUnit)
+        AddUnit = Node(Units(id_counter, "Tank", Position_Unit, currentPl_id), AddUnit)
+        
         print("Unitid = " + str(AddUnit.Value.id))
         print("Unittype = " + str(AddUnit.Value.unittype))
-        print("UnitOwnerid" + str(AddUnit.Value.OwnerPlayer))
+        print("UnitOwnerid = " + str(AddUnit.Value.OwnerPlayer))
+        print("Unit Position = "+ str(AddUnit.Value.position))
+        print(currentPL_biome)
+        print(currentPL_currency)
+        return AddUnit
 
-    def BuySoldier():
-        while Playerslist.Value.IsEmpty == False:
-            print("nog niks")
+    def BuySoldier(currentPl_id, currentPL_biome, currentPL_currency):
         global id_counter
-        global Position_Unit
-        global CurrentPlayer
+        Position_Unit = GetBiomePosition(currentPL_biome)
         global AddUnit
         id_counter += 1
-        AddUnit = Node(Units (id_counter, "Soldier", CurrentPlayer, 1), AddUnit)
-        print(AddUnit.Value.id)
+        AddUnit = Node(Units(id_counter, "Soldier", Position_Unit, currentPl_id), AddUnit)
+        
+        print("Unitid = " + str(AddUnit.Value.id))
+        print("Unittype = " + str(AddUnit.Value.unittype))
+        print("UnitOwnerid = " + str(AddUnit.Value.OwnerPlayer))
+        print("Unit Position = "+ str(AddUnit.Value.position))
+        print(currentPL_biome)
+        print(currentPL_currency)
+        return AddUnit
+    def BuyRobot(currentPl_id, currentPL_biome, currentPL_currency):
+        global id_counter
+        Position_Unit = GetBiomePosition(currentPL_biome)
+        global AddUnit
+        id_counter += 1
+        AddUnit = Node(Units(id_counter, "Robot", Position_Unit, currentPl_id), AddUnit)
+        
+        print("Unitid = " + str(AddUnit.Value.id))
+        print("Unittype = " + str(AddUnit.Value.unittype))
+        print("UnitOwnerid = " + str(AddUnit.Value.OwnerPlayer))
+        print("Unit Position = "+ str(AddUnit.Value.position))
+        print(currentPL_biome)
+        print(currentPL_currency)
+        return AddUnit
+    def BuyBoat(currentPl_id, currentPL_biome, currentPL_currency):
+        global id_counter
+        Position_Unit = GetBiomePosition(currentPL_biome)
+        global AddUnit
+        id_counter += 1
+        AddUnit = Node(Units(id_counter, "Boat", Position_Unit, currentPl_id), AddUnit)
+        
+        print("Unitid = " + str(AddUnit.Value.id))
+        print("Unittype = " + str(AddUnit.Value.unittype))
+        print("UnitOwnerid = " + str(AddUnit.Value.OwnerPlayer))
+        print("Unit Position = "+ str(AddUnit.Value.position))
+        print(currentPL_biome)
+        print(currentPL_currency)
+        return AddUnit
+
+    def BuyBarrack(currentPl_id, currentPL_biome, currentPL_currency):
+        global id_counter
+        Position_Unit = GetBiomePosition(currentPL_biome)
+        global AddUnit
+        id_counter += 1
+        AddUnit = Node(Units(id_counter, "Barrack", Position_Unit, currentPl_id), AddUnit)
+        
+        print("Unitid = " + str(AddUnit.Value.id))
+        print("Unittype = " + str(AddUnit.Value.unittype))
+        print("UnitOwnerid = " + str(AddUnit.Value.OwnerPlayer))
+        print("Unit Position = "+ str(AddUnit.Value.position))
+        print(currentPL_biome)
+        print(currentPL_currency)
+        return AddUnit
+
+'''
+                currentPlayerList = changePlayer(Playerslist2)
+                currentPl_id = currentPlayerList.Value.Pl_id
+                currentPL_name = currentPlayerList.Value.Pl_name
+                currentPL_card = currentPlayerList.Value.Gamecard
+                currentPL_biome = currentPlayerList.Value.Biome
+                currentPL_currency = currentPlayerList.Value.Currency
+                currentPl_soldiers = currentPlayerList.Value.Soldiers
+                currentPl_robots = currentPlayerList.Value.Robots
+                currentPl_tanks = currentPlayerList.Value.Tanks
+                currentPl_barracks = currentPlayerList.Value.Barracks
+                currentPl_boats = currentPlayerList.Value.Boats
+                '''

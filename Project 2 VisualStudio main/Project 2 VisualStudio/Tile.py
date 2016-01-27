@@ -215,6 +215,8 @@ def tile_loop(Playerslist2):
             soldierPos = [mouse_x, mouse_y]
             mouse_x = math.floor(pygame.mouse.get_pos()[0] / Tilesize)
             mouse_y = math.floor(pygame.mouse.get_pos()[1] / Tilesize)
+            mouse_x = [0,0]
+            mouse_y = [0,0]
         #print map
         for row in range(Mapheight):
             for column in range(Mapwidth):
@@ -230,6 +232,11 @@ def tile_loop(Playerslist2):
         click = pygame.mouse.get_pressed()
         if 865 + 124 > mouse[0] > 865 and 31 + 19 > mouse[1] > 31:          #soldier
             pygame.draw.rect(screen, cyan, (865,31,124,19))    
+            if click[0] == 1:
+                AddUnit = Units.BuySoldier(currentPl_id, currentPL_biome, currentPL_currency)
+                pygame.time.delay(100)
+                TankPos = AddUnit.Value.position
+                screen.blit(soldier_texture, (TankPos[0] * Mapwidth * 2, TankPos[1]* Mapheight * 2))
         else:
             pygame.draw.rect(screen, white, (865,31,124,19))
         textSurf, textRect = text_objects('Soldier = f150', font1)
@@ -238,6 +245,11 @@ def tile_loop(Playerslist2):
         
         if 865 + 124 > mouse[0] > 865 and 115 + 19 > mouse[1] > 115:        #robot
             pygame.draw.rect(screen, cyan, (865,115,124,19))    
+            if click[0] == 1:
+                AddUnit = Units.BuyRobot(currentPl_id, currentPL_biome, currentPL_currency)
+                pygame.time.delay(100)
+                TankPos = AddUnit.Value.position
+                screen.blit(robot_texture, (TankPos[0] * Mapwidth * 2, TankPos[1]* Mapheight * 2))
         else:
             pygame.draw.rect(screen, white, (865,115,124,19))
         textSurf, textRect = text_objects('Robot = f300', font1)
@@ -247,8 +259,10 @@ def tile_loop(Playerslist2):
         if 865 + 124 > mouse[0] > 865 and 199 + 19 > mouse[1] > 199:        #tank
             pygame.draw.rect(screen, cyan, (865,199,124,19))    
             if click[0] == 1:
-                Units.BuyTank()
+                AddUnit = Units.BuyTank(currentPl_id, currentPL_biome, currentPL_currency)
                 pygame.time.delay(100)
+                TankPos = AddUnit.Value.position
+                screen.blit(tank_texture, (TankPos[0] * Mapwidth * 2, TankPos[1]* Mapheight * 2))
         else:
             pygame.draw.rect(screen, white, (865,199,124,19))
         textSurf, textRect = text_objects('Tank = f750', font1)
@@ -257,6 +271,11 @@ def tile_loop(Playerslist2):
         
         if 865 + 124 > mouse[0] > 865 and 283 + 19 > mouse[1] > 283:        #boat
             pygame.draw.rect(screen, cyan, (865,283,124,19))    
+            if click[0] == 1:
+                AddUnit = Units.BuyBoat(currentPl_id, currentPL_biome, currentPL_currency)
+                pygame.time.delay(100)
+                TankPos = AddUnit.Value.position
+                screen.blit(boat_texture, (TankPos[0] * Mapwidth * 2, TankPos[1]* Mapheight * 2))
         else:
             pygame.draw.rect(screen, white, (865,283,124,19))
         textSurf, textRect = text_objects('Boat = f1000', font1)
@@ -264,7 +283,12 @@ def tile_loop(Playerslist2):
         screen.blit(textSurf, textRect)
         
         if 865 + 124 > mouse[0] > 865 and 367 + 19 > mouse[1] > 367:        #barrack
-            pygame.draw.rect(screen, cyan, (865,367,124,19))    
+            pygame.draw.rect(screen, cyan, (865,367,124,19))  
+            if click[0] == 1:
+                AddUnit = Units.BuyBarrack(currentPl_id, currentPL_biome, currentPL_currency)
+                pygame.time.delay(100)
+                TankPos = AddUnit.Value.position
+                screen.blit(barrack_texture, (TankPos[0] * Mapwidth * 2, TankPos[1]* Mapheight * 2))              
         else:
             pygame.draw.rect(screen, white, (865,367,124,19))
         textSurf, textRect = text_objects('Barrack = f500', font1)
