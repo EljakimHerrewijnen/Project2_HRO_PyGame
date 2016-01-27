@@ -25,6 +25,9 @@
     <Compile Include="BuyScreen.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="EzText.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Node.py">
       <SubType>Code</SubType>
     </Compile>

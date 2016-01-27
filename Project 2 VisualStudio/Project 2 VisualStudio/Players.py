@@ -27,6 +27,15 @@ class Player1:
             return 'Desert'
         else:
             return 'Forest'
+
+
+class Player2:
+    def __init__(self, id, name, card, Biome, currency):              #Node gemaakt door Joost, aangepast door Eljakim
+        self.Pl_id = id
+        self.Pl_name = name
+        self.Gamecard = card
+        self.Biome = Biome
+        self.currency = currency
         
 
 

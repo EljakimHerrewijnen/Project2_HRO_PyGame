@@ -47,7 +47,6 @@ from BuyScreen import *
                             #Code van Eljakim
 
 id_counter = 0
-Position_Unit = 0
 AddUnit = Empty
 class Units():
     def __init__(self, id, unittype, position, OwnerPlayer):
