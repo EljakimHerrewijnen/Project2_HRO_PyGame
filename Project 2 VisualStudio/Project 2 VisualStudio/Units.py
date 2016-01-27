@@ -62,10 +62,10 @@ class Units():
         global CurrentPlayer
         global AddUnit
         id_counter += 1
-        AddUnit = Node(Units (id_counter, "Tank", 0, 0), AddUnit)
-        print(AddUnit.Value.id)
-        print(AddUnit.Value.OwnerPlayer)
-        print(AddUnit.Value.unittype)
+        AddUnit = Node(Units(id_counter, "Tank", 0, 0), AddUnit)
+        print("Unitid = " + str(AddUnit.Value.id))
+        print("Unittype = " + str(AddUnit.Value.unittype))
+        print("UnitOwnerid" + str(AddUnit.Value.OwnerPlayer))
 
     def BuySoldier():
         while Playerslist.Value.IsEmpty == False:

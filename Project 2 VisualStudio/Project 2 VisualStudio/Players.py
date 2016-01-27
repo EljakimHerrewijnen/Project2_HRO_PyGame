@@ -8,7 +8,14 @@ class Player1:
         self.Pl_name = name
         self.Gamecard = card
         self.Biome = Biome
-        self.currency = currency
+        self.Currency = currency
+
+    def units(self, soldiers, robots, tanks, barracks, boats):
+        self.Soldiers = 0
+        self.Robots = 0
+        self.Tanks = 0
+        self.Barracks = 0
+        self.Boats = 0
 
     def GenerateRandomBiome():                              #Code door Eljakim, aangepast door Joost
         RandomBiome = random.randrange(0,4)

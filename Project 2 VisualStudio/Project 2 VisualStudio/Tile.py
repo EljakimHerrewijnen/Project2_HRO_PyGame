@@ -9,6 +9,7 @@ black = (0,0,0)
 white = (255,255,255)
 poepkleur = (139, 69, 19)
 cyan = (0, 255, 255)
+currentid = 0
 
 class Point:
   def __init__(self, x, y):
@@ -22,6 +23,27 @@ class Tile:
       self.Offset = offset
       self.Properties = properties
 
+def changePlayer():
+    global currentid
+    global Playerslist
+    currentid += 1
+    if currentid > 4:
+        currentid = 1
+    while Playerslist.IsEmpty == False:
+        if Playerslist.Value.Pl_id == id:
+            currentPl_id = Playerslist.Value.Pl_id
+            currentPL_biome = Playerslist.Value.Biome
+            currentPL_currency = Playerslist.Value.Currency
+            currentPl_soldiers = Playerslist.Value.Units.Soldiers
+            currentPl_robots = Playerslist.Value.Units.Robots
+            currentPl_tanks = Playerslist.Value.Units.Tanks
+            currentPl_barracks = Playerslist.Value.Units.Barracks
+            currentPl_boats = Playerslist.Value.Units.Boats
+            return currentPl_id, currentPL_biome, currentPL_currency, currentPl_soldiers, currentPl_robots, currentPl_tanks, currentPl_barracks, currentPl_boats
+        else:
+            Playerslist = Playerslist.Tail
+
+    
 
 def text_objects(text, font):
     textSurface = font.render(text, True, black)
@@ -36,8 +58,6 @@ def tile_loop():
     global currentTile
     global Movements
     global CurrentPlayer
-
-
 
     pygame.init()
     Texturesize = 40
@@ -62,24 +82,6 @@ def tile_loop():
     Tank = pygame.image.load("content/tank.tif")
     Tank = pygame.transform.scale(Tank, (Tilesize, Tilesize))
     TankPos = [0, 0]
-
-    """
-    pl_id = 1
-    countdown = AmountPlayersDefault
-    for i in range(0, AmountPlayersDefault):
-        random_nr = random.randint(0, countdown)
-        if random_nr == 0:
-            Playerlist = Node(Player(pl_id, Naam1, SwampCard), Playerlist)
-        elif random_nr == 1:
-            Playerlist = Node(Player(pl_id, Naam2, IceCard), Playerlist)
-        elif random_nr == 2:
-            Playerlist = Node(Player(pl_id, Naam3, DesertCard), Playerlist)
-        elif random_nr == 3:
-            Playerlist = Node(Player(pl_id, Naam4, ForestCard), Playerlist)
-        if Playerlist
-        countdown -= 1
-        playerid += 1
-        """
 
     #colours
     blue = (132, 112, 255)
@@ -181,25 +183,24 @@ def tile_loop():
                 done = True
 
             # if a key is pressed move the soldier
-            if event.type == KEYDOWN and soldierPos[0] < Mapwidth - 1:
+            if event.type == KEYDOWN and soldierPos[0] < Mapwidth * Tilesize - Tilesize:
                 if (event.key == K_RIGHT):
-                    soldierPos[0] += 1
+                    soldierPos[0] += 1 * Tilesize
             if event.type == KEYDOWN and soldierPos[0] > 0:
                 if (event.key == K_LEFT):
-                    soldierPos[0] -= 1
+                    soldierPos[0] -= 1 * Tilesize
             if event.type == KEYDOWN and soldierPos[1] > 0:
                 if (event.key == K_UP):
-                    soldierPos[1] -= 1
-            if event.type == KEYDOWN and soldierPos[1] < Mapheight - 1:
+                    soldierPos[1] -= 1 * Tilesize
+            if event.type == KEYDOWN and soldierPos[1] < Mapheight * Tilesize - Tilesize:
                 if (event.key == K_DOWN):
-                    soldierPos[1] += 1
+                    soldierPos[1] += 1 * Tilesize
             #als spatie is ingedrukt: print het klimaat of water
             if pygame.key.get_pressed()[K_SPACE] == 1:
                     currentTile = tilelist[mouse_x][mouse_y]
                     print("Water = 0/Goldmine = 1/Forest = 2/Ice = 3/Swamp = 4/Desert = 5: ", currentTile)
+      
         
-
-
         if pygame.mouse.get_pressed()[0] and pygame.mouse.get_pos()[0] < (Mapwidth * Tilesize):
             mouse_x = math.floor(pygame.mouse.get_pos()[0] / Tilesize) * Tilesize
             mouse_y = math.floor(pygame.mouse.get_pos()[1] / Tilesize) * Tilesize
@@ -219,17 +220,15 @@ def tile_loop():
         
         mouse = pygame.mouse.get_pos()  
         click = pygame.mouse.get_pressed()
-        if 865 + 124 > mouse[0] > 865 and 31 + 19 > mouse[1] > 31:
+        if 865 + 124 > mouse[0] > 865 and 31 + 19 > mouse[1] > 31:          #soldier
             pygame.draw.rect(screen, cyan, (865,31,124,19))    
-            if click[0] == 1:
-                Units.BuyTank()
         else:
             pygame.draw.rect(screen, white, (865,31,124,19))
         textSurf, textRect = text_objects('Soldier = f150', font1)
         textRect.center = ( (865+(124/2)), (34+(7.5)) )
         screen.blit(textSurf, textRect)
         
-        if 865 + 124 > mouse[0] > 865 and 115 + 19 > mouse[1] > 115:
+        if 865 + 124 > mouse[0] > 865 and 115 + 19 > mouse[1] > 115:        #robot
             pygame.draw.rect(screen, cyan, (865,115,124,19))    
         else:
             pygame.draw.rect(screen, white, (865,115,124,19))
@@ -237,15 +236,18 @@ def tile_loop():
         textRect.center = ( (865+(124/2)), (115+(9)) )
         screen.blit(textSurf, textRect)
 
-        if 865 + 124 > mouse[0] > 865 and 199 + 19 > mouse[1] > 199:
+        if 865 + 124 > mouse[0] > 865 and 199 + 19 > mouse[1] > 199:        #tank
             pygame.draw.rect(screen, cyan, (865,199,124,19))    
+            if click[0] == 1:
+                Units.BuyTank()
+                pygame.time.delay(100)
         else:
             pygame.draw.rect(screen, white, (865,199,124,19))
         textSurf, textRect = text_objects('Tank = f750', font1)
         textRect.center = ( (865+(124/2)), (199+(9)) )
         screen.blit(textSurf, textRect)
         
-        if 865 + 124 > mouse[0] > 865 and 283 + 19 > mouse[1] > 283:
+        if 865 + 124 > mouse[0] > 865 and 283 + 19 > mouse[1] > 283:        #boat
             pygame.draw.rect(screen, cyan, (865,283,124,19))    
         else:
             pygame.draw.rect(screen, white, (865,283,124,19))
@@ -253,7 +255,7 @@ def tile_loop():
         textRect.center = ( (865+(124/2)), (283+(9)) )
         screen.blit(textSurf, textRect)
         
-        if 865 + 124 > mouse[0] > 865 and 367 + 19 > mouse[1] > 367:
+        if 865 + 124 > mouse[0] > 865 and 367 + 19 > mouse[1] > 367:        #barrack
             pygame.draw.rect(screen, cyan, (865,367,124,19))    
         else:
             pygame.draw.rect(screen, white, (865,367,124,19))
@@ -261,18 +263,20 @@ def tile_loop():
         textRect.center = ( (865+(124/2)), (367+(9)) )
         screen.blit(textSurf, textRect)   
         
-        if 865 + 124 > mouse[0] > 865 and 700 + 19 > mouse[1] > 700:
+        if 865 + 124 > mouse[0] > 865 and 700 + 19 > mouse[1] > 700:        #end turn
             pygame.draw.rect(screen, cyan, (865,700,124,19)) 
+            if click[0] == 1:
+                changePlayer()
+                global currentPl_id
+                pygame.time.delay(100)
+                print(currentPl_id)
         else:
             pygame.draw.rect(screen, white, (865,700,124,19))
         textSurf, textRect = text_objects('End Turn!', font1)
         textRect.center = ( (865+(124/2)), (700+(9)) )
         screen.blit(textSurf, textRect) 
 
-        if Movements >= 4:
-            Movents = 0
-            print("def for player turn")
-
+        """
         #Clickable Buttons. Code voor het click Event               Door Eljakim
         if 865 + 124 > mouse[0] > 865 and 700 + 19 > mouse[1] > 700 and pygame.mouse.get_pressed()[0]: #Turn Code
             print("def for player turn") 
@@ -288,7 +292,7 @@ def tile_loop():
             print("Boat")  #Boat
         elif 865 + 124 > mouse[0] > 865 and 367 + 19 > mouse[1] > 367 and pygame.mouse.get_pressed()[0]:        
             print("Barrack")  #Barrack
-
+                """
         #print BuyScreen
         placePositionY = 10
         placePositionX = Tilesize * 2 + 5
@@ -297,14 +301,15 @@ def tile_loop():
             #Text = font1.render(str(unit_text[i]), True, black, kots)
             #screen.blit(Text, (Mapwidth * Tilesize + 20 + placePositionX, placePositionY + 0.5 * Tilesize))
             placePositionY += Tilesize * 2
+        
+        #print wie er aan de beurt is
+        Text = font1.render("Player " + "1" + "'s turn", True, black, transparent_texture)
+        screen.blit(Text, (Mapwidth * Tilesize + 20, placePositionY + 20))
 
         #print de soldier
         screen.blit(Soldier,(soldierPos[0], soldierPos[1]))
         #print soldier-coordinaten in console
-        print("x = ", soldierPos[0], "y = ", soldierPos[1])
-        pygame.display.toggle_fullscreen
-
-
+        #print("x = ", soldierPos[0], "y = ", soldierPos[1])
 
 
         pygame.display.flip()
