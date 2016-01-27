@@ -5,7 +5,6 @@ from Tile import *
 from Players import *
 from WinningScreen import *
 from Units import *
-#from tkinter import *     #dit is voor textboxes
 
 AmountPlayersDefault = 0
 
@@ -13,19 +12,11 @@ AmountPlayersDefault = 0
 def game_loop():                                #GameLoop door Joost en Eljakim
     global AmountPlayersDefault     #Eljakim's code
     if AmountPlayersDefault == 0:
-        ChoosePlayerScreen()
+        Playerslist1 = ChoosePlayerScreen()
     print("aantal normale spelers: " + str(AmountPlayersDefault))
     
-    tile_loop()                     #Joost
+    tile_loop(Playerslist1)                     #Joost
 
-    """           #Joost textbox voor playernames
-def textbox():
-    myGui = Tk()
-    myGui.title("Playername")
-    myGui.geometry("500x600")
-    lbl1 = Label(myGui, text = "Playername: ").pack()
-    #ebox = Entry(root).pack
-        """
 
 def ChoosePlayerScreen():               #ChoosePlayerScreen door Joost en Eljakim
     pygame.init() 
@@ -70,15 +61,6 @@ def ChoosePlayerScreen():               #ChoosePlayerScreen door Joost en Eljaki
         bg= pygame.transform.scale(bg, (display_width, display_height))
         gameDisplay.blit(bg, (0, 0))  
 
-        #oude text "Choose your amount of players"
-        """
-        gameDisplay.fill(white)        #Pretty much the same as carlo's Menu screen
-        largeText = pygame.font.Font('freesansbold.ttf', 40)
-        TextSurf, TextRect = text_objects('Choose your amount of players.', largeText)
-        TextRect.center = ((display_width/2), (display_height/4))
-        gameDisplay.blit(TextSurf, TextRect)
-        """
-
         mouse = pygame.mouse.get_pos()
         click = pygame.mouse.get_pressed()
        
@@ -111,8 +93,6 @@ def ChoosePlayerScreen():               #ChoosePlayerScreen door Joost en Eljaki
         gameDisplay.blit(textSurf, textRect)
         
         
-        
-        
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:    
             pygame.draw.rect(gameDisplay, bright_red, (550,500,100,50))
             if click[0] == 1:
@@ -126,7 +106,7 @@ def ChoosePlayerScreen():               #ChoosePlayerScreen door Joost en Eljaki
         textRect.center = ( (550+(100/2)), (500+(50/2)) )
         gameDisplay.blit(textSurf, textRect)
 
-        #hier wordt een player lijst aangemaakt:  
+                #hier wordt een player lijst aangemaakt:  
         id = 1                                      #gemaakt door Joost
         pl_1_Biome = "niks"
         pl_2_Biome = "niks"
@@ -136,7 +116,7 @@ def ChoosePlayerScreen():               #ChoosePlayerScreen door Joost en Eljaki
         for normalPlayers in range(AmountPlayersDefault):       #Deze eerste for loop zorgt er voor dat elke echte speler een naam kan invullen
             biomegenerator = Player1.GenerateRandomBiome()  
             Playername = input("What's the name of player " + str(id) + " ?: ")
-            Playerslist = Node(Player1(id, Playername, biomegenerator, biomegenerator, 500), Playerslist)
+            Playerslist = Node(Player1(id, Playername, biomegenerator, biomegenerator, 500, 0, 0, 0, 0, 0), Playerslist)
             #Deze loop zorgt ervoor dat spelers niet dezelfde biome kunnen hebben:
             while Playerslist.Value.Biome == pl_1_Biome or Playerslist.Value.Biome == pl_2_Biome or Playerslist.Value.Biome == pl_3_Biome or Playerslist.Value.Biome == pl_4_Biome:
                 biogenerator = Player1.GenerateRandomBiome()
@@ -164,7 +144,7 @@ def ChoosePlayerScreen():               #ChoosePlayerScreen door Joost en Eljaki
                     for computerPlayers in range(AmountComputerPlayers - 1):        #Deze tweede for loop zorgt ervoor dat als er niet genoeg spelers zijn er PC spelers worden aangemaakt
                         Playername = "PCplayer " + str(id)
                         biomegenerator = Player1.GenerateRandomBiome()
-                        Playerslist = Node(Player1(id, Playername, biomegenerator, biomegenerator, 500), Playerslist)
+                        Playerslist = Node(Player1(id, Playername, biomegenerator, biomegenerator, 500, 0, 0, 0, 0, 0), Playerslist)
                         #Deze for loop is hetzelfde als de vorige, dus het zorgt ervoor dat spelers niet dezelfde biome kunnen hebben:
                         while Playerslist.Value.Biome == pl_1_Biome or Playerslist.Value.Biome == pl_2_Biome or Playerslist.Value.Biome == pl_3_Biome or Playerslist.Value.Biome == pl_4_Biome:
                             biogenerator = Player1.GenerateRandomBiome()
@@ -181,8 +161,7 @@ def ChoosePlayerScreen():               #ChoosePlayerScreen door Joost en Eljaki
                         print("gamecard = " + Playerslist.Value.Gamecard)
                         print("biome = " + Playerslist.Value.Biome)
                         print("currency = " + str(Playerslist.Value.Currency))
-                #return Playerslist
-                game_loop()     #<--Nu begint het spel
+                return Playerslist
 
             
         pygame.display.update()

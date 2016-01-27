@@ -3,6 +3,7 @@ from Players import *
 from Node import *
 from pygame.locals import *
 from Units import *
+#from Change_Player import *
 
 #colors
 black = (0,0,0)
@@ -10,6 +11,7 @@ white = (255,255,255)
 poepkleur = (139, 69, 19)
 cyan = (0, 255, 255)
 currentid = 0
+Playerlist4 = Empty
 
 class Point:
   def __init__(self, x, y):
@@ -23,26 +25,30 @@ class Tile:
       self.Offset = offset
       self.Properties = properties
 
-def changePlayer():
+      
+def changePlayer(Playerslist3):
     global currentid
-    global Playerslist
+    global Playerlist4
     currentid += 1
     if currentid > 4:
         currentid = 1
-    while Playerslist.IsEmpty == False:
-        if Playerslist.Value.Pl_id == id:
-            currentPl_id = Playerslist.Value.Pl_id
-            currentPL_biome = Playerslist.Value.Biome
-            currentPL_currency = Playerslist.Value.Currency
-            currentPl_soldiers = Playerslist.Value.Units.Soldiers
-            currentPl_robots = Playerslist.Value.Units.Robots
-            currentPl_tanks = Playerslist.Value.Units.Tanks
-            currentPl_barracks = Playerslist.Value.Units.Barracks
-            currentPl_boats = Playerslist.Value.Units.Boats
-            return currentPl_id, currentPL_biome, currentPL_currency, currentPl_soldiers, currentPl_robots, currentPl_tanks, currentPl_barracks, currentPl_boats
+    while Playerslist3.IsEmpty == False:
+        if Playerslist3.Value.Pl_id == currentid:
+            currentPl_id = Playerslist3.Value.Pl_id
+            currentPL_name = Playerslist3.Value.Pl_name
+            currentPL_card = Playerslist3.Value.Gamecard
+            currentPL_biome = Playerslist3.Value.Biome
+            currentPL_currency = Playerslist3.Value.Currency
+            currentPl_soldiers = Playerslist3.Value.Soldiers
+            currentPl_robots = Playerslist3.Value.Robots
+            currentPl_tanks = Playerslist3.Value.Tanks
+            currentPl_barracks = Playerslist3.Value.Barracks
+            currentPl_boats = Playerslist3.Value.Boats
+            Playerlist4 = Node(Player1(currentPl_id, currentPL_name, currentPL_card, currentPL_biome, currentPL_currency, currentPl_soldiers, currentPl_robots, currentPl_tanks, currentPl_barracks, currentPl_boats), Playerlist4)
+            return Playerlist4  #currentPl_id, currentPL_biome, currentPL_currency, currentPl_soldiers, currentPl_robots, currentPl_tanks, currentPl_barracks, currentPl_boats
         else:
-            Playerslist = Playerslist.Tail
-
+            Playerslist3 = Playerslist3.Tail
+            
     
 
 def text_objects(text, font):
@@ -54,7 +60,7 @@ Movements = 0
 CurrentPlayer = 1
 
 
-def tile_loop():
+def tile_loop(Playerslist2):
     global currentTile
     global Movements
     global CurrentPlayer
@@ -266,10 +272,10 @@ def tile_loop():
         if 865 + 124 > mouse[0] > 865 and 700 + 19 > mouse[1] > 700:        #end turn
             pygame.draw.rect(screen, cyan, (865,700,124,19)) 
             if click[0] == 1:
-                changePlayer()
-                global currentPl_id
-                pygame.time.delay(100)
-                print(currentPl_id)
+                currentPlayerList = changePlayer(Playerslist2)
+                #global currentPl_id
+                pygame.time.delay(200)
+                print(currentPlayerList.Value.Pl_id)
         else:
             pygame.draw.rect(screen, white, (865,700,124,19))
         textSurf, textRect = text_objects('End Turn!', font1)
