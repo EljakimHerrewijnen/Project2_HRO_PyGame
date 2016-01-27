@@ -191,7 +191,7 @@ def tile_loop(Playerslist2):
                 done = True
 
             # if a key is pressed move the soldier
-            if event.type == KEYDOWN and soldierPos[0] < Mapwidth * Tilesize - Tilesize:
+            if event.type == KEYDOWN: #and soldierPos[0] < Mapwidth * Tilesize - Tilesize:
                 if (event.key == K_RIGHT):
                     soldierPos[0] += 1 * Tilesize
             if event.type == KEYDOWN and soldierPos[0] > 0:
@@ -205,11 +205,11 @@ def tile_loop(Playerslist2):
                     soldierPos[1] += 1 * Tilesize
             #als spatie is ingedrukt: print het klimaat of water
             if pygame.key.get_pressed()[K_SPACE] == 1:
-                    currentTile = tilelist[mouse_x][mouse_y]
-                    print("Water = 0/Goldmine = 1/Forest = 2/Ice = 3/Swamp = 4/Desert = 5: ", currentTile)
+                currentTile = tilelist[mouse_y][mouse_x]
+                print("Water = 0/Goldmine = 1/Forest = 2/Ice = 3/Swamp = 4/Desert = 5: ", currentTile)
       
         
-        if pygame.mouse.get_pressed()[0] and pygame.mouse.get_pos()[0] < (Mapwidth * Tilesize):
+        if pygame.mouse.get_pressed()[0]: #and pygame.mouse.get_pos()[0] < (Mapwidth * Tilesize):
             mouse_x = math.floor(pygame.mouse.get_pos()[0] / Tilesize) * Tilesize
             mouse_y = math.floor(pygame.mouse.get_pos()[1] / Tilesize) * Tilesize
             soldierPos = [mouse_x, mouse_y]
@@ -271,7 +271,7 @@ def tile_loop(Playerslist2):
         textRect.center = ( (865+(124/2)), (367+(9)) )
         screen.blit(textSurf, textRect)   
         
-        if 865 + 124 > mouse[0] > 865 and 700 + 19 > mouse[1] > 700:        #end turn
+        if 865 + 124 > mouse[0] > 865 and 700 + 19 > mouse[1] > 700:        #end turn, klik hier op om de volgende speler de beurt te geven
             pygame.draw.rect(screen, cyan, (865,700,124,19)) 
             if click[0] == 1:
                 currentPlayerList = changePlayer(Playerslist2)
@@ -311,7 +311,7 @@ def tile_loop(Playerslist2):
         elif 865 + 124 > mouse[0] > 865 and 367 + 19 > mouse[1] > 367 and pygame.mouse.get_pressed()[0]:        
             print("Barrack")  #Barrack
                 """
-        #print BuyScreen
+        #print BuyScreen background
         placePositionY = 10
         placePositionX = Tilesize * 2 + 5
         for i in range(0, 5):
