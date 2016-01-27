@@ -207,6 +207,7 @@ def tile_loop(Playerslist2):
             if pygame.key.get_pressed()[K_SPACE] == 1:
                     currentTile = tilelist[mouse_x][mouse_y]
                     print("Water = 0/Goldmine = 1/Forest = 2/Ice = 3/Swamp = 4/Desert = 5: ", currentTile)
+                    Draw()
       
         
         if pygame.mouse.get_pressed()[0] and pygame.mouse.get_pos()[0] < (Mapwidth * Tilesize):
@@ -215,8 +216,8 @@ def tile_loop(Playerslist2):
             soldierPos = [mouse_x, mouse_y]
             mouse_x = math.floor(pygame.mouse.get_pos()[0] / Tilesize)
             mouse_y = math.floor(pygame.mouse.get_pos()[1] / Tilesize)
-            mouse_x = [0,0]
-            mouse_y = [0,0]
+           # print(mouse_x)
+            print(soldierPos)
         #print map
         for row in range(Mapheight):
             for column in range(Mapwidth):
@@ -233,10 +234,12 @@ def tile_loop(Playerslist2):
         if 865 + 124 > mouse[0] > 865 and 31 + 19 > mouse[1] > 31:          #soldier
             pygame.draw.rect(screen, cyan, (865,31,124,19))    
             if click[0] == 1:
-                AddUnit = Units.BuySoldier(currentPl_id, currentPL_biome, currentPL_currency)
+                BuyingUnit = 1
+                Draw(BuyingUnit, currentPl_id, currentPL_biome, currentPL_currency)
+              #  AddUnit = Units.BuySoldier(currentPl_id, currentPL_biome, currentPL_currency)
                 pygame.time.delay(100)
-                TankPos = AddUnit.Value.position
-                screen.blit(soldier_texture, (TankPos[0] * Mapwidth * 2, TankPos[1]* Mapheight * 2))
+               # TankPos = AddUnit.Value.position
+               # screen.blit(soldier_texture, (TankPos[0] * Mapwidth * 2, TankPos[1]* Mapheight * 2))
         else:
             pygame.draw.rect(screen, white, (865,31,124,19))
         textSurf, textRect = text_objects('Soldier = f150', font1)
@@ -318,6 +321,19 @@ def tile_loop(Playerslist2):
         textRect.center = ( (865+(124/2)), (700+(9)) )
         screen.blit(textSurf, textRect) 
 
+        def Draw():
+            Texturesize = 40
+            Tilesize = Texturesize + 2
+            Mapwidth = 18
+            Mapheight = 18 
+            screen = pygame.display.set_mode((Mapwidth * Tilesize + 250, Mapheight * Tilesize))
+            bgmap = pygame.image.load("content/map895.jpg")
+            bgmap = pygame.transform.scale(bgmap, (Mapwidth * Tilesize, Mapheight * Tilesize))
+            screen.blit(bgmap, (0,0))
+            if AddUnit.Value.unittype == "Tank":
+                TankPos = AddUnit.Value.position
+                screen.blit(tank_texture, (TankPos[0] * Mapwidth * 2, TankPos[1]* Mapheight * 2))       
+
         """
         #Clickable Buttons. Code voor het click Event               Door Eljakim
         if 865 + 124 > mouse[0] > 865 and 700 + 19 > mouse[1] > 700 and pygame.mouse.get_pressed()[0]: #Turn Code
@@ -353,6 +369,7 @@ def tile_loop(Playerslist2):
         #print soldier-coordinaten in console
         #print("x = ", soldierPos[0], "y = ", soldierPos[1])
 
-
         pygame.display.flip()
         clock.tick(60)
+
+       
