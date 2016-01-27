@@ -5,13 +5,9 @@ from Tile import *
 from Players import *
 from WinningScreen import *
 from Units import *
-<<<<<<< HEAD
-#from tkinter import *     #dit is voor textboxes
-=======
 import sys
 from pygame.locals import *
-import EzText
->>>>>>> origin/master
+
 
 AmountPlayersDefault = 0
 
@@ -21,10 +17,7 @@ def game_loop():                                #GameLoop door Joost en Eljakim
     if AmountPlayersDefault == 0:
         ChoosePlayerScreen()
     print("aantal normale spelers: " + str(AmountPlayersDefault))
-<<<<<<< HEAD
-    
-=======
->>>>>>> origin/master
+
     tile_loop()                     #Joost
 
     """           #Joost textbox voor playernames
@@ -68,15 +61,11 @@ def ChoosePlayerScreen():               #ChoosePlayerScreen door Joost en Eljaki
     def text_objects(text, font):
         textSurface = font.render(text, True, black)
         return textSurface, textSurface.get_rect()
-<<<<<<< HEAD
-    
-=======
 
     #EzText, for typing in pygame GUI
-    txtbx = EzText.Input(maxlength=45, color=(255,0,0), prompt='type here: ')
+    #txtbx = EzText.Input(maxlength=45, color=(255,0,0), prompt='type here: ')
     #Playerlist is Empty
     Playerslist = Empty
->>>>>>> origin/master
 
     while intro:
         for event in pygame.event.get():
@@ -86,15 +75,6 @@ def ChoosePlayerScreen():               #ChoosePlayerScreen door Joost en Eljaki
         bg = pygame.image.load("content/background_chooseplayers.jpg")
         bg= pygame.transform.scale(bg, (display_width, display_height))
         gameDisplay.blit(bg, (0, 0))  
-
-        #oude text "Choose your amount of players"
-        """
-        gameDisplay.fill(white)        #Pretty much the same as carlo's Menu screen
-        largeText = pygame.font.Font('freesansbold.ttf', 40)
-        TextSurf, TextRect = text_objects('Choose your amount of players.', largeText)
-        TextRect.center = ((display_width/2), (display_height/4))
-        gameDisplay.blit(TextSurf, TextRect)
-        """
 
 
         mouse = pygame.mouse.get_pos()
@@ -126,7 +106,7 @@ def ChoosePlayerScreen():               #ChoosePlayerScreen door Joost en Eljaki
         textSurf, textRect = text_objects('3 Players', smallText)
         textRect.center = ( (350+(100/2)), (500+(50/2)) )
         gameDisplay.blit(textSurf, textRect)
-        txtbx.draw(800)    
+       # txtbx.draw(800)    
         pygame.display.flip()
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:    
             pygame.draw.rect(gameDisplay, bright_red, (550,500,100,50))

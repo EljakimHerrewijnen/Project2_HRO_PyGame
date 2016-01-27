@@ -1,4 +1,5 @@
-# input lib
+﻿# input lib
+'''
 from pygame.locals import *
 import pygame, string
 
@@ -193,4 +194,5 @@ def main():
         # refresh the display
         pygame.display.flip()
 
-if __name__ == '__main__': main()
+#if __name__ == '__main__': main()
+'''
