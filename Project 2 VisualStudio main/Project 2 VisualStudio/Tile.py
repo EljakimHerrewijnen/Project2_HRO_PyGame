@@ -12,6 +12,7 @@ poepkleur = (139, 69, 19)
 cyan = (0, 255, 255)
 currentid = 0
 Playerlist4 = Empty
+currentPl_id = 0
 
 class Point:
   def __init__(self, x, y):
@@ -44,7 +45,7 @@ def changePlayer(Playerslist3):
             currentPl_tanks = Playerslist3.Value.Tanks
             currentPl_barracks = Playerslist3.Value.Barracks
             currentPl_boats = Playerslist3.Value.Boats
-            Playerlist4 = Node(Player1(currentPl_id, currentPL_name, currentPL_card, currentPL_biome, currentPL_currency, currentPl_soldiers, currentPl_robots, currentPl_tanks, currentPl_barracks, currentPl_boats), Playerlist4)
+            Playerlist4 = Node(Player1(Playerslist3.Value.Pl_id, Playerslist3.Value.Pl_name, Playerslist3.Value.Gamecard, Playerslist3.Value.Biome, Playerslist3.Value.Currency, Playerslist3.Value.Soldiers, Playerslist3.Value.Robots, Playerslist3.Value.Tanks, Playerslist3.Value.Barracks, Playerslist3.Value.Boats), Playerlist4)                     #currentPl_id, currentPL_name, currentPL_card, currentPL_biome, currentPL_currency, currentPl_soldiers, currentPl_robots, currentPl_tanks, currentPl_barracks, currentPl_boats), Playerlist4)
             return Playerlist4  #currentPl_id, currentPL_biome, currentPL_currency, currentPl_soldiers, currentPl_robots, currentPl_tanks, currentPl_barracks, currentPl_boats
         else:
             Playerslist3 = Playerslist3.Tail
@@ -64,6 +65,7 @@ def tile_loop(Playerslist2):
     global currentTile
     global Movements
     global CurrentPlayer
+    global currentPl_id
 
     pygame.init()
     Texturesize = 40
@@ -273,9 +275,19 @@ def tile_loop(Playerslist2):
             pygame.draw.rect(screen, cyan, (865,700,124,19)) 
             if click[0] == 1:
                 currentPlayerList = changePlayer(Playerslist2)
+                currentPl_id = currentPlayerList.Value.Pl_id
+                currentPL_name = currentPlayerList.Value.Pl_name
+                currentPL_card = currentPlayerList.Value.Gamecard
+                currentPL_biome = currentPlayerList.Value.Biome
+                currentPL_currency = currentPlayerList.Value.Currency
+                currentPl_soldiers = currentPlayerList.Value.Soldiers
+                currentPl_robots = currentPlayerList.Value.Robots
+                currentPl_tanks = currentPlayerList.Value.Tanks
+                currentPl_barracks = currentPlayerList.Value.Barracks
+                currentPl_boats = currentPlayerList.Value.Boats
                 #global currentPl_id
-                pygame.time.delay(200)
-                print(currentPlayerList.Value.Pl_id)
+                print("Player id = " + str(currentPl_id) + " Player name = " + currentPL_name)
+                pygame.time.delay(1000)
         else:
             pygame.draw.rect(screen, white, (865,700,124,19))
         textSurf, textRect = text_objects('End Turn!', font1)
@@ -309,7 +321,7 @@ def tile_loop(Playerslist2):
             placePositionY += Tilesize * 2
         
         #print wie er aan de beurt is
-        Text = font1.render("Player " + "1" + "'s turn", True, black, transparent_texture)
+        Text = font1.render("Player " + str(currentPl_id) + "'s turn", True, black, transparent_texture)
         screen.blit(Text, (Mapwidth * Tilesize + 20, placePositionY + 20))
 
         #print de soldier
