@@ -526,7 +526,7 @@ def tile_loop(Playerslist2):
         Text2 = font1.render("Player " + str(currentPl_id) + "'s gold: " + str(currentPL_currency), True, black, transparent_texture)
         screen.blit(Text2, (Mapwidth * Tilesize + 20, placePositionY + 40))
         #print de soldier
-        #screen.blit(Soldier,(soldierPos[0], soldierPos[1]))
+        screen.blit(Soldier,(soldierPos[0], soldierPos[1]))
         #print soldier-coordinaten in console
         #print("x = ", soldierPos[0], "y = ", soldierPos[1])
 
