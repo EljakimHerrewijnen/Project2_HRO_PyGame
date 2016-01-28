@@ -75,8 +75,25 @@ def check_For_Other_Units_On_Tile(currentUnitPos, AddUnit):
             DrawUnits = Node(AddUnit.Value.Texture, DrawUnits)
             """
 
-def draw(AddUnit, screen, soldierPos):
-    #while AddUnit.IsEmpty == False:
+def draw1(AddUnit, screen, soldierPos):     #simpele draw functie voor units
+    while AddUnit.IsEmpty == False:
+        if AddUnit.Value.unittype == "Soldier":
+            screen.blit(soldier_texture, (AddUnit.Value.position[0] * Tilesize, AddUnit.Value.position[1] * Tilesize))
+        elif AddUnit.Value.unittype == "Robot":
+            screen.blit(robot_texture, (AddUnit.Value.position[0] * Tilesize, AddUnit.Value.position[1] * Tilesize))
+        elif AddUnit.Value.unittype == "Tank":
+            screen.blit(tank_texture, (AddUnit.Value.position[0] * Tilesize, AddUnit.Value.position[1] * Tilesize))
+        elif AddUnit.Value.unittype == "Barrack":
+            screen.blit(barrack_texture, (AddUnit.Value.position[0] * Tilesize, AddUnit.Value.position[1] * Tilesize))
+        elif AddUnit.Value.unittype == "Boat":
+            screen.blit(boat_texture, (AddUnit.Value.position[0] * Tilesize, AddUnit.Value.position[1] * Tilesize))
+
+        pygame.display.flip()
+        AddUnit = AddUnit.Tail
+
+
+def draw(AddUnit, screen, soldierPos):      #draw functie voor units
+    while AddUnit.IsEmpty == False:
         currentUnitPos = [AddUnit.Value.position[0], AddUnit.Value.position[1]]
         nr_Units_On_Tile = 0
         while AddUnit.IsEmpty == False:
@@ -320,14 +337,14 @@ def tile_loop(Playerslist2):
                     print("Test ", currentPL_currency)
                     print(currentPL_currency)
                     AddUnit = Units.BuySoldier(currentPl_id, currentPL_biome, currentPL_currency)
-                    RobotPos = AddUnit.Value.position
-                    screen.blit(robot_texture, (soldierPos[0] * Mapwidth * 2, soldierPos[1]* Mapheight * 2))
+                    soldierPos = AddUnit.Value.position
+                    #screen.blit(soldier_texture, (soldierPos[0] * Mapwidth * 2, soldierPos[1]* Mapheight * 2))
                 elif currentPL_currency >= 150:
                     currentPL_currency -= 150
                     AddUnit = Units.BuySoldier(currentPl_id, currentPL_biome, currentPL_currency)
-                    RobotPos = AddUnit.Value.position
+                    soldierPos = AddUnit.Value.position
                     print("Test", currentPL_currency)
-                    screen.blit(soldier_texture, (soldierPos[0] * Mapwidth * 2, soldierPos[1]* Mapheight * 2))
+                    #screen.blit(soldier_texture, (soldierPos[0] * Mapwidth * 2, soldierPos[1]* Mapheight * 2))
                 else:
                     print("You do not have enough gold!")
         else:
@@ -344,12 +361,12 @@ def tile_loop(Playerslist2):
                     currentPL_currency -= 240
                     AddUnit = Units.BuyRobot(currentPl_id, currentPL_biome, currentPL_currency)
                     RobotPos = AddUnit.Value.position
-                    screen.blit(robot_texture, (RobotPos[0] * Mapwidth * 2, RobotPos[1]* Mapheight * 2))
+                    #screen.blit(robot_texture, (RobotPos[0] * Mapwidth * 2, RobotPos[1]* Mapheight * 2))
                 elif currentPL_currency >= 150:
                     currentPL_currency -= 300
                     AddUnit = Units.BuyRobot(currentPl_id, currentPL_biome, currentPL_currency)
                     RobotPos = AddUnit.Value.position
-                    screen.blit(robot_texture, (RobotPos[0] * Mapwidth * 2, RobotPos[1]* Mapheight * 2))
+                    #screen.blit(robot_texture, (RobotPos[0] * Mapwidth * 2, RobotPos[1]* Mapheight * 2))
                 else:
                     print("You do not have enough gold!")
         else:
@@ -366,12 +383,12 @@ def tile_loop(Playerslist2):
                     AddUnit = Units.BuyTank(currentPl_id, currentPL_biome, currentPL_currency)   
                     currentPL_currency -= 500
                     TankPos = AddUnit.Value.position
-                    screen.blit(tank_texture, (TankPos[0] * Mapwidth * 2, TankPos[1]* Mapheight * 2))
+                    #screen.blit(tank_texture, (TankPos[0] * Mapwidth * 2, TankPos[1]* Mapheight * 2))
                 elif currentPL_currency >= 750:
                     AddUnit = Units.BuyTank(currentPl_id, currentPL_biome, currentPL_currency)   
                     currentPL_currency -= 750
                     TankPos = AddUnit.Value.position
-                    screen.blit(tank_texture, (TankPos[0] * Mapwidth * 2, TankPos[1]* Mapheight * 2))
+                    #screen.blit(tank_texture, (TankPos[0] * Mapwidth * 2, TankPos[1]* Mapheight * 2))
                 else:
                     print("You do not have enough gold!")                
         else:
@@ -388,12 +405,12 @@ def tile_loop(Playerslist2):
                     currentPL_currency -= 800
                     AddUnit = Units.BuyBoat(currentPl_id, currentPL_biome, currentPL_currency)
                     BoatPos = AddUnit.Value.position
-                    screen.blit(boat_texture, (BoatPos[0] * Mapwidth * 2, BoatPos[1]* Mapheight * 2))
+                    #screen.blit(boat_texture, (BoatPos[0] * Mapwidth * 2, BoatPos[1]* Mapheight * 2))
                 elif currentPL_currency >= 1000:
                     currentPL_currency = currentPL_currency - 1000
                     AddUnit = Units.BuyBoat(currentPl_id, currentPL_biome, currentPL_currency)
                     BoatPos = AddUnit.Value.position
-                    screen.blit(boat_texture, (BoatPos[0] * Mapwidth * 2, BoatPos[1]* Mapheight * 2))
+                    #screen.blit(boat_texture, (BoatPos[0] * Mapwidth * 2, BoatPos[1]* Mapheight * 2))
                 else:
                     print("You do not have enough gold!")
         else:
@@ -414,7 +431,7 @@ def tile_loop(Playerslist2):
                     currentPL_currency -= 500
                     AddUnit = Units.BuyBarrack(currentPl_id, currentPL_biome, currentPL_currency)
                     BarrackPos = AddUnit.Value.position
-                    screen.blit(barrack_texture, (TankPos[0] * Mapwidth * 2, TankPos[1]* Mapheight * 2))              
+                    #screen.blit(barrack_texture, (TankPos[0] * Mapwidth * 2, TankPos[1]* Mapheight * 2))              
                 else:
                     print("You do not have enough gold!")
         else:
@@ -513,9 +530,7 @@ def tile_loop(Playerslist2):
         #print soldier-coordinaten in console
         #print("x = ", soldierPos[0], "y = ", soldierPos[1])
 
-        #draw(AddUnit, screen, soldierPos)
-     #   draw(AddUnit, screen, soldierPos)
-
+        draw1(AddUnit, screen, soldierPos)
         pygame.display.flip()
         clock.tick(60)
 
