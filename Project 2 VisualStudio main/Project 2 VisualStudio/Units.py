@@ -5,17 +5,17 @@ from Node import *
 from Players import *
 
 # ------------------------------------------------------------------------------------testen door Joost
-Texturesize = 42 * 2                       
+Tilesize = 42 #* 2                       
 soldier_texture = pygame.image.load('content/soldier.png')
-soldier_texture = pygame.transform.scale(soldier_texture, (Texturesize, Texturesize))
+soldier_texture = pygame.transform.scale(soldier_texture, (Tilesize, Tilesize))
 robot_texture = pygame.image.load('content/robot.png')
-robot_texture = pygame.transform.scale(robot_texture, (Texturesize, Texturesize))
+robot_texture = pygame.transform.scale(robot_texture, (Tilesize, Tilesize))
 tank_texture = pygame.image.load('content/tank.tif')
-tank_texture = pygame.transform.scale(tank_texture, (Texturesize, Texturesize))
+tank_texture = pygame.transform.scale(tank_texture, (Tilesize, Tilesize))
 boat_texture = pygame.image.load('content/boat.png')
-boat_texture = pygame.transform.scale(boat_texture, (Texturesize, Texturesize))
+boat_texture = pygame.transform.scale(boat_texture, (Tilesize, Tilesize))
 barrack_texture = pygame.image.load('content/barrack.png')
-barrack_texture = pygame.transform.scale(barrack_texture, (Texturesize, Texturesize))      
+barrack_texture = pygame.transform.scale(barrack_texture, (Tilesize, Tilesize))      
  
 soldier = 0
 robot = 1
@@ -53,13 +53,13 @@ AddUnit = Empty
 #To get the position, this is where in the 5 biomes the unit should spawn.
 def GetBiomePosition(currentPL_biome):
     if currentPL_biome == "Desert":
-        return [18, 0]
+        return [0, 17]
     elif currentPL_biome == "Swamp":
         return [0,0]
     elif currentPL_biome == "Forest":
-        return [18, 18]
+        return [17, 17]
     elif currentPL_biome == "Ice":
-        return [0, 18]
+        return [17, 0]
 class Units():
     def __init__(self, id, unittype, position, OwnerPlayer):
         self.id = id
@@ -96,6 +96,7 @@ class Units():
         print(currentPL_biome)
         print(currentPL_currency)
         return AddUnit
+
     def BuyRobot(currentPl_id, currentPL_biome, currentPL_currency):
         global id_counter
         Position_Unit = GetBiomePosition(currentPL_biome)
@@ -110,6 +111,7 @@ class Units():
         print(currentPL_biome)
         print(currentPL_currency)
         return AddUnit
+
     def BuyBoat(currentPl_id, currentPL_biome, currentPL_currency):
         global id_counter
         Position_Unit = GetBiomePosition(currentPL_biome)
