@@ -61,19 +61,21 @@ def GetBiomePosition(currentPL_biome):
     elif currentPL_biome == "Ice":
         return [17, 0]
 class Units():
-    def __init__(self, id, unittype, position, OwnerPlayer, texture):
+    def __init__(self, id, unittype, position, OwnerPlayer, texture, AttackValue, DefenceValue):
         self.id = id
         self.unittype = unittype
         self.position = position
         self.OwnerPlayer = OwnerPlayer
         self.Texture = texture
+        self.AttackValue = AttackValue
+        self.DefenceValue = DefenceValue
 
     def BuyTank(currentPl_id, currentPL_biome, currentPL_currency):  
         global id_counter
         Position_Unit = GetBiomePosition(currentPL_biome)
         global AddUnit
         id_counter += 1
-        AddUnit = Node(Units(id_counter, "Tank", Position_Unit, currentPl_id, tank_texture), AddUnit)
+        AddUnit = Node(Units(id_counter, "Tank", Position_Unit, currentPl_id, tank_texture, 2, 2), AddUnit)
         
         print("Unitid = " + str(AddUnit.Value.id))
         print("Unittype = " + str(AddUnit.Value.unittype))
@@ -88,7 +90,7 @@ class Units():
         Position_Unit = GetBiomePosition(currentPL_biome)
         global AddUnit
         id_counter += 1
-        AddUnit = Node(Units(id_counter, "Soldier", Position_Unit, currentPl_id, soldier_texture), AddUnit)
+        AddUnit = Node(Units(id_counter, "Soldier", Position_Unit, currentPl_id, soldier_texture,1 ,1), AddUnit)
         
         print("Unitid = " + str(AddUnit.Value.id))
         print("Unittype = " + str(AddUnit.Value.unittype))
@@ -103,7 +105,7 @@ class Units():
         Position_Unit = GetBiomePosition(currentPL_biome)
         global AddUnit
         id_counter += 1
-        AddUnit = Node(Units(id_counter, "Robot", Position_Unit, currentPl_id, robot_texture), AddUnit)
+        AddUnit = Node(Units(id_counter, "Robot", Position_Unit, currentPl_id, robot_texture, 2, 2), AddUnit)
         
         print("Unitid = " + str(AddUnit.Value.id))
         print("Unittype = " + str(AddUnit.Value.unittype))
@@ -118,7 +120,7 @@ class Units():
         Position_Unit = GetBiomePosition(currentPL_biome)
         global AddUnit
         id_counter += 1
-        AddUnit = Node(Units(id_counter, "Boat", Position_Unit, currentPl_id, boat_texture), AddUnit)
+        AddUnit = Node(Units(id_counter, "Boat", Position_Unit, currentPl_id, boat_texture, 0, 6), AddUnit)
         
         print("Unitid = " + str(AddUnit.Value.id))
         print("Unittype = " + str(AddUnit.Value.unittype))
@@ -133,7 +135,7 @@ class Units():
         Position_Unit = GetBiomePosition(currentPL_biome)
         global AddUnit
         id_counter += 1
-        AddUnit = Node(Units(id_counter, "Barrack", Position_Unit, currentPl_id, barrack_texture), AddUnit)
+        AddUnit = Node(Units(id_counter, "Barrack", Position_Unit, currentPl_id, barrack_texture, 0, 6), AddUnit)
         
         print("Unitid = " + str(AddUnit.Value.id))
         print("Unittype = " + str(AddUnit.Value.unittype))
