@@ -62,11 +62,50 @@ def text_objects(text, font):
 currentTile = 0
 Movements = 0
 CurrentPlayer = 1
+"""
+def check_For_Other_Units_On_Tile(currentUnitPos, AddUnit):
+    nr_Units_On_Tile = 0
+    while AddUnit.IsEmpty == False:
+        AddUnit = AddUnit.Tail
+        if currentUnitPos == AddUnit.Value.position:
+            nr_Units_On_Tile += 1
+            newTexture = pygame.transform.scale(AddUnit.Value.Texture, (Tilesize * 0.5, Tilesize * 0.5))
+            DrawUnits = Node(newTexture, DrawUnits)
+        else:
+            DrawUnits = Node(AddUnit.Value.Texture, DrawUnits)
+            """
 
 def draw(AddUnit, screen, soldierPos):
-    while AddUnit.IsEmpty == False:
-        if AddUnit.Value.unittype == "Soldier":
-            screen.blit(soldier_texture, (AddUnit.Value.position[0] * Tilesize, AddUnit.Value.position[1] * Tilesize))
+    #while AddUnit.IsEmpty == False:
+        currentUnitPos = [AddUnit.Value.position[0], AddUnit.Value.position[1]]
+        nr_Units_On_Tile = 0
+        while AddUnit.IsEmpty == False:
+            AddUnit = AddUnit.Tail
+            if currentUnitPos == AddUnit.Value.position:
+                nr_Units_On_Tile += 1
+                newTexture = pygame.transform.scale(AddUnit.Value.Texture, (Tilesize * 0.5, Tilesize * 0.5))
+                if nr_Units_On_Tile == 1:
+                    screen.blit(AddUnit.Value.Texture, (AddUnit.Value.position[0] * Tilesize, AddUnit.Value.position[1] * Tilesize))
+                if nr_Units_On_Tile == 2:
+                    screen.blit(AddUnit.Value.Texture, (AddUnit.Value.position[0] * Tilesize + Tilesize * 0.5, AddUnit.Value.position[1] * Tilesize))
+                if nr_Units_On_Tile == 3:
+                    screen.blit(AddUnit.Value.Texture, (AddUnit.Value.position[0] * Tilesize + Tilesize, AddUnit.Value.position[1] * Tilesize + Tilesize * 0.5))
+                #DrawUnits = Node(newTexture, DrawUnits)
+            else:
+                #DrawUnits = Node(AddUnit.Value.Texture, DrawUnits)
+                screen.blit(AddUnit.Value.Texture, (AddUnit.Value.position[0] * Tilesize, AddUnit.Value.position[1] * Tilesize))
+        screen.blit(AddUnit.Value.Texture, (AddUnit.Value.position[0] * Tilesize, AddUnit.Value.position[1] * Tilesize))
+        if nr_Units_On_Tile == 1:
+            screen.blit(AddUnit.Value.Texture, (AddUnit.Value.position[0] * Tilesize, AddUnit.Value.position[1] * Tilesize))
+        if nr_Units_On_Tile == 2:
+            screen.blit(AddUnit.Value.Texture, (AddUnit.Value.position[0] * Tilesize + Tilesize * 0.5, AddUnit.Value.position[1] * Tilesize))
+        if nr_Units_On_Tile == 3:
+            screen.blit(AddUnit.Value.Texture, (AddUnit.Value.position[0] * Tilesize + Tilesize, AddUnit.Value.position[1] * Tilesize + Tilesize * 0.5))
+
+        pygame.display.flip()
+        #AddUnit = AddUnit.Tail
+        """
+        #if AddUnit.Value.unittype == "Soldier":
         elif AddUnit.Value.unittype == "Robot":
             screen.blit(robot_texture, (AddUnit.Value.position[0] * Tilesize, AddUnit.Value.position[1] * Tilesize))
         elif AddUnit.Value.unittype == "Tank":
@@ -75,11 +114,12 @@ def draw(AddUnit, screen, soldierPos):
             screen.blit(barrack_texture, (AddUnit.Value.position[0] * Tilesize, AddUnit.Value.position[1] * Tilesize))
         elif AddUnit.Value.unittype == "Boat":
             screen.blit(boat_texture, (AddUnit.Value.position[0] * Tilesize, AddUnit.Value.position[1] * Tilesize))
-        AddUnit = AddUnit.Tail
+            """
+        
 
         #screen.blit(soldier_texture, (soldierPos[0], soldierPos[1]))
 
-    pygame.display.flip()
+    
 
 def tile_loop(Playerslist2):
     global currentTile
@@ -226,34 +266,20 @@ def tile_loop(Playerslist2):
                     soldierPos[1] += 1 * Tilesize
             #als spatie is ingedrukt: print het klimaat of water
             if pygame.key.get_pressed()[K_SPACE] == 1:
-<<<<<<< HEAD
-<<<<<<< HEAD
                 currentTile = tilelist[mouse_y][mouse_x]
                 print("Water = 0/Goldmine = 1/Forest = 2/Ice = 3/Swamp = 4/Desert = 5: ", currentTile)
-=======
-                    currentTile = tilelist[mouse_x][mouse_y]
-                    print("Water = 0/Goldmine = 1/Forest = 2/Ice = 3/Swamp = 4/Desert = 5: ", currentTile)
-                    Draw()
->>>>>>> origin/master
-=======
-                    
-                    currentTile = tilelist[mouse_x][mouse_y]
-                    print("Water = 0/Goldmine = 1/Forest = 2/Ice = 3/Swamp = 4/Desert = 5: ", currentTile)
+
 
                     #R key for map reloading
        #     if pygame.key.get_pressed()[K_r] == 1:
              #   Draw()
                     
->>>>>>> origin/master
-      
-        
         if pygame.mouse.get_pressed()[0] and pygame.mouse.get_pos()[0] < (Mapwidth * Tilesize):
             mouse_x = math.floor(pygame.mouse.get_pos()[0] / Tilesize) * Tilesize
             mouse_y = math.floor(pygame.mouse.get_pos()[1] / Tilesize) * Tilesize
             soldierPos = [mouse_x, mouse_y]
             mouse_x = math.floor(pygame.mouse.get_pos()[0] / Tilesize)
             mouse_y = math.floor(pygame.mouse.get_pos()[1] / Tilesize)
-<<<<<<< HEAD
             mouse_Pos = [mouse_x, mouse_y]
             #print(mouse_Pos[0], mouse_Pos[1])
             
@@ -271,11 +297,9 @@ def tile_loop(Playerslist2):
                     mouse_y_new = math.floor(pygame.mouse.get_pos()[1] / Tilesize)
                     AddUnit.Value.position = [mouse_x_new, mouse_y_new]
             AddUnit = AddUnit.Tail
-                        
-=======
+            
            # print(mouse_x)
-            print(soldierPos)
->>>>>>> origin/master
+            #print(soldierPos)
         #print map
         for row in range(Mapheight):
             for column in range(Mapwidth):
@@ -290,23 +314,13 @@ def tile_loop(Playerslist2):
         mouse = pygame.mouse.get_pos()  
         click = pygame.mouse.get_pressed()
 
-
-
         if 865 + 124 > mouse[0] > 865 and 31 + 19 > mouse[1] > 31:          #soldier
             pygame.draw.rect(screen, cyan, (865,31,124,19))    
             if click[0] == 1:
-<<<<<<< HEAD
                 AddUnit = Units.BuySoldier(currentPl_id, currentPL_biome, currentPL_currency)
                 pygame.time.delay(300)
-                #screen.blit(soldier_texture, (AddUnit.Value.position[0] * Tilesize, AddUnit.Value.position[0] * Tilesize))
-=======
-                BuyingUnit = 1
-              #  Draw(BuyingUnit, currentPl_id, currentPL_biome, currentPL_currency)
-              #  AddUnit = Units.BuySoldier(currentPl_id, currentPL_biome, currentPL_currency)
-                pygame.time.delay(100)
-               # TankPos = AddUnit.Value.position
-               # screen.blit(soldier_texture, (TankPos[0] * Mapwidth * 2, TankPos[1]* Mapheight * 2))
->>>>>>> origin/master
+                #Draw(BuyingUnit, currentPl_id, currentPL_biome, currentPL_currency)
+                TankPos = AddUnit.Value.position
         else:
             pygame.draw.rect(screen, white, (865,31,124,19))
         textSurf, textRect = text_objects('Soldier = f150', font1)
@@ -317,14 +331,9 @@ def tile_loop(Playerslist2):
             pygame.draw.rect(screen, cyan, (865,115,124,19))    
             if click[0] == 1:
                 AddUnit = Units.BuyRobot(currentPl_id, currentPL_biome, currentPL_currency)
-<<<<<<< HEAD
                 pygame.time.delay(300)
                 #screen.blit(robot_texture, (AddUnit.Value.position[0] * Tilesize, AddUnit.Value.position[1] * Tilesize))
-=======
-                pygame.time.delay(100)
                 RobotPos = AddUnit.Value.position
-                screen.blit(robot_texture, (TankPos[0] * Mapwidth * 2, TankPos[1]* Mapheight * 2))
->>>>>>> origin/master
         else:
             pygame.draw.rect(screen, white, (865,115,124,19))
         textSurf, textRect = text_objects('Robot = f300', font1)
@@ -334,16 +343,10 @@ def tile_loop(Playerslist2):
         if 865 + 124 > mouse[0] > 865 and 199 + 19 > mouse[1] > 199:        #tank
             pygame.draw.rect(screen, cyan, (865,199,124,19))    
             if click[0] == 1:
-<<<<<<< HEAD
                 AddUnit = Units.BuyTank(currentPl_id, currentPL_biome, currentPL_currency)
                 pygame.time.delay(300)
                 #screen.blit(tank_texture, (AddUnit.Value.position[0] * Tilesize, AddUnit.Value.position[1] * Tilesize))
-=======
-                AddUnit = Units.BuyTank(currentPl_id, currentPL_biome, currentPL_currency)       
-                pygame.time.delay(100)
                 TankPos = AddUnit.Value.position
-                screen.blit(tank_texture, (TankPos[0] * Mapwidth * 2, TankPos[1]* Mapheight * 2))
->>>>>>> origin/master
         else:
             pygame.draw.rect(screen, white, (865,199,124,19))
         textSurf, textRect = text_objects('Tank = f750', font1)
@@ -354,11 +357,8 @@ def tile_loop(Playerslist2):
             pygame.draw.rect(screen, cyan, (865,283,124,19))    
             if click[0] == 1:
                 AddUnit = Units.BuyBoat(currentPl_id, currentPL_biome, currentPL_currency)
-<<<<<<< HEAD
                 pygame.time.delay(300)
                 #screen.blit(boat_texture, (AddUnit.Value.position[0] * Tilesize, AddUnit.Value.position[1] * Tilesize))
-=======
-                pygame.time.delay(100)
                 if currentPL_biome == "Swamp" and currenPL_currency <= 800:
                     currentPL_currency -= 800
                 elif currentPL_currency <= 1000:
@@ -367,8 +367,6 @@ def tile_loop(Playerslist2):
                     print("doei")
                 print("currency :", currentPL_currency)
                 BoatPos = AddUnit.Value.position
-                screen.blit(boat_texture, (TankPos[0] * Mapwidth * 2, TankPos[1]* Mapheight * 2))
->>>>>>> origin/master
         else:
             pygame.draw.rect(screen, white, (865,283,124,19))
         textSurf, textRect = text_objects('Boat = f1000', font1)
@@ -379,14 +377,9 @@ def tile_loop(Playerslist2):
             pygame.draw.rect(screen, cyan, (865,367,124,19))  
             if click[0] == 1:
                 AddUnit = Units.BuyBarrack(currentPl_id, currentPL_biome, currentPL_currency)
-<<<<<<< HEAD
                 pygame.time.delay(300)
-                #screen.blit(barrack_texture, (AddUnit.Value.position[0] * Tilesize, AddUnit.Value.position[1] * Tilesize))              
-=======
-                pygame.time.delay(100)
-                BarrackPos = AddUnit.Value.position
-                screen.blit(barrack_texture, (TankPos[0] * Mapwidth * 2, TankPos[1]* Mapheight * 2))              
->>>>>>> origin/master
+                #screen.blit(barrack_texture, (AddUnit.Value.position[0] * Tilesize, AddUnit.Value.position[1] * Tilesize)) 
+                BarrackPos = AddUnit.Value.position    
         else:
             pygame.draw.rect(screen, white, (865,367,124,19))
         textSurf, textRect = text_objects('Barrack = f500', font1)
@@ -446,8 +439,6 @@ def tile_loop(Playerslist2):
                 screen.blit(robot_texture, (RobotPos[0] * Mapwidth * 2, RobotPos[1] * Mapheight * 2))
                 '''
 
-
-<<<<<<< HEAD
         """
         #Clickable Buttons. Code voor het click Event               Door Eljakim
         if 865 + 124 > mouse[0] > 865 and 700 + 19 > mouse[1] > 700 and pygame.mouse.get_pressed()[0]: #Turn Code
@@ -465,10 +456,8 @@ def tile_loop(Playerslist2):
         elif 865 + 124 > mouse[0] > 865 and 367 + 19 > mouse[1] > 367 and pygame.mouse.get_pressed()[0]:        
             print("Barrack")  #Barrack
                 """
-        #print BuyScreen background
-=======
+
         #print BuyScreen
->>>>>>> origin/master
         placePositionY = 10
         placePositionX = Tilesize * 2 + 5
         for i in range(0, 5):
@@ -486,10 +475,7 @@ def tile_loop(Playerslist2):
         #print soldier-coordinaten in console
         #print("x = ", soldierPos[0], "y = ", soldierPos[1])
 
-<<<<<<< HEAD
-        draw(AddUnit, screen, soldierPos)
-=======
->>>>>>> origin/master
+        #draw(AddUnit, screen, soldierPos)
         pygame.display.flip()
         clock.tick(60)
 
