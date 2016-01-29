@@ -3,6 +3,7 @@ from Players import *
 from Node import *
 from pygame.locals import *
 from Units import *
+from GameAI import *
 #from Change_Player import *
 
 #colors
@@ -146,7 +147,7 @@ def tile_loop(Playerslist2):
     global currentPL_currency
     global AddUnit
     global mouse_Pos
-
+    
     pygame.init()
     Texturesize = 40
     Tilesize = Texturesize + 2
@@ -189,6 +190,8 @@ def tile_loop(Playerslist2):
     Swamp_texture = pygame.transform.scale(Swamp_texture, (Texturesize, Texturesize))
     Desert_texture = pygame.image.load('content/desert_texture.png')
     Desert_texture = pygame.transform.scale(Desert_texture, (Texturesize, Texturesize))
+    MaxMovement_texture = pygame.image.load('content/soldier_texture.tif')
+    MaxMovement_texture = pygame.transform.scale(MaxMovement_texture, (Texturesize, Texturesize))
 
     #elements
     Water = 0
@@ -269,6 +272,21 @@ def tile_loop(Playerslist2):
             if event.type == pygame.QUIT:   #Option to quit
                 done = True
 
+            #Battle Code
+            if AddUnit.IsEmpty is False:
+                APlayersPosition = AddUnit.Value
+                print("Searching for a battle...")
+                if APlayersPosition == AddUnit.Value.position:
+                    APlayersPosition2 = AddUnit.Value
+                    APlayersPosition2.Value.DefenceValue - APlayersPosition.Value.AttackValue
+                    APlayersPosition.Value.DefenceValue - APlayersPosition2.Value.AttackValue
+                    BattleCounter = 0
+                    if APlayersPosition.DefenceValue >= 1:
+                        AddUnit.Value -= APlayersPosition2
+                    else: 
+                        AddUnit.Value -= APlayersPosition
+                elif APlayersPosition is not AddUnit.Value.position:
+                        APlayersPosition = AddUnit.Tail
             # if a key is pressed move the soldier
             if event.type == KEYDOWN: #and soldierPos[0] < Mapwidth * Tilesize - Tilesize:
                 if (event.key == K_RIGHT):
@@ -297,6 +315,7 @@ def tile_loop(Playerslist2):
             mouse_y = math.floor(pygame.mouse.get_pos()[1] / Tilesize)
             mouse_Pos = [mouse_x, mouse_y]
             #print(mouse_Pos[0], mouse_Pos[1])
+            SeeMaxMovement = Empty
             
         while AddUnit.IsEmpty == False:
             #if pygame.mouse.get_pressed()[0]: #and pygame.mouse.get_pos()[0] < (Mapwidth * Tilesize):
@@ -311,6 +330,13 @@ def tile_loop(Playerslist2):
                     mouse_x_new = math.floor(pygame.mouse.get_pos()[0] / Tilesize)
                     mouse_y_new = math.floor(pygame.mouse.get_pos()[1] / Tilesize)
                     AddUnit.Value.position = [mouse_x_new, mouse_y_new]
+            #if mouse_Pos == AddUnit.Value.position:
+            #    mouse_x_new = math.floor(pygame.mouse.get_pos()[0] / Tilesize)
+            #    mouse_y_new = math.floor(pygame.mouse.get_pos()[1] / Tilesize)
+            #    SeeMaxMovement = mouse_x_new
+            #    SeeMaxMovement = mouse_y_new
+            #    screen.blit(MaxMovement_texture, (SeeMaxMovement[0] * Mapwidth * 2, SeeMaxMovement[1] * Mapwidth * 2))
+            #    print("Wie dit leest is gek")
             AddUnit = AddUnit.Tail
            # print(mouse_x)
             #print(soldierPos)
@@ -457,6 +483,7 @@ def tile_loop(Playerslist2):
                 #global currentPl_id
                 print("Player id = " + str(currentPl_id) + " Player name = " + currentPL_name)
                 pygame.time.delay(1000)
+                GameAI(currentPl_id, currentPL_currency, currentPL_biome)
         else:
             pygame.draw.rect(screen, white, (865,700,124,19))
         textSurf, textRect = text_objects('End Turn!', font1)
