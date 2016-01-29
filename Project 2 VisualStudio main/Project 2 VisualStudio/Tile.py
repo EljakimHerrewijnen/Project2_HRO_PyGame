@@ -77,12 +77,16 @@ def check_For_Other_Units_On_Tile(currentUnitPos, AddUnit):
             """
 
 def draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background):     #simpele draw functie voor units
+    Texturesize = 40
+    Tilesize = Texturesize + 2
+    Mapwidth = 18
+    Mapheight = 18     
     buy_background_2 = pygame.image.load('content/wood_2.jpg')
     buy_background_2 = pygame.transform.scale(buy_background_2, (260, int(260 / 3)))
     screen.blit(buy_background_2, (Mapwidth * Tilesize - 4, 260 + math.floor((260 / 3) * 2)))
-
-    #print map
-    screen.blit(bgmap, (0,0))
+    bgmap = pygame.image.load("content/map895.jpg")
+    bgmap = pygame.transform.scale(bgmap, (Mapwidth * Tilesize, Mapheight * Tilesize))
+    #screen.blit(bgmap, (0,0))
     
     #print buyscreen items
     placePositionY = 10
@@ -353,7 +357,6 @@ def tile_loop(Playerslist2):
                 AddUnit.Value.position = mouse_Pos_New
                 print("klaar met wachten")
                 #AddUnit.Value.position[0] += 1
-<<<<<<< HEAD
                 if pygame.mouse.get_pressed()[0] and pygame.mouse.get_pos()[0] < (Mapwidth * Tilesize):
                     mouse_x_new = math.floor(pygame.mouse.get_pos()[0] / Tilesize)
                     mouse_y_new = math.floor(pygame.mouse.get_pos()[1] / Tilesize)
@@ -365,12 +368,10 @@ def tile_loop(Playerslist2):
             #    SeeMaxMovement = mouse_y_new
             #    screen.blit(MaxMovement_texture, (SeeMaxMovement[0] * Mapwidth * 2, SeeMaxMovement[1] * Mapwidth * 2))
             #    print("Wie dit leest is gek")
-=======
                 #if pygame.mouse.get_pressed()[2] and pygame.mouse.get_pos()[0] < (Mapwidth * Tilesize):
                 #    mouse_x_new = math.floor(pygame.mouse.get_pos()[0] / Tilesize)
                 #    mouse_y_new = math.floor(pygame.mouse.get_pos()[1] / Tilesize)
                 #    AddUnit.Value.position = [mouse_x_new, mouse_y_new]
->>>>>>> origin/master
             AddUnit = AddUnit.Tail
             """
         for row in range(Mapheight):
@@ -390,6 +391,7 @@ def tile_loop(Playerslist2):
         if 865 + 124 > mouse[0] > 865 and 31 + 19 > mouse[1] > 31:          #soldier
             pygame.draw.rect(screen, cyan, (865,31,124,19))    
             if click[0] == 1:
+                screen.blit(bgmap, (0,0))
                 pygame.time.delay(300)
                 if currentPL_biome == "Ice" and currentPL_currency >= 120:
                     currentPL_currency -= 120
@@ -502,6 +504,7 @@ def tile_loop(Playerslist2):
         if 865 + 124 > mouse[0] > 865 and 700 + 19 > mouse[1] > 700:        #end turn, klik hier op om de volgende speler de beurt te geven
             pygame.draw.rect(screen, cyan, (865,700,124,19)) 
             if click[0] == 1:
+                screen.blit(bgmap, (0,0))
                 currentPlayerList = changePlayer(Playerslist2)
                 currentPl_id = currentPlayerList.Value.Pl_id
                 currentPL_name = currentPlayerList.Value.Pl_name
@@ -517,11 +520,13 @@ def tile_loop(Playerslist2):
                 print("Player id = " + str(currentPl_id) + " Player name = " + currentPL_name)
                 pygame.time.delay(1000)
                 GameAI(currentPl_id, currentPL_currency, currentPL_biome)
+                draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background)
         else:
             pygame.draw.rect(screen, white, (865,700,124,19))
         textSurf, textRect = text_objects('End Turn!', font1)
         textRect.center = ( (865+(124/2)), (700+(9)) )
         screen.blit(textSurf, textRect) 
+        draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background)
 
         '''
         def Draw():
@@ -590,7 +595,7 @@ def tile_loop(Playerslist2):
         #screen.blit(Soldier,(soldierPos[0], soldierPos[1]))
         #print soldier-coordinaten in console
         #print("x = ", soldierPos[0], "y = ", soldierPos[1])
-
+        
         draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background)
         pygame.display.flip()
         clock.tick(60)
