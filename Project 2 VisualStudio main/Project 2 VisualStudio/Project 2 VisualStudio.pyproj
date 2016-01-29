@@ -28,6 +28,9 @@
     <Compile Include="Change_Player.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="GameAI.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Node.py">
       <SubType>Code</SubType>
     </Compile>

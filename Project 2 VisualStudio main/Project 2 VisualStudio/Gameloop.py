@@ -5,6 +5,7 @@ from Tile import *
 from Players import *
 from WinningScreen import *
 from Units import *
+from GameAI import *
 
 AmountPlayersDefault = 0
 
