@@ -34,7 +34,6 @@ def text_objects(text, font):
     textSurface = font.render(text, True, black)
     return textSurface, textSurface.get_rect()
 
-
 def game_intro():
 
     intro = True
@@ -62,8 +61,7 @@ def game_intro():
             pygame.draw.rect(gameDisplay, bright_green, (150,500,100,50))
             if click[0] == 1:
                 game_loop()
-            
-                 
+                print("test")                 
         else:
             pygame.draw.rect(gameDisplay, green, (150,500,100,50))
 
@@ -72,13 +70,13 @@ def game_intro():
         textRect.center = ( (150+(100/2)), (500+(50/2)) )
         gameDisplay.blit(textSurf, textRect)
 
+        if 350+100 > mouse[0
 
         
-        
-        if 350+100 > mouse[0] > 350 and 500+50 > mouse[1] > 500:
+        ] > 350 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (350,500,100,50))
             if click[0] == 1:
-                Rules()
+                Rules()                
         else: 
             pygame.draw.rect(gameDisplay, blue, (350,500,100,50))
         
@@ -86,9 +84,7 @@ def game_intro():
         textSurf, textRect = text_objects('Rules', smallText)
         textRect.center = ( (350+(100/2)), (500+(50/2)) )
         gameDisplay.blit(textSurf, textRect)
-        
-        
-        
+
         
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:    
             pygame.draw.rect(gameDisplay, bright_red, (550,500,100,50))
@@ -108,3 +104,5 @@ def game_intro():
         clock.tick(15)
 
 game_intro()
+
+
