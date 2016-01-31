@@ -70,10 +70,7 @@ def game_intro():
         textRect.center = ( (150+(100/2)), (500+(50/2)) )
         gameDisplay.blit(textSurf, textRect)
 
-        if 350+100 > mouse[0
-
-        
-        ] > 350 and 500+50 > mouse[1] > 500:
+        if 350+100 > mouse[0] > 350 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (350,500,100,50))
             if click[0] == 1:
                 Rules()                
