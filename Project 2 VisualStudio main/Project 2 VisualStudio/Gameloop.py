@@ -116,7 +116,7 @@ def ChoosePlayerScreen():               #ChoosePlayerScreen door Joost en Eljaki
         Playerslist = Empty
         for normalPlayers in range(AmountPlayersDefault):       #Deze eerste for loop zorgt er voor dat elke echte speler een naam kan invullen
             biomegenerator = Player1.GenerateRandomBiome()  
-            Playername = input("What's the name of player " + str(id) + " ?: ")
+            Playername = "Player" + str(normalPlayers) 
             Playerslist = Node(Player1(id, Playername, biomegenerator, biomegenerator, 500, 0, 0, 0, 0, 0), Playerslist)
             #Deze loop zorgt ervoor dat spelers niet dezelfde biome kunnen hebben:
             while Playerslist.Value.Biome == pl_1_Biome or Playerslist.Value.Biome == pl_2_Biome or Playerslist.Value.Biome == pl_3_Biome or Playerslist.Value.Biome == pl_4_Biome:
