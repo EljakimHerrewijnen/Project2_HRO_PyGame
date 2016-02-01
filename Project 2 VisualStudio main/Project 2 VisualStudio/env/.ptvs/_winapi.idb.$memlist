@@ -59,6 +59,7 @@ STILL_ACTIVE
 SW_HIDE
 SetNamedPipeHandleState
 TerminateProcess
+WAIT_ABANDONED_0
 WAIT_OBJECT_0
 WAIT_TIMEOUT
 WaitForMultipleObjects

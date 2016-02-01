@@ -548,11 +548,9 @@ def tile_loop(Playerslist2):
         screen.blit(textSurf, textRect) 
 
 
-<<<<<<< HEAD
-=======
+
         #draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background)
 
->>>>>>> origin/master
 
         '''
         def Draw():
