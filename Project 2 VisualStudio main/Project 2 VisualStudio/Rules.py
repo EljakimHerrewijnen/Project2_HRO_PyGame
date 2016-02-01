@@ -104,6 +104,22 @@ def Rules():
         textRect.center = ( (550+(100/2)), (400+(50/2)) )
         gameDisplay.blit(textSurf, textRect)
 
+#--------------------------------------------------------------------------
+
+
+        if 350+100 > mouse[0] > 350 and 400+50 > mouse[1] > 400:
+            pygame.draw.rect(gameDisplay, bright_green, (350,400,100,50))
+            if click[0] == 1:
+                Gameunits()
+            
+        else:
+            pygame.draw.rect(gameDisplay, green, (350,400,100,50))
+
+        smallText = pygame.font.Font('freesansbold.ttf', 16)
+        textSurf, textRect = text_objects('Game Units', smallText)
+        textRect.center = ( (350+(100/2)), (400+(50/2)) )
+        gameDisplay.blit(textSurf, textRect)
+
         pygame.display.update()
         clock.tick(15)   
 
@@ -952,6 +968,409 @@ def game_intro():
             
         pygame.display.update()
         clock.tick(15)
+
+
+def Gameunits():
+
+    pygame.init()
+    gameunits = True
+
+    while gameunits:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                gameunits = False
+        
+        gameDisplay.fill(white)
+        #bg = pygame.image.load("content/LoadingScreen.jpg")
+        #bg= pygame.transform.scale(bg, (display_width, display_height))
+        #gameDisplay.blit(bg, (0, 0))
+
+        mouse = pygame.mouse.get_pos()
+        click = pygame.mouse.get_pressed()
+
+#--------------------------------------------------------------------------
+
+        
+        if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
+            pygame.draw.rect(gameDisplay, bright_green, (150,500,100,50))
+            #if click[0] == 1:
+                #Rules()
+            
+        else:
+            pygame.draw.rect(gameDisplay, green, (150,500,100,50))
+
+        smallText = pygame.font.Font('freesansbold.ttf', 16)
+        textSurf, textRect = text_objects('Back', smallText)
+        textRect.center = ( (150+(100/2)), (500+(50/2)) )
+        gameDisplay.blit(textSurf, textRect)
+
+#--------------------------------------------------------------------------
+
+        if 600+100 > mouse[0] > 600 and 500+50 > mouse[1] > 500:
+            pygame.draw.rect(gameDisplay, bright_green, (600,500,100,50))
+            #if click[0] == 1:
+                #game_intro()
+            
+        else:
+            pygame.draw.rect(gameDisplay, green, (600,500,100,50))
+
+        smallText = pygame.font.Font('freesansbold.ttf', 16)
+        textSurf, textRect = text_objects('Home', smallText)
+        textRect.center = ( (600+(100/2)), (500+(50/2)) )
+        gameDisplay.blit(textSurf, textRect)
+
+#--------------------------------------------------------------------------
+
+        if 600+100 > mouse[0] > 600 and 440+50 > mouse[1] > 440:
+            pygame.draw.rect(gameDisplay, bright_green, (600,440,100,50))
+            if click[0] == 1:
+                Tank()
+            
+        else:
+            pygame.draw.rect(gameDisplay, green, (600,440,100,50))
+
+        smallText = pygame.font.Font('freesansbold.ttf', 16)
+        textSurf, textRect = text_objects('Tank', smallText)
+        textRect.center = ( (600+(100/2)), (440+(50/2)) )
+        gameDisplay.blit(textSurf, textRect)
+          
+
+#--------------------------------------------------------------------------
+
+         
+        if 262.5+100 > mouse[0] > 262.5 and 440+50 > mouse[1] > 440:
+            pygame.draw.rect(gameDisplay, bright_green, (262.5,440,100,50))
+            if click[0] == 1:
+                Soldier()
+            
+        else:
+            pygame.draw.rect(gameDisplay, green, (262.5,440,100,50))
+
+        smallText = pygame.font.Font('freesansbold.ttf', 16)
+        textSurf, textRect = text_objects('Soldier', smallText)
+        textRect.center = ( (262.5+(100/2)), (440+(50/2)) )
+        gameDisplay.blit(textSurf, textRect)
+
+#--------------------------------------------------------------------------
+
+          
+        if 150+100 > mouse[0] > 150 and 440+50 > mouse[1] > 440:
+            pygame.draw.rect(gameDisplay, bright_green, (150,440,100,50))
+            if click[0] == 1:
+                Base()
+            
+        else:
+            pygame.draw.rect(gameDisplay, green, (150,440,100,50))
+
+        smallText = pygame.font.Font('freesansbold.ttf', 16)
+        textSurf, textRect = text_objects('Base', smallText)
+        textRect.center = ( (150+(100/2)), (440+(50/2)) )
+        gameDisplay.blit(textSurf, textRect)
+        
+#--------------------------------------------------------------------------
+
+          
+        if 487.5+100 > mouse[0] > 487.5 and 440+50 > mouse[1] > 440:
+            pygame.draw.rect(gameDisplay, bright_green, (487.5,440,100,50))
+            if click[0] == 1:
+                Barrack()
+            
+        else:
+            pygame.draw.rect(gameDisplay, green, (487.5,440,100,50))
+
+        smallText = pygame.font.Font('freesansbold.ttf', 16)
+        textSurf, textRect = text_objects('Barrack', smallText)
+        textRect.center = ( (487.5+(100/2)), (440+(50/2)) )
+        gameDisplay.blit(textSurf, textRect)
+        
+
+#--------------------------------------------------------------------------
+
+
+        if 375+100 > mouse[0] > 375 and 440+50 > mouse[1] > 440:
+            pygame.draw.rect(gameDisplay, bright_green, (375,440,100,50))
+            if click[0] == 1:
+                Boat()
+            
+        else:
+            pygame.draw.rect(gameDisplay, green, (375,440,100,50))
+
+        smallText = pygame.font.Font('freesansbold.ttf', 16)
+        textSurf, textRect = text_objects('Boat', smallText)
+        textRect.center = ( (375+(100/2)), (440+(50/2)) )
+        gameDisplay.blit(textSurf, textRect)
+
+        pygame.display.update()
+        clock.tick(15) 
+
+
+def Soldier():
+
+    pygame.init()
+    soldier = True
+
+    while soldier:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                soldier = False
+        
+        gameDisplay.fill(white)
+        #bg = pygame.image.load("content/LoadingScreen.jpg")
+        #bg= pygame.transform.scale(bg, (display_width, display_height))
+        #gameDisplay.blit(bg, (0, 0))
+
+        mouse = pygame.mouse.get_pos()
+        click = pygame.mouse.get_pressed()
+
+#--------------------------------------------------------------------------
+
+        
+        if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
+            pygame.draw.rect(gameDisplay, bright_green, (150,500,100,50))
+            if click[0] == 1:
+                Gameunits()
+            
+        else:
+            pygame.draw.rect(gameDisplay, green, (150,500,100,50))
+
+        smallText = pygame.font.Font('freesansbold.ttf', 16)
+        textSurf, textRect = text_objects('Back', smallText)
+        textRect.center = ( (150+(100/2)), (500+(50/2)) )
+        gameDisplay.blit(textSurf, textRect)
+
+#--------------------------------------------------------------------------
+
+        if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
+            pygame.draw.rect(gameDisplay, bright_green, (550,500,100,50))
+            #if click[0] == 1:
+                #game_intro()
+            
+        else:
+            pygame.draw.rect(gameDisplay, green, (550,500,100,50))
+
+        smallText = pygame.font.Font('freesansbold.ttf', 16)
+        textSurf, textRect = text_objects('Home', smallText)
+        textRect.center = ( (550+(100/2)), (500+(50/2)) )
+        gameDisplay.blit(textSurf, textRect)
+
+        pygame.display.update()
+        clock.tick(15) 
+
+def Tank():
+
+    pygame.init()
+    tank = True
+
+    while tank:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                tank = False
+        
+        gameDisplay.fill(white)
+        #bg = pygame.image.load("content/LoadingScreen.jpg")
+        #bg= pygame.transform.scale(bg, (display_width, display_height))
+        #gameDisplay.blit(bg, (0, 0))
+
+        mouse = pygame.mouse.get_pos()
+        click = pygame.mouse.get_pressed()
+
+#--------------------------------------------------------------------------
+
+        
+        if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
+            pygame.draw.rect(gameDisplay, bright_green, (150,500,100,50))
+            if click[0] == 1:
+                Gameunits()
+            
+        else:
+            pygame.draw.rect(gameDisplay, green, (150,500,100,50))
+
+        smallText = pygame.font.Font('freesansbold.ttf', 16)
+        textSurf, textRect = text_objects('Back', smallText)
+        textRect.center = ( (150+(100/2)), (500+(50/2)) )
+        gameDisplay.blit(textSurf, textRect)
+
+#--------------------------------------------------------------------------
+
+        if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
+            pygame.draw.rect(gameDisplay, bright_green, (550,500,100,50))
+            #if click[0] == 1:
+                #game_intro()
+            
+        else:
+            pygame.draw.rect(gameDisplay, green, (550,500,100,50))
+
+        smallText = pygame.font.Font('freesansbold.ttf', 16)
+        textSurf, textRect = text_objects('Home', smallText)
+        textRect.center = ( (550+(100/2)), (500+(50/2)) )
+        gameDisplay.blit(textSurf, textRect)
+
+        pygame.display.update()
+        clock.tick(15) 
+
+
+def Base():
+
+    pygame.init()
+    base = True
+
+    while base:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                base = False
+        
+        gameDisplay.fill(white)
+        #bg = pygame.image.load("content/LoadingScreen.jpg")
+        #bg= pygame.transform.scale(bg, (display_width, display_height))
+        #gameDisplay.blit(bg, (0, 0))
+
+        mouse = pygame.mouse.get_pos()
+        click = pygame.mouse.get_pressed()
+
+#--------------------------------------------------------------------------
+
+        
+        if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
+            pygame.draw.rect(gameDisplay, bright_green, (150,500,100,50))
+            if click[0] == 1:
+                Gameunits()
+            
+        else:
+            pygame.draw.rect(gameDisplay, green, (150,500,100,50))
+
+        smallText = pygame.font.Font('freesansbold.ttf', 16)
+        textSurf, textRect = text_objects('Back', smallText)
+        textRect.center = ( (150+(100/2)), (500+(50/2)) )
+        gameDisplay.blit(textSurf, textRect)
+
+#--------------------------------------------------------------------------
+
+        if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
+            pygame.draw.rect(gameDisplay, bright_green, (550,500,100,50))
+            #if click[0] == 1:
+                #game_intro()
+            
+        else:
+            pygame.draw.rect(gameDisplay, green, (550,500,100,50))
+
+        smallText = pygame.font.Font('freesansbold.ttf', 16)
+        textSurf, textRect = text_objects('Home', smallText)
+        textRect.center = ( (550+(100/2)), (500+(50/2)) )
+        gameDisplay.blit(textSurf, textRect)
+
+        pygame.display.update()
+        clock.tick(15)
+
+
+def Barrack():
+
+    pygame.init()
+    barrack = True
+
+    while barrack:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                barrack = False
+        
+        gameDisplay.fill(white)
+        #bg = pygame.image.load("content/LoadingScreen.jpg")
+        #bg= pygame.transform.scale(bg, (display_width, display_height))
+        #gameDisplay.blit(bg, (0, 0))
+
+        mouse = pygame.mouse.get_pos()
+        click = pygame.mouse.get_pressed()
+
+#--------------------------------------------------------------------------
+
+        
+        if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
+            pygame.draw.rect(gameDisplay, bright_green, (150,500,100,50))
+            if click[0] == 1:
+                Gameunits()
+            
+        else:
+            pygame.draw.rect(gameDisplay, green, (150,500,100,50))
+
+        smallText = pygame.font.Font('freesansbold.ttf', 16)
+        textSurf, textRect = text_objects('Back', smallText)
+        textRect.center = ( (150+(100/2)), (500+(50/2)) )
+        gameDisplay.blit(textSurf, textRect)
+
+#--------------------------------------------------------------------------
+
+        if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
+            pygame.draw.rect(gameDisplay, bright_green, (550,500,100,50))
+            #if click[0] == 1:
+                #game_intro()
+            
+        else:
+            pygame.draw.rect(gameDisplay, green, (550,500,100,50))
+
+        smallText = pygame.font.Font('freesansbold.ttf', 16)
+        textSurf, textRect = text_objects('Home', smallText)
+        textRect.center = ( (550+(100/2)), (500+(50/2)) )
+        gameDisplay.blit(textSurf, textRect)
+
+        pygame.display.update()
+        clock.tick(15)
+
+
+def Boat():
+
+    pygame.init()
+    boat = True
+
+    while boat:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                boat = False
+        
+        gameDisplay.fill(white)
+        #bg = pygame.image.load("content/LoadingScreen.jpg")
+        #bg= pygame.transform.scale(bg, (display_width, display_height))
+        #gameDisplay.blit(bg, (0, 0))
+
+        mouse = pygame.mouse.get_pos()
+        click = pygame.mouse.get_pressed()
+
+#--------------------------------------------------------------------------
+
+        
+        if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
+            pygame.draw.rect(gameDisplay, bright_green, (150,500,100,50))
+            if click[0] == 1:
+                Gameunits()
+            
+        else:
+            pygame.draw.rect(gameDisplay, green, (150,500,100,50))
+
+        smallText = pygame.font.Font('freesansbold.ttf', 16)
+        textSurf, textRect = text_objects('Back', smallText)
+        textRect.center = ( (150+(100/2)), (500+(50/2)) )
+        gameDisplay.blit(textSurf, textRect)
+
+#--------------------------------------------------------------------------
+
+        if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
+            pygame.draw.rect(gameDisplay, bright_green, (550,500,100,50))
+            #if click[0] == 1:
+                #game_intro()
+            
+        else:
+            pygame.draw.rect(gameDisplay, green, (550,500,100,50))
+
+        smallText = pygame.font.Font('freesansbold.ttf', 16)
+        textSurf, textRect = text_objects('Home', smallText)
+        textRect.center = ( (550+(100/2)), (500+(50/2)) )
+        gameDisplay.blit(textSurf, textRect)
+
+        pygame.display.update()
+        clock.tick(15)
+
+
+
+
+
 
 
 
