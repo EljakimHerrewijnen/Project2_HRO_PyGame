@@ -3197,3 +3197,440 @@ ImportError: DLL load failed: %1 is geen geldige Win32-toepassing.
 2016-02-01T12:59:01: End of group "C:\Users\carlo\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\_markerlib"
 2016-02-01T12:59:01: Deleting 0 files
 >>>>>>> origin/master
+
+2016-02-01T13:13:30: Start analysis
+2016-02-01T13:13:30: [WARNING] Library was set explicitly - skipping path detection
+2016-02-01T13:13:30: IncludeModulesFromModulePath = win32com
+2016-02-01T13:13:30: Deleting 0 files
+
+2016-02-01T13:44:58: Start analysis
+2016-02-01T13:44:58: [WARNING] Library was set explicitly - skipping path detection
+2016-02-01T13:44:58: IncludeModulesFromModulePath = win32com
+2016-02-01T13:44:58: Deleting 205 files
+2016-02-01T13:44:58: astropy.CallDepth = 0
+2016-02-01T13:44:58: matplotlib.CallDepth = 3
+2016-02-01T13:44:58: pandas.CallDepth = 0
+2016-02-01T13:44:58: sympy.CallDepth = 0
+2016-02-01T13:44:58: Start group "C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip" with 208 files
+2016-02-01T13:44:59: Parsing "pip.basecommand" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\basecommand.py")
+2016-02-01T13:44:59: Parsing "pip.baseparser" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\baseparser.py")
+2016-02-01T13:44:59: Parsing "pip.cmdoptions" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\cmdoptions.py")
+2016-02-01T13:44:59: Parsing "pip.download" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\download.py")
+2016-02-01T13:44:59: Parsing "pip.exceptions" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\exceptions.py")
+2016-02-01T13:44:59: Parsing "pip.index" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\index.py")
+2016-02-01T13:44:59: Parsing "pip.locations" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\locations.py")
+2016-02-01T13:44:59: Parsing "pip.log" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\log.py")
+2016-02-01T13:44:59: Parsing "pip.pep425tags" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\pep425tags.py")
+2016-02-01T13:44:59: Parsing "pip.req" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\req.py")
+2016-02-01T13:44:59: Parsing "pip.runner" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\runner.py")
+2016-02-01T13:44:59: Parsing "pip.status_codes" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\status_codes.py")
+2016-02-01T13:44:59: Parsing "pip.util" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\util.py")
+2016-02-01T13:44:59: Parsing "pip.wheel" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\wheel.py")
+2016-02-01T13:44:59: Parsing "pip" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\__init__.py")
+2016-02-01T13:44:59: Parsing "pip.__main__" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\__main__.py")
+2016-02-01T13:44:59: Parsing "pip.backwardcompat" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\backwardcompat\__init__.py")
+2016-02-01T13:44:59: Parsing "pip.commands.bundle" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\commands\bundle.py")
+2016-02-01T13:44:59: Parsing "pip.commands.completion" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\commands\completion.py")
+2016-02-01T13:44:59: Parsing "pip.commands.freeze" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\commands\freeze.py")
+2016-02-01T13:44:59: Parsing "pip.commands.help" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\commands\help.py")
+2016-02-01T13:44:59: Parsing "pip.commands.install" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\commands\install.py")
+2016-02-01T13:44:59: Parsing "pip.commands.list" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\commands\list.py")
+2016-02-01T13:44:59: Parsing "pip.commands.search" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\commands\search.py")
+2016-02-01T13:44:59: Parsing "pip.commands.show" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\commands\show.py")
+2016-02-01T13:44:59: Parsing "pip.commands.uninstall" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\commands\uninstall.py")
+2016-02-01T13:44:59: Parsing "pip.commands.unzip" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\commands\unzip.py")
+2016-02-01T13:44:59: Parsing "pip.commands.wheel" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\commands\wheel.py")
+2016-02-01T13:44:59: Parsing "pip.commands.zip" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\commands\zip.py")
+2016-02-01T13:44:59: Parsing "pip.commands" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\commands\__init__.py")
+2016-02-01T13:44:59: Parsing "pip.vcs.bazaar" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\vcs\bazaar.py")
+2016-02-01T13:44:59: Parsing "pip.vcs.git" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\vcs\git.py")
+2016-02-01T13:44:59: Parsing "pip.vcs.mercurial" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\vcs\mercurial.py")
+2016-02-01T13:44:59: Parsing "pip.vcs.subversion" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\vcs\subversion.py")
+2016-02-01T13:44:59: Parsing "pip.vcs" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\vcs\__init__.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.pkg_resources" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\pkg_resources.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.six" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\six.py")
+2016-02-01T13:44:59: Parsing "pip._vendor" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\__init__.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.colorama.ansi" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\colorama\ansi.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.colorama.ansitowin32" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\colorama\ansitowin32.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.colorama.initialise" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\colorama\initialise.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.colorama.win32" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\colorama\win32.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.colorama.winterm" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\colorama\winterm.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.colorama" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\colorama\__init__.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.distlib.compat" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\distlib\compat.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.distlib.database" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\distlib\database.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.distlib.index" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\distlib\index.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.distlib.locators" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\distlib\locators.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.distlib.manifest" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\distlib\manifest.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.distlib.markers" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\distlib\markers.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.distlib.metadata" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\distlib\metadata.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.distlib.resources" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\distlib\resources.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.distlib.scripts" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\distlib\scripts.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.distlib.util" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\distlib\util.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.distlib.version" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\distlib\version.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.distlib.wheel" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\distlib\wheel.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.distlib" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\distlib\__init__.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.distlib._backport.misc" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\distlib\_backport\misc.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.distlib._backport.shutil" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\distlib\_backport\shutil.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.distlib._backport.sysconfig" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\distlib\_backport\sysconfig.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.distlib._backport.tarfile" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\distlib\_backport\tarfile.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.distlib._backport" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\distlib\_backport\__init__.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.html5lib.constants" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\html5lib\constants.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.html5lib.html5parser" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\html5lib\html5parser.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.html5lib.ihatexml" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\html5lib\ihatexml.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.html5lib.inputstream" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\html5lib\inputstream.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.html5lib.sanitizer" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\html5lib\sanitizer.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.html5lib.tokenizer" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\html5lib\tokenizer.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.html5lib.utils" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\html5lib\utils.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.html5lib" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\html5lib\__init__.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.html5lib.filters.alphabeticalattributes" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\html5lib\filters\alphabeticalattributes.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.html5lib.filters.inject_meta_charset" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\html5lib\filters\inject_meta_charset.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.html5lib.filters.lint" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\html5lib\filters\lint.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.html5lib.filters.optionaltags" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\html5lib\filters\optionaltags.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.html5lib.filters.sanitizer" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\html5lib\filters\sanitizer.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.html5lib.filters.whitespace" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\html5lib\filters\whitespace.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.html5lib.filters._base" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\html5lib\filters\_base.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.html5lib.filters" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\html5lib\filters\__init__.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.html5lib.serializer.htmlserializer" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\html5lib\serializer\htmlserializer.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.html5lib.serializer" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\html5lib\serializer\__init__.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.html5lib.treebuilders.dom" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\html5lib\treebuilders\dom.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.html5lib.treebuilders.etree" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\html5lib\treebuilders\etree.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.html5lib.treebuilders.etree_lxml" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\html5lib\treebuilders\etree_lxml.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.html5lib.treebuilders._base" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\html5lib\treebuilders\_base.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.html5lib.treebuilders" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\html5lib\treebuilders\__init__.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.html5lib.treewalkers.dom" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\html5lib\treewalkers\dom.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.html5lib.treewalkers.etree" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\html5lib\treewalkers\etree.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.html5lib.treewalkers.genshistream" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\html5lib\treewalkers\genshistream.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.html5lib.treewalkers.lxmletree" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\html5lib\treewalkers\lxmletree.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.html5lib.treewalkers.pulldom" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\html5lib\treewalkers\pulldom.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.html5lib.treewalkers._base" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\html5lib\treewalkers\_base.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.html5lib.treewalkers" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\html5lib\treewalkers\__init__.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.html5lib.trie.datrie" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\html5lib\trie\datrie.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.html5lib.trie.py" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\html5lib\trie\py.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.html5lib.trie._base" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\html5lib\trie\_base.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.html5lib.trie" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\html5lib\trie\__init__.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.requests.adapters" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\adapters.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.requests.api" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\api.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.requests.auth" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\auth.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.requests.certs" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\certs.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.requests.compat" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\compat.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.requests.cookies" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\cookies.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.requests.exceptions" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\exceptions.py")
+2016-02-01T13:44:59: Parsing "pip._vendor.requests.hooks" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\hooks.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.models" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\models.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.sessions" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\sessions.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.status_codes" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\status_codes.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.structures" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\structures.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.utils" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\utils.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\__init__.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\__init__.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.charade.big5freq" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\charade\big5freq.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.charade.big5prober" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\charade\big5prober.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.charade.chardistribution" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\charade\chardistribution.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.charade.charsetgroupprober" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\charade\charsetgroupprober.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.charade.charsetprober" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\charade\charsetprober.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.charade.codingstatemachine" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\charade\codingstatemachine.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.charade.compat" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\charade\compat.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.charade.constants" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\charade\constants.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.charade.cp949prober" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\charade\cp949prober.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.charade.escprober" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\charade\escprober.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.charade.escsm" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\charade\escsm.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.charade.eucjpprober" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\charade\eucjpprober.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.charade.euckrfreq" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\charade\euckrfreq.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.charade.euckrprober" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\charade\euckrprober.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.charade.euctwfreq" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\charade\euctwfreq.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.charade.euctwprober" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\charade\euctwprober.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.charade.gb2312freq" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\charade\gb2312freq.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.charade.gb2312prober" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\charade\gb2312prober.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.charade.hebrewprober" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\charade\hebrewprober.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.charade.jisfreq" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\charade\jisfreq.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.charade.jpcntx" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\charade\jpcntx.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.charade.langbulgarianmodel" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\charade\langbulgarianmodel.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.charade.langcyrillicmodel" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\charade\langcyrillicmodel.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.charade.langgreekmodel" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\charade\langgreekmodel.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.charade.langhebrewmodel" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\charade\langhebrewmodel.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.charade.langhungarianmodel" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\charade\langhungarianmodel.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.charade.langthaimodel" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\charade\langthaimodel.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.charade.latin1prober" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\charade\latin1prober.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.charade.mbcharsetprober" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\charade\mbcharsetprober.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.charade.mbcsgroupprober" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\charade\mbcsgroupprober.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.charade.mbcssm" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\charade\mbcssm.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.charade.sbcharsetprober" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\charade\sbcharsetprober.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.charade.sbcsgroupprober" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\charade\sbcsgroupprober.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.charade.sjisprober" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\charade\sjisprober.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.charade.universaldetector" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\charade\universaldetector.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.charade.utf8prober" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\charade\utf8prober.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.charade" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\charade\__init__.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.charade.__main__" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\charade\__main__.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.chardet.big5freq" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\chardet\big5freq.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.chardet.big5prober" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\chardet\big5prober.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.chardet.chardetect" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\chardet\chardetect.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.chardet.chardistribution" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\chardet\chardistribution.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.chardet.charsetgroupprober" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\chardet\charsetgroupprober.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.chardet.charsetprober" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\chardet\charsetprober.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.chardet.codingstatemachine" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\chardet\codingstatemachine.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.chardet.compat" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\chardet\compat.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.chardet.constants" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\chardet\constants.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.chardet.cp949prober" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\chardet\cp949prober.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.chardet.escprober" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\chardet\escprober.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.chardet.escsm" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\chardet\escsm.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.chardet.eucjpprober" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\chardet\eucjpprober.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.chardet.euckrfreq" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\chardet\euckrfreq.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.chardet.euckrprober" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\chardet\euckrprober.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.chardet.euctwfreq" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\chardet\euctwfreq.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.chardet.euctwprober" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\chardet\euctwprober.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.chardet.gb2312freq" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\chardet\gb2312freq.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.chardet.gb2312prober" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\chardet\gb2312prober.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.chardet.hebrewprober" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\chardet\hebrewprober.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.chardet.jisfreq" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\chardet\jisfreq.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.chardet.jpcntx" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\chardet\jpcntx.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.chardet.langbulgarianmodel" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\chardet\langbulgarianmodel.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.chardet.langcyrillicmodel" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\chardet\langcyrillicmodel.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.chardet.langgreekmodel" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\chardet\langgreekmodel.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.chardet.langhebrewmodel" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\chardet\langhebrewmodel.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.chardet.langhungarianmodel" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\chardet\langhungarianmodel.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.chardet.langthaimodel" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\chardet\langthaimodel.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.chardet.latin1prober" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\chardet\latin1prober.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.chardet.mbcharsetprober" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\chardet\mbcharsetprober.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.chardet.mbcsgroupprober" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\chardet\mbcsgroupprober.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.chardet.mbcssm" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\chardet\mbcssm.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.chardet.sbcharsetprober" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\chardet\sbcharsetprober.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.chardet.sbcsgroupprober" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\chardet\sbcsgroupprober.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.chardet.sjisprober" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\chardet\sjisprober.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.chardet.universaldetector" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\chardet\universaldetector.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.chardet.utf8prober" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\chardet\utf8prober.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.chardet" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\chardet\__init__.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.urllib3.connection" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\urllib3\connection.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.urllib3.connectionpool" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\urllib3\connectionpool.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.urllib3.exceptions" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\urllib3\exceptions.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.urllib3.fields" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\urllib3\fields.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.urllib3.filepost" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\urllib3\filepost.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.urllib3.poolmanager" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\urllib3\poolmanager.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.urllib3.request" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\urllib3\request.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.urllib3.response" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\urllib3\response.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.urllib3.util" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\urllib3\util.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.urllib3._collections" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\urllib3\_collections.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.urllib3" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\urllib3\__init__.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.urllib3.contrib.ntlmpool" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\urllib3\contrib\ntlmpool.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.urllib3.contrib.pyopenssl" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\urllib3\contrib\pyopenssl.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.urllib3.contrib" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\urllib3\contrib\__init__.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.urllib3.packages.ordered_dict" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\urllib3\packages\ordered_dict.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.urllib3.packages.six" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\urllib3\packages\six.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.urllib3.packages" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\urllib3\packages\__init__.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.urllib3.packages.ssl_match_hostname._implementation" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\urllib3\packages\ssl_match_hostname\_implementation.py")
+2016-02-01T13:45:00: Parsing "pip._vendor.requests.packages.urllib3.packages.ssl_match_hostname" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\requests\packages\urllib3\packages\ssl_match_hostname\__init__.py")
+2016-02-01T13:45:00: Parsing "pip._vendor._markerlib.markers" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\_markerlib\markers.py")
+2016-02-01T13:45:00: Parsing "pip._vendor._markerlib" ("C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip\_vendor\_markerlib\__init__.py")
+2016-02-01T13:45:00: Parsing complete
+2016-02-01T13:45:00: Analyzing "pip.basecommand"
+2016-02-01T13:45:00: Analyzing "pip.baseparser"
+2016-02-01T13:45:00: Analyzing "pip.cmdoptions"
+2016-02-01T13:45:00: Analyzing "pip.download"
+2016-02-01T13:45:00: Analyzing "pip.exceptions"
+2016-02-01T13:45:00: Analyzing "pip.index"
+2016-02-01T13:45:00: Analyzing "pip.locations"
+2016-02-01T13:45:00: Analyzing "pip.log"
+2016-02-01T13:45:00: Analyzing "pip.pep425tags"
+2016-02-01T13:45:00: Analyzing "pip.req"
+2016-02-01T13:45:00: Analyzing "pip.runner"
+2016-02-01T13:45:00: Analyzing "pip.status_codes"
+2016-02-01T13:45:00: Analyzing "pip.util"
+2016-02-01T13:45:00: Analyzing "pip.wheel"
+2016-02-01T13:45:00: Analyzing "pip"
+2016-02-01T13:45:00: Analyzing "pip.__main__"
+2016-02-01T13:45:00: Analyzing "pip.backwardcompat"
+2016-02-01T13:45:00: Analyzing "pip.commands.bundle"
+2016-02-01T13:45:00: Analyzing "pip.commands.completion"
+2016-02-01T13:45:00: Analyzing "pip.commands.freeze"
+2016-02-01T13:45:00: Analyzing "pip.commands.help"
+2016-02-01T13:45:00: Analyzing "pip.commands.install"
+2016-02-01T13:45:00: Analyzing "pip.commands.list"
+2016-02-01T13:45:00: Analyzing "pip.commands.search"
+2016-02-01T13:45:00: Analyzing "pip.commands.show"
+2016-02-01T13:45:00: Analyzing "pip.commands.uninstall"
+2016-02-01T13:45:00: Analyzing "pip.commands.unzip"
+2016-02-01T13:45:00: Analyzing "pip.commands.wheel"
+2016-02-01T13:45:00: Analyzing "pip.commands.zip"
+2016-02-01T13:45:00: Analyzing "pip.commands"
+2016-02-01T13:45:00: Analyzing "pip.vcs.bazaar"
+2016-02-01T13:45:00: Analyzing "pip.vcs.git"
+2016-02-01T13:45:00: Analyzing "pip.vcs.mercurial"
+2016-02-01T13:45:00: Analyzing "pip.vcs.subversion"
+2016-02-01T13:45:00: Analyzing "pip.vcs"
+2016-02-01T13:45:00: Analyzing "pip._vendor.pkg_resources"
+2016-02-01T13:45:00: Analyzing "pip._vendor.six"
+2016-02-01T13:45:00: Analyzing "pip._vendor"
+2016-02-01T13:45:00: Analyzing "pip._vendor.colorama.ansi"
+2016-02-01T13:45:00: Analyzing "pip._vendor.colorama.ansitowin32"
+2016-02-01T13:45:00: Analyzing "pip._vendor.colorama.initialise"
+2016-02-01T13:45:00: Analyzing "pip._vendor.colorama.win32"
+2016-02-01T13:45:00: Analyzing "pip._vendor.colorama.winterm"
+2016-02-01T13:45:00: Analyzing "pip._vendor.colorama"
+2016-02-01T13:45:00: Analyzing "pip._vendor.distlib.compat"
+2016-02-01T13:45:00: Analyzing "pip._vendor.distlib.database"
+2016-02-01T13:45:00: Analyzing "pip._vendor.distlib.index"
+2016-02-01T13:45:00: Analyzing "pip._vendor.distlib.locators"
+2016-02-01T13:45:00: Analyzing "pip._vendor.distlib.manifest"
+2016-02-01T13:45:00: Analyzing "pip._vendor.distlib.markers"
+2016-02-01T13:45:00: Analyzing "pip._vendor.distlib.metadata"
+2016-02-01T13:45:00: Analyzing "pip._vendor.distlib.resources"
+2016-02-01T13:45:00: Analyzing "pip._vendor.distlib.scripts"
+2016-02-01T13:45:00: Analyzing "pip._vendor.distlib.util"
+2016-02-01T13:45:00: Analyzing "pip._vendor.distlib.version"
+2016-02-01T13:45:00: Analyzing "pip._vendor.distlib.wheel"
+2016-02-01T13:45:00: Analyzing "pip._vendor.distlib"
+2016-02-01T13:45:00: Analyzing "pip._vendor.distlib._backport.misc"
+2016-02-01T13:45:00: Analyzing "pip._vendor.distlib._backport.shutil"
+2016-02-01T13:45:00: Analyzing "pip._vendor.distlib._backport.sysconfig"
+2016-02-01T13:45:00: Analyzing "pip._vendor.distlib._backport.tarfile"
+2016-02-01T13:45:00: Analyzing "pip._vendor.distlib._backport"
+2016-02-01T13:45:00: Analyzing "pip._vendor.html5lib.constants"
+2016-02-01T13:45:00: Analyzing "pip._vendor.html5lib.html5parser"
+2016-02-01T13:45:00: Analyzing "pip._vendor.html5lib.ihatexml"
+2016-02-01T13:45:00: Analyzing "pip._vendor.html5lib.inputstream"
+2016-02-01T13:45:00: Analyzing "pip._vendor.html5lib.sanitizer"
+2016-02-01T13:45:00: Analyzing "pip._vendor.html5lib.tokenizer"
+2016-02-01T13:45:00: Analyzing "pip._vendor.html5lib.utils"
+2016-02-01T13:45:00: Analyzing "pip._vendor.html5lib"
+2016-02-01T13:45:00: Analyzing "pip._vendor.html5lib.filters.alphabeticalattributes"
+2016-02-01T13:45:00: Analyzing "pip._vendor.html5lib.filters.inject_meta_charset"
+2016-02-01T13:45:00: Analyzing "pip._vendor.html5lib.filters.lint"
+2016-02-01T13:45:00: Analyzing "pip._vendor.html5lib.filters.optionaltags"
+2016-02-01T13:45:00: Analyzing "pip._vendor.html5lib.filters.sanitizer"
+2016-02-01T13:45:00: Analyzing "pip._vendor.html5lib.filters.whitespace"
+2016-02-01T13:45:00: Analyzing "pip._vendor.html5lib.filters._base"
+2016-02-01T13:45:00: Analyzing "pip._vendor.html5lib.filters"
+2016-02-01T13:45:00: Analyzing "pip._vendor.html5lib.serializer.htmlserializer"
+2016-02-01T13:45:00: Analyzing "pip._vendor.html5lib.serializer"
+2016-02-01T13:45:00: Analyzing "pip._vendor.html5lib.treebuilders.dom"
+2016-02-01T13:45:00: Analyzing "pip._vendor.html5lib.treebuilders.etree"
+2016-02-01T13:45:00: Analyzing "pip._vendor.html5lib.treebuilders.etree_lxml"
+2016-02-01T13:45:00: Analyzing "pip._vendor.html5lib.treebuilders._base"
+2016-02-01T13:45:00: Analyzing "pip._vendor.html5lib.treebuilders"
+2016-02-01T13:45:00: Analyzing "pip._vendor.html5lib.treewalkers.dom"
+2016-02-01T13:45:00: Analyzing "pip._vendor.html5lib.treewalkers.etree"
+2016-02-01T13:45:00: Analyzing "pip._vendor.html5lib.treewalkers.genshistream"
+2016-02-01T13:45:00: Analyzing "pip._vendor.html5lib.treewalkers.lxmletree"
+2016-02-01T13:45:00: Analyzing "pip._vendor.html5lib.treewalkers.pulldom"
+2016-02-01T13:45:00: Analyzing "pip._vendor.html5lib.treewalkers._base"
+2016-02-01T13:45:00: Analyzing "pip._vendor.html5lib.treewalkers"
+2016-02-01T13:45:00: Analyzing "pip._vendor.html5lib.trie.datrie"
+2016-02-01T13:45:00: Analyzing "pip._vendor.html5lib.trie.py"
+2016-02-01T13:45:00: Analyzing "pip._vendor.html5lib.trie._base"
+2016-02-01T13:45:00: Analyzing "pip._vendor.html5lib.trie"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.adapters"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.api"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.auth"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.certs"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.compat"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.cookies"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.exceptions"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.hooks"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.models"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.sessions"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.status_codes"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.structures"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.utils"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.charade.big5freq"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.charade.big5prober"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.charade.chardistribution"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.charade.charsetgroupprober"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.charade.charsetprober"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.charade.codingstatemachine"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.charade.compat"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.charade.constants"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.charade.cp949prober"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.charade.escprober"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.charade.escsm"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.charade.eucjpprober"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.charade.euckrfreq"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.charade.euckrprober"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.charade.euctwfreq"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.charade.euctwprober"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.charade.gb2312freq"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.charade.gb2312prober"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.charade.hebrewprober"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.charade.jisfreq"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.charade.jpcntx"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.charade.langbulgarianmodel"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.charade.langcyrillicmodel"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.charade.langgreekmodel"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.charade.langhebrewmodel"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.charade.langhungarianmodel"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.charade.langthaimodel"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.charade.latin1prober"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.charade.mbcharsetprober"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.charade.mbcsgroupprober"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.charade.mbcssm"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.charade.sbcharsetprober"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.charade.sbcsgroupprober"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.charade.sjisprober"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.charade.universaldetector"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.charade.utf8prober"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.charade"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.charade.__main__"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.chardet.big5freq"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.chardet.big5prober"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.chardet.chardetect"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.chardet.chardistribution"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.chardet.charsetgroupprober"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.chardet.charsetprober"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.chardet.codingstatemachine"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.chardet.compat"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.chardet.constants"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.chardet.cp949prober"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.chardet.escprober"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.chardet.escsm"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.chardet.eucjpprober"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.chardet.euckrfreq"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.chardet.euckrprober"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.chardet.euctwfreq"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.chardet.euctwprober"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.chardet.gb2312freq"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.chardet.gb2312prober"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.chardet.hebrewprober"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.chardet.jisfreq"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.chardet.jpcntx"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.chardet.langbulgarianmodel"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.chardet.langcyrillicmodel"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.chardet.langgreekmodel"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.chardet.langhebrewmodel"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.chardet.langhungarianmodel"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.chardet.langthaimodel"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.chardet.latin1prober"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.chardet.mbcharsetprober"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.chardet.mbcsgroupprober"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.chardet.mbcssm"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.chardet.sbcharsetprober"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.chardet.sbcsgroupprober"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.chardet.sjisprober"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.chardet.universaldetector"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.chardet.utf8prober"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.chardet"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.urllib3.connection"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.urllib3.connectionpool"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.urllib3.exceptions"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.urllib3.fields"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.urllib3.filepost"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.urllib3.poolmanager"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.urllib3.request"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.urllib3.response"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.urllib3.util"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.urllib3._collections"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.urllib3"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.urllib3.contrib.ntlmpool"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.urllib3.contrib.pyopenssl"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.urllib3.contrib"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.urllib3.packages.ordered_dict"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.urllib3.packages.six"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.urllib3.packages"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.urllib3.packages.ssl_match_hostname._implementation"
+2016-02-01T13:45:00: Analyzing "pip._vendor.requests.packages.urllib3.packages.ssl_match_hostname"
+2016-02-01T13:45:00: Analyzing "pip._vendor._markerlib.markers"
+2016-02-01T13:45:00: Analyzing "pip._vendor._markerlib"
+2016-02-01T13:45:00: Starting analysis of 208 modules
+2016-02-01T13:45:06: Analysis complete
+2016-02-01T13:45:06: Saving group "C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip"
+2016-02-01T13:45:06: End of group "C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip"
+2016-02-01T13:45:07: Deleting 0 files
