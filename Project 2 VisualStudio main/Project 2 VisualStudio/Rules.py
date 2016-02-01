@@ -4,6 +4,7 @@ import random
 from Gameloop import *
 
 
+
 white=(255,248,207)
 display_width = 800
 display_height = 600
@@ -23,8 +24,15 @@ green = (0,175,0)
 blue = (30,144,255)
 bright_red = (255,0,0)
 bright_green = (0,255,0)
-clock = pygame.time.Clock()
 
+orange = (255,128,0)
+bright_orange = (255,191,0)
+yellow = (242, 242 ,13)
+bright_yellow = (255, 255 , 0)
+purple = (127 ,0 ,255)
+bright_purple = (191,0,255)
+
+clock = pygame.time.Clock()
 
 def text_objects(text, font):
     textSurface = font.render(text, True, black)
@@ -100,6 +108,7 @@ def Rules():
         clock.tick(15)   
 
 
+
 def GameBoard():
     pygame.init()
     GameBoard = True
@@ -150,6 +159,7 @@ def GameBoard():
         gameDisplay.blit(textSurf, textRect)
         pygame.display.update()
         clock.tick(15)   
+
 
 def Climates():
     pygame.init()
@@ -268,6 +278,7 @@ def Climates():
         pygame.display.update()
         clock.tick(15) 
 
+
 def Swamp():
 
     pygame.init()
@@ -372,6 +383,7 @@ def Forest():
         gameDisplay.blit(textSurf, textRect)
         pygame.display.update()
         clock.tick(15)   
+
 
 def Iceplains():
 
@@ -874,6 +886,72 @@ def Howtowin():
 
         pygame.display.update()
         clock.tick(15) 
+
+def game_intro():
+
+    intro = True
+
+    while intro:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+
+        
+        bg = pygame.image.load("content/background_menu1.jpg")
+        bg= pygame.transform.scale(bg, (display_width, display_height))
+        gameDisplay.blit(bg, (0, 0))         
+
+        largeText = pygame.font.Font('freesansbold.ttf', 115)
+
+    
+        
+        mouse = pygame.mouse.get_pos()
+        click = pygame.mouse.get_pressed()
+       
+        
+        if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
+            pygame.draw.rect(gameDisplay, bright_green, (150,500,100,50))
+            if click[0] == 1:
+                game_loop()
+                print("test")                 
+        else:
+            pygame.draw.rect(gameDisplay, green, (150,500,100,50))
+
+        smallText = pygame.font.Font('freesansbold.ttf', 20)
+        textSurf, textRect = text_objects('Play!', smallText)
+        textRect.center = ( (150+(100/2)), (500+(50/2)) )
+        gameDisplay.blit(textSurf, textRect)
+
+        if 350+100 > mouse[0] > 350 and 500+50 > mouse[1] > 500:
+            pygame.draw.rect(gameDisplay, bright_blue, (350,500,100,50))
+            if click[0] == 1:
+                Rules()                
+        else: 
+            pygame.draw.rect(gameDisplay, blue, (350,500,100,50))
+        
+        smallText = pygame.font.Font('freesansbold.ttf', 20)
+        textSurf, textRect = text_objects('Rules', smallText)
+        textRect.center = ( (350+(100/2)), (500+(50/2)) )
+        gameDisplay.blit(textSurf, textRect)
+
+        
+        if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:    
+            pygame.draw.rect(gameDisplay, bright_red, (550,500,100,50))
+            if click[0] == 1:
+                pygame.quit()
+                quit()
+        else:
+            pygame.draw.rect(gameDisplay, red, (550,500,100,50))
+
+        smallText = pygame.font.Font('freesansbold.ttf', 20)
+        textSurf, textRect = text_objects('Quit!', smallText)
+        textRect.center = ( (550+(100/2)), (500+(50/2)) )
+        gameDisplay.blit(textSurf, textRect)
+        
+            
+        pygame.display.update()
+        clock.tick(15)
 
 
 
