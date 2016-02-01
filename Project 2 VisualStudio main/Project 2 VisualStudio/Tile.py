@@ -106,13 +106,6 @@ def draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwid
     Text2 = font1.render("Player " + str(currentPl_id) + "'s gold: " + str(currentPL_currency), True, black, transparent_texture)
     screen.blit(Text2, (Mapwidth * Tilesize + 20, placePositionY + 40))
     
-    """
-    #print units
-    while AddUnit.IsEmpty == False:
-        screen.blit(AddUnit.Value.Texture, (AddUnit.Value.position[0] * Tilesize, AddUnit.Value.position[1] * Tilesize))
-        
-        AddUnit = AddUnit.Tail
-        """
     pygame.display.flip()
     
 
@@ -338,15 +331,14 @@ def tile_loop(Playerslist2):
                 currentTile = tilelist[mouse_y][mouse_x]
                 print("Water = 0/Goldmine = 1/Forest = 2/Ice = 3/Swamp = 4/Desert = 5: ", currentTile)
         
-        #copy_AddUnit = Empty
-        if pygame.mouse.get_pressed()[0] and pygame.mouse.get_pos()[0] < (Mapwidth * Tilesize):
-            mouse_x = math.floor(pygame.mouse.get_pos()[0] / Tilesize) * Tilesize
-            mouse_y = math.floor(pygame.mouse.get_pos()[1] / Tilesize) * Tilesize
-            soldierPos = [mouse_x, mouse_y]
-            mouse_x = math.floor(pygame.mouse.get_pos()[0] / Tilesize)
-            mouse_y = math.floor(pygame.mouse.get_pos()[1] / Tilesize)
-            mouse_Pos = [mouse_x, mouse_y]
-            #AddUnit = copy_AddUnit
+            copy_AddUnit = Empty
+            if pygame.mouse.get_pressed()[0] and pygame.mouse.get_pos()[0] < (Mapwidth * Tilesize):
+                mouse_x = math.floor(pygame.mouse.get_pos()[0] / Tilesize) * Tilesize
+                mouse_y = math.floor(pygame.mouse.get_pos()[1] / Tilesize) * Tilesize
+                soldierPos = [mouse_x, mouse_y]
+                mouse_x = math.floor(pygame.mouse.get_pos()[0] / Tilesize)
+                mouse_y = math.floor(pygame.mouse.get_pos()[1] / Tilesize)
+                mouse_Pos = [mouse_x, mouse_y]
             while AddUnit.IsEmpty == False:
                 #if pygame.mouse.get_pressed()[0]: #and pygame.mouse.get_pos()[0] < (Mapwidth * Tilesize):
                     #mouse_x = math.floor(pygame.mouse.get_pos()[0] / Tilesize)
@@ -357,17 +349,18 @@ def tile_loop(Playerslist2):
                     print("Hier staat een unit: " + AddUnit.Value.unittype + " met id: " + str(AddUnit.Value.id))
                     mouse_Pos_New = wait(Mapwidth)
                     AddUnit.Value.position = mouse_Pos_New
-                    draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background)
-                    draw2(AddUnit, screen)
+                    #draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background)
+                    #draw2(AddUnit, screen)
                     print("klaar met wachten")
                     #AddUnit.Value.position[0] += 1
                     #if pygame.mouse.get_pressed()[2] and pygame.mouse.get_pos()[0] < (Mapwidth * Tilesize):
                     #    mouse_x_new = math.floor(pygame.mouse.get_pos()[0] / Tilesize)
                     #    mouse_y_new = math.floor(pygame.mouse.get_pos()[1] / Tilesize)
                     #    AddUnit.Value.position = [mouse_x_new, mouse_y_new]
+                copy_AddUnit = Node(AddUnit.Value, copy_AddUnit)
+                draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background)
+                draw2(copy_AddUnit, screen)
                 AddUnit = AddUnit.Tail
-        #draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background)
-        draw2(AddUnit, screen)
                 
         """
             #print(mouse_Pos[0], mouse_Pos[1])
@@ -421,7 +414,7 @@ def tile_loop(Playerslist2):
         if 865 + 124 > mouse[0] > 865 and 31 + 19 > mouse[1] > 31:          #soldier
             pygame.draw.rect(screen, cyan, (865,31,124,19))    
             if click[0] == 1:
-                screen.blit(bgmap, (0,0))
+                #screen.blit(bgmap, (0,0))
                 pygame.time.delay(300)
                 if currentPL_biome == "Ice" and currentPL_currency >= 120:
                     currentPL_currency -= 120
@@ -526,6 +519,7 @@ def tile_loop(Playerslist2):
         textRect.center = ( (865+(124/2)), (367+(9)) )
         screen.blit(textSurf, textRect)   
         
+        copy2_AddUnit = AddUnit
         if 865 + 124 > mouse[0] > 865 and 700 + 19 > mouse[1] > 700:        #end turn, klik hier op om de volgende speler de beurt te geven
             pygame.draw.rect(screen, cyan, (865,700,124,19)) 
             if click[0] == 1:
@@ -544,16 +538,15 @@ def tile_loop(Playerslist2):
                 #global currentPl_id
                 print("Player id = " + str(currentPl_id) + " Player name = " + currentPL_name)
                 draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background)
-                draw2(AddUnit, screen)
+                draw2(copy2_AddUnit, screen)
                 pygame.time.delay(1000)
                 GameAI(currentPl_id, currentPL_currency, currentPL_biome)
-                draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background)
         else:
             pygame.draw.rect(screen, white, (865,700,124,19))
         textSurf, textRect = text_objects('End Turn!', font1)
         textRect.center = ( (865+(124/2)), (700+(9)) )
         screen.blit(textSurf, textRect) 
-        draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background)
+        #draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background)
 
         '''
         def Draw():
