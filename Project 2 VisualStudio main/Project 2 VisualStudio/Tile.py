@@ -547,13 +547,11 @@ def tile_loop(Playerslist2):
                 draw2(AddUnit, screen)
                 pygame.time.delay(1000)
                 GameAI(currentPl_id, currentPL_currency, currentPL_biome)
-                draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background)
         else:
             pygame.draw.rect(screen, white, (865,700,124,19))
         textSurf, textRect = text_objects('End Turn!', font1)
         textRect.center = ( (865+(124/2)), (700+(9)) )
         screen.blit(textSurf, textRect) 
-        draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background)
 
         '''
         def Draw():
@@ -613,6 +611,9 @@ def tile_loop(Playerslist2):
             #screen.blit(Text, (Mapwidth * Tilesize + 20 + placePositionX, placePositionY + 0.5 * Tilesize))
             placePositionY += Tilesize * 2
 
+        #Calculate incomming currency
+   
+
         """
         #print wie er aan de beurt is
         Text = font1.render("Player " + str(currentPl_id) + "'s turn", True, black, transparent_texture)
@@ -629,18 +630,4 @@ def tile_loop(Playerslist2):
         draw2(AddUnit, screen)
         pygame.display.flip()
         clock.tick(30)
-
-    '''
-            elif AddUnit.Value.unittype == "Soldier":
-                SoldierPos = AddUnit.Value.position
-                screen.blit(soldier_texture, (SoldierPos[0] * Mapwidth * 2, SoldierPos[1] * Mapheight * 2))  
-            elif AddUnit.Value.unittype == "Boat":
-                BoatPos = AddUnit.Value.position
-                screen.blit(boat_texture, (BoatPos[0] * Mapwidth * 2, BoatPos[1] * Mapheight * 2))  
-            elif AddUnit.Value.unittype == "Barrack":
-                BarrackPos = AddUnit.Value.position
-                screen.blit(barrack_texture, (BarrackPos[0] * Mapwidth * 2, BarrackPos[1] * Mapheight * 2))  
-            elif AddUnit.Value.unittype == "Robot":
-                RobotPos = AddUnit.Value.position
-                screen.blit(robot_texture, (RobotPos[0] * Mapwidth * 2, RobotPos[1] * Mapheight * 2))
-                '''
+        
