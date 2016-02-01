@@ -4,6 +4,7 @@ __loader__
 __name__
 __package__
 __spec__
+_forget_codec
 ascii_decode
 ascii_encode
 charmap_build

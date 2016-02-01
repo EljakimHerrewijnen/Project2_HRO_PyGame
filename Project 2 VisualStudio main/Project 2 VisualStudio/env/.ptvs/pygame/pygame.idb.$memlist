@@ -1,6 +1,7 @@
 K_KP_PLUS
 K_BACKQUOTE
 __version__
+<<<<<<< HEAD
 JOYHATMOTION
 KMOD_NONE
 K_QUOTE
@@ -12,14 +13,33 @@ K_3
 OPENGLBLIT
 YV12_OVERLAY
 K_LSUPER
+=======
+JOYBUTTONUP
+KMOD_NONE
+K_QUOTE
+AUDIO_U16
+K_d
+K_3
+image
+K_LCTRL
+YV12_OVERLAY
+OPENGLBLIT
+K_HELP
+>>>>>>> origin/master
 K_F7
 copy_reg
 HAT_RIGHTDOWN
 AUDIO_U16SYS
+examples
 __color_constructor
+<<<<<<< HEAD
 BLEND_MIN
 ACTIVEEVENT
 K_LMETA
+=======
+camera
+KMOD_ALT
+>>>>>>> origin/master
 K_QUESTION
 GL_ACCUM_BLUE_SIZE
 K_DELETE
@@ -43,21 +63,38 @@ K_HASH
 scrap
 KMOD_RALT
 GL_STEREO
+<<<<<<< HEAD
 K_0
+=======
+K_i
+>>>>>>> origin/master
 K_PAUSE
 K_q
 K_8
+<<<<<<< HEAD
 K_y
 GL_ACCELERATED_VISUAL
 compat
 K_PERIOD
 KMOD_CAPS
 K_LSHIFT
+=======
+GL_ACCELERATED_VISUAL
+PREALLOC
+compat
+K_PERIOD
+K_LSHIFT
+K_ASTERISK
+>>>>>>> origin/master
 K_FIRST
 HAT_LEFT
 K_UNKNOWN
 K_TAB
+<<<<<<< HEAD
 SCRAP_SELECTION
+=======
+K_F6
+>>>>>>> origin/master
 JOYBALLMOTION
 GL_MULTISAMPLESAMPLES
 K_RIGHTPAREN
@@ -68,13 +105,18 @@ GL_DOUBLEBUFFER
 K_k
 GL_ACCUM_GREEN_SIZE
 KMOD_META
-transform
+SCRAP_BMP
 HAT_LEFTDOWN
 AUDIO_S16
 set_error
 SWSURFACE
+<<<<<<< HEAD
 K_n
 AUDIO_U8
+=======
+HAT_UP
+YUY2_OVERLAY
+>>>>>>> origin/master
 gp2x
 K_AMPERSAND
 BLEND_RGB_MAX
@@ -96,15 +138,19 @@ K_DOWN
 locals
 __rect_reduce
 K_RMETA
-SCRAP_PBM
+K_h
 ftfont
 AUDIO_S8
 K_p
-NOFRAME
-GL_ACCUM_RED_SIZE
+BLEND_RGBA_MULT
+K_KP_ENTER
 K_F5
 K_2
+<<<<<<< HEAD
 _winreg
+=======
+cdrom
+>>>>>>> origin/master
 os
 K_QUOTEDBL
 UYVY_OVERLAY
@@ -119,21 +165,32 @@ K_KP2
 packager_imports
 K_KP0
 K_KP1
-K_KP6
+K_KP_DIVIDE
 K_KP7
 K_KP4
 K_KP5
 VIDEOEXPOSE
 cursors
 K_KP9
+<<<<<<< HEAD
 K_e
 AUDIO_U16LSB
 GL_DEPTH_SIZE
+=======
+K_RSUPER
+_camera_vidcapture
+K_m
+>>>>>>> origin/master
 K_4
 BLEND_RGB_MULT
+<<<<<<< HEAD
 _camera
 NUMEVENTS
 FULLSCREEN
+=======
+pixelcopy
+HAT_RIGHT
+>>>>>>> origin/master
 font
 register_quit
 QUIT
@@ -141,16 +198,27 @@ GL_MULTISAMPLEBUFFERS
 RESIZABLE
 K_COMMA
 AUDIO_S16SYS
+<<<<<<< HEAD
 K_DOLLAR
+=======
+IYUV_OVERLAY
+>>>>>>> origin/master
 mouse
 K_x
 K_RIGHT
 ASYNCBLIT
 pkgdata
+<<<<<<< HEAD
 K_F4
 K_SLASH
 BUTTON_X2
 nmovie
+=======
+USEREVENT
+colordict
+nmovie
+type
+>>>>>>> origin/master
 KMOD_CTRL
 K_g
 joystick
@@ -158,6 +226,7 @@ K_6
 display
 K_w
 K_ESCAPE
+<<<<<<< HEAD
 K_RALT
 AUDIO_S16LSB
 GL_ALPHA_SIZE
@@ -170,6 +239,20 @@ K_F11
 K_BREAK
 K_F14
 K_9
+=======
+K_1
+K_j
+KEYDOWN
+K_RALT
+K_F13
+K_F12
+BLEND_RGB_SUB
+K_F10
+K_EXCLAIM
+AUDIO_S16LSB
+ImportError
+K_F14
+>>>>>>> origin/master
 K_F15
 K_z
 __color_reduce
@@ -178,30 +261,50 @@ BLEND_RGBA_SUB
 KEYUP
 error
 HAT_CENTERED
+<<<<<<< HEAD
 BIG_ENDIAN
 K_GREATER
 JOYBUTTONUP
 Color
 JOYBUTTONDOWN
+=======
+K_GREATER
+K_BACKQUOTE
+OPENGL
+Color
+JOYHATMOTION
+>>>>>>> origin/master
 sndarray
 MOUSEBUTTONDOWN
 RuntimeWarning
 K_INSERT
+<<<<<<< HEAD
 K_PAGEUP
 K_t
 K_l
 K_LCTRL
+=======
+K_LSUPER
+K_PAGEDOWN
+K_l
+K_t
+>>>>>>> origin/master
 _dummybackend
 sprite
-K_HELP
+K_PAGEUP
 GL_BUFFER_SIZE
 K_F3
 BLEND_SUB
-examples
+BLEND_MIN
 segfault
 BLEND_RGBA_MIN
+<<<<<<< HEAD
 camera
 KMOD_ALT
+=======
+ACTIVEEVENT
+K_LMETA
+>>>>>>> origin/master
 macosx
 rev
 K_MINUS
@@ -219,6 +322,7 @@ freetype
 K_a
 PixelArray
 K_BACKSLASH
+<<<<<<< HEAD
 K_KP_MINUS
 K_i
 BLEND_RGBA_MAX
@@ -227,15 +331,33 @@ surflock
 K_KP_PERIOD
 PREALLOC
 K_KP_EQUALS
+=======
+K_0
+K_KP_MINUS
+BLEND_RGBA_MAX
+_numpysurfarray
+surflock
+K_q
+>>>>>>> origin/master
 K_LALT
+K_KP_EQUALS
+K_y
 get_sdl_version
 K_LAST
+<<<<<<< HEAD
 K_ASTERISK
+=======
+KMOD_CAPS
+>>>>>>> origin/master
 HAT_LEFTUP
 K_CAPSLOCK
 SRCCOLORKEY
 AUDIO_U16MSB
+<<<<<<< HEAD
 K_F6
+=======
+SCRAP_SELECTION
+>>>>>>> origin/master
 surfarray
 Surface
 draw
@@ -247,8 +369,9 @@ HAT_DOWN
 K_MODE
 BLEND_ADD
 BLEND_MAX
-SCRAP_BMP
+transform
 _camera_opencv_highgui
+<<<<<<< HEAD
 K_F9
 GL_BLUE_SIZE
 HAT_UP
@@ -256,12 +379,22 @@ K_KP_MULTIPLY
 K_5
 K_v
 YUY2_OVERLAY
+=======
+AUDIO_S16
+GL_BLUE_SIZE
+K_n
+K_KP_MULTIPLY
+K_5
+K_v
+AUDIO_U8
+>>>>>>> origin/master
 SCRAP_PPM
+KMOD_RCTRL
 K_EQUALS
 KMOD_RCTRL
 BufferProxy
-LIL_ENDIAN
 K_HOME
+LIL_ENDIAN
 str
 SYSWMEVENT
 version
@@ -270,12 +403,18 @@ sys
 MissingModule
 math
 get_error
+<<<<<<< HEAD
 K_BACKSPACE
 K_CLEAR
+=======
+K_END
+>>>>>>> origin/master
 K_NUMLOCK
+K_CLEAR
 HAVE_NEWBUF
 K_7
 vernum
+<<<<<<< HEAD
 K_h
 K_KP_ENTER
 BLEND_RGBA_MULT
@@ -283,6 +422,18 @@ __rect_constructor
 BLEND_PREMULTIPLIED
 RLEACCEL
 KMOD_SHIFT
+=======
+SCRAP_PBM
+K_F1
+NOFRAME
+__rect_constructor
+GL_ACCUM_RED_SIZE
+BLEND_PREMULTIPLIED
+KMOD_SHIFT
+_winreg
+RLEACCEL
+SCRAP_TEXT
+>>>>>>> origin/master
 KMOD_RSHIFT
 cdrom
 K_F1
@@ -294,8 +445,12 @@ geterror
 PY_MAJOR_VERSION
 K_KP3
 K_PLUS
+<<<<<<< HEAD
+=======
+K_KP3
+>>>>>>> origin/master
 encode_file_path
-K_KP_DIVIDE
+K_KP6
 sdlmain_osx
 BLEND_RGBA_ADD
 K_KP8
@@ -303,12 +458,17 @@ K_PRINT
 K_UNDERSCORE
 K_RSUPER
 K_UP
-_camera_vidcapture
-K_m
+AUDIO_U16LSB
+GL_DEPTH_SIZE
 K_u
 tests
 ANYFORMAT
+<<<<<<< HEAD
 pixelcopy
+=======
+NUMEVENTS
+FULLSCREEN
+>>>>>>> origin/master
 event
 HAT_RIGHT
 MOUSEMOTION
@@ -317,6 +477,7 @@ IOError
 print
 int
 NOEVENT
+<<<<<<< HEAD
 IYUV_OVERLAY
 KMOD_LCTRL
 GL_GREEN_SIZE
@@ -327,12 +488,25 @@ KMOD_LALT
 K_LESS
 colordict
 type
+=======
+K_DOLLAR
+KMOD_LCTRL
+GL_GREEN_SIZE
+K_RETURN
+Overlay
+K_F4
+KMOD_LALT
+K_LESS
+K_SLASH
+BUTTON_X2
+>>>>>>> origin/master
 midi
 BUTTON_X1
 K_o
 VIDEORESIZE
 K_SYSREQ
 GL_ACCUM_ALPHA_SIZE
+<<<<<<< HEAD
 K_r
 KMOD_LSHIFT
 KEYDOWN
@@ -344,6 +518,19 @@ BufferError
 K_EURO
 K_EXCLAIM
 ImportError
+=======
+K_9
+KMOD_LSHIFT
+GL_ALPHA_SIZE
+K_b
+K_F11
+K_SPACE
+K_LEFTPAREN
+BufferError
+K_BREAK
+K_EURO
+K_r
+>>>>>>> origin/master
 K_COLON
 warn_unwanted_files
 key
@@ -352,7 +539,11 @@ pygame
 movie
 docs
 mixer
+<<<<<<< HEAD
 OPENGL
+=======
+JOYBUTTONDOWN
+>>>>>>> origin/master
 constants
 _freetype
 vidcap

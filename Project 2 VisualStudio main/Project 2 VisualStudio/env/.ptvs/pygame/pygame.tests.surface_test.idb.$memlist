@@ -48,7 +48,7 @@ get_last_error
 K_HASH
 KMOD_RALT
 GL_STEREO
-K_KP_MINUS
+K_i
 K_PAUSE
 zip
 K_KP_PERIOD
@@ -57,7 +57,11 @@ GL_ACCELERATED_VISUAL
 K_y
 K_PERIOD
 K_LAST
+<<<<<<< HEAD
 KMOD_CAPS
+=======
+K_LSHIFT
+>>>>>>> origin/master
 HAT_LEFTUP
 memmove
 HAT_LEFT
@@ -104,26 +108,38 @@ BLEND_MULT
 AUDIO_S16MSB
 YVYU_OVERLAY
 RLEACCELOK
+<<<<<<< HEAD
 K_BACKSPACE
 PyCapsule_IsValid
 SCRAP_CLIPBOARD
 ValueError
 K_CLEAR
+=======
+K_END
+PyCapsule_IsValid
+SCRAP_CLIPBOARD
+K_NUMLOCK
+K_DOWN
+>>>>>>> origin/master
 PY3
 test
 K_RMETA
-K_h
+SCRAP_PBM
 PyCObject_AsVoidPtr
 AUDIO_S8
 K_p
-BLEND_RGBA_MULT
+NOFRAME
 GL_ACCUM_RED_SIZE
+<<<<<<< HEAD
 K_F5
+=======
+K_KP_ENTER
+>>>>>>> origin/master
 SCRAP_TEXT
 Exporter
 os
 K_QUOTEDBL
-K_2
+UYVY_OVERLAY
 K_s
 resize
 K_SEMICOLON
@@ -131,13 +147,17 @@ HRESULT
 create_string_buffer
 K_F8
 wstring_at
+<<<<<<< HEAD
 GL_RED_SIZE
+=======
+c_int16
+>>>>>>> origin/master
 K_PLUS
 K_RIGHTBRACKET
 SurfaceGetBufferTest
 K_KP0
 K_KP1
-K_KP6
+K_KP_DIVIDE
 BLEND_RGBA_ADD
 K_KP4
 K_KP5
@@ -148,7 +168,7 @@ PyCapsule_Destructor
 POINTER
 K_e
 cdll
-K_m
+GL_DEPTH_SIZE
 c_size_t
 K_4
 pkg_name
@@ -181,13 +201,18 @@ set_last_error
 K_g
 PAI_ARR_HAS_DESCR
 K_6
+<<<<<<< HEAD
 K_9
+=======
+K_EXCLAIM
+>>>>>>> origin/master
 K_w
 K_ESCAPE
-AUDIO_S16LSB
-K_j
+K_BREAK
+K_SPACE
 longify
 KMOD_LSHIFT
+<<<<<<< HEAD
 BLEND_RGB_SUB
 K_F10
 K_F12
@@ -196,6 +221,16 @@ SurfaceTypeTest
 K_F11
 K_BREAK
 K_r
+=======
+K_b
+BLEND_RGB_SUB
+K_F12
+K_j
+SurfaceTypeTest
+K_F11
+AUDIO_S16LSB
+K_EURO
+>>>>>>> origin/master
 as_unicode
 K_F15
 K_z
@@ -205,8 +240,8 @@ KEYUP
 c_float
 c_int32
 HAT_CENTERED
-K_BACKQUOTE
 K_GREATER
+K_BACKQUOTE
 OPENGL
 Color
 JOYBUTTONDOWN
@@ -215,11 +250,15 @@ MOUSEBUTTONDOWN
 py_object
 AUDIO_U16
 CDLL
-K_LCTRL
 K_PAGEDOWN
+K_LCTRL
 intify
-OPENGLBLIT
 K_t
+OPENGLBLIT
+<<<<<<< HEAD
+K_t
+=======
+>>>>>>> origin/master
 K_PAGEUP
 string_at
 RTLD_LOCAL
@@ -251,7 +290,7 @@ long
 K_a
 K_BACKSLASH
 BLEND_RGBA_MAX
-K_i
+K_KP_MINUS
 K_0
 PREALLOC
 K_q
@@ -260,9 +299,15 @@ xrange_
 format_flags
 K_LALT
 SIZEOF_VOID_P
+<<<<<<< HEAD
 K_ASTERISK
 LibraryLoader
 K_LSHIFT
+=======
+KMOD_CAPS
+LibraryLoader
+K_ASTERISK
+>>>>>>> origin/master
 K_FIRST
 K_CAPSLOCK
 SRCCOLORKEY
@@ -286,12 +331,12 @@ BLEND_MAX
 wintypes
 ARRAY
 GetLastError
-AUDIO_S16
 GL_BLUE_SIZE
-K_5
+AUDIO_S16
+HAT_UP
 SWSURFACE
 getattr
-HAT_UP
+K_5
 ArrayTest
 YUY2_OVERLAY
 kind
@@ -299,8 +344,8 @@ BLEND_RGB_MAX
 IndexError
 SCRAP_PPM
 BufferProxy
-K_HOME
 LIL_ENDIAN
+K_HOME
 str
 addressof
 SYSWMEVENT
@@ -311,25 +356,36 @@ HWACCEL
 sys
 example_path
 capsule_new
+<<<<<<< HEAD
 K_END
 c_ulong
 K_NUMLOCK
 K_DOWN
+=======
+K_BACKSPACE
+c_ulong
+K_CLEAR
+ValueError
+>>>>>>> origin/master
 c_bool
 K_7
 pointer
 pydll
-SCRAP_PBM
+K_h
 create_unicode_buffer
 c_int
-NOFRAME
+BLEND_RGBA_MULT
 BLEND_PREMULTIPLIED
-K_KP_ENTER
+K_F5
 KMOD_SHIFT
 K_F1
 RLEACCEL
 unittest
+<<<<<<< HEAD
 UYVY_OVERLAY
+=======
+K_2
+>>>>>>> origin/master
 KMOD_RSHIFT
 c_uint8
 JOYAXISMOTION
@@ -338,12 +394,12 @@ set_errno
 PAI_CONTIGUOUS
 Py_intptr_t
 c_ushort
-c_int16
+GL_RED_SIZE
 c_int8
 K_KP2
 K_KP3
 c_char_p
-K_KP_DIVIDE
+K_KP6
 K_KP7
 PAI_ALIGNED
 c_byte
@@ -357,7 +413,7 @@ K_RSUPER
 K_UP
 c_double
 AUDIO_U16LSB
-GL_DEPTH_SIZE
+K_m
 K_u
 CFUNCTYPE
 NUMEVENTS
@@ -389,6 +445,7 @@ BUTTON_X1
 K_o
 VIDEORESIZE
 K_SYSREQ
+<<<<<<< HEAD
 K_EURO
 GL_ACCUM_ALPHA_SIZE
 test_utils
@@ -402,6 +459,21 @@ K_RALT
 BufferError
 K_F14
 K_EXCLAIM
+=======
+K_r
+GL_ACCUM_ALPHA_SIZE
+test_utils
+K_LEFTPAREN
+K_F13
+KEYDOWN
+GL_ALPHA_SIZE
+K_F10
+K_RALT
+K_1
+BufferError
+K_9
+K_F14
+>>>>>>> origin/master
 ImportError
 K_COLON
 byref
