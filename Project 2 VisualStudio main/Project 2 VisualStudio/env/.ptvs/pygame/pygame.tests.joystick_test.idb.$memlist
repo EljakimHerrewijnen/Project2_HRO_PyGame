@@ -1,0 +1,10 @@
+os
+pkg_dir
+pkg_name
+sys
+is_pygame_pkg
+parent_dir
+JoystickTypeTest
+JoytickModuleTest
+test_not_implemented
+unittest

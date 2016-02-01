@@ -42,9 +42,9 @@ def Rules():
                 rules = False
         
         gameDisplay.fill(white)
-        #bg = pygame.image.load("content/LoadingScreen.jpg")
-        #bg= pygame.transform.scale(bg, (display_width, display_height))
-        #gameDisplay.blit(bg, (0, 0))
+        bg = pygame.image.load("content/LoadingScreen.jpg")
+        bg= pygame.transform.scale(bg, (display_width, display_height))
+        gameDisplay.blit(bg, (0, 0))
 
         mouse = pygame.mouse.get_pos()
         click = pygame.mouse.get_pressed()
@@ -110,9 +110,9 @@ def GameBoard():
                 GameBoard = False
         
         gameDisplay.fill(white)
-        #bg = pygame.image.load("content/LoadingScreen.jpg")
-        #bg= pygame.transform.scale(bg, (display_width, display_height))
-        #gameDisplay.blit(bg, (0, 0))
+        bg = pygame.image.load("content/rules_3_the_playboard.jpg.")
+        bg= pygame.transform.scale(bg, (700, 430))
+        gameDisplay.blit(bg, (0, 0))
 
         mouse = pygame.mouse.get_pos()
         click = pygame.mouse.get_pressed()
@@ -122,8 +122,8 @@ def GameBoard():
     
         if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_green, (150,500,100,50))
-            #if click[0] == 1:
-                #Rules()
+            if click[0] == 1:
+                Rules()
             
         else:
             pygame.draw.rect(gameDisplay, green, (150,500,100,50))
@@ -138,8 +138,8 @@ def GameBoard():
 
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_green, (550,500,100,50))
-            #if click[0] == 1:
-                #game_intro()
+            if click[0] == 1:
+                game_intro()
             
         else:
             pygame.draw.rect(gameDisplay, green, (550,500,100,50))
@@ -161,9 +161,9 @@ def Climates():
                 climates = False
         
         gameDisplay.fill(white)
-        #bg = pygame.image.load("content/LoadingScreen.jpg")
-        #bg= pygame.transform.scale(bg, (display_width, display_height))
-        #gameDisplay.blit(bg, (0, 0))
+        bg = pygame.image.load("content/rules_4_climates.jpg")
+        bg= pygame.transform.scale(bg, (700, 430))
+        gameDisplay.blit(bg, (0, 0))
 
         mouse = pygame.mouse.get_pos()
         click = pygame.mouse.get_pressed()
@@ -173,8 +173,8 @@ def Climates():
     
         if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_green, (150,500,100,50))
-            #if click[0] == 1:
-                #game_intro()
+            if click[0] == 1:
+                game_intro()
             
         else:
             pygame.draw.rect(gameDisplay, green, (150,500,100,50))
@@ -189,8 +189,8 @@ def Climates():
 
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_green, (550,500,100,50))
-            #if click[0] == 1:
-                #game_intro()
+            if click[0] == 1:
+                game_intro()
             
         else:
             pygame.draw.rect(gameDisplay, green, (550,500,100,50))
@@ -279,9 +279,9 @@ def Swamp():
                 Swamp = False
         
         gameDisplay.fill(white)
-        #bg = pygame.image.load("content/LoadingScreen.jpg")
-        #bg= pygame.transform.scale(bg, (display_width, display_height))
-        #gameDisplay.blit(bg, (0, 0))
+        bg = pygame.image.load("content/rules_7_swamp.jpg")
+        bg= pygame.transform.scale(bg, (700, 430))
+        gameDisplay.blit(bg, (0, 0))
 
         mouse = pygame.mouse.get_pos()
         click = pygame.mouse.get_pressed()
@@ -307,8 +307,8 @@ def Swamp():
 
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_green, (550,500,100,50))
-            #if click[0] == 1:
-                #game_intro()
+            if click[0] == 1:
+                game_intro()
             
         else:
             pygame.draw.rect(gameDisplay, green, (550,500,100,50))
@@ -332,9 +332,9 @@ def Forest():
                 Forest = False
         
         gameDisplay.fill(white)
-        #bg = pygame.image.load("content/LoadingScreen.jpg")
-        #bg= pygame.transform.scale(bg, (display_width, display_height))
-        #gameDisplay.blit(bg, (0, 0))
+        bg = pygame.image.load("content/rules_9_forest.jpg")
+        bg= pygame.transform.scale(bg, (700, 430))
+        gameDisplay.blit(bg, (0, 0))
 
         mouse = pygame.mouse.get_pos()
         click = pygame.mouse.get_pressed()
@@ -360,8 +360,8 @@ def Forest():
 
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_green, (550,500,100,50))
-            #if click[0] == 1:
-                #game_intro()
+            if click[0] == 1:
+                game_intro()
             
         else:
             pygame.draw.rect(gameDisplay, green, (550,500,100,50))
@@ -384,9 +384,9 @@ def Iceplains():
                 Iceplains = False
         
         gameDisplay.fill(white)
-        #bg = pygame.image.load("content/LoadingScreen.jpg")
-        #bg= pygame.transform.scale(bg, (display_width, display_height))
-        #gameDisplay.blit(bg, (0, 0))
+        bg = pygame.image.load("content/rules_8_ice_plains.jpg")
+        bg= pygame.transform.scale(bg, (700, 430))
+        gameDisplay.blit(bg, (0, 0))
 
         mouse = pygame.mouse.get_pos()
         click = pygame.mouse.get_pressed()
@@ -413,8 +413,8 @@ def Iceplains():
 
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_green, (550,500,100,50))
-            #if click[0] == 1:
-                #game_intro()
+            if click[0] == 1:
+                game_intro()
             
         else:
             pygame.draw.rect(gameDisplay, green, (550,500,100,50))
@@ -438,9 +438,9 @@ def Desert():
                 Desert = False
         
         gameDisplay.fill(white)
-        #bg = pygame.image.load("content/LoadingScreen.jpg")
-        #bg= pygame.transform.scale(bg, (display_width, display_height))
-        #gameDisplay.blit(bg, (0, 0))
+        bg = pygame.image.load("content/rules_6_desert.jpg")
+        bg= pygame.transform.scale(bg, (700, 430))
+        gameDisplay.blit(bg, (0, 0))
 
         mouse = pygame.mouse.get_pos()
         click = pygame.mouse.get_pressed()
@@ -465,8 +465,8 @@ def Desert():
 
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_green, (550,500,100,50))
-            #if click[0] == 1:
-                #game_intro()
+            if click[0] == 1:
+                game_intro()
             
         else:
             pygame.draw.rect(gameDisplay, green, (550,500,100,50))
@@ -490,9 +490,9 @@ def Thegame():
                 thegame = False
         
         gameDisplay.fill(white)
-        #bg = pygame.image.load("content/LoadingScreen.jpg")
-        #bg= pygame.transform.scale(bg, (display_width, display_height))
-        #gameDisplay.blit(bg, (0, 0))
+        bg = pygame.image.load("content/LoadingScreen.jpg")
+        bg= pygame.transform.scale(bg, (700, 430))
+        gameDisplay.blit(bg, (0, 0))
 
         mouse = pygame.mouse.get_pos()
         click = pygame.mouse.get_pressed()
@@ -517,8 +517,8 @@ def Thegame():
 
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_green, (550,500,100,50))
-            #if click[0] == 1:
-                #game_intro()
+            if click[0] == 1:
+                game_intro()
             
         else:
             pygame.draw.rect(gameDisplay, green, (550,500,100,50))
@@ -624,9 +624,9 @@ def Beginninggame():
                 beginninggame = False
         
         gameDisplay.fill(white)
-        #bg = pygame.image.load("content/LoadingScreen.jpg")
-        #bg= pygame.transform.scale(bg, (display_width, display_height))
-        #gameDisplay.blit(bg, (0, 0))
+        bg = pygame.image.load("content/rules_10_start_of_the_game.jpg")
+        bg= pygame.transform.scale(bg, (700, 430))
+        gameDisplay.blit(bg, (0, 0))
 
         mouse = pygame.mouse.get_pos()
         click = pygame.mouse.get_pressed()
@@ -651,8 +651,8 @@ def Beginninggame():
 
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_green, (550,500,100,50))
-            #if click[0] == 1:
-                #game_intro()
+            if click[0] == 1:
+                game_intro()
             
         else:
             pygame.draw.rect(gameDisplay, green, (550,500,100,50))
@@ -676,9 +676,9 @@ def MovesandTurns():
                 movesandturn = False
         
         gameDisplay.fill(white)
-        #bg = pygame.image.load("content/LoadingScreen.jpg")
-        #bg= pygame.transform.scale(bg, (display_width, display_height))
-        #gameDisplay.blit(bg, (0, 0))
+        bg = pygame.image.load("content/rules_11_moves_and_turns.jpg")
+        bg= pygame.transform.scale(bg, (700, 430))
+        gameDisplay.blit(bg, (0, 0))
 
         mouse = pygame.mouse.get_pos()
         click = pygame.mouse.get_pressed()
@@ -703,8 +703,8 @@ def MovesandTurns():
 
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_green, (550,500,100,50))
-            #if click[0] == 1:
-                #game_intro()
+            if click[0] == 1:
+                game_intro()
             
         else:
             pygame.draw.rect(gameDisplay, green, (550,500,100,50))
@@ -729,9 +729,9 @@ def Economy():
                 economy = False
         
         gameDisplay.fill(white)
-        #bg = pygame.image.load("content/LoadingScreen.jpg")
-        #bg= pygame.transform.scale(bg, (display_width, display_height))
-        #gameDisplay.blit(bg, (0, 0))
+        bg = pygame.image.load("content/rules_12_building_your_economy.jpg")
+        bg= pygame.transform.scale(bg, (700, 430))
+        gameDisplay.blit(bg, (0, 0))
 
         mouse = pygame.mouse.get_pos()
         click = pygame.mouse.get_pressed()
@@ -756,8 +756,8 @@ def Economy():
 
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_green, (550,500,100,50))
-            #if click[0] == 1:
-                #game_intro()
+            if click[0] == 1:
+                game_intro()
             
         else:
             pygame.draw.rect(gameDisplay, green, (550,500,100,50))
@@ -782,9 +782,9 @@ def Capturingland():
                 capturingland = False
         
         gameDisplay.fill(white)
-        #bg = pygame.image.load("content/LoadingScreen.jpg")
-        #bg= pygame.transform.scale(bg, (display_width, display_height))
-        #gameDisplay.blit(bg, (0, 0))
+        bg = pygame.image.load("content/rules_13_capturing_land.jpg")
+        bg= pygame.transform.scale(bg, (700, 430))
+        gameDisplay.blit(bg, (0, 0))
 
         mouse = pygame.mouse.get_pos()
         click = pygame.mouse.get_pressed()
@@ -809,8 +809,8 @@ def Capturingland():
 
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_green, (550,500,100,50))
-            #if click[0] == 1:
-                #game_intro()
+            if click[0] == 1:
+                game_intro()
             
         else:
             pygame.draw.rect(gameDisplay, green, (550,500,100,50))
@@ -834,9 +834,9 @@ def Howtowin():
                 howtowin = False
         
         gameDisplay.fill(white)
-        #bg = pygame.image.load("content/LoadingScreen.jpg")
-        #bg= pygame.transform.scale(bg, (display_width, display_height))
-        #gameDisplay.blit(bg, (0, 0))
+        bg = pygame.image.load("content/rules_14_how_do_you_win.jpg")
+        bg= pygame.transform.scale(bg, (700, 430))
+        gameDisplay.blit(bg, (0, 0))
 
         mouse = pygame.mouse.get_pos()
         click = pygame.mouse.get_pressed()
@@ -861,8 +861,8 @@ def Howtowin():
 
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_green, (550,500,100,50))
-            #if click[0] == 1:
-                #game_intro()
+            if click[0] == 1:
+                game_intro()
             
         else:
             pygame.draw.rect(gameDisplay, green, (550,500,100,50))

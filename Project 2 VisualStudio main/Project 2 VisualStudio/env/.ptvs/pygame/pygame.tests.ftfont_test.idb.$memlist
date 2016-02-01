@@ -1,0 +1,11 @@
+obj
+pygame
+os
+pkg_dir
+pkg_name
+is_pygame_pkg
+font_test
+name
+parent_dir
+sys
+unittest

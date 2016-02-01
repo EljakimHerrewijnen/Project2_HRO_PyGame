@@ -1,0 +1,13 @@
+CdromModuleTest
+pygame
+os
+pkg_dir
+unittest
+sys
+prompt
+pkg_name
+parent_dir
+CDTypeTest
+question
+test_not_implemented
+is_pygame_pkg

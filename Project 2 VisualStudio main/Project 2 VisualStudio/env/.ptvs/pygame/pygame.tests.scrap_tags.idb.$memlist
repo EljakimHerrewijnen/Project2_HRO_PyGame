@@ -1,0 +1,4 @@
+pygame
+exclude
+__tags__
+sys

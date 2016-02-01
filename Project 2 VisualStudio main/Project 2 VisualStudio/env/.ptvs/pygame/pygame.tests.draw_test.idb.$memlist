@@ -1,0 +1,13 @@
+DrawModuleTest
+pygame
+unordered_equality
+pkg_dir
+draw
+sys
+unittest
+os
+parent_dir
+pkg_name
+test_utils
+test_not_implemented
+is_pygame_pkg

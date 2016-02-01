@@ -1,0 +1,11 @@
+--- libpng-1.5.0/pngread.c.ark	2011-01-14 12:27:23.440018507 +0100
++++ libpng-1.5.0/pngread.c	2011-01-14 12:28:02.866685173 +0100
+@@ -841,7 +841,7 @@ png_read_image(png_structp png_ptr, png_
+    }
+    else
+    {
+-      if (!(png_ptr->transformations & PNG_INTERLACE))
++      if (png_ptr->interlaced && !(png_ptr->transformations & PNG_INTERLACE))
+       {
+          /* Caller called png_start_read_image or png_read_update_info without
+           * first turning on the PNG_INTERLACE transform.  We can fix this here,
