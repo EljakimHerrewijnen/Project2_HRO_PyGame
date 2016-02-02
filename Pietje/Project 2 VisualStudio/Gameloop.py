@@ -9,7 +9,6 @@ from GameAI import *
 
 AmountPlayersDefault = 0
 
-
 def game_loop():                                #GameLoop door Joost en Eljakim
     global AmountPlayersDefault     #Eljakim's code
     if AmountPlayersDefault == 0:
