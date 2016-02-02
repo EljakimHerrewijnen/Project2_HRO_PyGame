@@ -85,6 +85,7 @@ def check_For_Other_Units_On_Tile(currentUnitPos, AddUnit):
         else:
             DrawUnits = Node(AddUnit.Value.Texture, DrawUnits)
             """
+"""
 def draw2(AddUnit, screen):
     while AddUnit.IsEmpty == False:
         screen.blit(AddUnit.Value.Texture, (AddUnit.Value.position[0] * Tilesize, AddUnit.Value.position[1] * Tilesize))
@@ -92,8 +93,9 @@ def draw2(AddUnit, screen):
         AddUnit = AddUnit.Tail
 
     pygame.display.flip()
+        """
 
-def draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency):     #simpele draw functie voor units   
+def draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome):     #simpele draw functie voor units   
     buy_background_2 = pygame.image.load('content/wood_2.jpg')
     buy_background_2 = pygame.transform.scale(buy_background_2, (260, int(260 / 3)))
     screen.blit(buy_background_2, (Mapwidth * Tilesize - 4, 260 + math.floor((260 / 3) * 2)))
@@ -116,12 +118,20 @@ def draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwid
     screen.blit(Text, (Mapwidth * Tilesize + 20, placePositionY + 20))
     Text2 = font1.render("Player " + str(currentPl_id) + "'s gold: " + str(currentPL_currency), True, black, transparent_texture)
     screen.blit(Text2, (Mapwidth * Tilesize + 20, placePositionY + 40))
+    Text3 = font1.render("Player " + str(currentPl_id) + "'s climate: " + currentPL_biome, True, black, transparent_texture)
+    screen.blit(Text3, (Mapwidth * Tilesize + 20, placePositionY + 60))
     
     pygame.display.flip()
     
+def draw2(AddUnit, screen):
+    while AddUnit.IsEmpty == False:
+        screen.blit(AddUnit.Value.Texture, (AddUnit.Value.position[0] * Tilesize, AddUnit.Value.position[1] * Tilesize))
+        
+        AddUnit = AddUnit.Tail
 
+    pygame.display.flip()
 
-def draw(AddUnit, screen, soldierPos):      #draw functie voor units
+def draw(AddUnit, screen):      #draw functie voor units
     while AddUnit.IsEmpty == False:
         currentUnitPos = [AddUnit.Value.position[0], AddUnit.Value.position[1]]
         nr_Units_On_Tile = 0
@@ -385,7 +395,7 @@ def tile_loop(Playerslist, copy_Playerslist):
                     currentPL_currency += 150
                     print("3")
 
-                #draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency)
+                #draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome)
                 #draw2(AddUnit, screen)
                 print("klaar met wachten")
             copy_AddUnit = Node(AddUnit.Value, copy_AddUnit)
@@ -393,7 +403,7 @@ def tile_loop(Playerslist, copy_Playerslist):
 
 
                 
-            draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency)
+            draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome)
             draw2(copy_AddUnit, screen)
             AddUnit = AddUnit.Tail
                 
@@ -530,7 +540,7 @@ def tile_loop(Playerslist, copy_Playerslist):
                 currentPl_boats = currentPlayerList.Value.Boats
                 #global currentPl_id
                 print("Player id = " + str(currentPl_id) + " Player name = " + currentPL_name)
-                draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency)
+                draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome)
                 draw2(copy2_AddUnit, screen)
                 pygame.time.delay(1000)
                 #GameAI(currentPl_id, currentPL_currency, currentPL_biome)
@@ -539,7 +549,7 @@ def tile_loop(Playerslist, copy_Playerslist):
         textSurf, textRect = text_objects('End Turn!', font1)
         textRect.center = ( (865+(124/2)), (700+(9)) )
         screen.blit(textSurf, textRect) 
-        #draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency)
+        #draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome)
         
         #print BuyScreen
         placePositionY = 10
@@ -562,7 +572,7 @@ def tile_loop(Playerslist, copy_Playerslist):
         #print("x = ", soldierPos[0], "y = ", soldierPos[1])
 
 
-        #draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency)
+        #draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome)
         draw2(AddUnit, screen)
         pygame.display.flip()
         clock.tick(30)
