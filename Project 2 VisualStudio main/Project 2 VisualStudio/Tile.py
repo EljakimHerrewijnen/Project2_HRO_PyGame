@@ -618,7 +618,14 @@ def tile_loop(Playerslist):
         textSurf, textRect = text_objects('End Turn!', font1)
         textRect.center = ( (865+(124/2)), (700+(9)) )
         screen.blit(textSurf, textRect) 
+<<<<<<< HEAD
         #draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency)
+=======
+
+
+
+
+>>>>>>> origin/master
 
         '''
         def Draw():

@@ -1,0 +1,14 @@
+pygame
+os
+race_condition_notification
+event
+sys
+is_pygame_pkg
+geterror
+pkg_name
+parent_dir
+pkg_dir
+FasteventModuleTest
+fastevent
+test_not_implemented
+unittest

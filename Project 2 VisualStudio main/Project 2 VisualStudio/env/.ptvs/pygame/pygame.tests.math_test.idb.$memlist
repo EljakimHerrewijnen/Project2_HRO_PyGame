@@ -1,0 +1,17 @@
+sys
+pygame
+Vector3
+os
+pkg_dir
+parent_dir
+pkg_name
+clock
+gc
+Vector3TypeTest
+math
+is_pygame_pkg
+Vector2
+random
+Vector2TypeTest
+unittest
+test_not_implemented

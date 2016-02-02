@@ -1,0 +1,13 @@
+TimeModuleTest
+pygame
+os
+pkg_dir
+ClockTypeTest
+sys
+is_pygame_pkg
+Clock
+parent_dir
+time
+pkg_name
+test_not_implemented
+unittest

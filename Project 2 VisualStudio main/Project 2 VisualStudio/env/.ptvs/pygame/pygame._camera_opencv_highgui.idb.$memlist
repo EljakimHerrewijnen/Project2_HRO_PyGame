@@ -1,0 +1,8 @@
+pygame
+highgui
+Camera
+list_cameras
+numpy
+init
+quit
+opencv
