@@ -42,16 +42,16 @@ def changePlayer(Playerslist, currentPL_currency):
     if currentid > 4:
         currentid = 1
     
-    for i in range(0, 3):
+    for i in range(0, 4):
         print(str(i))
-        print("changePlayer1 " + str(currentid))
+        print("changePlayer1 " + str(currentid) + " Playerid: " + str(Playerslist.Value.Pl_id))
         if Playerslist.Tail.IsEmpty == True:
             Playerslist.Tail = Playerslist
         if currentid == Playerslist.Value.Pl_id:
             print("changePlayer2 " + str(currentid))
             Playerslist2 = Node(Player1(Playerslist.Value.Pl_id, Playerslist.Value.Pl_name, Playerslist.Value.Gamecard, Playerslist.Value.Biome, Playerslist.Value.Currency, Playerslist.Value.Soldiers, Playerslist.Value.Robots, Playerslist.Value.Tanks, Playerslist.Value.Barracks, Playerslist.Value.Boats), Playerslist2)
             #return Playerslist2
-        Playerslist.Tail
+        Playerslist = Playerslist.Tail
 
     return Playerslist2
     
@@ -84,24 +84,26 @@ def changePlayer(Playerslist, currentPL_currency):
     print ("Pizza")
                         """
 
-def saveAttributes(Playerslist, currentPL_currency):
-    #global n
+def saveAttributes(Playerslist, copy_Playerslist, currentPL_currency):
+    global n
     global previousid
     print("1 saveAttributes def")
 
-    previousid += 1
-    if previousid < 1:
-        previousid = 4
-
-    for i in range(0, 3):
-        print("2 saveAttributes def for")
-        if Playerslist.Tail.IsEmpty == True:
-            Playerslist.Tail = Playerslist
-        if Playerslist.Value.Pl_id == previousid:
-            print("if saveAttributes def" + str(i) + " id: " + str(Playerslist.Value.Pl_id))
-            Playerslist.Value.Currency = currentPL_currency
-            print(Playerslist.Value.Pl_id)
-        Playerslist = Playerslist.Tail
+    if n == 0:
+        n += 1
+    else:
+        previousid += 1
+        if previousid > 4:
+            previousid = 1
+        for i in range(0, 4):
+            print("2 saveAttributes def for")
+            if Playerslist.Tail.IsEmpty == True:
+                Playerslist.Tail = copy_Playerslist
+            elif Playerslist.Value.Pl_id == previousid:
+                print("if saveAttributes def" + str(i) + " id: " + str(Playerslist.Value.Pl_id))
+                Playerslist.Value.Currency = currentPL_currency
+                print(Playerslist.Value.Pl_id)
+            Playerslist = Playerslist.Tail
 
     return Playerslist
 
@@ -220,7 +222,7 @@ def wait(Mapwidth):
                 mouse_Pos_New = [mouse_x_new, mouse_y_new]
                 return mouse_Pos_New
 
-def tile_loop(Playerslist):
+def tile_loop(Playerslist, copy_Playerslist):
     global currentPlayerList
     global currentTile
     global Movements
@@ -599,7 +601,7 @@ def tile_loop(Playerslist):
             pygame.draw.rect(screen, cyan, (865,700,124,19)) 
             if click[0] == 1:
                 screen.blit(bgmap, (0,0))
-                Playerslist = saveAttributes(Playerslist, currentPL_currency)
+                Playerslist = saveAttributes(Playerslist, copy_Playerslist, currentPL_currency)
                 currentPlayerList = changePlayer(Playerslist, currentPL_currency)
                 currentPl_id = currentPlayerList.Value.Pl_id
                 currentPL_name = currentPlayerList.Value.Pl_name

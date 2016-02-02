@@ -14,9 +14,10 @@ def game_loop():                                #GameLoop door Joost en Eljakim
     global AmountPlayersDefault     #Eljakim's code
     if AmountPlayersDefault == 0:
         Playerslist = ChoosePlayerScreen()
+        copy_Playerslist = Playerslist
     print("aantal normale spelers: " + str(AmountPlayersDefault))
     
-    tile_loop(Playerslist)                     #Joost
+    tile_loop(Playerslist, copy_Playerslist)                     #Joost
 
 
 def ChoosePlayerScreen():               #ChoosePlayerScreen door Joost en Eljakim
