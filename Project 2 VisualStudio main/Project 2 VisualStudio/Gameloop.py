@@ -13,10 +13,10 @@ AmountPlayersDefault = 0
 def game_loop():                                #GameLoop door Joost en Eljakim
     global AmountPlayersDefault     #Eljakim's code
     if AmountPlayersDefault == 0:
-        Playerslist1 = ChoosePlayerScreen()
+        Playerslist = ChoosePlayerScreen()
     print("aantal normale spelers: " + str(AmountPlayersDefault))
     
-    tile_loop(Playerslist1)                     #Joost
+    tile_loop(Playerslist)                     #Joost
 
 
 def ChoosePlayerScreen():               #ChoosePlayerScreen door Joost en Eljakim
@@ -113,10 +113,11 @@ def ChoosePlayerScreen():               #ChoosePlayerScreen door Joost en Eljaki
         pl_2_Biome = "niks"
         pl_3_Biome = "niks"
         pl_4_Biome = "niks"
+        #Playerslist = Node("Hoi", Empty)
         Playerslist = Empty
         for normalPlayers in range(AmountPlayersDefault):       #Deze eerste for loop zorgt er voor dat elke echte speler een naam kan invullen
             biomegenerator = Player1.GenerateRandomBiome()  
-            Playername = "Player" + str(normalPlayers) 
+            Playername = "Player " + str(normalPlayers + 1) 
             Playerslist = Node(Player1(id, Playername, biomegenerator, biomegenerator, 500, 0, 0, 0, 0, 0), Playerslist)
             #Deze loop zorgt ervoor dat spelers niet dezelfde biome kunnen hebben:
             while Playerslist.Value.Biome == pl_1_Biome or Playerslist.Value.Biome == pl_2_Biome or Playerslist.Value.Biome == pl_3_Biome or Playerslist.Value.Biome == pl_4_Biome:
@@ -162,6 +163,9 @@ def ChoosePlayerScreen():               #ChoosePlayerScreen door Joost en Eljaki
                         print("gamecard = " + Playerslist.Value.Gamecard)
                         print("biome = " + Playerslist.Value.Biome)
                         print("currency = " + str(Playerslist.Value.Currency))
+                    #for i in range(0, 5):
+                        #if i == 2:
+                            #Playerslist = Node(Playerslist.Value, Playerslist.Tail)
                 return Playerslist
 
             
