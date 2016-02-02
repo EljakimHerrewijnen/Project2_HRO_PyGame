@@ -71,6 +71,7 @@ def ChoosePlayerScreen():               #ChoosePlayerScreen door Joost en Eljaki
             pygame.draw.rect(gameDisplay, bright_green, (150,500,100,50))
             if click[0] == 1:
                 AmountPlayersDefault = 2
+                intro = False
                 #game_loop()               
         else:
             pygame.draw.rect(gameDisplay, green, (150,500,100,50))
@@ -85,6 +86,7 @@ def ChoosePlayerScreen():               #ChoosePlayerScreen door Joost en Eljaki
             pygame.draw.rect(gameDisplay, bright_blue, (350,500,100,50))
             if click[0] == 1:
                 AmountPlayersDefault = 3
+                intro = False
                 #game_loop()
         else: 
             pygame.draw.rect(gameDisplay, blue, (350,500,100,50))
@@ -99,6 +101,7 @@ def ChoosePlayerScreen():               #ChoosePlayerScreen door Joost en Eljaki
             pygame.draw.rect(gameDisplay, bright_red, (550,500,100,50))
             if click[0] == 1:
                 AmountPlayersDefault = 4
+                intro = False
                 #game_loop()
         else:
             pygame.draw.rect(gameDisplay, red, (550,500,100,50))
@@ -115,65 +118,72 @@ def ChoosePlayerScreen():               #ChoosePlayerScreen door Joost en Eljaki
         pl_3_Biome = "niks"
         pl_4_Biome = "niks"
         #Playerslist = Node("Hoi", Empty)
-        Playerslist = Empty
-        for normalPlayers in range(AmountPlayersDefault):       #Deze eerste for loop zorgt er voor dat elke echte speler een naam kan invullen
-            biomegenerator = Player1.GenerateRandomBiome()  
-            Playername = "Player " + str(normalPlayers + 1) 
-            Playerslist = Node(Player1(id, Playername, biomegenerator, biomegenerator, 500, 0, 0, 0, 0, 0), Playerslist)
-            #Deze loop zorgt ervoor dat spelers niet dezelfde biome kunnen hebben:
-            while Playerslist.Value.Biome == pl_1_Biome or Playerslist.Value.Biome == pl_2_Biome or Playerslist.Value.Biome == pl_3_Biome or Playerslist.Value.Biome == pl_4_Biome:
-                biogenerator = Player1.GenerateRandomBiome()
-                Playerslist.Value.Biome = biogenerator
-                Playerslist.Value.Gamecard = biogenerator
-            if id == 1:
-                pl_1_Biome = Playerslist.Value.Biome
-            elif id == 2:
-                pl_2_Biome = Playerslist.Value.Biome
-            elif id == 3:
-                pl_3_Biome = Playerslist.Value.Biome
-            elif id == 4:
-                pl_4_Biome = Playerslist.Value.Biome
+        pygame.display.update()
+        clock.tick(15)                      
+    
+    Playerslist = Empty
+    for normalPlayers in range(AmountPlayersDefault):       #Deze eerste for loop zorgt er voor dat elke echte speler een naam kan invullen
+        biomegenerator = Player1.GenerateRandomBiome()  
+        Playername = "Player " + str(normalPlayers + 1) 
+        Playerslist = Node(Player1(id, Playername, biomegenerator, biomegenerator, 500, 0, 0, 0, 0, 0), Playerslist)
+        #Deze loop zorgt ervoor dat spelers niet dezelfde biome kunnen hebben:
+        while Playerslist.Value.Biome == pl_1_Biome or Playerslist.Value.Biome == pl_2_Biome or Playerslist.Value.Biome == pl_3_Biome or Playerslist.Value.Biome == pl_4_Biome:
+            biogenerator = Player1.GenerateRandomBiome()
+            Playerslist.Value.Biome = biogenerator
+            Playerslist.Value.Gamecard = biogenerator
+        if id == 1:
+            pl_1_Biome = Playerslist.Value.Biome
+        elif id == 2:
+            pl_2_Biome = Playerslist.Value.Biome
+        elif id == 3:
+            pl_3_Biome = Playerslist.Value.Biome
+        elif id == 4:
+            pl_4_Biome = Playerslist.Value.Biome
 
-            id += 1
-            print("id = " + str(Playerslist.Value.Pl_id))
-            print("name = " + Playerslist.Value.Pl_name)
-            print("gamecard = " + Playerslist.Value.Gamecard)
-            print("biome = " + Playerslist.Value.Biome)
-            print("currency = " + str(Playerslist.Value.Currency))
-            if normalPlayers == AmountPlayersDefault - 1:       #moeten er nog PC spelers aangemaakt worden?
-                if AmountPlayersDefault < 4:
-                    AmountComputerPlayers = 0
-                    AmountComputerPlayers = 4 - normalPlayers
-                    for computerPlayers in range(AmountComputerPlayers - 1):        #Deze tweede for loop zorgt ervoor dat als er niet genoeg spelers zijn er PC spelers worden aangemaakt
-                        Playername = "PCplayer " + str(id)
-                        biomegenerator = Player1.GenerateRandomBiome()
-                        Playerslist = Node(Player1(id, Playername, biomegenerator, biomegenerator, 500, 0, 0, 0, 0, 0), Playerslist)
-                        #Deze for loop is hetzelfde als de vorige, dus het zorgt ervoor dat spelers niet dezelfde biome kunnen hebben:
-                        while Playerslist.Value.Biome == pl_1_Biome or Playerslist.Value.Biome == pl_2_Biome or Playerslist.Value.Biome == pl_3_Biome or Playerslist.Value.Biome == pl_4_Biome:
-                            biogenerator = Player1.GenerateRandomBiome()
-                            Playerslist.Value.Biome = biogenerator
-                            Playerslist.Value.Gamecard = biogenerator
-                        if id == 3:
-                            pl_3_Biome = Playerslist.Value.Biome
-                        elif id == 4:
-                            pl_4_Biome = Playerslist.Value.Biome
+        id += 1
+        print("id = " + str(Playerslist.Value.Pl_id))
+        print("name = " + Playerslist.Value.Pl_name)
+        print("gamecard = " + Playerslist.Value.Gamecard)
+        print("biome = " + Playerslist.Value.Biome)
+        print("currency = " + str(Playerslist.Value.Currency))
+        if normalPlayers == AmountPlayersDefault - 1:       #moeten er nog PC spelers aangemaakt worden?
+            if AmountPlayersDefault < 4:
+                AmountComputerPlayers = 0
+                AmountComputerPlayers = 4 - normalPlayers
+                for computerPlayers in range(AmountComputerPlayers - 1):        #Deze tweede for loop zorgt ervoor dat als er niet genoeg spelers zijn er PC spelers worden aangemaakt
+                    Playername = "PCplayer " + str(id)
+                    biomegenerator = Player1.GenerateRandomBiome()
+                    Playerslist = Node(Player1(id, Playername, biomegenerator, biomegenerator, 500, 0, 0, 0, 0, 0), Playerslist)
+                    #Deze for loop is hetzelfde als de vorige, dus het zorgt ervoor dat spelers niet dezelfde biome kunnen hebben:
+                    while Playerslist.Value.Biome == pl_1_Biome or Playerslist.Value.Biome == pl_2_Biome or Playerslist.Value.Biome == pl_3_Biome or Playerslist.Value.Biome == pl_4_Biome:
+                        biogenerator = Player1.GenerateRandomBiome()
+                        Playerslist.Value.Biome = biogenerator
+                        Playerslist.Value.Gamecard = biogenerator
+                    if id == 3:
+                        pl_3_Biome = Playerslist.Value.Biome
+                    elif id == 4:
+                        pl_4_Biome = Playerslist.Value.Biome
 
-                        id += 1
-                        print("id = " + str(Playerslist.Value.Pl_id))
-                        print("name = " + Playerslist.Value.Pl_name)
-                        print("gamecard = " + Playerslist.Value.Gamecard)
-                        print("biome = " + Playerslist.Value.Biome)
-                        print("currency = " + str(Playerslist.Value.Currency))
-                    #head = Playerslist
+                    id += 1
+                    print("id = " + str(Playerslist.Value.Pl_id))
+                    print("name = " + Playerslist.Value.Pl_name)
+                    print("gamecard = " + Playerslist.Value.Gamecard)
+                    print("biome = " + Playerslist.Value.Biome)
+                    print("currency = " + str(Playerslist.Value.Currency))
+                #head = Playerslist
 
-                    #for i in range(0, 5):
-                        #if i == 4:
-                            #Playerslist = Node(Playerslist.Value, Playerslist.Tail)
-                return Playerslist
+                #for i in range(0, 5):
+                    #if i == 4:
+                        #Playerslist = Node(Playerslist.Value, Playerslist.Tail)
+
+    last_player = Playerslist
+    while not last_player.Tail.IsEmpty:
+        last_player = last_player.Tail
+    last_player.Tail = Playerslist
+    return Playerslist
 
             
-        pygame.display.update()
-        clock.tick(15)                      #Einde code Joost en Eljakim
+        #Einde code Joost en Eljakim
 
 def NextTurn():
     print("Next turn Commencing")
