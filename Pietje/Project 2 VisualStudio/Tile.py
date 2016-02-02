@@ -151,17 +151,18 @@ def draw(AddUnit, screen, soldierPos):      #draw functie voor units
         pygame.display.flip()
         #AddUnit = AddUnit.Tail
 
-def wait(Mapwidth):
+def wait(Mapwidth, mouse_Pos):
     while True:
         for event in pygame.event.get():
             if event.type == QUIT:
                 pygame.quit()
                 sys.exit()
-            #if event.type == KEYDOWN and event.key == K_f:
-            if pygame.mouse.get_pressed()[2] and pygame.mouse.get_pos()[0] < (Mapwidth * Tilesize):
-                mouse_x_new = math.floor(pygame.mouse.get_pos()[0] / Tilesize)
-                mouse_y_new = math.floor(pygame.mouse.get_pos()[1] / Tilesize)
-                mouse_Pos_New = [mouse_x_new, mouse_y_new]
+        #if event.type == KEYDOWN and event.key == K_f:
+        if pygame.mouse.get_pressed()[2] and pygame.mouse.get_pos()[0] < (Mapwidth * Tilesize):
+            mouse_x_new = math.floor(pygame.mouse.get_pos()[0] / Tilesize)
+            mouse_y_new = math.floor(pygame.mouse.get_pos()[1] / Tilesize)
+            mouse_Pos_New = [mouse_x_new, mouse_y_new]
+            if -2 < mouse_Pos_New[0] - mouse_Pos[0] < 2 and -2 < mouse_Pos_New[1] - mouse_Pos[1] < 2:
                 return mouse_Pos_New
 
 def tile_loop(Playerslist, copy_Playerslist):
@@ -343,38 +344,58 @@ def tile_loop(Playerslist, copy_Playerslist):
                 currentTile = tilelist[mouse_y][mouse_x]
                 print("Water = 0/Goldmine = 1/Forest = 2/Ice = 3/Swamp = 4/Desert = 5: ", currentTile)
         
-            copy_AddUnit = Empty
-            if pygame.mouse.get_pressed()[0] and pygame.mouse.get_pos()[0] < (Mapwidth * Tilesize):
-                mouse_x = math.floor(pygame.mouse.get_pos()[0] / Tilesize) * Tilesize
-                mouse_y = math.floor(pygame.mouse.get_pos()[1] / Tilesize) * Tilesize
-                soldierPos = [mouse_x, mouse_y]
-                mouse_x = math.floor(pygame.mouse.get_pos()[0] / Tilesize)
-                mouse_y = math.floor(pygame.mouse.get_pos()[1] / Tilesize)
-                mouse_Pos = [mouse_x, mouse_y]
-            while AddUnit.IsEmpty == False:
-                print(mouse_Pos[0], mouse_Pos[1])
-                if mouse_Pos == AddUnit.Value.position:
-                    print("Hier staat een unit: " + AddUnit.Value.unittype + " met id: " + str(AddUnit.Value.id))
-                    mouse_Pos_New = wait(Mapwidth)
-                    AddUnit.Value.position = mouse_Pos_New
-                    #draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency)
-                    #draw2(AddUnit, screen)
-                    print("klaar met wachten")
-                copy_AddUnit = Node(AddUnit.Value, copy_AddUnit)
+        
+        if pygame.mouse.get_pressed()[0] and pygame.mouse.get_pos()[0] < (Mapwidth * Tilesize):
+            mouse_x = math.floor(pygame.mouse.get_pos()[0] / Tilesize) * Tilesize
+            mouse_y = math.floor(pygame.mouse.get_pos()[1] / Tilesize) * Tilesize
+            soldierPos = [mouse_x, mouse_y]
+            mouse_x = math.floor(pygame.mouse.get_pos()[0] / Tilesize)
+            mouse_y = math.floor(pygame.mouse.get_pos()[1] / Tilesize)
+            mouse_Pos = [mouse_x, mouse_y]
+        #code voor het verplaatsen van units
+        copy_AddUnit = Empty
+        while AddUnit.IsEmpty == False:
+            print(mouse_Pos[0], mouse_Pos[1])
+            if mouse_Pos == AddUnit.Value.position and AddUnit.Value.OwnerPlayer == currentPl_id:
+                print("Hier staat een unit: " + AddUnit.Value.unittype + " met id: " + str(AddUnit.Value.id))
+                mouse_Pos_New = wait(Mapwidth, mouse_Pos)
+                AddUnit.Value.position = mouse_Pos_New
 
-                """
-                current_biome = AddUnit.Value.position
-                if current_biome == "Swamp" or current_biome == "Ice" or current_biome == "Forest" or current_biome == "Desert":
-                    if currentPlayerList.Value.Biome == current_biome:
-                        currentPlayerList.Value.Currency += 50
+                #code voor het krijgen van gold als een unit is verplaatst
+                current_biome = tilelist[AddUnit.Value.position[1]][AddUnit.Value.position[0]]
+                if currentPL_biome == "Forest":
+                    currentPL_biome_nr = 2
+                elif currentPL_biome == "Ice":
+                    currentPL_biome_nr = 3
+                elif currentPL_biome == "Swamp":
+                    currentPL_biome_nr = 4
+                elif currentPL_biome == "Desert":
+                    currentPL_biome_nr = 5
+                print("current_biome van units = " + str(current_biome))
+                print("current_biome van Player = " + str(currentPL_biome))
+                #if current_biome == "Swamp" or current_biome == "Ice" or current_biome == "Forest" or current_biome == "Desert":
+                if current_biome == 2 or current_biome == 3 or current_biome == 4 or current_biome == 5:
+                    if currentPL_biome_nr == current_biome:
+                        print("1")
+                        currentPL_currency += 50
                     else:
-                        currentPlayerList.Value.Currency += 100
-                if current_biome == "Goldmine":
-                    currentPlayerList.Value.Currency += 150
-                    """
-                draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency)
-                draw2(copy_AddUnit, screen)
-                AddUnit = AddUnit.Tail
+                        currentPL_currency += 100
+                        print("2")
+                if current_biome == 1:
+                    currentPL_currency += 150
+                    print("3")
+
+                #draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency)
+                #draw2(AddUnit, screen)
+                print("klaar met wachten")
+            copy_AddUnit = Node(AddUnit.Value, copy_AddUnit)
+
+
+
+                
+            draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency)
+            draw2(copy_AddUnit, screen)
+            AddUnit = AddUnit.Tail
                 
         #als de muis over tekst heen gaat verkleurt de achtergrond van de text
                 
