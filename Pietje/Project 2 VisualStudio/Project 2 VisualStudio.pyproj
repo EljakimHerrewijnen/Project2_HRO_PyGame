@@ -25,9 +25,6 @@
     <Compile Include="BuyScreen.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Change_Player.py">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="GameAI.py">
       <SubType>Code</SubType>
     </Compile>
