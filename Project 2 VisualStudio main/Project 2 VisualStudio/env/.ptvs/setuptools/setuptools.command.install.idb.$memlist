@@ -1,6 +1,0 @@
-install
-setuptools
-glob
-sys
-_install
-DistutilsArgError

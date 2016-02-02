@@ -1,8 +1,0 @@
-getResource
-os
-BytesIO
-resource_exists
-resource_stream
-__all__
-sys
-get_BytesIO

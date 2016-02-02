@@ -1,9 +1,0 @@
-os
-pkg_dir
-pkg_name
-sys
-is_pygame_pkg
-OverlayTypeTest
-parent_dir
-test_not_implemented
-unittest

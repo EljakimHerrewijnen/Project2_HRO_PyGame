@@ -3634,3 +3634,100 @@ ImportError: DLL load failed: %1 is geen geldige Win32-toepassing.
 2016-02-01T13:45:06: Saving group "C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip"
 2016-02-01T13:45:06: End of group "C:\Users\Gebruiker\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Lib\site-packages\pip"
 2016-02-01T13:45:07: Deleting 0 files
+
+2016-02-02T09:59:20: Start analysis
+2016-02-02T09:59:20: [WARNING] Library was set explicitly - skipping path detection
+2016-02-02T09:59:20: IncludeModulesFromModulePath = win32com
+2016-02-02T09:59:20: Getting builtin names
+2016-02-02T09:59:20: Command "C:\Users\Joostdw1\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Scripts\python.exe" -E -S -c "import sys; print('\n'.join(sys.builtin_module_names))"
+2016-02-02T09:59:20: Deleting 543 files
+2016-02-02T09:59:22: Scraping builtin modules
+2016-02-02T09:59:22: Command: "C:\Users\Joostdw1\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Scripts\python.exe" "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\Microsoft\Python Tools for Visual Studio\2.2\PythonScraper.py" "C:\Users\Joostdw1\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\.ptvs\\" "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\Microsoft\Python Tools for Visual Studio\2.2\CompletionDB\\"
+2016-02-02T09:59:22: [ERROR] Failed to scrape builtin modules (Exit Code: -1073741515)
+2016-02-02T09:59:22: [ERROR] Analysis failed
+System.InvalidOperationException: Failed to scrape builtin modules
+   bij Microsoft.PythonTools.Analysis.PyLibAnalyzer.<Scrape>d__53.MoveNext()
+--- Einde van stacktracering vanaf vorige locatie waar uitzondering is opgetreden ---
+   bij System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   bij System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   bij Microsoft.PythonTools.Analysis.PyLibAnalyzer.<RunWorker>d__31.MoveNext()
+--- Einde van stacktracering vanaf vorige locatie waar uitzondering is opgetreden ---
+   bij System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   bij System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   bij Microsoft.PythonTools.Analysis.PyLibAnalyzer.<Run>d__30.MoveNext()
+
+2016-02-02T10:00:15: Start analysis
+2016-02-02T10:00:15: [WARNING] Library was set explicitly - skipping path detection
+2016-02-02T10:00:15: IncludeModulesFromModulePath = win32com
+2016-02-02T10:00:15: Deleting 0 files
+2016-02-02T10:00:15: Scraping builtin modules
+2016-02-02T10:00:15: Command: "C:\Users\Joostdw1\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Scripts\python.exe" "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\Microsoft\Python Tools for Visual Studio\2.2\PythonScraper.py" "C:\Users\Joostdw1\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\.ptvs\\" "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\Microsoft\Python Tools for Visual Studio\2.2\CompletionDB\\"
+2016-02-02T10:00:15: [ERROR] Failed to scrape builtin modules (Exit Code: -1073741515)
+2016-02-02T10:00:15: [ERROR] Analysis failed
+System.InvalidOperationException: Failed to scrape builtin modules
+   bij Microsoft.PythonTools.Analysis.PyLibAnalyzer.<Scrape>d__53.MoveNext()
+--- Einde van stacktracering vanaf vorige locatie waar uitzondering is opgetreden ---
+   bij System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   bij System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   bij Microsoft.PythonTools.Analysis.PyLibAnalyzer.<RunWorker>d__31.MoveNext()
+--- Einde van stacktracering vanaf vorige locatie waar uitzondering is opgetreden ---
+   bij System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   bij System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   bij Microsoft.PythonTools.Analysis.PyLibAnalyzer.<Run>d__30.MoveNext()
+
+2016-02-02T10:00:59: Start analysis
+2016-02-02T10:00:59: [WARNING] Library was set explicitly - skipping path detection
+2016-02-02T10:00:59: IncludeModulesFromModulePath = win32com
+2016-02-02T10:01:00: Deleting 0 files
+2016-02-02T10:01:00: Scraping builtin modules
+2016-02-02T10:01:00: Command: "C:\Users\Joostdw1\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Scripts\python.exe" "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\Microsoft\Python Tools for Visual Studio\2.2\PythonScraper.py" "C:\Users\Joostdw1\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\.ptvs\\" "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\Microsoft\Python Tools for Visual Studio\2.2\CompletionDB\\"
+2016-02-02T10:01:00: [ERROR] Failed to scrape builtin modules (Exit Code: -1073741515)
+2016-02-02T10:01:00: [ERROR] Analysis failed
+System.InvalidOperationException: Failed to scrape builtin modules
+   bij Microsoft.PythonTools.Analysis.PyLibAnalyzer.<Scrape>d__53.MoveNext()
+--- Einde van stacktracering vanaf vorige locatie waar uitzondering is opgetreden ---
+   bij System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   bij System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   bij Microsoft.PythonTools.Analysis.PyLibAnalyzer.<RunWorker>d__31.MoveNext()
+--- Einde van stacktracering vanaf vorige locatie waar uitzondering is opgetreden ---
+   bij System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   bij System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   bij Microsoft.PythonTools.Analysis.PyLibAnalyzer.<Run>d__30.MoveNext()
+
+2016-02-02T10:01:22: Start analysis
+2016-02-02T10:01:22: [WARNING] Library was set explicitly - skipping path detection
+2016-02-02T10:01:22: IncludeModulesFromModulePath = win32com
+2016-02-02T10:01:22: Deleting 0 files
+2016-02-02T10:01:22: Scraping builtin modules
+2016-02-02T10:01:22: Command: "C:\Users\Joostdw1\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Scripts\python.exe" "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\Microsoft\Python Tools for Visual Studio\2.2\PythonScraper.py" "C:\Users\Joostdw1\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\.ptvs\\" "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\Microsoft\Python Tools for Visual Studio\2.2\CompletionDB\\"
+2016-02-02T10:01:22: [ERROR] Failed to scrape builtin modules (Exit Code: -1073741515)
+2016-02-02T10:01:22: [ERROR] Analysis failed
+System.InvalidOperationException: Failed to scrape builtin modules
+   bij Microsoft.PythonTools.Analysis.PyLibAnalyzer.<Scrape>d__53.MoveNext()
+--- Einde van stacktracering vanaf vorige locatie waar uitzondering is opgetreden ---
+   bij System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   bij System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   bij Microsoft.PythonTools.Analysis.PyLibAnalyzer.<RunWorker>d__31.MoveNext()
+--- Einde van stacktracering vanaf vorige locatie waar uitzondering is opgetreden ---
+   bij System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   bij System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   bij Microsoft.PythonTools.Analysis.PyLibAnalyzer.<Run>d__30.MoveNext()
+
+2016-02-02T10:03:41: Start analysis
+2016-02-02T10:03:41: [WARNING] Library was set explicitly - skipping path detection
+2016-02-02T10:03:41: IncludeModulesFromModulePath = win32com
+2016-02-02T10:03:41: Deleting 0 files
+2016-02-02T10:03:41: Scraping builtin modules
+2016-02-02T10:03:41: Command: "C:\Users\Joostdw1\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\Scripts\python.exe" "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\Microsoft\Python Tools for Visual Studio\2.2\PythonScraper.py" "C:\Users\Joostdw1\Documents\GitHub\Project2\Project 2 VisualStudio main\Project 2 VisualStudio\env\.ptvs\\" "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\Microsoft\Python Tools for Visual Studio\2.2\CompletionDB\\"
+2016-02-02T10:03:41: [ERROR] Failed to scrape builtin modules (Exit Code: -1073741515)
+2016-02-02T10:03:41: [ERROR] Analysis failed
+System.InvalidOperationException: Failed to scrape builtin modules
+   bij Microsoft.PythonTools.Analysis.PyLibAnalyzer.<Scrape>d__53.MoveNext()
+--- Einde van stacktracering vanaf vorige locatie waar uitzondering is opgetreden ---
+   bij System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   bij System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   bij Microsoft.PythonTools.Analysis.PyLibAnalyzer.<RunWorker>d__31.MoveNext()
+--- Einde van stacktracering vanaf vorige locatie waar uitzondering is opgetreden ---
+   bij System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   bij System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   bij Microsoft.PythonTools.Analysis.PyLibAnalyzer.<Run>d__30.MoveNext()
