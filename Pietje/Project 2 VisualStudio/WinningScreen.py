@@ -1,6 +1,11 @@
 ﻿import pygame
 import time
 from Gameloop import *
+import sys
+import os
+#from Project_2_VisualStudio import *
+
+RestartValue = 0
 
 def winning_screen():
     pygame.init()
@@ -51,20 +56,6 @@ def winning_screen():
         mouse = pygame.mouse.get_pos()
         click = pygame.mouse.get_pressed()
        
-        
-        if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
-            pygame.draw.rect(gameDisplay, bright_green, (150,500,100,50))
-            if click[0] == 1:
-                game_loop()                                                     #Einde Code Carlo
-                    
-        else:
-            pygame.draw.rect(gameDisplay, green, (150,500,100,50))
-
-        smallText = pygame.font.Font('freesansbold.ttf', 20)                #Code van Eljakim
-        textSurf, textRect = text_objects('Replay!', smallText)
-        textRect.center = ( (150+(100/2)), (500+(50/2)) )
-        gameDisplay.blit(textSurf, textRect)
-
         
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:    
             pygame.draw.rect(gameDisplay, bright_red, (550,500,100,50))

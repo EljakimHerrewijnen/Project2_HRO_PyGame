@@ -4,7 +4,7 @@ from Node import *
 from pygame.locals import *
 from Units import *
 from GameAI import *
-
+from WinningScreen import *
 #colors
 black = (0,0,0)
 white = (255,255,255)
@@ -335,6 +335,10 @@ def tile_loop(Playerslist, copy_Playerslist):
                         AddUnit.Value -= APlayersPosition
                 elif APlayersPosition is not AddUnit.Value.position:
                         APlayersPosition = AddUnit.Tail
+
+            if currentPL_currency >= 50000:
+                winning_screen()
+                done = True
 
             # if a key is pressed move the soldier
             if event.type == KEYDOWN: #and soldierPos[0] < Mapwidth * Tilesize - Tilesize:
