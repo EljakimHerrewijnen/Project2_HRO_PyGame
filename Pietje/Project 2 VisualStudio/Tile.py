@@ -366,51 +366,48 @@ def tile_loop(Playerslist, copy_Playerslist):
             mouse_x = math.floor(pygame.mouse.get_pos()[0] / Tilesize)
             mouse_y = math.floor(pygame.mouse.get_pos()[1] / Tilesize)
             mouse_Pos = [mouse_x, mouse_y]
-        #code voor het verplaatsen van units
-        copy_AddUnit = Empty
-        while AddUnit.IsEmpty == False:
-            print(mouse_Pos[0], mouse_Pos[1])
-            if mouse_Pos == AddUnit.Value.position and AddUnit.Value.OwnerPlayer == currentPl_id:
-                print("Hier staat een unit: " + AddUnit.Value.unittype + " met id: " + str(AddUnit.Value.id))
-                mouse_Pos_New = wait(Mapwidth, mouse_Pos)
-                AddUnit.Value.position = mouse_Pos_New
+            #code voor het verplaatsen van units
+            copy_AddUnit = Empty
+            while AddUnit.IsEmpty == False:
+                print(mouse_Pos[0], mouse_Pos[1])
+                if mouse_Pos == AddUnit.Value.position and AddUnit.Value.OwnerPlayer == currentPl_id:
+                    print("Hier staat een unit: " + AddUnit.Value.unittype + " met id: " + str(AddUnit.Value.id))
+                    mouse_Pos_New = wait(Mapwidth, mouse_Pos)
+                    AddUnit.Value.position = mouse_Pos_New
 
-                #code voor het krijgen van gold als een unit is verplaatst
-                current_biome = tilelist[AddUnit.Value.position[1]][AddUnit.Value.position[0]]
-                if currentPL_biome == "Forest":
-                    currentPL_biome_nr = 2
-                elif currentPL_biome == "Ice":
-                    currentPL_biome_nr = 3
-                elif currentPL_biome == "Swamp":
-                    currentPL_biome_nr = 4
-                elif currentPL_biome == "Desert":
-                    currentPL_biome_nr = 5
-                print("current_biome van units = " + str(current_biome))
-                print("current_biome van Player = " + str(currentPL_biome))
-                #if current_biome == "Swamp" or current_biome == "Ice" or current_biome == "Forest" or current_biome == "Desert":
-                if current_biome == 2 or current_biome == 3 or current_biome == 4 or current_biome == 5:
-                    if currentPL_biome_nr == current_biome:
-                        print("1")
-                        currentPL_currency += 50
-                    else:
-                        currentPL_currency += 100
-                        print("2")
-                if current_biome == 1:
-                    currentPL_currency += 150
-                    print("3")
+                    #code voor het krijgen van gold als een unit is verplaatst
+                    current_biome = tilelist[AddUnit.Value.position[1]][AddUnit.Value.position[0]]
+                    if currentPL_biome == "Forest":
+                        currentPL_biome_nr = 2
+                    elif currentPL_biome == "Ice":
+                        currentPL_biome_nr = 3
+                    elif currentPL_biome == "Swamp":
+                        currentPL_biome_nr = 4
+                    elif currentPL_biome == "Desert":
+                        currentPL_biome_nr = 5
+                    print("current_biome van units = " + str(current_biome))
+                    print("current_biome van Player = " + str(currentPL_biome))
+                    #if current_biome == "Swamp" or current_biome == "Ice" or current_biome == "Forest" or current_biome == "Desert":
+                    if current_biome == 2 or current_biome == 3 or current_biome == 4 or current_biome == 5:
+                        if currentPL_biome_nr == current_biome:
+                            print("1")
+                            currentPL_currency += 50
+                        else:
+                            currentPL_currency += 100
+                            print("2")
+                    if current_biome == 1:
+                        currentPL_currency += 150
+                        print("3")
 
-                #draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome)
-                #draw2(AddUnit, screen)
-                print("klaar met wachten")
-            copy_AddUnit = Node(AddUnit.Value, copy_AddUnit)
-
-
-
-                
-            draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome)
-            draw2(copy_AddUnit, screen)
-            AddUnit = AddUnit.Tail
-                
+                    #draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome)
+                    #draw2(AddUnit, screen)
+                    print("klaar met wachten")
+                copy_AddUnit = Node(AddUnit.Value, copy_AddUnit)
+                draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome)
+                draw2(copy_AddUnit, screen)
+                #AddUnit = draw2(copy_AddUnit, screen)
+                AddUnit = AddUnit.Tail
+            AddUnit = copy_AddUnit
         #als de muis over tekst heen gaat verkleurt de achtergrond van de text
                 
         mouse = pygame.mouse.get_pos()  
