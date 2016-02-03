@@ -44,7 +44,7 @@ def changePlayer(Playerslist, currentPL_currency):
 
     return Playerslist2
 
-def saveAttributes(Playerslist, copy_Playerslist, currentPL_currency):
+def saveAttributes(Playerslist, copy_Playerslist, currentPL_currency, currentPl_soldiers, currentPl_robots, currentPl_tanks, currentPl_barracks, currentPl_boats):
     global n
     global previousid
     print("1 saveAttributes def")
@@ -63,7 +63,13 @@ def saveAttributes(Playerslist, copy_Playerslist, currentPL_currency):
                 print("if saveAttributes def" + str(i) + " id: " + str(Playerslist.Value.Pl_id))
                 Playerslist.Value.Currency = currentPL_currency
                 print(Playerslist.Value.Pl_id)
+                Playerslist.Value.Soldiers = currentPl_soldiers
+                Playerslist.Value.Robots = currentPl_robots
+                Playerslist.Value.Tanks = currentPl_tanks
+                Playerslist.Value.Barracks = currentPl_barracks
+                Playerslist.Value.Boats = currentPl_boats
             Playerslist = Playerslist.Tail
+
 
     return Playerslist      
 
@@ -96,7 +102,7 @@ def draw2(AddUnit, screen):
     pygame.display.flip()
         """
 
-def draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome, currentPlayerList):     #simpele draw functie voor units   
+def draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome, currentPl_soldiers, currentPl_robots, currentPl_tanks, currentPl_barracks, currentPl_boats):     #simpele draw functie voor units   
     buy_background_2 = pygame.image.load('content/wood_3.jpg')
     buy_background_2 = pygame.transform.scale(buy_background_2, (260, 260))   #int(260 / 3)))
     screen.blit(buy_background_2, (Mapwidth * Tilesize - 4, 260 + math.floor((260 / 3) * 2)))
@@ -121,15 +127,15 @@ def draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwid
     screen.blit(Text2, (Mapwidth * Tilesize + 20, placePositionY + 40))
     Text3 = font1.render("Player " + str(currentPl_id) + "'s climate: " + currentPL_biome, True, black, transparent_texture)
     screen.blit(Text3, (Mapwidth * Tilesize + 20, placePositionY + 60))
-    Text4 = font1.render("Player " + str(currentPl_id) + "'s soldiers: " + str(currentPlayerList.Value.Soldiers), True, black, transparent_texture)
+    Text4 = font1.render("Player " + str(currentPl_id) + "'s soldiers: " + str(currentPl_soldiers), True, black, transparent_texture)
     screen.blit(Text4, (Mapwidth * Tilesize + 20, placePositionY + 80))
-    Text5 = font1.render("Player " + str(currentPl_id) + "'s robots: " + str(currentPlayerList.Value.Robots), True, black, transparent_texture)
+    Text5 = font1.render("Player " + str(currentPl_id) + "'s robots: " + str(currentPl_robots), True, black, transparent_texture)
     screen.blit(Text5, (Mapwidth * Tilesize + 20, placePositionY + 100))
-    Text6 = font1.render("Player " + str(currentPl_id) + "'s tanks: " + str(currentPlayerList.Value.Tanks), True, black, transparent_texture)
+    Text6 = font1.render("Player " + str(currentPl_id) + "'s tanks: " + str(currentPl_tanks), True, black, transparent_texture)
     screen.blit(Text6, (Mapwidth * Tilesize + 20, placePositionY + 120))
-    Text7 = font1.render("Player " + str(currentPl_id) + "'s barracks: " + str(currentPlayerList.Value.Barracks), True, black, transparent_texture)
+    Text7 = font1.render("Player " + str(currentPl_id) + "'s barracks: " + str(currentPl_barracks), True, black, transparent_texture)
     screen.blit(Text7, (Mapwidth * Tilesize + 20, placePositionY + 140))
-    Text8 = font1.render("Player " + str(currentPl_id) + "'s boats: " + str(currentPlayerList.Value.Boats), True, black, transparent_texture)
+    Text8 = font1.render("Player " + str(currentPl_id) + "'s boats: " + str(currentPl_boats), True, black, transparent_texture)
     screen.blit(Text8, (Mapwidth * Tilesize + 20, placePositionY + 160))
     
     pygame.display.flip()
@@ -326,6 +332,11 @@ def tile_loop(Playerslist, copy_Playerslist):
     font1 = pygame.font.Font("freesansbold.ttf", 16)
     click = pygame.mouse.get_pressed()
     currentPL_currency = 0
+    currentPl_soldiers = 0
+    currentPl_robots = 0
+    currentPl_tanks = 0
+    currentPl_barracks = 0
+    currentPl_boats = 0
 
     while not done:
         for event in pygame.event.get():    #get all user events
@@ -414,11 +425,11 @@ def tile_loop(Playerslist, copy_Playerslist):
                         print("3")
 
                     nr_movements += 1
-                    #draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome, currentPlayerList)
+                    #draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome, currentPl_soldiers, currentPl_robots, currentPl_tanks, currentPl_barracks, currentPl_boats)
                     #draw2(AddUnit, screen)
                     print("klaar met wachten")
                 copy_AddUnit = Node(AddUnit.Value, copy_AddUnit)
-                draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome, currentPlayerList)
+                draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome, currentPl_soldiers, currentPl_robots, currentPl_tanks, currentPl_barracks, currentPl_boats)
                 draw2(copy_AddUnit, screen)
                 #AddUnit = draw2(copy_AddUnit, screen)
                 AddUnit = AddUnit.Tail
@@ -437,11 +448,11 @@ def tile_loop(Playerslist, copy_Playerslist):
                     currentPL_currency -= 120
                     print(currentPL_currency)
                     AddUnit = Units.BuySoldier(currentPl_id, currentPL_biome, currentPL_currency)
-                    currentPlayerList.Value.Soldiers += 1
+                    currentPl_soldiers += 1
                 elif currentPL_currency >= 150:
                     currentPL_currency -= 150
                     AddUnit = Units.BuySoldier(currentPl_id, currentPL_biome, currentPL_currency)
-                    currentPlayerList.Value.Soldiers += 1
+                    currentPl_soldiers += 1
                 else:
                     print("You do not have enough gold!")
                 #currentPlayerList.Value.Currency = currentPL_currency
@@ -459,11 +470,13 @@ def tile_loop(Playerslist, copy_Playerslist):
                     currentPL_currency -= 240
                     AddUnit = Units.BuyRobot(currentPl_id, currentPL_biome, currentPL_currency)
                     RobotPos = AddUnit.Value.position
+                    currentPl_robots += 1
                     #screen.blit(robot_texture, (RobotPos[0] * Mapwidth * 2, RobotPos[1]* Mapheight * 2))
                 elif currentPL_currency >= 150:
                     currentPL_currency -= 300
                     AddUnit = Units.BuyRobot(currentPl_id, currentPL_biome, currentPL_currency)
                     RobotPos = AddUnit.Value.position
+                    currentPl_robots += 1
                     #screen.blit(robot_texture, (RobotPos[0] * Mapwidth * 2, RobotPos[1]* Mapheight * 2))
                 else:
                     print("You do not have enough gold!")
@@ -481,11 +494,13 @@ def tile_loop(Playerslist, copy_Playerslist):
                     AddUnit = Units.BuyTank(currentPl_id, currentPL_biome, currentPL_currency)   
                     currentPL_currency -= 500
                     TankPos = AddUnit.Value.position
+                    currentPl_tanks += 1
                     #screen.blit(tank_texture, (TankPos[0] * Mapwidth * 2, TankPos[1]* Mapheight * 2))
                 elif currentPL_currency >= 750:
                     AddUnit = Units.BuyTank(currentPl_id, currentPL_biome, currentPL_currency)   
                     currentPL_currency -= 750
                     TankPos = AddUnit.Value.position
+                    currentPl_tanks += 1
                     #screen.blit(tank_texture, (TankPos[0] * Mapwidth * 2, TankPos[1]* Mapheight * 2))
                 else:
                     print("You do not have enough gold!")        
@@ -503,11 +518,13 @@ def tile_loop(Playerslist, copy_Playerslist):
                     currentPL_currency -= 800
                     AddUnit = Units.BuyBoat(currentPl_id, currentPL_biome, currentPL_currency)
                     BoatPos = AddUnit.Value.position
+                    currentPl_boats += 1
                     #screen.blit(boat_texture, (BoatPos[0] * Mapwidth * 2, BoatPos[1]* Mapheight * 2))
                 elif currentPL_currency >= 1000:
                     currentPL_currency = currentPL_currency - 1000
                     AddUnit = Units.BuyBoat(currentPl_id, currentPL_biome, currentPL_currency)
                     BoatPos = AddUnit.Value.position
+                    currentPl_boats += 1
                     #screen.blit(boat_texture, (BoatPos[0] * Mapwidth * 2, BoatPos[1]* Mapheight * 2))
                 else:
                     print("You do not have enough gold!")
@@ -529,6 +546,7 @@ def tile_loop(Playerslist, copy_Playerslist):
                     currentPL_currency -= 500
                     AddUnit = Units.BuyBarrack(currentPl_id, currentPL_biome, currentPL_currency)
                     BarrackPos = AddUnit.Value.position
+                    currentPl_barracks += 1
                     #screen.blit(barrack_texture, (TankPos[0] * Mapwidth * 2, TankPos[1]* Mapheight * 2))              
                 else:
                     print("You do not have enough gold!")
@@ -544,29 +562,35 @@ def tile_loop(Playerslist, copy_Playerslist):
             pygame.draw.rect(screen, cyan, (865,700,124,19)) 
             if click[0] == 1:
                 screen.blit(bgmap, (0,0))
-                Playerslist = saveAttributes(Playerslist, copy_Playerslist, currentPL_currency)
+                Playerslist = saveAttributes(Playerslist, copy_Playerslist, currentPL_currency, currentPl_soldiers, currentPl_robots, currentPl_tanks, currentPl_barracks, currentPl_boats)
                 currentPlayerList = changePlayer(Playerslist, currentPL_currency)
                 currentPl_id = currentPlayerList.Value.Pl_id
                 currentPL_name = currentPlayerList.Value.Pl_name
                 currentPL_card = currentPlayerList.Value.Gamecard
                 currentPL_biome = currentPlayerList.Value.Biome
                 currentPL_currency = currentPlayerList.Value.Currency
+<<<<<<< HEAD
+=======
                 currentPL_currency += 5000
+>>>>>>> origin/master
                 currentPl_soldiers = currentPlayerList.Value.Soldiers
                 currentPl_robots = currentPlayerList.Value.Robots
                 currentPl_tanks = currentPlayerList.Value.Tanks
                 currentPl_barracks = currentPlayerList.Value.Barracks
                 currentPl_boats = currentPlayerList.Value.Boats
+<<<<<<< HEAD
+=======
                 #currentPl_soldiers = currentPlayerList.Value.Soldiers
                 #currentPl_robots = currentPlayerList.Value.Robots
                 #currentPl_tanks = currentPlayerList.Value.Tanks
                 #currentPl_barracks = currentPlayerList.Value.Barracks
                 #currentPl_boats = currentPlayerList.Value.Boats
+>>>>>>> origin/master
                 nr_movements = 0
                 #global currentPl_id
                 print("Player id = " + str(currentPl_id) + " Player name = " + currentPL_name)
-                draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome, currentPlayerList)
-                draw2(copy2_AddUnit, screen)
+                draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome, currentPl_soldiers, currentPl_robots, currentPl_tanks, currentPl_barracks, currentPl_boats)
+                #draw2(copy2_AddUnit, screen)
                 pygame.time.delay(1000)
                 #GameAI(currentPl_id, currentPL_currency, currentPL_biome)
         else:
@@ -574,7 +598,7 @@ def tile_loop(Playerslist, copy_Playerslist):
         textSurf, textRect = text_objects('End Turn!', font1)
         textRect.center = ( (865+(124/2)), (700+(9)) )
         screen.blit(textSurf, textRect) 
-        #draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome, currentPlayerList)
+        #draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome, currentPl_soldiers, currentPl_robots, currentPl_tanks, currentPl_barracks, currentPl_boats)
         
         #print BuyScreen
         placePositionY = 10
@@ -597,7 +621,7 @@ def tile_loop(Playerslist, copy_Playerslist):
         #print("x = ", soldierPos[0], "y = ", soldierPos[1])
 
 
-        #draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome, currentPlayerList)
+        #draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome, currentPl_soldiers, currentPl_robots, currentPl_tanks, currentPl_barracks, currentPl_boats)
         draw2(AddUnit, screen)
         pygame.display.flip()
         clock.tick(30)
