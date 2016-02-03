@@ -5,6 +5,7 @@ from pygame.locals import *
 from Units import *
 from GameAI import *
 from WinningScreen import *
+from Rules import *
 #colors
 black = (0,0,0)
 white = (255,255,255)
@@ -199,6 +200,10 @@ def wait(Mapwidth, mouse_Pos):
             if -2 < mouse_Pos_New[0] - mouse_Pos[0] < 2 and -2 < mouse_Pos_New[1] - mouse_Pos[1] < 2:
                 return mouse_Pos_New
 
+def drawcloud(cloud_texture, cloudx, cloudy, screen):
+    screen.blit(cloud_texture.convert_alpha(), (cloudx, cloudy))
+    pygame.display.flip()
+
 def tile_loop(Playerslist, copy_Playerslist):
     global currentPlayerList
     global currentTile
@@ -384,6 +389,8 @@ def tile_loop(Playerslist, copy_Playerslist):
             if pygame.key.get_pressed()[K_SPACE] == 1:
                 currentTile = tilelist[mouse_y][mouse_x]
                 print("Water = 0/Goldmine = 1/Forest = 2/Ice = 3/Swamp = 4/Desert = 5: ", currentTile)
+            if pygame.key.get_pressed()[K_p] == 1:
+                Settings()
         """
         n = 0
         while AddUnit.IsEmpty == False:
@@ -745,13 +752,15 @@ def tile_loop(Playerslist, copy_Playerslist):
         #print soldier-coordinaten in console
         #print("x = ", soldierPos[0], "y = ", soldierPos[1])
 
-        #cloud animatie
         """
+        #cloud animatie
         cloudx += 1
         if cloudx > Mapwidth * Tilesize:
             cloudy = random.randint(0, Mapheight * Tilesize)
             cloudx = -200
-        screen.blit(cloud_texture.convert_alpha(), (cloudx, cloudy))
+        drawcloud(cloud_texture, cloudx, cloudy, screen)
+
+        #screen.blit(cloud_texture.convert_alpha(), (cloudx, cloudy))
             """
 
 
