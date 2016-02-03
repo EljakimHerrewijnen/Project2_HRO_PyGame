@@ -200,15 +200,12 @@ def wait(Mapwidth, mouse_Pos):
             if -2 < mouse_Pos_New[0] - mouse_Pos[0] < 2 and -2 < mouse_Pos_New[1] - mouse_Pos[1] < 2:
                 return mouse_Pos_New
 
-<<<<<<< HEAD
-def tile_loop(Playerslist, copy_Playerslist, AmountPlayersDefault):
-=======
+
 def drawcloud(cloud_texture, cloudx, cloudy, screen):
     screen.blit(cloud_texture.convert_alpha(), (cloudx, cloudy))
     pygame.display.flip()
 
-def tile_loop(Playerslist, copy_Playerslist):
->>>>>>> origin/master
+def tile_loop(Playerslist, copy_Playerslist, AmountPlayersDefault):
     global currentPlayerList
     global currentTile
     global Movements
@@ -226,11 +223,8 @@ def tile_loop(Playerslist, copy_Playerslist):
     screen = pygame.display.set_mode((Mapwidth * Tilesize + 250, Mapheight * Tilesize))
     done = False
     clock = pygame.time.Clock()
-<<<<<<< HEAD
     pygame.mixer.music.load('Symphony X - Pharaoh.mp3')
-=======
     pygame.mixer.music.load('Birth of a Hero Extended.mp3')
->>>>>>> origin/master
     pygame.mixer.music.play(0)
 
     bgmap = pygame.image.load("content/map895.jpg")
@@ -397,7 +391,6 @@ def tile_loop(Playerslist, copy_Playerslist):
             if pygame.key.get_pressed()[K_SPACE] == 1:
                 currentTile = tilelist[mouse_y][mouse_x]
                 print("Water = 0/Goldmine = 1/Forest = 2/Ice = 3/Swamp = 4/Desert = 5: ", currentTile)
-<<<<<<< HEAD
             #Battle Code          
         #while AddUnit.IsEmpty == False:
         #    APlayersPosition = AddUnit.Value
@@ -417,7 +410,6 @@ def tile_loop(Playerslist, copy_Playerslist):
         #            print("This is a battle test")
         #    elif APlayersPosition is not AddUnit.Value.position:
         #                print("boe")
-=======
             if pygame.key.get_pressed()[K_p] == 1:
                 Settings()
         """
@@ -493,7 +485,6 @@ def tile_loop(Playerslist, copy_Playerslist):
             count_Units = AddUnit.Tail
             """
 
->>>>>>> origin/master
         if pygame.mouse.get_pressed()[0] and pygame.mouse.get_pos()[0] < (Mapwidth * Tilesize):
             mouse_x = math.floor(pygame.mouse.get_pos()[0] / Tilesize) * Tilesize
             mouse_y = math.floor(pygame.mouse.get_pos()[1] / Tilesize) * Tilesize

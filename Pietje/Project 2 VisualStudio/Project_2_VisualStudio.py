@@ -26,7 +26,7 @@ yellow = (255,255,0)
 bright_yellow = (229,230,0)
 purple = (128,0,127)
 bright_purple = (230,0,229)
-pygame.mixer.music.load('Yu-gi-oh GX Spirit Caller Music- Shadow Riders.mp3')
+pygame.mixer.music.load('Birth of a Hero Extended.mp3')
 pygame.mixer.music.play(0)
  
 block_color = (53,115,255)
@@ -43,14 +43,10 @@ def text_objects(text, font):
     return textSurface, textSurface.get_rect()
 
 def game_intro():
-
-<<<<<<< HEAD
     cloud_texture = pygame.image.load('content/cloud.tif')
     cloud_texture = pygame.transform.scale(cloud_texture, (250, 150))
     cloudx = -200
     cloudy = 0
-=======
->>>>>>> origin/master
 
     intro = True
     global sound
