@@ -742,10 +742,8 @@ def tile_loop(Playerslist, copy_Playerslist):
             #screen.blit(Text, (Mapwidth * Tilesize + 20 + placePositionX, placePositionY + 0.5 * Tilesize))
             placePositionY += Tilesize * 2
 
-
         #Calculate incomming currency
         #AddUnit.Value.position
-   
 
         #print de soldier
         #screen.blit(Soldier,(soldierPos[0], soldierPos[1]))
@@ -759,10 +757,8 @@ def tile_loop(Playerslist, copy_Playerslist):
             cloudy = random.randint(0, Mapheight * Tilesize)
             cloudx = -200
         drawcloud(cloud_texture, cloudx, cloudy, screen)
-
         #screen.blit(cloud_texture.convert_alpha(), (cloudx, cloudy))
             """
-
 
         #draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome, currentPl_soldiers, currentPl_robots, currentPl_tanks, currentPl_barracks, currentPl_boats)
         draw2(AddUnit, screen, nr_1_texture, nr_2_texture, nr_3_texture, nr_4_texture)

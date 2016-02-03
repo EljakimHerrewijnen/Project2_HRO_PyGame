@@ -43,6 +43,11 @@ def text_objects(text, font):
 
 def game_intro():
 
+    cloud_texture = pygame.image.load('content/cloud.tif')
+    cloud_texture = pygame.transform.scale(cloud_texture, (250, 150))
+    cloudx = -200
+    cloudy = 0
+
     intro = True
     global sound
 
@@ -177,6 +182,19 @@ def game_intro():
         textSurf, textRect = text_objects('Settings', smallText)
         textRect.center = ( (650+(100/2)), (500+(50/2)) )
         gameDisplay.blit(textSurf, textRect)
+        
+                
+        #cloud animatie
+        cloudx += 1
+        if cloudx > (Mapwidth * Tilesize):
+            cloudy = random.randint(display_height * 0.5, display_height * Tilesize)
+            cloudx = -200
+        drawcloud(cloud_texture, cloudx, cloudy, gameDisplay)
+        drawcloud(cloud_texture, cloudx - 200, cloudy + 350, gameDisplay)
+        drawcloud(cloud_texture, cloudx - 500, cloudy + 150, gameDisplay)
+        drawcloud(cloud_texture, cloudx + 250, cloudy - 200, gameDisplay)
+        #screen.blit(cloud_texture.convert_alpha(), (cloudx, cloudy))
+            
            
         pygame.display.update()
         clock.tick(15)
