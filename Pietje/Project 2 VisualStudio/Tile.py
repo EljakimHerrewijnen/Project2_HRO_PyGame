@@ -388,7 +388,6 @@ def tile_loop(Playerslist, copy_Playerslist):
                 print("Searching for a battle...")
                 AddUnit = AddUnit.Tail
                 if APlayersPosition.Value.position == AddUnit.Value.position:
-
                     APlayersPosition2 = AddUnit.Value
                     APlayersPosition2.Value.DefenceValue - APlayersPosition.Value.AttackValue
                     APlayersPosition.Value.DefenceValue - APlayersPosition2.Value.AttackValue
@@ -592,14 +591,11 @@ def tile_loop(Playerslist, copy_Playerslist):
                 currentPl_tanks = currentPlayerList.Value.Tanks
                 currentPl_barracks = currentPlayerList.Value.Barracks
                 currentPl_boats = currentPlayerList.Value.Boats
-<<<<<<< HEAD
                 #currentPl_soldiers = currentPlayerList.Value.Soldiers
                 #currentPl_robots = currentPlayerList.Value.Robots
                 #currentPl_tanks = currentPlayerList.Value.Tanks
                 #currentPl_barracks = currentPlayerList.Value.Barracks
                 #currentPl_boats = currentPlayerList.Value.Boats
-=======
->>>>>>> origin/master
                 nr_movements = 0
                 #global currentPl_id
                 print("Player id = " + str(currentPl_id) + " Player name = " + currentPL_name)

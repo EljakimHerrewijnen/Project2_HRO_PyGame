@@ -33,6 +33,8 @@ bright_purple = (230,0,229)
 
 clock = pygame.time.Clock()
 
+sound = 1
+
 
 def text_objects(text, font):
     textSurface = font.render(text, True, black)
@@ -42,6 +44,7 @@ def text_objects(text, font):
 def game_intro():
 
     intro = True
+    global sound
 
     while intro:
         for event in pygame.event.get():
@@ -65,11 +68,13 @@ def game_intro():
         
         if 25+100 > mouse[0] > 25 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_green, (25,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 game_loop()
-                print("test")                 
+            if click[0] == 1 and sound == 0:
+                game_loop()
+                #print("test")                 
         else:
             pygame.draw.rect(gameDisplay, green, (25,500,100,50))
 
@@ -82,9 +87,11 @@ def game_intro():
 
         if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (150,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
+                Rules()
+            if click[0] == 1 and sound == 0:
                 Rules()                
         else: 
             pygame.draw.rect(gameDisplay, blue, (150,500,100,50))
@@ -98,9 +105,12 @@ def game_intro():
 
         if 275+100 > mouse[0] > 275 and 500+50 > mouse[1] > 500:    
             pygame.draw.rect(gameDisplay, bright_red, (275,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
+                pygame.quit()
+                quit()
+            if click[0] == 1 and sound == 0:
                 pygame.quit()
                 quit()
         else:
@@ -116,9 +126,11 @@ def game_intro():
 
         if 400+100 > mouse[0] > 400 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_orange, (400,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
+                Welcome()
+            if click[0] == 1 and sound == 0:
                 Welcome()
                                
         else:
@@ -133,9 +145,11 @@ def game_intro():
 
         if 525+100 > mouse[0] > 525 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_yellow, (525,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
+                Background()
+            if click[0] == 1 and sound == 0:
                 Background()                
         else: 
             pygame.draw.rect(gameDisplay, yellow, (525,500,100,50))
@@ -149,9 +163,11 @@ def game_intro():
 
         if 650+100 > mouse[0] > 650 and 500+50 > mouse[1] > 500:    
             pygame.draw.rect(gameDisplay, bright_purple, (650,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
+                Settings()
+            if click[0] == 1 and sound == 0:
                 Settings()
         else:
             pygame.draw.rect(gameDisplay, purple, (650,500,100,50))
@@ -166,8 +182,10 @@ def game_intro():
 
 
 def Welcome():
+
     pygame.init()
     welkom = True
+    global sound
 
     while welkom:
         for event in pygame.event.get():
@@ -187,9 +205,11 @@ def Welcome():
     
         if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (150,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                game_intro()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 game_intro()
             
         else:
@@ -205,9 +225,11 @@ def Welcome():
 
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (550,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                game_intro()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 game_intro()
             
         else:
@@ -217,13 +239,16 @@ def Welcome():
         textSurf, textRect = text_objects('HOME', smallText)
         textRect.center = ( (550+(100/2)), (500+(50/2)) )
         gameDisplay.blit(textSurf, textRect)
+
         pygame.display.update()
         clock.tick(15) 
 
 
 def Background():
+
     pygame.init()
     background = True
+    global sound
 
     while background:
         for event in pygame.event.get():
@@ -243,9 +268,11 @@ def Background():
     
         if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (150,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                game_intro()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 game_intro()
             
         else:
@@ -261,9 +288,11 @@ def Background():
 
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (550,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                game_intro()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 game_intro()
             
         else:
@@ -273,14 +302,17 @@ def Background():
         textSurf, textRect = text_objects('HOME', smallText)
         textRect.center = ( (550+(100/2)), (500+(50/2)) )
         gameDisplay.blit(textSurf, textRect)
+
         pygame.display.update()
         clock.tick(15) 
 
 
 
 def Settings():
+
     pygame.init()
     settings = True
+    global sound
 
     while settings:
         for event in pygame.event.get():
@@ -298,15 +330,53 @@ def Settings():
 #--------------------------------------------------------------------------
 
     
+        if 150+100 > mouse[0] > 150 and 400+50 > mouse[1] > 400:
+            pygame.draw.rect(gameDisplay, bright_green, (150,400,100,50))
+            if click[0] == 1:
+                sound = 1
+               
+            
+        else:
+            pygame.draw.rect(gameDisplay, green, (150,400,100,50))
+        
+        smallText = pygame.font.Font('freesansbold.ttf', 12)
+        textSurf, textRect = text_objects('Sound on', smallText)
+        textRect.center = ( (150+(100/2)), (400+(50/2)) )
+        gameDisplay.blit(textSurf, textRect)
+
+#--------------------------------------------------------------------------
+
+
+        if 550+100 > mouse[0] > 550 and 400+50 > mouse[1] > 400:
+            pygame.draw.rect(gameDisplay, bright_green, (550,400,100,50))
+            if click[0] == 1:
+                sound = 0
+               
+            
+        else:
+            pygame.draw.rect(gameDisplay, green, (550,400,100,50))
+        
+        smallText = pygame.font.Font('freesansbold.ttf', 12)
+        textSurf, textRect = text_objects('Sound off', smallText)
+        textRect.center = ( (550+(100/2)), (400+(50/2)) )
+        gameDisplay.blit(textSurf, textRect)
+        
+       
+
+#--------------------------------------------------------------------------
+
+    
         if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (150,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                game_intro()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 game_intro()
             
         else:
-            pygame.draw.rect(gameDisplay, green, (150,500,100,50))
+            pygame.draw.rect(gameDisplay, blue, (150,500,100,50))
 
         smallText = pygame.font.Font('freesansbold.ttf', 12)
         textSurf, textRect = text_objects('BACK', smallText)
@@ -318,18 +388,21 @@ def Settings():
 
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (550,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                game_intro()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 game_intro()
             
         else:
-            pygame.draw.rect(gameDisplay, green, (550,500,100,50))
+            pygame.draw.rect(gameDisplay, blue, (550,500,100,50))
 
         smallText = pygame.font.Font('freesansbold.ttf', 12)
         textSurf, textRect = text_objects('HOME', smallText)
         textRect.center = ( (550+(100/2)), (500+(50/2)) )
         gameDisplay.blit(textSurf, textRect)
+
         pygame.display.update()
         clock.tick(15) 
 
@@ -338,6 +411,7 @@ def Rules():
 
     pygame.init()
     rules = True
+    global sound
 
     while rules:
         for event in pygame.event.get():
@@ -356,9 +430,11 @@ def Rules():
     
         if 100+100 > mouse[0] > 100 and 400+50 > mouse[1] > 400:
             pygame.draw.rect(gameDisplay, bright_green, (100,400,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                GameBoard()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 GameBoard()
             
         else:
@@ -374,9 +450,11 @@ def Rules():
 
         if 225+100 > mouse[0] > 225 and 400+50 > mouse[1] > 400:
             pygame.draw.rect(gameDisplay, bright_green, (225,400,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Climates()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Climates()
             
         else:
@@ -392,9 +470,11 @@ def Rules():
 
         if 350+100 > mouse[0] > 350 and 400+50 > mouse[1] > 400:
             pygame.draw.rect(gameDisplay, bright_green, (350,400,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Thegame()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Thegame()
             
         else:
@@ -410,9 +490,11 @@ def Rules():
 
         if 475+100 > mouse[0] > 475 and 400+50 > mouse[1] > 400:
             pygame.draw.rect(gameDisplay, bright_green, (475,400,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Gameunits()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Gameunits()
             
         else:
@@ -429,9 +511,11 @@ def Rules():
 
         if 600+100 > mouse[0] > 600 and 400+50 > mouse[1] > 400:
             pygame.draw.rect(gameDisplay, bright_green, (600,400,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Gamesituations()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Gamesituations()
             
         else:
@@ -447,9 +531,11 @@ def Rules():
     
         if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (150,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Rules()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Rules()
             
         else:
@@ -465,9 +551,11 @@ def Rules():
 
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (550,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                game_intro()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 game_intro()
             
         else:
@@ -484,8 +572,10 @@ def Rules():
 
 
 def GameBoard():
+
     pygame.init()
     GameBoard = True
+    global sound
 
     while GameBoard:
         for event in pygame.event.get():
@@ -505,9 +595,11 @@ def GameBoard():
     
         if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (150,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Rules()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Rules()
             
         else:
@@ -523,9 +615,11 @@ def GameBoard():
 
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (550,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                game_intro()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 game_intro()
             
         else:
@@ -543,6 +637,7 @@ def Climates():
 
     pygame.init()
     climates = True
+    global sound
 
     while climates:
         for event in pygame.event.get():
@@ -562,9 +657,11 @@ def Climates():
     
         if 150+100 > mouse[0] > 150 and 400+50 > mouse[1] > 400:
             pygame.draw.rect(gameDisplay, bright_green, (150,400,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Climatecards()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Climatecards()
             
         else:
@@ -581,9 +678,11 @@ def Climates():
     
         if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (150,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                game_intro()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 game_intro()
             
         else:
@@ -599,9 +698,11 @@ def Climates():
 
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (550,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                game_intro()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 game_intro()
             
         else:
@@ -617,8 +718,10 @@ def Climates():
 
 
 def Climatecards():
+
     pygame.init()
     climatecards = True
+    global sound
 
     while climatecards:
         for event in pygame.event.get():
@@ -637,9 +740,11 @@ def Climatecards():
 
         if 550+100 > mouse[0] > 550 and 450+50 > mouse[1] > 50:
             pygame.draw.rect(gameDisplay, bright_green, (550,450,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Desert()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Desert()
             
         else:
@@ -656,9 +761,11 @@ def Climatecards():
          
         if 550+100 > mouse[0] > 550 and 150+50 > mouse[1] > 150:
             pygame.draw.rect(gameDisplay, bright_green, (550,150,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Swamp()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Swamp()
             
         else:
@@ -675,9 +782,11 @@ def Climatecards():
           
         if 150+100 > mouse[0] > 150 and 150+50 > mouse[1] > 150:
             pygame.draw.rect(gameDisplay, bright_green, (150,150,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Iceplains()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Iceplains()
             
         else:
@@ -694,11 +803,12 @@ def Climatecards():
           
         if 150+100 > mouse[0] > 150 and 450+50 > mouse[1] > 50:
             pygame.draw.rect(gameDisplay, bright_green, (150,450,100,50))
-            if click[0] == 1:
-                pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+            if click[0] == 1 and sound == 0:
                 Forest()
-            
+            if click[0] == 1 and sound == 1:
+                pygame.mixer.music.load('Button Click On Sound Effect.mp3')
+                pygame.mixer.music.play(0)
+                Forest()
         else:
             pygame.draw.rect(gameDisplay, green, (150,450,100,50))
 
@@ -712,9 +822,11 @@ def Climatecards():
     
         if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (150,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Climates()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Climates()
             
         else:
@@ -730,9 +842,11 @@ def Climatecards():
 
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (550,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                game_intro()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 game_intro()
             
         else:
@@ -751,6 +865,7 @@ def Swamp():
 
     pygame.init()
     Swamp = True
+    global sound
 
     while Swamp:
         for event in pygame.event.get():
@@ -770,10 +885,12 @@ def Swamp():
         
         if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (150,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Climates()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
-                Climate()
+                pygame.mixer.music.play(0)
+                Climates()
             
         else:
             pygame.draw.rect(gameDisplay, blue, (150,500,100,50))
@@ -788,10 +905,12 @@ def Swamp():
 
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (550,500,100,50))
-            if click[0] == 1:
-                pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+            if click[0] == 1 and sound == 0:
                 game_intro()
+            if click[0] == 1 and sound == 1:
+                pygame.mixer.music.load('Button Click On Sound Effect.mp3')
+                pygame.mixer.music.play(0)
+                Climates()
             
         else:
             pygame.draw.rect(gameDisplay, blue, (550,500,100,50))
@@ -807,9 +926,10 @@ def Swamp():
 def Forest():
 
     pygame.init()
-    Forest = True
+    forest = True
+    global sound
 
-    while Forest:
+    while forest:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 Forest = False
@@ -826,9 +946,11 @@ def Forest():
         
         if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (150,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Climates()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Climates()
             
         else:
@@ -845,9 +967,11 @@ def Forest():
 
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (550,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                game_intro()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 game_intro()
             
         else:
@@ -863,9 +987,10 @@ def Forest():
 def Iceplains():
 
     pygame.init()
-    Iceplains = True
+    iceplains = True
+    global sound
 
-    while Iceplains:
+    while iceplains:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 Iceplains = False
@@ -884,9 +1009,11 @@ def Iceplains():
         
         if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (150,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Climates()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Climates()
             
         else:
@@ -902,9 +1029,11 @@ def Iceplains():
 
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (550,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                game_intro()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 game_intro()
             
         else:
@@ -921,9 +1050,10 @@ def Iceplains():
 def Desert():
 
     pygame.init()
-    Desert = True
+    desert = True
+    global sound
 
-    while Desert:
+    while desert:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 Desert = False
@@ -941,9 +1071,11 @@ def Desert():
         
         if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (150,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Climates()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Climates()
             
         else:
@@ -958,7 +1090,11 @@ def Desert():
 
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (550,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                game_intro()
+            if click[0] == 1 and sound == 1:
+                pygame.mixer.music.load('Button Click On Sound Effect.mp3')
+                pygame.mixer.music.play(0)
                 game_intro()
             
         else:
@@ -976,6 +1112,7 @@ def Thegame():
 
     pygame.init()
     thegame = True
+    global sound
 
     while thegame:
         for event in pygame.event.get():
@@ -995,9 +1132,11 @@ def Thegame():
         
         if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (150,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Rules()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Rules()
             
         else:
@@ -1012,9 +1151,11 @@ def Thegame():
 
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (550,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                game_intro()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 game_intro()
             
         else:
@@ -1029,9 +1170,11 @@ def Thegame():
 
         if 225+100 > mouse[0] > 225 and 400+50 > mouse[1] > 400:
             pygame.draw.rect(gameDisplay, bright_green, (225,400,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Beginninggame()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Beginninggame()
             
         else:
@@ -1048,9 +1191,11 @@ def Thegame():
          
         if 350+100 > mouse[0] > 350 and 400+50 > mouse[1] > 400:
             pygame.draw.rect(gameDisplay, bright_green, (350,400,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                MovesandTurns()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 MovesandTurns()
             
         else:
@@ -1066,9 +1211,11 @@ def Thegame():
           
         if 475+100 > mouse[0] > 475 and 400+50 > mouse[1] > 400:
             pygame.draw.rect(gameDisplay, bright_green, (475,400,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Economy()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Economy()
             
         else:
@@ -1084,9 +1231,11 @@ def Thegame():
           
         if 600+100 > mouse[0] > 600 and 400+50 > mouse[1] > 400:
             pygame.draw.rect(gameDisplay, bright_green, (600,400,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Capturingland()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Capturingland()
             
         else:
@@ -1103,9 +1252,11 @@ def Thegame():
 
         if 100+100 > mouse[0] > 100 and 400+50 > mouse[1] > 400:
             pygame.draw.rect(gameDisplay, bright_green, (100,400,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Howtowin()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Howtowin()
             
         else:
@@ -1124,6 +1275,7 @@ def Beginninggame():
 
     pygame.init()
     beginninggame = True
+    global sound
 
     while beginninggame:
         for event in pygame.event.get():
@@ -1142,9 +1294,11 @@ def Beginninggame():
 
         if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (150,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Thegame()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Thegame()
             
         else:
@@ -1160,9 +1314,11 @@ def Beginninggame():
 
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (550,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                game_intro()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 game_intro()
             
         else:
@@ -1180,11 +1336,12 @@ def MovesandTurns():
 
     pygame.init()
     movesandturns = True
+    global sound
 
     while movesandturns:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                movesandturn = False
+                movesandturns = False
         
         gameDisplay.fill(white)
         bg = pygame.image.load("content/rules_11_moves_and_turns.jpg")
@@ -1199,9 +1356,11 @@ def MovesandTurns():
         
         if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (150,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Thegame()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Thegame()
             
         else:
@@ -1216,9 +1375,11 @@ def MovesandTurns():
 
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (550,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                game_intro()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 game_intro()
             
         else:
@@ -1237,6 +1398,7 @@ def Economy():
 
     pygame.init()
     economy = True
+    global sound
 
     while economy:
         for event in pygame.event.get():
@@ -1256,9 +1418,11 @@ def Economy():
         
         if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (150,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Thegame()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Thegame()
             
         else:
@@ -1273,9 +1437,11 @@ def Economy():
 
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (550,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                game_intro()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 game_intro()
             
         else:
@@ -1294,6 +1460,7 @@ def Capturingland():
 
     pygame.init()
     capturingland = True
+    global sound
 
     while capturingland:
         for event in pygame.event.get():
@@ -1313,9 +1480,11 @@ def Capturingland():
         
         if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (150,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Thegame()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Thegame()
             
         else:
@@ -1330,9 +1499,11 @@ def Capturingland():
 
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (550,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                game_intro()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 game_intro()
             
         else:
@@ -1350,6 +1521,7 @@ def Howtowin():
 
     pygame.init()
     howtowin = True
+    global sound
 
     while howtowin:
         for event in pygame.event.get():
@@ -1369,9 +1541,11 @@ def Howtowin():
         
         if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (150,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Thegame()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Thegame()
             
         else:
@@ -1386,9 +1560,11 @@ def Howtowin():
 
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (550,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                game_intro()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 game_intro()
             
         else:
@@ -1407,6 +1583,7 @@ def Gameunits():
 
     pygame.init()
     gameunits = True
+    global sound
 
     while gameunits:
         for event in pygame.event.get():
@@ -1426,9 +1603,11 @@ def Gameunits():
         
         if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (150,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Rules()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Rules()
             
         else:
@@ -1443,9 +1622,11 @@ def Gameunits():
 
         if 600+100 > mouse[0] > 600 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (600,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                game_intro()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 game_intro()
             
         else:
@@ -1460,9 +1641,11 @@ def Gameunits():
 
         if 600+100 > mouse[0] > 600 and 440+50 > mouse[1] > 440:
             pygame.draw.rect(gameDisplay, bright_green, (600,440,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Tank()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Tank()
             
         else:
@@ -1479,9 +1662,11 @@ def Gameunits():
          
         if 262.5+100 > mouse[0] > 262.5 and 440+50 > mouse[1] > 440:
             pygame.draw.rect(gameDisplay, bright_green, (262.5,440,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Soldier()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Soldier()
             
         else:
@@ -1497,9 +1682,11 @@ def Gameunits():
           
         if 150+100 > mouse[0] > 150 and 440+50 > mouse[1] > 440:
             pygame.draw.rect(gameDisplay, bright_green, (150,440,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Base()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Base()
             
         else:
@@ -1515,9 +1702,11 @@ def Gameunits():
           
         if 487.5+100 > mouse[0] > 487.5 and 440+50 > mouse[1] > 440:
             pygame.draw.rect(gameDisplay, bright_green, (487.5,440,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Barrack()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Barrack()
             
         else:
@@ -1534,9 +1723,11 @@ def Gameunits():
 
         if 375+100 > mouse[0] > 375 and 440+50 > mouse[1] > 440:
             pygame.draw.rect(gameDisplay, bright_green, (375,440,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Boat()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Boat()
             
         else:
@@ -1555,6 +1746,7 @@ def Soldier():
 
     pygame.init()
     soldier = True
+    global sound
 
     while soldier:
         for event in pygame.event.get():
@@ -1574,9 +1766,11 @@ def Soldier():
         
         if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (150,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Gameunits()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Gameunits()
             
         else:
@@ -1591,9 +1785,11 @@ def Soldier():
 
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (550,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                game_intro()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 game_intro()
             
         else:
@@ -1611,6 +1807,7 @@ def Tank():
 
     pygame.init()
     tank = True
+    global sound
 
     while tank:
         for event in pygame.event.get():
@@ -1630,9 +1827,11 @@ def Tank():
         
         if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (150,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Gameunits()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Gameunits()
             
         else:
@@ -1647,9 +1846,11 @@ def Tank():
 
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (550,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                game_intro()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 game_intro()
             
         else:
@@ -1668,6 +1869,7 @@ def Base():
 
     pygame.init()
     base = True
+    global sound
 
     while base:
         for event in pygame.event.get():
@@ -1687,9 +1889,11 @@ def Base():
         
         if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (150,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Gameunits()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Gameunits()
             
         else:
@@ -1704,9 +1908,11 @@ def Base():
 
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (550,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                game_intro()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 game_intro()
             
         else:
@@ -1725,6 +1931,7 @@ def Barrack():
 
     pygame.init()
     barrack = True
+    global sound
 
     while barrack:
         for event in pygame.event.get():
@@ -1744,9 +1951,11 @@ def Barrack():
         
         if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (150,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Gameunits()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Gameunits()
             
         else:
@@ -1761,9 +1970,11 @@ def Barrack():
 
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (550,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                game_intro()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 game_intro()
             
         else:
@@ -1782,6 +1993,7 @@ def Boat():
 
     pygame.init()
     boat = True
+    global sound
 
     while boat:
         for event in pygame.event.get():
@@ -1801,9 +2013,11 @@ def Boat():
         
         if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (150,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Gameunits()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Gameunits()
             
         else:
@@ -1818,9 +2032,11 @@ def Boat():
 
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (550,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                game_intro()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 game_intro()
             
         else:
@@ -1841,6 +2057,7 @@ def Gamesituations():
 
     pygame.init()
     gamesituations = True
+    global sound
 
     while gamesituations:
         for event in pygame.event.get():
@@ -1860,9 +2077,11 @@ def Gamesituations():
         
         if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (150,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Rules()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Rules()
             
         else:
@@ -1877,9 +2096,11 @@ def Gamesituations():
 
         if 600+100 > mouse[0] > 600 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (600,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                game_intro()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 game_intro()
             
         else:
@@ -1894,9 +2115,11 @@ def Gamesituations():
 
         if 600+100 > mouse[0] > 600 and 440+50 > mouse[1] > 440:
             pygame.draw.rect(gameDisplay, bright_green, (600,440,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Tank()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Tank()
             
         else:
@@ -1913,10 +2136,12 @@ def Gamesituations():
          
         if 375+100 > mouse[0] > 375 and 440+50 > mouse[1] > 440:
             pygame.draw.rect(gameDisplay, bright_green, (375,440,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Fightingland()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
-                Soldier()
+                pygame.mixer.music.play(0)
+                Fightingland()
             
         else:
             pygame.draw.rect(gameDisplay, green, (375,440,100,50))
@@ -1931,9 +2156,11 @@ def Gamesituations():
           
         if 150+100 > mouse[0] > 150 and 440+50 > mouse[1] > 440:
             pygame.draw.rect(gameDisplay, bright_green, (150,440,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Conquerbase()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Conquerbase()
             
         else:
@@ -1955,9 +2182,10 @@ def Gamesituations():
 def Conquerbase():
 
     pygame.init()
-    soldier = True
+    conquerbase = True
+    global sound
 
-    while soldier:
+    while conquerbase:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 soldier = False
@@ -1975,9 +2203,11 @@ def Conquerbase():
         
         if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (150,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Gameunits()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Gameunits()
             
         else:
@@ -1992,9 +2222,11 @@ def Conquerbase():
 
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (550,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                game_intro()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 game_intro()
             
         else:
@@ -2011,9 +2243,10 @@ def Conquerbase():
 def Fightingland():
 
     pygame.init()
-    tank = True
+    fighting = True
+    global sound
 
-    while tank:
+    while fighting:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 tank = False
@@ -2031,9 +2264,11 @@ def Fightingland():
         
         if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (150,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Gameunits()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Gameunits()
             
         else:
@@ -2048,9 +2283,11 @@ def Fightingland():
 
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (550,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                game_intro()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 game_intro()
             
         else:
@@ -2068,9 +2305,10 @@ def Fightingland():
 def Conquerterritory():
 
     pygame.init()
-    base = True
+    conquerterritory = True
+    global sound
 
-    while base:
+    while conquerterritory:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 base = False
@@ -2088,9 +2326,11 @@ def Conquerterritory():
         
         if 150+100 > mouse[0] > 150 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_blue, (150,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                Gameunits()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 Gameunits()
             
         else:
@@ -2105,9 +2345,11 @@ def Conquerterritory():
 
         if 550+100 > mouse[0] > 550 and 500+50 > mouse[1] > 500:
             pygame.draw.rect(gameDisplay, bright_red, (550,500,100,50))
-            if click[0] == 1:
+            if click[0] == 1 and sound == 0:
+                game_intro()
+            if click[0] == 1 and sound == 1:
                 pygame.mixer.music.load('Button Click On Sound Effect.mp3')
-                pygame.mixer.music.play()
+                pygame.mixer.music.play(0)
                 game_intro()
             
         else:
@@ -2120,33 +2362,3 @@ def Conquerterritory():
 
         pygame.display.update()
         clock.tick(15)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
