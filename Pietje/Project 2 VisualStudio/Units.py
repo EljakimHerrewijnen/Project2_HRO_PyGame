@@ -23,6 +23,12 @@ tank = 2
 boat = 3
 barrack = 4
 
+
+#AmountBoats 
+AmountBoatsPL1 = 0
+AmountBoatsPL2 = 0
+AmountBoatsPL3 = 0
+AmountBoatsPL4 = 0
 unit_textures = {   
     soldier: soldier_texture,
     robot: robot_texture,
@@ -59,30 +65,28 @@ def GetBiomePosition(currentPL_biome, Type, AmountBoats):
             elif AmountBoats == 1:
                 return [4, 10]
             elif AmountBoats == 2:
-                return [6, 9]
+                return [6, 12]
             else:
-                return [7, 8]
+                return [7, 13]
         elif currentPL_biome == "Swamp":
             if AmountBoats == 0:
                 return [5, 6]
             elif AmountBoats == 1:
-                return [4, 5]
+                return [6, 5]
             elif AmountBoats == 2:
-                return [6, 4]
+                return [7, 4]
             else:
-                return [7, 3]
+                return [4, 7]
         elif currentPL_biome == "Forest":
-            return [11, 12]
             if AmountBoats == 0:
-                return [11, 12]
-            elif AmountBoats == 1:
                 return [10, 11]
+            elif AmountBoats == 1:
+                return [11, 12]
             elif AmountBoats == 2:
-                return [9, 10]
+                return [12, 11]
             else:
-                return [12, 13]
+                return [10, 13]
         elif currentPL_biome == "Ice":
-            return [11, 5]
             if AmountBoats == 0:
                 return [11, 5]
             elif AmountBoats == 1:
@@ -111,6 +115,7 @@ class Units():
         self.DefenceValue = DefenceValue
 
     def BuyTank(currentPl_id, currentPL_biome, currentPL_currency):  
+        AmountBoats = 0
         global id_counter
         Type = "Tank"
         Position_Unit = GetBiomePosition(currentPL_biome, Type, AmountBoats)
@@ -127,6 +132,7 @@ class Units():
         return AddUnit
 
     def BuySoldier(currentPl_id, currentPL_biome, currentPL_currency):
+        AmountBoats = 0
         global id_counter
         Type = "Soldier"
         Position_Unit = GetBiomePosition(currentPL_biome, Type, AmountBoats)
@@ -143,6 +149,7 @@ class Units():
         return AddUnit
 
     def BuyRobot(currentPl_id, currentPL_biome, currentPL_currency):
+        AmountBoats = 0
         global id_counter
         Type = "Robot"
         Position_Unit = GetBiomePosition(currentPL_biome, Type, AmountBoats)
@@ -160,10 +167,10 @@ class Units():
 
     def BuyBoat(currentPl_id, currentPL_biome, currentPL_currency):
         global id_counter
-        AmountBoatsPL1 = 0
-        AmountBoatsPL2 = 0
-        AmountBoatsPL3 = 0
-        AmountBoatsPL4 = 0
+        global AmountBoatsPL1 
+        global AmountBoatsPL2 
+        global AmountBoatsPL3 
+        global AmountBoatsPL4 
         AmountBoats = 0
 
         if currentPl_id == 1:
@@ -205,6 +212,7 @@ class Units():
         return AddUnit
 
     def BuyBarrack(currentPl_id, currentPL_biome, currentPL_currency):
+        AmountBoats = 0
         global id_counter
         Position_Unit = GetBiomePosition(currentPL_biome, Type, AmountBoats)
         global AddUnit

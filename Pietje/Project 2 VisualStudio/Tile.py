@@ -342,9 +342,11 @@ def tile_loop(Playerslist, copy_Playerslist):
                     APlayersPosition.Value.DefenceValue - APlayersPosition2.Value.AttackValue
                     BattleCounter = 0
                     if APlayersPosition.DefenceValue >= 1:
-                        AddUnit.Value -= APlayersPosition2
+                        #AddUnit.Value -= APlayersPosition2
+                        print("This is a battle test")
                     else: 
                         AddUnit.Value -= APlayersPosition
+                        print("This is a battle test")
                 elif APlayersPosition is not AddUnit.Value.position:
                         APlayersPosition = AddUnit.Tail
 
