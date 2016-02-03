@@ -18,6 +18,7 @@ AddUnit = Empty
 mouse_Pos = [0, 0]
 n = 0
 Playerslist2 = Empty
+nr_movements = 0
 
       
 def changePlayer(Playerslist, currentPL_currency):
@@ -183,6 +184,7 @@ def tile_loop(Playerslist, copy_Playerslist):
     global currentPl_id
     global AddUnit
     global mouse_Pos
+    global nr_movements 
     
     pygame.init()
     Texturesize = 40
@@ -364,13 +366,13 @@ def tile_loop(Playerslist, copy_Playerslist):
             mouse_Pos = [mouse_x, mouse_y]
             #code voor het verplaatsen van units
             copy_AddUnit = Empty
-            while AddUnit.IsEmpty == False:
+            
+            while AddUnit.IsEmpty == False and nr_movements < 4:
                 print(mouse_Pos[0], mouse_Pos[1])
                 if mouse_Pos == AddUnit.Value.position and AddUnit.Value.OwnerPlayer == currentPl_id:
                     print("Hier staat een unit: " + AddUnit.Value.unittype + " met id: " + str(AddUnit.Value.id))
                     mouse_Pos_New = wait(Mapwidth, mouse_Pos)
                     AddUnit.Value.position = mouse_Pos_New
-
                     #code voor het krijgen van gold als een unit is verplaatst
                     current_biome = tilelist[AddUnit.Value.position[1]][AddUnit.Value.position[0]]
                     if currentPL_biome == "Forest":
@@ -395,6 +397,7 @@ def tile_loop(Playerslist, copy_Playerslist):
                         currentPL_currency += 150
                         print("3")
 
+                    nr_movements += 1
                     #draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome)
                     #draw2(AddUnit, screen)
                     print("klaar met wachten")
@@ -535,6 +538,7 @@ def tile_loop(Playerslist, copy_Playerslist):
                 currentPl_tanks = currentPlayerList.Value.Tanks
                 currentPl_barracks = currentPlayerList.Value.Barracks
                 currentPl_boats = currentPlayerList.Value.Boats
+                nr_movements = 0
                 #global currentPl_id
                 print("Player id = " + str(currentPl_id) + " Player name = " + currentPL_name)
                 draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome)
