@@ -549,21 +549,18 @@ def tile_loop(Playerslist, copy_Playerslist):
                 currentPL_card = currentPlayerList.Value.Gamecard
                 currentPL_biome = currentPlayerList.Value.Biome
                 currentPL_currency = currentPlayerList.Value.Currency
-<<<<<<< HEAD
                 currentPL_currency += 5000
                 currentPl_soldiers = currentPlayerList.Value.Soldiers
                 currentPl_robots = currentPlayerList.Value.Robots
                 currentPl_tanks = currentPlayerList.Value.Tanks
                 currentPl_barracks = currentPlayerList.Value.Barracks
                 currentPl_boats = currentPlayerList.Value.Boats
-=======
                 #currentPl_soldiers = currentPlayerList.Value.Soldiers
                 #currentPl_robots = currentPlayerList.Value.Robots
                 #currentPl_tanks = currentPlayerList.Value.Tanks
                 #currentPl_barracks = currentPlayerList.Value.Barracks
                 #currentPl_boats = currentPlayerList.Value.Boats
                 nr_movements = 0
->>>>>>> origin/master
                 #global currentPl_id
                 print("Player id = " + str(currentPl_id) + " Player name = " + currentPL_name)
                 draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome, currentPlayerList)
