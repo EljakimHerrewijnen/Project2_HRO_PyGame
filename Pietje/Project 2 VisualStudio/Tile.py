@@ -5,6 +5,7 @@ from pygame.locals import *
 from Units import *
 from GameAI import *
 from WinningScreen import *
+from Rules import *
 #colors
 black = (0,0,0)
 white = (255,255,255)
@@ -199,7 +200,15 @@ def wait(Mapwidth, mouse_Pos):
             if -2 < mouse_Pos_New[0] - mouse_Pos[0] < 2 and -2 < mouse_Pos_New[1] - mouse_Pos[1] < 2:
                 return mouse_Pos_New
 
+<<<<<<< HEAD
 def tile_loop(Playerslist, copy_Playerslist, AmountPlayersDefault):
+=======
+def drawcloud(cloud_texture, cloudx, cloudy, screen):
+    screen.blit(cloud_texture.convert_alpha(), (cloudx, cloudy))
+    pygame.display.flip()
+
+def tile_loop(Playerslist, copy_Playerslist):
+>>>>>>> origin/master
     global currentPlayerList
     global currentTile
     global Movements
@@ -217,7 +226,11 @@ def tile_loop(Playerslist, copy_Playerslist, AmountPlayersDefault):
     screen = pygame.display.set_mode((Mapwidth * Tilesize + 250, Mapheight * Tilesize))
     done = False
     clock = pygame.time.Clock()
+<<<<<<< HEAD
     pygame.mixer.music.load('Symphony X - Pharaoh.mp3')
+=======
+    pygame.mixer.music.load('Birth of a Hero Extended.mp3')
+>>>>>>> origin/master
     pygame.mixer.music.play(0)
 
     bgmap = pygame.image.load("content/map895.jpg")
@@ -239,6 +252,8 @@ def tile_loop(Playerslist, copy_Playerslist, AmountPlayersDefault):
     green = (34, 139, 34)
     #textures
     transparent_texture = pygame.image.load('content/transparent_tile.png')
+    cloud_texture = pygame.image.load('content/cloud.tif')
+    cloud_texture = pygame.transform.scale(cloud_texture, (250, 150))
     nr_1_texture = pygame.image.load('content/player1.tif')
     nr_1_texture = pygame.transform.scale(nr_1_texture, (Texturesize, Texturesize))
     nr_2_texture = pygame.image.load('content/player2.tif')
@@ -352,12 +367,13 @@ def tile_loop(Playerslist, copy_Playerslist, AmountPlayersDefault):
     currentPl_tanks = 0
     currentPl_barracks = 0
     currentPl_boats = 0
+    cloudx = -200
+    cloudy = 0
 
     while not done:
         for event in pygame.event.get():    #get all user events
             if event.type == pygame.QUIT:   #Option to quit
                 done = True
-
 
 
             if currentPL_currency >= 50000:
@@ -381,6 +397,7 @@ def tile_loop(Playerslist, copy_Playerslist, AmountPlayersDefault):
             if pygame.key.get_pressed()[K_SPACE] == 1:
                 currentTile = tilelist[mouse_y][mouse_x]
                 print("Water = 0/Goldmine = 1/Forest = 2/Ice = 3/Swamp = 4/Desert = 5: ", currentTile)
+<<<<<<< HEAD
             #Battle Code          
         #while AddUnit.IsEmpty == False:
         #    APlayersPosition = AddUnit.Value
@@ -400,6 +417,83 @@ def tile_loop(Playerslist, copy_Playerslist, AmountPlayersDefault):
         #            print("This is a battle test")
         #    elif APlayersPosition is not AddUnit.Value.position:
         #                print("boe")
+=======
+            if pygame.key.get_pressed()[K_p] == 1:
+                Settings()
+        """
+        n = 0
+        while AddUnit.IsEmpty == False:
+            n += 1
+            AddUnit = AddUnit.Tail
+
+            #Battle Code
+        if AddUnit.IsEmpty == False and AddUnit.Tail.IsEmpty == False:
+            currentUnit = AddUnit
+            copy_AddUnit = AddUnit
+            copy2_AddUnit = AddUnit
+            AddUnit2 = Empty
+            for i in range(0, n - 1):
+            #while copy_AddUnit.IsEmpty == False:
+                #if copy_AddUnit.Tail.IsEmpty == True:
+                #    copy_AddUnit.Tail = copy2_AddUnit
+                print("Searching for a battle...")
+                copy_AddUnit = copy_AddUnit.Tail
+                if currentUnit.Value.position == copy_AddUnit.Value.position:
+                    if copy_AddUnit.Value.AttackValue > currentUnit.Value.AttackValue:
+                        print("1 Unitid: " + str(copy_AddUnit.Value.id) + " died!")
+                        AddUnit2 = Node(copy_AddUnit.Value, AddUnit2)
+                    elif copy_AddUnit.Value.DefenceValue == currentUnit.Value.DefenceValue:
+                        print("1 Unitid: " + str(copy_AddUnit.Value.id) + " died!")
+                        print("1 Unitid: " + str(currentUnit.Value.id) + " died!")
+                    else:
+                        AddUnit2 = Node(currentUnit.Value, AddUnit2)
+                    
+#                    enemyUnit_lives = copy_AddUnit.Value.DefenceValue - currentUnit.Value.AttackValue
+#                    currentUnit_lives = currentUnit.Value.DefenceValue - copy_AddUnit.Value.AttackValue
+#                    copy_AddUnit.Value.DefenceValue -= currentUnit.Value.AttackValue
+#                    currentUnit.Value.DefenceValue -= copy_AddUnit.Value.AttackValue
+#                    if copy_AddUnit.Value.DefenceValue < 1:
+#                        print("1 Unitid: " + str(copy_AddUnit.Value.id) + " died!")
+#                    else:
+#                        AddUnit2 = Node(copy_AddUnit.Value, AddUnit2)
+#                        print("1 Unitid: " + str(copy_AddUnit.Value.id) + " survived!")
+#                    if currentUnit.Value.DefenceValue < 1:
+#                        print("2 Unitid: " + str(currentUnit.Value.id) + " died!")
+#                    else:
+#                        AddUnit2 = Node(copy_AddUnit.Value, AddUnit2)
+#                        print("2 Unitid: " + str(currentUnit.Value.id) + " survived!")
+                        
+                else:
+                    AddUnit2 = Node(copy_AddUnit.Value, AddUnit2)
+            AddUnit = AddUnit2
+            """
+        
+
+        """             #eljakim
+                AddUnit = AddUnit.Tail
+                if APlayersPosition.Value.position == AddUnit.Value.position:
+                    APlayersPosition2 = AddUnit.Value
+                    APlayersPosition2.Value.DefenceValue - APlayersPosition.Value.AttackValue
+                    APlayersPosition.Value.DefenceValue - APlayersPosition2.Value.AttackValue
+                    BattleCounter = 0
+                    if APlayersPosition.DefenceValue >= 1:
+                        AddUnit.Value -= APlayersPosition2
+                        print("This is a battle test")
+                    else: 
+                        AddUnit.Value -= APlayersPosition
+                        print("This is a battle test")
+                elif APlayersPosition is not AddUnit.Value.position:
+                            print("boe")
+                            """
+        """
+        count_Units = AddUnit
+        j = 0
+        while count_Units.IsEmpty == False:
+            j += 1
+            count_Units = AddUnit.Tail
+            """
+
+>>>>>>> origin/master
         if pygame.mouse.get_pressed()[0] and pygame.mouse.get_pos()[0] < (Mapwidth * Tilesize):
             mouse_x = math.floor(pygame.mouse.get_pos()[0] / Tilesize) * Tilesize
             mouse_y = math.floor(pygame.mouse.get_pos()[1] / Tilesize) * Tilesize
@@ -407,15 +501,60 @@ def tile_loop(Playerslist, copy_Playerslist, AmountPlayersDefault):
             mouse_x = math.floor(pygame.mouse.get_pos()[0] / Tilesize)
             mouse_y = math.floor(pygame.mouse.get_pos()[1] / Tilesize)
             mouse_Pos = [mouse_x, mouse_y]
+
             #code voor het verplaatsen van units
             copy_AddUnit = Empty
-            
             while AddUnit.IsEmpty == False and nr_movements < 4:
                 print(mouse_Pos[0], mouse_Pos[1])
                 if mouse_Pos == AddUnit.Value.position and AddUnit.Value.OwnerPlayer == currentPl_id:
                     print("Hier staat een unit: " + AddUnit.Value.unittype + " met id: " + str(AddUnit.Value.id))
                     mouse_Pos_New = wait(Mapwidth, mouse_Pos)
                     AddUnit.Value.position = mouse_Pos_New
+
+                    """
+                    #battle code
+                    if AddUnit.IsEmpty == False and AddUnit.Tail.IsEmpty == False:
+                        currentUnit = AddUnit
+                        copy_AddUnit = AddUnit
+                        copy2_AddUnit = AddUnit
+                        AddUnit2 = Empty
+                        for i in range(0, j - 1):
+                        #while copy_AddUnit.IsEmpty == False:
+                            #if copy_AddUnit.Tail.IsEmpty == True:
+                            #    copy_AddUnit.Tail = copy2_AddUnit
+                            print("Searching for a battle...")
+                            if copy_AddUnit.IsEmpty.Tail == True:
+                                copy_AddUnit.Tail = copy2_AddUnit
+                            copy_AddUnit = copy_AddUnit.Tail
+                            if currentUnit.Value.position == copy_AddUnit.Value.position:
+                                if copy_AddUnit.Value.AttackValue > currentUnit.Value.AttackValue:
+                                    print("1 Unitid: " + str(currentUnit.Value.id) + " died!")
+                                    AddUnit2 = Node(copy_AddUnit.Value, AddUnit2)
+                                elif copy_AddUnit.Value.AttackValue == currentUnit.Value.AttackValue:
+                                    print("1 Unitid: " + str(copy_AddUnit.Value.id) + " died!")
+                                    print("1 Unitid: " + str(currentUnit.Value.id) + " died!")
+                                #else:
+                                    #AddUnit2 = Node(currentUnit.Value, AddUnit2)
+                                #enemyUnit_lives = copy_AddUnit.Value.DefenceValue - currentUnit.Value.AttackValue
+                                #currentUnit_lives = currentUnit.Value.DefenceValue - copy_AddUnit.Value.AttackValue
+                                #copy_AddUnit.Value.DefenceValue -= currentUnit.Value.AttackValue
+                                #currentUnit.Value.DefenceValue -= copy_AddUnit.Value.AttackValue
+                                #if copy_AddUnit.Value.DefenceValue < 1:
+                                #    print("1 Unitid: " + str(copy_AddUnit.Value.id) + " died!")
+                                #else:
+                                #    AddUnit2 = Node(copy_AddUnit.Value, AddUnit2)
+                                #    print("1 Unitid: " + str(copy_AddUnit.Value.id) + " survived!")
+                                #if currentUnit.Value.DefenceValue < 1:
+                                #    print("2 Unitid: " + str(currentUnit.Value.id) + " died!")
+                                #else:
+                                #    AddUnit2 = Node(copy_AddUnit.Value, AddUnit2)
+                                #    print("2 Unitid: " + str(currentUnit.Value.id) + " survived!")
+                            else:
+                                AddUnit2 = Node(copy_AddUnit.Value, AddUnit2)
+                        AddUnit = AddUnit2
+                        copy_AddUnit = Empty
+                            """
+
                     #code voor het krijgen van gold als een unit is verplaatst
                     current_biome = tilelist[AddUnit.Value.position[1]][AddUnit.Value.position[0]]
                     if currentPL_biome == "Forest":
@@ -464,10 +603,14 @@ def tile_loop(Playerslist, copy_Playerslist, AmountPlayersDefault):
                     currentPL_currency -= 120
                     print(currentPL_currency)
                     AddUnit = Units.BuySoldier(currentPl_id, currentPL_biome, currentPL_currency, currentPl_boats)
+                    draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome, currentPl_soldiers, currentPl_robots, currentPl_tanks, currentPl_barracks, currentPl_boats)
+                    draw2(AddUnit, screen, nr_1_texture, nr_2_texture, nr_3_texture, nr_4_texture)
                     currentPl_soldiers += 1
                 elif currentPL_currency >= 150:
                     currentPL_currency -= 150
                     AddUnit = Units.BuySoldier(currentPl_id, currentPL_biome, currentPL_currency, currentPl_boats)
+                    draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome, currentPl_soldiers, currentPl_robots, currentPl_tanks, currentPl_barracks, currentPl_boats)
+                    draw2(AddUnit, screen, nr_1_texture, nr_2_texture, nr_3_texture, nr_4_texture)
                     currentPl_soldiers += 1
                 else:
                     print("You do not have enough gold!")
@@ -486,12 +629,16 @@ def tile_loop(Playerslist, copy_Playerslist, AmountPlayersDefault):
                     currentPL_currency -= 240
                     AddUnit = Units.BuyRobot(currentPl_id, currentPL_biome, currentPL_currency, currentPl_boats)
                     RobotPos = AddUnit.Value.position
+                    draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome, currentPl_soldiers, currentPl_robots, currentPl_tanks, currentPl_barracks, currentPl_boats)
+                    draw2(AddUnit, screen, nr_1_texture, nr_2_texture, nr_3_texture, nr_4_texture)
                     currentPl_robots += 1
                     #screen.blit(robot_texture, (RobotPos[0] * Mapwidth * 2, RobotPos[1]* Mapheight * 2))
                 elif currentPL_currency >= 150:
                     currentPL_currency -= 300
                     AddUnit = Units.BuyRobot(currentPl_id, currentPL_biome, currentPL_currency, currentPl_boats)
                     RobotPos = AddUnit.Value.position
+                    draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome, currentPl_soldiers, currentPl_robots, currentPl_tanks, currentPl_barracks, currentPl_boats)
+                    draw2(AddUnit, screen, nr_1_texture, nr_2_texture, nr_3_texture, nr_4_texture)
                     currentPl_robots += 1
                     #screen.blit(robot_texture, (RobotPos[0] * Mapwidth * 2, RobotPos[1]* Mapheight * 2))
                 else:
@@ -513,12 +660,16 @@ def tile_loop(Playerslist, copy_Playerslist, AmountPlayersDefault):
                     AddUnit = Units.BuyTank(currentPl_id, currentPL_biome, currentPL_currency, currentPl_boats)   
                     currentPL_currency -= 500
                     TankPos = AddUnit.Value.position
+                    draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome, currentPl_soldiers, currentPl_robots, currentPl_tanks, currentPl_barracks, currentPl_boats)
+                    draw2(AddUnit, screen, nr_1_texture, nr_2_texture, nr_3_texture, nr_4_texture)
                     currentPl_tanks += 1
                     #screen.blit(tank_texture, (TankPos[0] * Mapwidth * 2, TankPos[1]* Mapheight * 2))
                 elif currentPL_currency >= 750:
                     AddUnit = Units.BuyTank(currentPl_id, currentPL_biome, currentPL_currency, currentPl_boats)   
                     currentPL_currency -= 750
                     TankPos = AddUnit.Value.position
+                    draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome, currentPl_soldiers, currentPl_robots, currentPl_tanks, currentPl_barracks, currentPl_boats)
+                    draw2(AddUnit, screen, nr_1_texture, nr_2_texture, nr_3_texture, nr_4_texture)
                     currentPl_tanks += 1
                     #screen.blit(tank_texture, (TankPos[0] * Mapwidth * 2, TankPos[1]* Mapheight * 2))
                 else:
@@ -537,12 +688,16 @@ def tile_loop(Playerslist, copy_Playerslist, AmountPlayersDefault):
                     currentPL_currency -= 800
                     AddUnit = Units.BuyBoat(currentPl_id, currentPL_biome, currentPL_currency, currentPl_boats)
                     BoatPos = AddUnit.Value.position
+                    draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome, currentPl_soldiers, currentPl_robots, currentPl_tanks, currentPl_barracks, currentPl_boats)
+                    draw2(AddUnit, screen, nr_1_texture, nr_2_texture, nr_3_texture, nr_4_texture)
                     currentPl_boats += 1
                     #screen.blit(boat_texture, (BoatPos[0] * Mapwidth * 2, BoatPos[1]* Mapheight * 2))
                 elif currentPL_currency >= 1000 and currentPl_boats < 4:
                     currentPL_currency = currentPL_currency - 1000
                     AddUnit = Units.BuyBoat(currentPl_id, currentPL_biome, currentPL_currency, currentPl_boats)
                     BoatPos = AddUnit.Value.position
+                    draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome, currentPl_soldiers, currentPl_robots, currentPl_tanks, currentPl_barracks, currentPl_boats)
+                    draw2(AddUnit, screen, nr_1_texture, nr_2_texture, nr_3_texture, nr_4_texture)
                     currentPl_boats += 1
                     #screen.blit(boat_texture, (BoatPos[0] * Mapwidth * 2, BoatPos[1]* Mapheight * 2))
                 else:
@@ -565,6 +720,8 @@ def tile_loop(Playerslist, copy_Playerslist, AmountPlayersDefault):
                     currentPL_currency -= 500
                     AddUnit = Units.BuyBarrack(currentPl_id, currentPL_biome, currentPL_currency, currentPl_boats)
                     BarrackPos = AddUnit.Value.position
+                    draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome, currentPl_soldiers, currentPl_robots, currentPl_tanks, currentPl_barracks, currentPl_boats)
+                    draw2(AddUnit, screen, nr_1_texture, nr_2_texture, nr_3_texture, nr_4_texture)
                     currentPl_barracks += 1
                     #screen.blit(barrack_texture, (TankPos[0] * Mapwidth * 2, TankPos[1]* Mapheight * 2))              
                 else:
@@ -616,11 +773,6 @@ def tile_loop(Playerslist, copy_Playerslist, AmountPlayersDefault):
                 currentPl_tanks = currentPlayerList.Value.Tanks
                 currentPl_barracks = currentPlayerList.Value.Barracks
                 currentPl_boats = currentPlayerList.Value.Boats
-                #currentPl_soldiers = currentPlayerList.Value.Soldiers
-                #currentPl_robots = currentPlayerList.Value.Robots
-                #currentPl_tanks = currentPlayerList.Value.Tanks
-                #currentPl_barracks = currentPlayerList.Value.Barracks
-                #currentPl_boats = currentPlayerList.Value.Boats
                 nr_movements = 0
                 #global currentPl_id
                 print("Player id = " + str(currentPl_id) + " Player name = " + currentPL_name)
@@ -654,6 +806,17 @@ def tile_loop(Playerslist, copy_Playerslist, AmountPlayersDefault):
         #screen.blit(Soldier,(soldierPos[0], soldierPos[1]))
         #print soldier-coordinaten in console
         #print("x = ", soldierPos[0], "y = ", soldierPos[1])
+
+        """
+        #cloud animatie
+        cloudx += 1
+        if cloudx > Mapwidth * Tilesize:
+            cloudy = random.randint(0, Mapheight * Tilesize)
+            cloudx = -200
+        drawcloud(cloud_texture, cloudx, cloudy, screen)
+
+        #screen.blit(cloud_texture.convert_alpha(), (cloudx, cloudy))
+            """
 
 
         #draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome, currentPl_soldiers, currentPl_robots, currentPl_tanks, currentPl_barracks, currentPl_boats)

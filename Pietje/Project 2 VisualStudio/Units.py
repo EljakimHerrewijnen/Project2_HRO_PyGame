@@ -215,6 +215,7 @@ class Units():
     def BuyBarrack(currentPl_id, currentPL_biome, currentPL_currency, currentPl_boats):
         AmountBoats = 0
         global id_counter
+        Type = "Barrack"
         Position_Unit = GetBiomePosition(currentPL_biome, Type, currentPl_boats)
         global AddUnit
         id_counter += 1
