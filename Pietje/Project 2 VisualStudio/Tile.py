@@ -590,14 +590,6 @@ def tile_loop(Playerslist, copy_Playerslist):
                 currentPl_tanks = currentPlayerList.Value.Tanks
                 currentPl_barracks = currentPlayerList.Value.Barracks
                 currentPl_boats = currentPlayerList.Value.Boats
-<<<<<<< HEAD
-=======
-                #currentPl_soldiers = currentPlayerList.Value.Soldiers
-                #currentPl_robots = currentPlayerList.Value.Robots
-                #currentPl_tanks = currentPlayerList.Value.Tanks
-                #currentPl_barracks = currentPlayerList.Value.Barracks
-                #currentPl_boats = currentPlayerList.Value.Boats
->>>>>>> origin/master
                 nr_movements = 0
                 #global currentPl_id
                 print("Player id = " + str(currentPl_id) + " Player name = " + currentPL_name)
