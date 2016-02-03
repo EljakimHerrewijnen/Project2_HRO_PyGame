@@ -199,7 +199,7 @@ def wait(Mapwidth, mouse_Pos):
             if -2 < mouse_Pos_New[0] - mouse_Pos[0] < 2 and -2 < mouse_Pos_New[1] - mouse_Pos[1] < 2:
                 return mouse_Pos_New
 
-def tile_loop(Playerslist, copy_Playerslist):
+def tile_loop(Playerslist, copy_Playerslist, AmountPlayersDefault):
     global currentPlayerList
     global currentTile
     global Movements
@@ -217,7 +217,7 @@ def tile_loop(Playerslist, copy_Playerslist):
     screen = pygame.display.set_mode((Mapwidth * Tilesize + 250, Mapheight * Tilesize))
     done = False
     clock = pygame.time.Clock()
-    pygame.mixer.music.load('Cipher2.mp3')
+    pygame.mixer.music.load('Symphony X - Pharaoh.mp3')
     pygame.mixer.music.play(0)
 
     bgmap = pygame.image.load("content/map895.jpg")
@@ -381,25 +381,25 @@ def tile_loop(Playerslist, copy_Playerslist):
             if pygame.key.get_pressed()[K_SPACE] == 1:
                 currentTile = tilelist[mouse_y][mouse_x]
                 print("Water = 0/Goldmine = 1/Forest = 2/Ice = 3/Swamp = 4/Desert = 5: ", currentTile)
-            #Battle Code
-        if AddUnit.IsEmpty is False:
-            APlayersPosition = AddUnit.Value
-            while AddUnit.IsEmpty == False:
-                print("Searching for a battle...")
-                AddUnit = AddUnit.Tail
-                if APlayersPosition.Value.position == AddUnit.Value.position:
-                    APlayersPosition2 = AddUnit.Value
-                    APlayersPosition2.Value.DefenceValue - APlayersPosition.Value.AttackValue
-                    APlayersPosition.Value.DefenceValue - APlayersPosition2.Value.AttackValue
-                    BattleCounter = 0
-                    if APlayersPosition.DefenceValue >= 1:
-                        AddUnit.Value -= APlayersPosition2
-                        print("This is a battle test")
-                    else: 
-                        AddUnit.Value -= APlayersPosition
-                        print("This is a battle test")
-                elif APlayersPosition is not AddUnit.Value.position:
-                            print("boe")
+            #Battle Code          
+        #while AddUnit.IsEmpty == False:
+        #    APlayersPosition = AddUnit.Value
+        #    print("Searching for a battle...")
+        #    AddUnit = AddUnit.Tail
+        #    if APlayersPosition.Value.position == AddUnit.Value.position:
+        #        APlayersPosition2 = AddUnit.Value
+        #        APlayersPosition2.Value.DefenceValue - APlayersPosition.Value.AttackValue
+        #        APlayersPosition.Value.DefenceValue - APlayersPosition2.Value.AttackValue
+        #        BattleCounter = 0
+        #        if APlayersPosition.DefenceValue >= 1:
+        #            AddUnit.Value -= APlayersPosition2
+        #            print("This is a battle test")
+
+        #        else: 
+        #            AddUnit.Value -= APlayersPosition
+        #            print("This is a battle test")
+        #    elif APlayersPosition is not AddUnit.Value.position:
+        #                print("boe")
         if pygame.mouse.get_pressed()[0] and pygame.mouse.get_pos()[0] < (Mapwidth * Tilesize):
             mouse_x = math.floor(pygame.mouse.get_pos()[0] / Tilesize) * Tilesize
             mouse_y = math.floor(pygame.mouse.get_pos()[1] / Tilesize) * Tilesize
@@ -503,6 +503,9 @@ def tile_loop(Playerslist, copy_Playerslist):
         textRect.center = ( (865+(124/2)), (115+(9)) )
         screen.blit(textSurf, textRect)
 
+        #OnBoat code
+
+
         if 865 + 124 > mouse[0] > 865 and 199 + 19 > mouse[1] > 199:        #tank
             pygame.draw.rect(screen, cyan, (865,199,124,19))    
             if click[0] == 1:  
@@ -572,6 +575,28 @@ def tile_loop(Playerslist, copy_Playerslist):
         textSurf, textRect = text_objects('Barrack = f500', font1)
         textRect.center = ( (865+(124/2)), (367+(9)) )
         screen.blit(textSurf, textRect)   
+
+        if 865 + 124 > mouse[0] > 865 and 367 + 19 > mouse[1] > 367:        #barrack
+            pygame.draw.rect(screen, cyan, (865,367,124,19))  
+            if click[0] == 1:
+                AddUnit = Units.BuyBarrack(currentPl_id, currentPL_biome, currentPL_currency, currentPl_boats)
+                #screen.blit(barrack_texture, (AddUnit.Value.position[0] * Tilesize, AddUnit.Value.position[1] * Tilesize)) 
+                BarrackPos = AddUnit.Value.position    
+                pygame.time.delay(300)
+                if currentPL_currency >= 500:
+                    currentPL_currency -= 500
+                    AddUnit = Units.BuyBarrack(currentPl_id, currentPL_biome, currentPL_currency, currentPl_boats)
+                    BarrackPos = AddUnit.Value.position
+                    currentPl_barracks += 1
+                    #screen.blit(barrack_texture, (TankPos[0] * Mapwidth * 2, TankPos[1]* Mapheight * 2))              
+                else:
+                    print("You do not have enough gold!")
+                pygame.time.delay(300)
+        else:
+            pygame.draw.rect(screen, white, (865,367,124,19))
+        textSurf, textRect = text_objects('Rules', font1)
+        textRect.center = ( (865+(124/2)), (367+(9)) )
+        screen.blit(textSurf, textRect)   
         
         copy2_AddUnit = AddUnit
         if 865 + 124 > mouse[0] > 865 and 700 + 19 > mouse[1] > 700:        #end turn, klik hier op om de volgende speler de beurt te geven
@@ -602,7 +627,7 @@ def tile_loop(Playerslist, copy_Playerslist):
                 draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome, currentPl_soldiers, currentPl_robots, currentPl_tanks, currentPl_barracks, currentPl_boats)
                 #draw2(copy2_AddUnit, screen, nr_1_texture, nr_2_texture, nr_3_texture, nr_4_texture)
                 pygame.time.delay(1000)
-                #GameAI(currentPl_id, currentPL_currency, currentPL_biome)
+                GameAI(currentPl_id, currentPL_currency, currentPL_biome, currentPl_boats, AmountPlayersDefault)
         else:
             pygame.draw.rect(screen, white, (865,700,124,19))
         textSurf, textRect = text_objects('End Turn!', font1)

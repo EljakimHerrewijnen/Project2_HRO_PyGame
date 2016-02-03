@@ -10,7 +10,7 @@ pygame.init()
  
 display_width = 800
 display_height = 600
- 
+
 black = (0,0,0)
 white = (255,255,255)
 bright_blue = (0, 0, 255)
@@ -26,7 +26,8 @@ yellow = (255,255,0)
 bright_yellow = (229,230,0)
 purple = (128,0,127)
 bright_purple = (230,0,229)
-
+pygame.mixer.music.load('Yu-gi-oh GX Spirit Caller Music- Shadow Riders.mp3')
+pygame.mixer.music.play(0)
  
 block_color = (53,115,255)
 
@@ -42,6 +43,7 @@ def text_objects(text, font):
     return textSurface, textSurface.get_rect()
 
 def game_intro():
+
 
     intro = True
     global sound

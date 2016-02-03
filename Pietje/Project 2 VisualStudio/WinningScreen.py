@@ -33,7 +33,8 @@ def winning_screen():
     pygame.display.set_caption('Frequency')
     clock = pygame.time.Clock()
 
-
+    pygame.mixer.music.load('Solid Snake Victory Theme - Super Smash Bros. Brawl Music.mp3')
+    pygame.mixer.music.play(0)
 
     winning = True
 

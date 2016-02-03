@@ -16,7 +16,7 @@ def game_loop():                                #GameLoop door Joost en Eljakim
         copy_Playerslist = Playerslist
     print("aantal normale spelers: " + str(AmountPlayersDefault))
     
-    tile_loop(Playerslist, copy_Playerslist)                     #Joost
+    tile_loop(Playerslist, copy_Playerslist, AmountPlayersDefault)                     #Joost
 
 
 def ChoosePlayerScreen():               #ChoosePlayerScreen door Joost en Eljakim
