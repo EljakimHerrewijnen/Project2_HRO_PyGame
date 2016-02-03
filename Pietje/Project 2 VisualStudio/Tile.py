@@ -239,6 +239,8 @@ def tile_loop(Playerslist, copy_Playerslist):
     green = (34, 139, 34)
     #textures
     transparent_texture = pygame.image.load('content/transparent_tile.png')
+    cloud_texture = pygame.image.load('content/cloud.tif')
+    cloud_texture = pygame.transform.scale(cloud_texture, (250, 150))
     nr_1_texture = pygame.image.load('content/player1.tif')
     nr_1_texture = pygame.transform.scale(nr_1_texture, (Texturesize, Texturesize))
     nr_2_texture = pygame.image.load('content/player2.tif')
@@ -352,11 +354,14 @@ def tile_loop(Playerslist, copy_Playerslist):
     currentPl_tanks = 0
     currentPl_barracks = 0
     currentPl_boats = 0
+    cloudx = -200
+    cloudy = 0
 
     while not done:
         for event in pygame.event.get():    #get all user events
             if event.type == pygame.QUIT:   #Option to quit
                 done = True
+
 
             if currentPL_currency >= 50000:
                 winning_screen()
@@ -739,6 +744,15 @@ def tile_loop(Playerslist, copy_Playerslist):
         #screen.blit(Soldier,(soldierPos[0], soldierPos[1]))
         #print soldier-coordinaten in console
         #print("x = ", soldierPos[0], "y = ", soldierPos[1])
+
+        #cloud animatie
+        """
+        cloudx += 1
+        if cloudx > Mapwidth * Tilesize:
+            cloudy = random.randint(0, Mapheight * Tilesize)
+            cloudx = -200
+        screen.blit(cloud_texture.convert_alpha(), (cloudx, cloudy))
+            """
 
 
         #draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome, currentPl_soldiers, currentPl_robots, currentPl_tanks, currentPl_barracks, currentPl_boats)
