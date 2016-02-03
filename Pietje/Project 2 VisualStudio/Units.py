@@ -51,15 +51,25 @@ id_counter = 0
 AddUnit = Empty
 
 #To get the position, this is where in the 5 biomes the unit should spawn.
-def GetBiomePosition(currentPL_biome):
-    if currentPL_biome == "Desert":
-        return [0, 17]
-    elif currentPL_biome == "Swamp":
-        return [0,0]
-    elif currentPL_biome == "Forest":
-        return [17, 17]
-    elif currentPL_biome == "Ice":
-        return [17, 0]
+def GetBiomePosition(currentPL_biome, Type):
+    if Type == "Boat":
+        if currentPL_biome == "Desert":
+            return [5, 11]
+        elif currentPL_biome == "Swamp":
+            return [5, 6]
+        elif currentPL_biome == "Forest":
+            return [11, 12]
+        elif currentPL_biome == "Ice":
+            return [11, 5]
+    else:
+        if currentPL_biome == "Desert":
+            return [0, 17]
+        elif currentPL_biome == "Swamp":
+            return [0,0]
+        elif currentPL_biome == "Forest":
+            return [17, 17]
+        elif currentPL_biome == "Ice":
+            return [17, 0]
 class Units():
     def __init__(self, id, unittype, position, OwnerPlayer, texture, AttackValue, DefenceValue):
         self.id = id
@@ -72,7 +82,8 @@ class Units():
 
     def BuyTank(currentPl_id, currentPL_biome, currentPL_currency):  
         global id_counter
-        Position_Unit = GetBiomePosition(currentPL_biome)
+        Type = "Tank"
+        Position_Unit = GetBiomePosition(currentPL_biome, Type)
         global AddUnit
         id_counter += 1
         AddUnit = Node(Units(id_counter, "Tank", Position_Unit, currentPl_id, tank_texture, 2, 2), AddUnit)
@@ -87,7 +98,8 @@ class Units():
 
     def BuySoldier(currentPl_id, currentPL_biome, currentPL_currency):
         global id_counter
-        Position_Unit = GetBiomePosition(currentPL_biome)
+        Type = "Soldier"
+        Position_Unit = GetBiomePosition(currentPL_biome, Type)
         global AddUnit
         id_counter += 1
         AddUnit = Node(Units(id_counter, "Soldier", Position_Unit, currentPl_id, soldier_texture,1 ,1), AddUnit)
@@ -102,7 +114,8 @@ class Units():
 
     def BuyRobot(currentPl_id, currentPL_biome, currentPL_currency):
         global id_counter
-        Position_Unit = GetBiomePosition(currentPL_biome)
+        Type = "Robot"
+        Position_Unit = GetBiomePosition(currentPL_biome, Type)
         global AddUnit
         id_counter += 1
         AddUnit = Node(Units(id_counter, "Robot", Position_Unit, currentPl_id, robot_texture, 2, 2), AddUnit)
@@ -117,7 +130,8 @@ class Units():
 
     def BuyBoat(currentPl_id, currentPL_biome, currentPL_currency):
         global id_counter
-        Position_Unit = GetBiomePosition(currentPL_biome)
+        Type = "Boat"
+        Position_Unit = GetBiomePosition(currentPL_biome, Type)
         global AddUnit
         id_counter += 1
         AddUnit = Node(Units(id_counter, "Boat", Position_Unit, currentPl_id, boat_texture, 0, 6), AddUnit)
@@ -132,7 +146,7 @@ class Units():
 
     def BuyBarrack(currentPl_id, currentPL_biome, currentPL_currency):
         global id_counter
-        Position_Unit = GetBiomePosition(currentPL_biome)
+        Position_Unit = GetBiomePosition(currentPL_biome, Type)
         global AddUnit
         id_counter += 1
         AddUnit = Node(Units(id_counter, "Barrack", Position_Unit, currentPl_id, barrack_texture, 0, 6), AddUnit)

@@ -534,6 +534,7 @@ def tile_loop(Playerslist, copy_Playerslist):
                 currentPL_card = currentPlayerList.Value.Gamecard
                 currentPL_biome = currentPlayerList.Value.Biome
                 currentPL_currency = currentPlayerList.Value.Currency
+                currentPL_currency += 5000
                 currentPl_soldiers = currentPlayerList.Value.Soldiers
                 currentPl_robots = currentPlayerList.Value.Robots
                 currentPl_tanks = currentPlayerList.Value.Tanks
