@@ -43,7 +43,7 @@ def game_intro():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
-
+                intro = False
         
         bg = pygame.image.load("content/background_menu1.jpg")
         bg= pygame.transform.scale(bg, (display_width, display_height))
