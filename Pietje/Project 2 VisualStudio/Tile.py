@@ -93,7 +93,7 @@ def check_For_Other_Units_On_Tile(currentUnitPos, AddUnit):
             DrawUnits = Node(AddUnit.Value.Texture, DrawUnits)
             """
 """
-def draw2(AddUnit, screen):
+def draw2(AddUnit, screen, currentPl_id):
     while AddUnit.IsEmpty == False:
         screen.blit(AddUnit.Value.Texture, (AddUnit.Value.position[0] * Tilesize, AddUnit.Value.position[1] * Tilesize))
         
@@ -140,10 +140,17 @@ def draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwid
     
     pygame.display.flip()
     
-def draw2(AddUnit, screen):
+def draw2(AddUnit, screen, nr_1_texture, nr_2_texture, nr_3_texture, nr_4_texture):
     while AddUnit.IsEmpty == False:
         screen.blit(AddUnit.Value.Texture, (AddUnit.Value.position[0] * Tilesize, AddUnit.Value.position[1] * Tilesize))
-        
+        if AddUnit.Value.OwnerPlayer == 1:
+            screen.blit(nr_1_texture, (AddUnit.Value.position[0] * Tilesize, AddUnit.Value.position[1] * Tilesize))
+        if AddUnit.Value.OwnerPlayer == 2:
+            screen.blit(nr_2_texture, (AddUnit.Value.position[0] * Tilesize, AddUnit.Value.position[1] * Tilesize))
+        if AddUnit.Value.OwnerPlayer == 3:
+            screen.blit(nr_3_texture, (AddUnit.Value.position[0] * Tilesize, AddUnit.Value.position[1] * Tilesize))
+        if AddUnit.Value.OwnerPlayer == 4:
+            screen.blit(nr_4_texture, (AddUnit.Value.position[0] * Tilesize, AddUnit.Value.position[1] * Tilesize))
         AddUnit = AddUnit.Tail
 
     pygame.display.flip()
@@ -232,6 +239,14 @@ def tile_loop(Playerslist, copy_Playerslist):
     green = (34, 139, 34)
     #textures
     transparent_texture = pygame.image.load('content/transparent_tile.png')
+    nr_1_texture = pygame.image.load('content/player1.tif')
+    nr_1_texture = pygame.transform.scale(nr_1_texture, (Texturesize, Texturesize))
+    nr_2_texture = pygame.image.load('content/player2.tif')
+    nr_2_texture = pygame.transform.scale(nr_2_texture, (Texturesize, Texturesize))
+    nr_3_texture = pygame.image.load('content/player3.tif')
+    nr_3_texture = pygame.transform.scale(nr_3_texture, (Texturesize, Texturesize))
+    nr_4_texture = pygame.image.load('content/player4.tif')
+    nr_4_texture = pygame.transform.scale(nr_4_texture, (Texturesize, Texturesize))
     Water_texture = pygame.image.load('content/water_texture.png')
     Water_texture = pygame.transform.scale(Water_texture, (Texturesize, Texturesize))
     Goldmine_texture = pygame.image.load('content/goldmine_texture.png')
@@ -424,12 +439,12 @@ def tile_loop(Playerslist, copy_Playerslist):
 
                     nr_movements += 1
                     #draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome, currentPl_soldiers, currentPl_robots, currentPl_tanks, currentPl_barracks, currentPl_boats)
-                    #draw2(AddUnit, screen)
+                    #draw2(AddUnit, screen, nr_1_texture, nr_2_texture, nr_3_texture, nr_4_texture)
                     print("klaar met wachten")
                 copy_AddUnit = Node(AddUnit.Value, copy_AddUnit)
                 draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome, currentPl_soldiers, currentPl_robots, currentPl_tanks, currentPl_barracks, currentPl_boats)
-                draw2(copy_AddUnit, screen)
-                #AddUnit = draw2(copy_AddUnit, screen)
+                draw2(copy_AddUnit, screen, nr_1_texture, nr_2_texture, nr_3_texture, nr_4_texture)
+                #AddUnit = draw2(copy_AddUnit, screen, nr_1_texture, nr_2_texture, nr_3_texture, nr_4_texture)
                 AddUnit = AddUnit.Tail
             AddUnit = copy_AddUnit
         #als de muis over tekst heen gaat verkleurt de achtergrond van de text
@@ -567,28 +582,17 @@ def tile_loop(Playerslist, copy_Playerslist):
                 currentPL_card = currentPlayerList.Value.Gamecard
                 currentPL_biome = currentPlayerList.Value.Biome
                 currentPL_currency = currentPlayerList.Value.Currency
-<<<<<<< HEAD
-=======
                 currentPL_currency += 5000
->>>>>>> origin/master
                 currentPl_soldiers = currentPlayerList.Value.Soldiers
                 currentPl_robots = currentPlayerList.Value.Robots
                 currentPl_tanks = currentPlayerList.Value.Tanks
                 currentPl_barracks = currentPlayerList.Value.Barracks
                 currentPl_boats = currentPlayerList.Value.Boats
-<<<<<<< HEAD
-=======
-                #currentPl_soldiers = currentPlayerList.Value.Soldiers
-                #currentPl_robots = currentPlayerList.Value.Robots
-                #currentPl_tanks = currentPlayerList.Value.Tanks
-                #currentPl_barracks = currentPlayerList.Value.Barracks
-                #currentPl_boats = currentPlayerList.Value.Boats
->>>>>>> origin/master
                 nr_movements = 0
                 #global currentPl_id
                 print("Player id = " + str(currentPl_id) + " Player name = " + currentPL_name)
                 draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome, currentPl_soldiers, currentPl_robots, currentPl_tanks, currentPl_barracks, currentPl_boats)
-                #draw2(copy2_AddUnit, screen)
+                #draw2(copy2_AddUnit, screen, nr_1_texture, nr_2_texture, nr_3_texture, nr_4_texture)
                 pygame.time.delay(1000)
                 #GameAI(currentPl_id, currentPL_currency, currentPL_biome)
         else:
@@ -620,6 +624,6 @@ def tile_loop(Playerslist, copy_Playerslist):
 
 
         #draw1(AddUnit, screen, bgmap, soldierPos, font1, transparent_texture, Mapwidth, buy_background, currentPL_currency, currentPL_biome, currentPl_soldiers, currentPl_robots, currentPl_tanks, currentPl_barracks, currentPl_boats)
-        draw2(AddUnit, screen)
+        draw2(AddUnit, screen, nr_1_texture, nr_2_texture, nr_3_texture, nr_4_texture)
         pygame.display.flip()
         clock.tick(30)
