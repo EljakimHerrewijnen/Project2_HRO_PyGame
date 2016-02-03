@@ -358,8 +358,6 @@ def tile_loop(Playerslist, copy_Playerslist):
             if event.type == pygame.QUIT:   #Option to quit
                 done = True
 
-
-
             if currentPL_currency >= 50000:
                 winning_screen()
                 done = True
@@ -381,26 +379,58 @@ def tile_loop(Playerslist, copy_Playerslist):
             if pygame.key.get_pressed()[K_SPACE] == 1:
                 currentTile = tilelist[mouse_y][mouse_x]
                 print("Water = 0/Goldmine = 1/Forest = 2/Ice = 3/Swamp = 4/Desert = 5: ", currentTile)
-            #Battle Code
-        if AddUnit.IsEmpty is False:
-            APlayersPosition = AddUnit.Value
-            while AddUnit.IsEmpty == False:
-                print("Searching for a battle...")
-                AddUnit = AddUnit.Tail
-                if APlayersPosition.Value.position == AddUnit.Value.position:
+        """
+        n = 0
+        while AddUnit.IsEmpty == False:
+            n += 1
+            AddUnit = AddUnit.Tail
 
-                    APlayersPosition2 = AddUnit.Value
-                    APlayersPosition2.Value.DefenceValue - APlayersPosition.Value.AttackValue
-                    APlayersPosition.Value.DefenceValue - APlayersPosition2.Value.AttackValue
-                    BattleCounter = 0
-                    if APlayersPosition.DefenceValue >= 1:
-                        AddUnit.Value -= APlayersPosition2
-                        print("This is a battle test")
-                    else: 
-                        AddUnit.Value -= APlayersPosition
-                        print("This is a battle test")
-                elif APlayersPosition is not AddUnit.Value.position:
-                            print("boe")
+            #Battle Code
+        if AddUnit.IsEmpty == False and AddUnit.Tail.IsEmpty == False:
+            currentUnit = AddUnit
+            copy_AddUnit = AddUnit
+            copy2_AddUnit = AddUnit
+            AddUnit2 = Empty
+            for i in range(0, n - 1):
+            #while copy_AddUnit.IsEmpty == False:
+                #if copy_AddUnit.Tail.IsEmpty == True:
+                #    copy_AddUnit.Tail = copy2_AddUnit
+                print("Searching for a battle...")
+                copy_AddUnit = copy_AddUnit.Tail
+                if currentUnit.Value.position == copy_AddUnit.Value.position:
+                    if copy_AddUnit.Value.AttackValue > currentUnit.Value.AttackValue:
+                        print("1 Unitid: " + str(copy_AddUnit.Value.id) + " died!")
+                        AddUnit2 = Node(copy_AddUnit.Value, AddUnit2)
+                    elif copy_AddUnit.Value.DefenceValue == currentUnit.Value.DefenceValue:
+                        print("1 Unitid: " + str(copy_AddUnit.Value.id) + " died!")
+                        print("1 Unitid: " + str(currentUnit.Value.id) + " died!")
+                    else:
+                        AddUnit2 = Node(currentUnit.Value, AddUnit2)
+                    
+#                    enemyUnit_lives = copy_AddUnit.Value.DefenceValue - currentUnit.Value.AttackValue
+#                    currentUnit_lives = currentUnit.Value.DefenceValue - copy_AddUnit.Value.AttackValue
+#                    copy_AddUnit.Value.DefenceValue -= currentUnit.Value.AttackValue
+#                    currentUnit.Value.DefenceValue -= copy_AddUnit.Value.AttackValue
+#                    if copy_AddUnit.Value.DefenceValue < 1:
+#                        print("1 Unitid: " + str(copy_AddUnit.Value.id) + " died!")
+#                    else:
+#                        AddUnit2 = Node(copy_AddUnit.Value, AddUnit2)
+#                        print("1 Unitid: " + str(copy_AddUnit.Value.id) + " survived!")
+#                    if currentUnit.Value.DefenceValue < 1:
+#                        print("2 Unitid: " + str(currentUnit.Value.id) + " died!")
+#                    else:
+#                        AddUnit2 = Node(copy_AddUnit.Value, AddUnit2)
+#                        print("2 Unitid: " + str(currentUnit.Value.id) + " survived!")
+                        
+                else:
+                    AddUnit2 = Node(copy_AddUnit.Value, AddUnit2)
+            AddUnit = AddUnit2
+            """
+        #n = 0
+        #while AddUnit.IsEmpty == False:
+        #    n += 1
+        #    AddUnit = AddUnit.Tail
+
         if pygame.mouse.get_pressed()[0] and pygame.mouse.get_pos()[0] < (Mapwidth * Tilesize):
             mouse_x = math.floor(pygame.mouse.get_pos()[0] / Tilesize) * Tilesize
             mouse_y = math.floor(pygame.mouse.get_pos()[1] / Tilesize) * Tilesize
@@ -408,15 +438,62 @@ def tile_loop(Playerslist, copy_Playerslist):
             mouse_x = math.floor(pygame.mouse.get_pos()[0] / Tilesize)
             mouse_y = math.floor(pygame.mouse.get_pos()[1] / Tilesize)
             mouse_Pos = [mouse_x, mouse_y]
+
             #code voor het verplaatsen van units
             copy_AddUnit = Empty
-            
             while AddUnit.IsEmpty == False and nr_movements < 4:
                 print(mouse_Pos[0], mouse_Pos[1])
                 if mouse_Pos == AddUnit.Value.position and AddUnit.Value.OwnerPlayer == currentPl_id:
                     print("Hier staat een unit: " + AddUnit.Value.unittype + " met id: " + str(AddUnit.Value.id))
                     mouse_Pos_New = wait(Mapwidth, mouse_Pos)
                     AddUnit.Value.position = mouse_Pos_New
+
+                    """
+                    #battle code
+                    if AddUnit.IsEmpty == False and AddUnit.Tail.IsEmpty == False:
+                        currentUnit = AddUnit
+                        copy_AddUnit = AddUnit
+                        copy2_AddUnit = AddUnit
+                        AddUnit2 = Empty
+                        for i in range(0, n - 1):
+                        #while copy_AddUnit.IsEmpty == False:
+                            #if copy_AddUnit.Tail.IsEmpty == True:
+                            #    copy_AddUnit.Tail = copy2_AddUnit
+                            print("Searching for a battle...")
+                            if copy_AddUnit.IsEmpty == True:
+                                copy_AddUnit.Tail = copy2_AddUnit
+                            copy_AddUnit = copy_AddUnit.Tail
+                            if currentUnit.Value.position == copy_AddUnit.Value.position:
+                                if copy_AddUnit.Value.AttackValue > currentUnit.Value.AttackValue:
+                                    print("1 Unitid: " + str(currentUnit.Value.id) + " died!")
+                                    AddUnit2 = Node(copy_AddUnit.Value, AddUnit2)
+                                elif copy_AddUnit.Value.AttackValue == currentUnit.Value.AttackValue:
+                                    print("1 Unitid: " + str(copy_AddUnit.Value.id) + " died!")
+                                    print("1 Unitid: " + str(currentUnit.Value.id) + " died!")
+                                #else:
+                                    #AddUnit2 = Node(currentUnit.Value, AddUnit2)
+                                    """
+                                #enemyUnit_lives = copy_AddUnit.Value.DefenceValue - currentUnit.Value.AttackValue
+                                #currentUnit_lives = currentUnit.Value.DefenceValue - copy_AddUnit.Value.AttackValue
+                                #copy_AddUnit.Value.DefenceValue -= currentUnit.Value.AttackValue
+                                #currentUnit.Value.DefenceValue -= copy_AddUnit.Value.AttackValue
+                                #if copy_AddUnit.Value.DefenceValue < 1:
+                                #    print("1 Unitid: " + str(copy_AddUnit.Value.id) + " died!")
+                                #else:
+                                #    AddUnit2 = Node(copy_AddUnit.Value, AddUnit2)
+                                #    print("1 Unitid: " + str(copy_AddUnit.Value.id) + " survived!")
+                                #if currentUnit.Value.DefenceValue < 1:
+                                #    print("2 Unitid: " + str(currentUnit.Value.id) + " died!")
+                                #else:
+                                #    AddUnit2 = Node(copy_AddUnit.Value, AddUnit2)
+                                #    print("2 Unitid: " + str(currentUnit.Value.id) + " survived!")
+                    """
+                            else:
+                                AddUnit2 = Node(copy_AddUnit.Value, AddUnit2)
+                        AddUnit = AddUnit2
+                        copy_AddUnit = Empty
+                            """
+
                     #code voor het krijgen van gold als een unit is verplaatst
                     current_biome = tilelist[AddUnit.Value.position[1]][AddUnit.Value.position[0]]
                     if currentPL_biome == "Forest":
@@ -592,14 +669,6 @@ def tile_loop(Playerslist, copy_Playerslist):
                 currentPl_tanks = currentPlayerList.Value.Tanks
                 currentPl_barracks = currentPlayerList.Value.Barracks
                 currentPl_boats = currentPlayerList.Value.Boats
-<<<<<<< HEAD
-                #currentPl_soldiers = currentPlayerList.Value.Soldiers
-                #currentPl_robots = currentPlayerList.Value.Robots
-                #currentPl_tanks = currentPlayerList.Value.Tanks
-                #currentPl_barracks = currentPlayerList.Value.Barracks
-                #currentPl_boats = currentPlayerList.Value.Boats
-=======
->>>>>>> origin/master
                 nr_movements = 0
                 #global currentPl_id
                 print("Player id = " + str(currentPl_id) + " Player name = " + currentPL_name)
