@@ -493,7 +493,7 @@ def tile_loop(Playerslist, copy_Playerslist):
                             #if copy_AddUnit.Tail.IsEmpty == True:
                             #    copy_AddUnit.Tail = copy2_AddUnit
                             print("Searching for a battle...")
-                            if copy_AddUnit.IsEmpty == True:
+                            if copy_AddUnit.IsEmpty.Tail == True:
                                 copy_AddUnit.Tail = copy2_AddUnit
                             copy_AddUnit = copy_AddUnit.Tail
                             if currentUnit.Value.position == copy_AddUnit.Value.position:
