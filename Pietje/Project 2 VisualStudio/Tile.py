@@ -447,11 +447,11 @@ def tile_loop(Playerslist, copy_Playerslist):
                 if currentPL_biome == "Ice" and currentPL_currency >= 120:
                     currentPL_currency -= 120
                     print(currentPL_currency)
-                    AddUnit = Units.BuySoldier(currentPl_id, currentPL_biome, currentPL_currency)
+                    AddUnit = Units.BuySoldier(currentPl_id, currentPL_biome, currentPL_currency, currentPl_boats)
                     currentPl_soldiers += 1
                 elif currentPL_currency >= 150:
                     currentPL_currency -= 150
-                    AddUnit = Units.BuySoldier(currentPl_id, currentPL_biome, currentPL_currency)
+                    AddUnit = Units.BuySoldier(currentPl_id, currentPL_biome, currentPL_currency, currentPl_boats)
                     currentPl_soldiers += 1
                 else:
                     print("You do not have enough gold!")
@@ -468,13 +468,13 @@ def tile_loop(Playerslist, copy_Playerslist):
             if click[0] == 1:
                 if currentPL_biome == "Forest" and currentPL_currency >= 120:
                     currentPL_currency -= 240
-                    AddUnit = Units.BuyRobot(currentPl_id, currentPL_biome, currentPL_currency)
+                    AddUnit = Units.BuyRobot(currentPl_id, currentPL_biome, currentPL_currency, currentPl_boats)
                     RobotPos = AddUnit.Value.position
                     currentPl_robots += 1
                     #screen.blit(robot_texture, (RobotPos[0] * Mapwidth * 2, RobotPos[1]* Mapheight * 2))
                 elif currentPL_currency >= 150:
                     currentPL_currency -= 300
-                    AddUnit = Units.BuyRobot(currentPl_id, currentPL_biome, currentPL_currency)
+                    AddUnit = Units.BuyRobot(currentPl_id, currentPL_biome, currentPL_currency, currentPl_boats)
                     RobotPos = AddUnit.Value.position
                     currentPl_robots += 1
                     #screen.blit(robot_texture, (RobotPos[0] * Mapwidth * 2, RobotPos[1]* Mapheight * 2))
@@ -491,13 +491,13 @@ def tile_loop(Playerslist, copy_Playerslist):
             pygame.draw.rect(screen, cyan, (865,199,124,19))    
             if click[0] == 1:  
                 if currentPL_biome == "Desert" and currentPL_currency >= 500:
-                    AddUnit = Units.BuyTank(currentPl_id, currentPL_biome, currentPL_currency)   
+                    AddUnit = Units.BuyTank(currentPl_id, currentPL_biome, currentPL_currency, currentPl_boats)   
                     currentPL_currency -= 500
                     TankPos = AddUnit.Value.position
                     currentPl_tanks += 1
                     #screen.blit(tank_texture, (TankPos[0] * Mapwidth * 2, TankPos[1]* Mapheight * 2))
                 elif currentPL_currency >= 750:
-                    AddUnit = Units.BuyTank(currentPl_id, currentPL_biome, currentPL_currency)   
+                    AddUnit = Units.BuyTank(currentPl_id, currentPL_biome, currentPL_currency, currentPl_boats)   
                     currentPL_currency -= 750
                     TankPos = AddUnit.Value.position
                     currentPl_tanks += 1
@@ -514,20 +514,20 @@ def tile_loop(Playerslist, copy_Playerslist):
         if 865 + 124 > mouse[0] > 865 and 283 + 19 > mouse[1] > 283:        #boat
             pygame.draw.rect(screen, cyan, (865,283,124,19))    
             if click[0] == 1:
-                if currentPL_biome == "Swamp" and currentPL_currency >= 800:
+                if currentPL_biome == "Swamp" and currentPL_currency >= 800 and currentPl_boats < 4:
                     currentPL_currency -= 800
-                    AddUnit = Units.BuyBoat(currentPl_id, currentPL_biome, currentPL_currency)
+                    AddUnit = Units.BuyBoat(currentPl_id, currentPL_biome, currentPL_currency, currentPl_boats)
                     BoatPos = AddUnit.Value.position
                     currentPl_boats += 1
                     #screen.blit(boat_texture, (BoatPos[0] * Mapwidth * 2, BoatPos[1]* Mapheight * 2))
-                elif currentPL_currency >= 1000:
+                elif currentPL_currency >= 1000 and currentPl_boats < 4:
                     currentPL_currency = currentPL_currency - 1000
-                    AddUnit = Units.BuyBoat(currentPl_id, currentPL_biome, currentPL_currency)
+                    AddUnit = Units.BuyBoat(currentPl_id, currentPL_biome, currentPL_currency, currentPl_boats)
                     BoatPos = AddUnit.Value.position
                     currentPl_boats += 1
                     #screen.blit(boat_texture, (BoatPos[0] * Mapwidth * 2, BoatPos[1]* Mapheight * 2))
                 else:
-                    print("You do not have enough gold!")
+                    print("You do not have enough gold! Or you have too much of these units")
                 pygame.time.delay(300)
         else:
             pygame.draw.rect(screen, white, (865,283,124,19))
@@ -538,13 +538,13 @@ def tile_loop(Playerslist, copy_Playerslist):
         if 865 + 124 > mouse[0] > 865 and 367 + 19 > mouse[1] > 367:        #barrack
             pygame.draw.rect(screen, cyan, (865,367,124,19))  
             if click[0] == 1:
-                AddUnit = Units.BuyBarrack(currentPl_id, currentPL_biome, currentPL_currency)
+                AddUnit = Units.BuyBarrack(currentPl_id, currentPL_biome, currentPL_currency, currentPl_boats)
                 #screen.blit(barrack_texture, (AddUnit.Value.position[0] * Tilesize, AddUnit.Value.position[1] * Tilesize)) 
                 BarrackPos = AddUnit.Value.position    
                 pygame.time.delay(300)
                 if currentPL_currency >= 500:
                     currentPL_currency -= 500
-                    AddUnit = Units.BuyBarrack(currentPl_id, currentPL_biome, currentPL_currency)
+                    AddUnit = Units.BuyBarrack(currentPl_id, currentPL_biome, currentPL_currency, currentPl_boats)
                     BarrackPos = AddUnit.Value.position
                     currentPl_barracks += 1
                     #screen.blit(barrack_texture, (TankPos[0] * Mapwidth * 2, TankPos[1]* Mapheight * 2))              
@@ -569,23 +569,17 @@ def tile_loop(Playerslist, copy_Playerslist):
                 currentPL_card = currentPlayerList.Value.Gamecard
                 currentPL_biome = currentPlayerList.Value.Biome
                 currentPL_currency = currentPlayerList.Value.Currency
-<<<<<<< HEAD
-=======
                 currentPL_currency += 5000
->>>>>>> origin/master
                 currentPl_soldiers = currentPlayerList.Value.Soldiers
                 currentPl_robots = currentPlayerList.Value.Robots
                 currentPl_tanks = currentPlayerList.Value.Tanks
                 currentPl_barracks = currentPlayerList.Value.Barracks
                 currentPl_boats = currentPlayerList.Value.Boats
-<<<<<<< HEAD
-=======
                 #currentPl_soldiers = currentPlayerList.Value.Soldiers
                 #currentPl_robots = currentPlayerList.Value.Robots
                 #currentPl_tanks = currentPlayerList.Value.Tanks
                 #currentPl_barracks = currentPlayerList.Value.Barracks
                 #currentPl_boats = currentPlayerList.Value.Boats
->>>>>>> origin/master
                 nr_movements = 0
                 #global currentPl_id
                 print("Player id = " + str(currentPl_id) + " Player name = " + currentPL_name)
